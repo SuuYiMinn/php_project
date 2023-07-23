@@ -166,7 +166,6 @@
                     <p class="mt-3 font-Tommorrow italic font-bold text-lg text-greyText1">340</p>
 
                 </div>
-<<<<<<< HEAD
                 <!-- end of total orders -->  
             </div>
             <!-- end of boxes -->
@@ -359,33 +358,6 @@
 
                 </div>
                 <!-- end of bottom-right side -->
-=======
-                <!-- end of total orders -->
-                <!-- start of circle chart -->
-                <div class="programming-stats">
-                    <div class="chart-container">
-                        <canvas class="my-chart"></canvas>
-                    </div>
-
-                    <div class="details">
-                        <p class="text-blueText font-RobotoSlab font-bold text-lg">Sales By Category</p>
-                        <ul></ul>
-                    </div>
-                </div>
-                <!-- end of circle chart -->
-                <!-- start of chart -->
-                <div class="charts-card absolute mt-[200px]">
-                    <h2 class="chart-title">Revenue Vs Orders</h2>
-                    <div id="area-chart"></div>
-                </div>
-
-                <!-- end of chart -->
-            </div>
-            <!-- end of boxes -->
-            
-            <!-- start of bottom -->
-            <div>
->>>>>>> e9870cc820cd27c8fb8c182eb00eb12364c0f6c0
 
             </div>
             <!-- end of bottom -->
@@ -396,13 +368,8 @@
     </div>
 
     <!-- end of lower -->
-<<<<<<< HEAD
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <!-- <script src="../resources/js/main.js"></script> -->
-=======
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="main.js"></script>
->>>>>>> e9870cc820cd27c8fb8c182eb00eb12364c0f6c0
 
 
 </body>
