@@ -8,9 +8,15 @@
     font-family: "Rubik", sans-serif;
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     /* align-items: center; */
     /* gap: 20px; */
     /* margin: 0 auto; */
+=======
+    align-items: center;
+    /* gap: 20px; */
+    margin: 0 auto;
+>>>>>>> e9870cc820cd27c8fb8c182eb00eb12364c0f6c0
     width: auto-fit;
     /* box-shadow: 0 4px 13px -2px rgba(0, 0, 0, 10); */
     /* border-radius: 20px; */
@@ -28,10 +34,13 @@
     list-style: none;
     padding: 0;
   }
+<<<<<<< HEAD
   .programming-stats .details{
     /* position: absolute; */
     top: 100px;
   }
+=======
+>>>>>>> e9870cc820cd27c8fb8c182eb00eb12364c0f6c0
   
   .programming-stats .details ul li {
     font-size: 15px;
@@ -44,8 +53,13 @@
     color: #e63946;
   }
   .my-chart{
+<<<<<<< HEAD
     /* position: absolute; */
     /* top: 70px; */
+=======
+    position: absolute;
+    top: 70px;
+>>>>>>> e9870cc820cd27c8fb8c182eb00eb12364c0f6c0
   }
 
 /* ================================ */
