@@ -1,3 +1,6 @@
+<?php session_start() ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,40 +18,38 @@
 <?php include "../common/CommonNavigation.php" ?>
 <form action="../../Controller/signupController.php" method="post">
     <main class=" lg:flex w-full h-full justify-between px-20 " >
-        <div class="lg:w-1/3 lg:ml-24 sm:w-4/5  mt-16 sm:mx-auto">
-            <p class="  text-2xl ml-24">Sign Up</p>
+        <div class="w-1/3 mx-auto  mt-16 flex-col">
+            <p class=" font-medium text-2xl w-80">Register your account</p>
 
             
-            <div class="my-10 w-3/4 mx-auto" >
-                <p class="mb-4">Please sign up using email</p>
-                <p class=" mb-1 text-xs text-blue-900">We will send a code to your email</p>
-            <input type="text" required name="email" placeholder="Enter your email" class="w-64 px-4 ring-1 rounded-md  require">
+            <div class="my-10" >
+                <p class="mb-4 text-orange-500">Please sign up using email</p>
+                <p class=" mb-1 text-xs text-blue-900">We will send verification link to your email</p>
+            <input type="text" required name="email" placeholder="Enter your email" class="px-4 ring-1 rounded-md  require">
             <div class="w-64">
-                <input type="submit"  value="send code" class="font-bold text-sm text-[#ff9f29] float-right p-2"></input>
+                <small class="float left text-red-700"><?php 
+                if(isset($_SESSION["registerError"])){
+                    $_SESSION["registerError"];
+
+                }
+                
+                ?></small>
             </div>
+            <input type="password" required name="password" placeholder="Enter password" class="px-4 ring-1 rounded-md my-5">
             
            
             </div>
-            <div class="w-3/4 mx-auto">
-                <p class="my-2">Code</p>
-            <input type="password" name="code" placeholder="Enter your code" class="px-4 w-64 mx-auto ring-1 rounded-md">
-           
-            </div>
-             <div class="flex mt-4 mb-8 w-80  justify-between text-xs">
-                <p class="sm:ml-12 lg:ml-4">don't recieve the code?</p>
-                <p class="font-bold text-sm text-[#ff9f29] float-right">resend code</p>
-                
-            </div>
-            <div class="w-3/4 mx-auto">
-                <input type="submit" value="Sign Up" class="bg-[#ff9f29] rounded-md mx-4 my-4 px-20 py-1 text-white">
+        
+            <div>
+                <input type="submit" value="Register" class="bg-[#ff9f29] rounded-md text-center px-14 py-1 text-white">
             </div>    
               
         </div>
 
 
-        <div class="w-3/5 lg:visible sm:invisible ">
+        <div class="w-3/5 lg:visible invisible ">
             <card class="">
-               <img src="../photo/shopping illustation.jpg" alt="shopping"> 
+               <img src="../resources/img/photo/illustation.jpg" alt="shopping"> 
             </card>
 
         </div>
@@ -57,3 +58,4 @@
     </form>
 </body>
 </html>
+<?php $_SESSION["registerError"] = "" ?>

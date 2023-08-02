@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="lg:w-full lg:h-6 bg-[#FF9F29] flex justify-evenly text-white text-xs lg:visible sm:invisible">
+    <nav class=" invisible lg:w-full lg:h-6 bg-[#FF9F29] flex justify-evenly text-white text-xs  lg:visible ">
         <div class="flex justify-between py-1">
             <phone class="flex mr-4">
                 <ion-icon name="call-outline" class="mx-2 py-[2px]"></ion-icon>
@@ -35,7 +35,7 @@
     </nav>
     <!--navigation bar end-->
     <!--menu bar start-->
-    <menu class="w-full flex justify-evenly py-2 border lg:visible sm:invisible">
+    <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
         <div class="w-[100px] h-[30px]">
             <img src="../resources/img/photo/Logo.png" alt="logo" class="pt-0">
         </div>

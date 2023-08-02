@@ -15,14 +15,14 @@
 
         
             <!-- products card -->
-            <div class="w-52 h-full bg-white drop-shadow-md mt-2">
+            <div class="lg:w-52 w-48 h-full bg-white drop-shadow-md mt-2">
                 <!-- product image -->
                 <div class="w-full h-2/3 relative">
                 </div>
                 <!-- product information -->
                 <div class="flex justify-evenly h-1/3 bg-yellow-50">
                     <div>
-                        <p class="lg:font-medium sm:font-normal text-center">Product Name</p>
+                        <p class="lg:font-medium font-normal text-center">Product Name</p>
                         <p class="text-xs text-center">Product Description</p>
                         <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
                     </div>

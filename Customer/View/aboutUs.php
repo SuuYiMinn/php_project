@@ -24,7 +24,7 @@
       At Godeal, we guarantee you to have the best online shopping experience like never before. With over 16000 items to choose from,
        Godeal offers wide range of items that span across everyone needs and wants.
       </p>
-      <div class="flex lg:flex-row lg:mx-2 sm:mx-52 sm:flex-col overflow-x-hidden lg:justify-evenly sm:item-center mt-10">
+      <div class="flex lg:flex-row lg:mx-2 mx-20 flex-col overflow-x-hidden justify-evenly mt-10">
 
       <div class="">
         <p class="text-lg text-[#FF9F29] text-center mb-5 font-semibold">FAQ</p>

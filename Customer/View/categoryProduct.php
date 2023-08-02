@@ -87,10 +87,10 @@
         
 
     </div>
-    <div class="w-full lg:h-60 sm:h-52 flex justify-evenly flex-wrap">
+    <div class=" lg:w-11/12 w-full lg:h-60  h-52 flex justify-evenly flex-wrap mx-auto">
 
     <?php
-        for ($i=0; $i < 5; $i++) { 
+        for ($i=0; $i < 10; $i++) { 
             include "./common/commonProductlist.php";
         }
      

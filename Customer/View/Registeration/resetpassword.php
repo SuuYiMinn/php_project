@@ -11,13 +11,15 @@
 </head>
 <body>
 <?php include "../common/CommonNavigation.php" ?>
-    <main class=" lg:flex w-full h-full justify-between px-20 " >
-        <div class="lg:w-1/3 lg:ml-24 sm:w-4/5  mt-16 sm:mx-auto">
-            <p class="  text-2xl ml-24 my-10">Reset password</p>
+    <main class=" flex-col lg:flex-row w-full h-full justify-evenly" >
 
-            <div class="w-3/4 mx-auto">
-                <p class=" mb-2">Please Enter your new password below</p>
-                <p class="mb-4 text-[#ff9f29] text-xs">Minimum 6 characters with numbers and letters</p>
+    <form action="../../Controller/resetpasswordController.php" method="post">
+        <div class="w-1/3 mt-16 mx-auto">
+            <p class="text-2xl mx-auto my-10 w-64">Reset password</p>
+
+            <div class="w-3/4 mx-auto my-4">
+                <p class="mb-2 w-72">Please Enter your new password below</p>
+                <p class="mb-1 text-[#ff9f29] text-xs w-80">Minimum 6 characters with numbers and letters</p>
                 
             <input type="password" name="new password" placeholder="new password" class="px-4 w-64 mx-auto ring-1 rounded-md">
            
@@ -28,15 +30,16 @@
             </div>
              
             <div class="w-3/4 mx-auto">
-                <input type="button" value="Send" class="bg-[#ff9f29] rounded-md mx-4 my-4 px-20 py-1 text-white">
+                <input type="submit" value="Send" class="bg-[#ff9f29] rounded-md mx-4 my-4 px-20 py-1 text-white">
             </div>    
               
         </div>
+        </form>
 
 
-        <div class="w-3/5 lg:visible sm:invisible ">
-            <card class="">
-               <img src="../photo/shopping illustation.jpg" alt="shopping"> 
+        <div>
+            <card class="visible">
+               <img src="../resources/img/photo/illustation.jpg" alt="shopping"> 
             </card>
 
         </div>
