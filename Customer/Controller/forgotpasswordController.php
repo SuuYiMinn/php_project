@@ -11,7 +11,7 @@ if (count($_POST) == 0) {
   }
   include "../Model/model.php";
   $sql = $pdo->prepare(
-    "SELECT * FROM m_customer WHERE c_email=:email"
+    "SELECT * FROM m_customers WHERE c_email=:email"
   );
   $sql->bindValue(":email", $user_email);
   $sql->execute();
@@ -24,7 +24,7 @@ if (count($_POST) == 0) {
     $verify_code = get_token(128);
 
     $sql = $pdo->prepare(
-        "UPDATE m_customer SET code = :verifyCode WHERE c_email = :email"
+        "UPDATE m_customers SET code = :verifyCode WHERE c_email = :email"
       );
 
       $sql->bindValue(":email", $user_email);

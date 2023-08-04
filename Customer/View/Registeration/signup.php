@@ -17,16 +17,15 @@
 
 <?php include "../common/CommonNavigation.php" ?>
 <form action="../../Controller/signupController.php" method="post">
-    <main class=" lg:flex w-full h-full justify-between px-20 " >
-        <div class="w-1/3 mx-auto  mt-16 flex-col">
-            <p class=" font-medium text-2xl w-80">Register your account</p>
+    <main class=" lg:flex lg:justify-evenly lg:w-full w-5/6 mx-auto overflow-x-hidden" >
+        <div class="lg:w-1/3 w-5/6 mx-auto mt-6">
+            <p class=" font-medium text-2xl mb-20 w-80">Register your account</p>
 
             
-            <div class="my-10" >
-                <p class="mb-4 text-orange-500">Please sign up using email</p>
-                <p class=" mb-1 text-xs text-blue-900">We will send verification link to your email</p>
-            <input type="text" required name="email" placeholder="Enter your email" class="px-4 ring-1 rounded-md  require">
-            <div class="w-64">
+            <div class="">
+                <p class="mb-4 text-orange-500 test-center w-60">Please sign up using email</p>
+                <p class=" mb-1 text-xs text-blue-900 w-60">We will send verification link to your email</p>
+            <input type="text" required name="email" placeholder="Enter your email" class="px-4 ring-1 rounded-md">
                 <small class="float left text-red-700"><?php 
                 if(isset($_SESSION["registerError"])){
                     $_SESSION["registerError"];
@@ -34,14 +33,13 @@
                 }
                 
                 ?></small>
-            </div>
             <input type="password" required name="password" placeholder="Enter password" class="px-4 ring-1 rounded-md my-5">
             
            
             </div>
         
-            <div>
-                <input type="submit" value="Register" class="bg-[#ff9f29] rounded-md text-center px-14 py-1 text-white">
+            <div class="w-60 mt-10">
+                <input type="submit" value="Register" class="bg-[#ff9f29] rounded-md px-24 lg:px-20 py-1 text-white">
             </div>    
               
         </div>

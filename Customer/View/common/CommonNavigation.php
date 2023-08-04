@@ -35,6 +35,7 @@
     </nav>
     <!--navigation bar end-->
     <!--menu bar start-->
+    <div class="lg:inline hidden">
     <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
         <div class="w-[100px] h-[30px]">
             <img src="../resources/img/photo/Logo.png" alt="logo" class="pt-0">
@@ -54,6 +55,7 @@
         <ion-icon name="cart" class="w-[23px] h-[23px] fill-[#ff9f29]"></ion-icon>
 
     </menu>
+    </div>
     <!--menu bar end-->
     <!--mobile menu bar start-->
     <div class="w-full flex justify-evenly py-2 lg:invisible sm:visible absolute top-0">
