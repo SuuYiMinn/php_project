@@ -47,6 +47,7 @@ session_start();
         </div>
 
     </main>
+    <?php include "../common/commonFooter.php" ?>
 </body>
 
 </html>

@@ -15,6 +15,7 @@
 <body>
     <?php include "../common/CommonNavigation.php" ?>
 
+<<<<<<< HEAD
     <?php $verified_code = $_GET["verifiedcode"] ?>
 
         <main class=" lg:flex w-full h-full justify-between px-20 ">
@@ -31,18 +32,31 @@
                 </form>
 
                 </div>
+=======
+    <main class=" lg:flex w-full h-full justify-between px-20 ">
+        <div class="lg:w-1/3 lg:ml-24 sm:w-4/5  mt-16 sm:mx-auto">
+            <p class="text-orange-500 text-3xl font-semibold text-center">Your Account</p>
+            <p class="text-orange-500 text-3xl font-semibold text-center">Has been Registered</p>
+            <button>
+            </button>
+
+        </div>
+>>>>>>> 28475c384bdca7c0362cf31b8f180a1a04994950
 
 
 
 
-            <div class="w-3/5 lg:visible invisible ">
-                <card class="">
-                    <img src="../resources/img/photo/illustation.jpg" alt="shopping">
-                </card>
+        <div class="w-3/5 lg:visible invisible ">
+            <card class="">
+                <img src="../resources/img/photo/illustation.jpg" alt="shopping">
+            </card>
 
-            </div>
+        </div>
 
-        </main>
+    </main>
+
+    <?php include "../common/commonFooter.php" ?>
+
 </body>
 
 </html>
