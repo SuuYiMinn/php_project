@@ -1,7 +1,13 @@
 <?php 
 
 $user_code = $_GET["token"];
+
+
+echo($user_code);
 include "../Model/model.php"; 
+
+
+
 
 $sql = $pdo->prepare(
 
@@ -11,7 +17,10 @@ $sql = $pdo->prepare(
 $sql->bindValue(":verifyCode",$user_code);
 $sql->execute();
 
+
+
 $resultCode = $sql->fetch(PDO::FETCH_ASSOC);
+
 
 if(count($resultCode)!=0){
 

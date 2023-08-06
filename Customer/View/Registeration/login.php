@@ -30,22 +30,29 @@ session_start()
                 <div class="my-10 w-3/4 mx-auto">
                     <p class=" my-2">Please enter your email</p>
                     <input type="text" required name="email" placeholder="Enter your email" class="w-64 px-4 ring-1 rounded-md">
-                    <small><?php 
-                if(isset($_SESSION["loginError"])){
+                    <?php 
+                if(isset($_SESSION["loginError"])){?><p class="text-xs text-red-500 font-semibold">
 
-                    $_SESSION["loginError"];
-
-                }
-                ?> </small>
+                    <?= $_SESSION["loginError"]; ?>
+                    </p>
+                <?php }
+                ?>
 
                 </div>
                 <div class="w-3/4 mx-auto">
                     <p class="my-2">Password</p>
                     <input type="password" required name="password" placeholder="Enter your password" class="px-4 w-64 mx-auto ring-1 rounded-md">
+                    <?php 
+                if(isset($_SESSION["wrongPassword"])){?><p class="text-xs text-red-500 font-semibold">
+
+                    <?= $_SESSION["wrongPassword"]; ?>
+                    </p>
+                <?php }
+                ?>
 
                 </div>
                 <div class="flex mt-4 w-80  justify-between text-xs">
-                    <a href="./forgotPassword.php" class="sm:ml-12 lg:ml-4">forgot password?</a>
+                    <a href="./forgotPassword.php" class="sm:ml-12 lg:ml-4 text-red-600">forgot password?</a>
 
                 </div>
                 <div class="w-3/4 mx-auto mt-8 mb-4">
@@ -53,7 +60,7 @@ session_start()
                 </div>
                 <div class="flex w-80  justify-between text-xs">
                     <p class="sm:ml-12 lg:ml-4">Don't have an account?</p>
-                    <p class="text-blue-900">sign up here</p>
+                    <a href="./signup.php" class="text-blue-900">sign up here</a>
 
                 </div>
             </form>
@@ -75,3 +82,4 @@ session_start()
 
 </html>
 <?php $_SESSION["loginError"] = "" ?>
+<?php $_SESSION["wrongPassword"] = "" ?>

@@ -31,7 +31,7 @@ if (count($result) == 0) {
   $create_date = date("Y-m-d");
 
   $sql = $pdo->prepare(
-    "INSERT INTO m_customers(c_email,c_password,create_date) VALUE(:db_email,:db_password,:db_createDate)"
+    "INSERT INTO m_customers(c_email,c_name,c_password,create_date) VALUE(:db_email,:db_email,:db_password,:db_createDate)"
   );
   $sql->bindValue(":db_email", $user_email);
   $sql->bindValue(":db_password", password_hash($user_password,PASSWORD_DEFAULT));
@@ -57,15 +57,15 @@ if (count($result) == 0) {
   "Verification Link",
   
   "<h2> Here is your verification Link</h2>
-  <a href = 'http://$domain/php_project/Customer/Controller/verifyController.php?token=$verify_code'> Verify </a>
-  
-  ");
+  <a href = 'http://$domain/php_pj/Customer/Controller/verifyController.php?token=$verify_code'> Verify </a>");
 
+ $_SESSION["registerError"] = "We have send a verify link to your mail. Click the verify link.";
+  header("Location: ../View/Registeration/signup.php");
 
 
   
 } else {
-  $_SESSION["registerError"] = "Already registered Email";
+  $_SESSION["registerError"] = "!Already registered Email";
   header("Location: ../View/Registeration/signup.php");
 }
 ?>
