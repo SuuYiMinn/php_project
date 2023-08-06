@@ -19,7 +19,7 @@ include "../Model/model.php";
 
 // get email from database to check email is used or not 
 $sql = $pdo->prepare(
-  "SELECT * FROM m_customer WHERE c_email=:email"
+  "SELECT * FROM m_customers WHERE c_email=:email"
 );
 $sql->bindValue(":email", $user_email);
 $sql->execute();
@@ -31,7 +31,7 @@ if (count($result) == 0) {
   $create_date = date("Y-m-d");
 
   $sql = $pdo->prepare(
-    "INSERT INTO m_customer(c_email,c_password,create_date) VALUE(:db_email,:db_password,:db_createDate)"
+    "INSERT INTO m_customers(c_email,c_password,create_date) VALUE(:db_email,:db_password,:db_createDate)"
   );
   $sql->bindValue(":db_email", $user_email);
   $sql->bindValue(":db_password", password_hash($user_password,PASSWORD_DEFAULT));
@@ -42,7 +42,7 @@ if (count($result) == 0) {
   $verify_code = get_token(128);
 
   $sql = $pdo->prepare(
-    "UPDATE m_customer SET code = :verifyCode WHERE c_email = :email"
+    "UPDATE m_customers SET code = :verifyCode WHERE c_email = :email"
   );
 
   $sql->bindValue(":email", $user_email);

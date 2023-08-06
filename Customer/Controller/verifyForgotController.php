@@ -5,7 +5,7 @@ include "../Model/model.php";
 
 $sql = $pdo->prepare(
 
-    "SELECT * FROM m_customer WHERE code = :verifyCode"
+    "SELECT * FROM m_customers WHERE code = :verifyCode"
 
 );
 $sql->bindValue(":verifyCode",$user_code);

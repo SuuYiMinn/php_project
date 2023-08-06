@@ -11,10 +11,11 @@
 </head>
 <body>
 <?php include "../common/CommonNavigation.php" ?>
-    <main class=" flex-col lg:flex-row w-full h-full justify-evenly" >
+   
 
     <form action="../../Controller/resetpasswordController.php" method="post">
-        <div class="w-1/3 mt-16 mx-auto">
+    <main class="lg:flex-row w-full justify-evenly" >
+        <div class="w-1/3 mt-16">
             <p class="text-2xl mx-auto my-10 w-64">Reset password</p>
 
             <div class="w-3/4 mx-auto my-4">
@@ -34,16 +35,17 @@
             </div>    
               
         </div>
-        </form>
+        
 
 
         <div>
-            <card class="visible">
+            <card class=" lg:visible invisible">
                <img src="../resources/img/photo/illustation.jpg" alt="shopping"> 
             </card>
 
         </div>
 
     </main>
+    </form>
 </body>
 </html>

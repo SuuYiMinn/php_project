@@ -6,7 +6,7 @@ session_start();
 
  $sql = $pdo->prepare(
 
-  "SELECT * FROM m_customer WHERE code = :verifycode"
+  "SELECT * FROM m_customers WHERE code = :verifycode"
 
  );
  $sql->bindValue(":verifycode" , $user_code);

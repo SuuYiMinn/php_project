@@ -2,7 +2,7 @@
 
 $hostname = "localhost";
 $port = "3306";
-$dbname = "godeal";
+$dbname = "go_deal";
 $uname = "root";
 $pwd = "";
 

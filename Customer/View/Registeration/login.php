@@ -21,18 +21,22 @@ session_start()
 
 
 
-    <main class=" lg:flex w-full h-full justify-between px-20 ">
-        <div class="lg:w-1/3 lg:ml-24 sm:w-4/5  mt-16 sm:mx-auto">
-            <p class="  text-2xl ml-24">Login</p>
+    <main class=" lg:flex w-full h-full justify-between">
+        <div class="lg:w-1/3 w-4/5 mt-16 mx-auto">
+            <p class="  text-2xl text-center">Login</p>
 
             <form action="../../Controller/loginController.php" method="post">
 
                 <div class="my-10 w-3/4 mx-auto">
                     <p class=" my-2">Please enter your email</p>
                     <input type="text" required name="email" placeholder="Enter your email" class="w-64 px-4 ring-1 rounded-md">
-                    <p class="text-red-500">
-                        <?= $_SESSION["loginError"] ?>
-                    </p>
+                    <small><?php 
+                if(isset($_SESSION["loginError"])){
+
+                    $_SESSION["loginError"];
+
+                }
+                ?> </small>
 
                 </div>
                 <div class="w-3/4 mx-auto">

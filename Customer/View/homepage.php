@@ -10,88 +10,37 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./resources/lib/jquery/jquery.js"></script>
-    <script src="./resources/js/menu.js"></script>
+    <script src="./resources/js/homepage.js" defer></script>
     <title>Home</title>
 </head>
 
 <body>
-   
+
     <?php include "./common/CommonNavigation.php" ?>
     <div class="overflow-x-hidden mx-5">
         <!-- hero session-->
 
-        <div class="w-full lg:h-72 sm:h-56 bg-orange-400 mb-2">
+        <div class="w-full lg:h-72 h-56 bg-orange-400 mb-2">
 
 
         </div>
-        <!-- cathegory-->           
-        <div class="wh-32 ">
+        <!-- cathegory-->
+        <div class="h-40">
             <p class="text-xl font-medium mb-2 ">Cathegory</p>
 
-            <div class="flex w-full overflow-x-auto">
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
+            <div class="flex w-full h-32 overflow-x-auto">
 
-                </div>
-
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-                <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative cate_item">
-                    <div class="w-14 h-14 rounded-full bg-black absolute top-1 left-5"></div>
-                    <p class="text-center text-xs absolute bottom-1">Health and Beauty</p>
-
-                </div>
-         
+                <?php include "../Controller/homeController.php"; ?>
                 
+                <?php foreach ($result as $category) { ?>
+                    <a href="./categoryProduct.php?category_id=<?= $category["id"] ?>" 
+                    class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative mt-1 cate_item" id="cate_<?= $category["id"] ?>">
+                        <div class="w-12 h-12 rounded-full bg-black absolute top-1 left-6"></div>
+                        <p class="text-center text-xs mt-14" name="catename"><?= $category["cat_name"]?></p>
+                    </a>
+                <?php } ?>
+
+
             </div>
 
 
@@ -155,7 +104,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline hidden">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -182,7 +131,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md lg:inline hidden">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -209,7 +158,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md hidden lg:inline ">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -235,10 +184,10 @@
                         </div>
                     </div>
                 </div>
-                
-                  
+
+
             </div>
-            
+
             <p class="float-right mt-1 text-orange-500 font-medium">See More..</p>
         </div>
         <!-- new arrivals -->
@@ -300,7 +249,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md hidden  lg:inline ">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -327,7 +276,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md lg:inline hidden">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -354,7 +303,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline hidden">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -380,8 +329,8 @@
                         </div>
                     </div>
                 </div>
-                
-                  
+
+
             </div>
             <p class="float-right mt-1 text-orange-500 font-medium">See More..</p>
         </div>
@@ -444,7 +393,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline hidden">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -471,7 +420,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md lg:inline hidden">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -498,7 +447,7 @@
                     </div>
                 </div>
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline sm:hidden">
+                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline hidden">
                     <!-- product image -->
                     <div class="w-full h-2/3 relative">
                     </div>
@@ -524,14 +473,14 @@
                         </div>
                     </div>
                 </div>
-                
-                  
-            </div>
-            <p class="float-right mt-1 text-orange-500 font-medium">See More..</p>
-        </div>
+
 
         </div>
-        
+        <p class="float-right mt-1 text-orange-500 font-medium">See More..</p>
+    </div>
+
+    </div>
+
     </div>
 
 </body>
