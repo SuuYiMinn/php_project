@@ -14,10 +14,10 @@
     <title>FooterMobile</title>
 </head>
 
-<body class="lg:invisible visible">
+<body>
 
     <!-- footer -->
-    <footer>
+    <footer class="lg:invisible visible">
         <!-- closing line -->
         <div class="w-full h-[100px] bg-[#FF9F29] flex justify-around">
             <div class="flex flex-col justify-center items-center">

@@ -14,9 +14,9 @@
     <title>Footer</title>
 </head>
 
-<body class="lg:visible invisible">
+<body>
     <!-- footer -->
-    <footer>
+    <footer class="lg:visible invisible">
         <!-- closing line -->
         <div class="w-full h-[130px] bg-[#FF9F29] flex justify-around">
             <div class="flex flex-row items-center">
