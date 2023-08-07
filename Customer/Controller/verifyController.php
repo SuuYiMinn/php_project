@@ -14,10 +14,21 @@ session_start();
 
  $resultcode = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+ print_r($resultcode);
 
 
- if (count($resultcode) != 0){    
-  header("Location: ../View/Registeration/finishSignup.php");
+
+ if (count($resultcode) != 0){  
+    
+    $verifysql = $pdo->prepare(
+        "UPDATE m_customers SET verify = 1 WHERE code = :verifycode");
+
+        $verifysql->bindValue(":verifycode",$user_code);
+
+        $verifysql->execute();
+
+  
+  header("Location: ../View/Registeration/finishSignup.php?verifiedcode=$user_code");
  }
 
  

@@ -22,10 +22,24 @@ $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
  if (count($result) != 0) {
     $dbPassword = $result[0]["c_password"];
+    $dbcode = $result[0]["code"];
 
     if(password_verify($password,$dbPassword)){
-      header("Location: ../View/homepage.php");
-    }  
+
+      if( ($dbPassword = $result[0]["verify"])==1){
+
+        header("Location: ../View/homepage.php?code=$dbcode");
+      }else {
+
+        $_SESSION["loginError"] = "Your account is not verified yet";
+        header("Location: ../View/Registeration/login.php");
+        
+      }
+     
+    }  else{
+      $_SESSION["wrongPassword"] = "!Wrong Password";
+       header("Location: ../View/Registeration/login.php");
+     }
   }
 else{
   $_SESSION["loginError"] = "Email is not registered";
