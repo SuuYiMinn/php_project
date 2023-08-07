@@ -22,7 +22,7 @@
     <div class="w-[30%] h-[100vh] border-r-2 p-10">
       <!-- shop photo -->
       <div class="w-[300px] m-auto">
-        <img class="w-full" src="../img/shopProfile.jpg" alt="" />
+        <img class="w-full" src="./resources/img/photo/shopProfile.jpg" alt="" />
       </div>
       <br />
       <h1 class="m-auto font-bold w-fit text-[48px]">Yuzana Clothing</h1>
@@ -30,7 +30,7 @@
       <br />
       <div class="flex flex-row justify-center items-center">
         <div class="w-[50px]">
-          <img class="w-full" src="../img/people.svg" alt="" />
+          <img class="w-full" src="./resources/img/people.svg" alt="" />
         </div>
         <div class="text-[20px]">50 followers</div>
       </div>
