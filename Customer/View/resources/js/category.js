@@ -1,10 +1,13 @@
 $(document).ready(function () {
 
 var category = $(".cate_item");
+console.log(category);
 
 
 for (const sub_category of category) {
    $(sub_category).click(function () {
+
+    console.log ("hello");
 
 
    
@@ -27,12 +30,6 @@ for (const sub_category of category) {
 
                 var price =subCate_product["p_sell_price"] - (((subCate_product["p_discount"])/100 )  * (subCate_product["p_sell_price"]) ) ;
              }else price = subCate_product["p_sell_price"];
-
-            
-
-        if(1=1){
-            var x ='<p class="lg:text-xs text-center line-through text-[9px]">Ks <span> ${subCate_product["p_sell_price"]}</span></p> <?php } ?>'
-        }
 
             $(".filter_sub_category").append(
                ` <a href="./detailpage.php?productid=${subCate_product["id"]}" class="lg:w-60 w-40 h-full bg-white drop-shadow-md mt-2" id ="${subCate_product["id"]}">

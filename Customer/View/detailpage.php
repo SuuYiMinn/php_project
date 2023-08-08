@@ -225,8 +225,8 @@
                            
         <?php } ?></div>
     </div>
-    <?php include "../common/commonFooter.php" ?>
-    <?php include "../common/commonFooterMobile.php" ?>
+    <?php include "./common/commonFooter.php" ?>
+    <?php include "./common/commonFooterMobile.php" ?>
 </body>
 
 </html>
