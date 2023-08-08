@@ -19,28 +19,20 @@
   <br />
 
   <!-- body -->
-  <section class="w-full h-[100vh] flex flex-col justify-around items-center">
-    <p class="font-medium text-[48px]">Choose Payment Method</p>
+  <section class="w-full h-screen flex flex-col justify-around items-center">
+    <p class="font-medium text-2xl mt-10">Choose Payment Method</p>
 
-    <p class="text-[40px]">Cash on delivery</p>
+    <p class="text-lg my-10">Cash on delivery</p>
 
-    <p class="text-[40px]">OR</p>
+    <p class="text-lg">OR</p>
 
-    <div class="flex">
-      <div class="w-[250px] mx-5">
-        <img class="w-full" src="./resources/img/photo/product-2.jpg" alt="" />
+      <div class="lg:w-56 lg:my-10 my-6 w-40">
+        <img class="w-full" src="./resources/img/photo/kpay.png" alt="" />
       </div>
-      <div class="w-[250px] mx-5">
-        <img class="w-full" src="./resources/img/photo/product-2.jpg" alt="" />
-      </div>
-      <div class="w-[250px] mx-5">
-        <img class="w-full" src="./resources/img/photo/product-2.jpg" alt="" />
-      </div>
-    </div>
-    <br>
 
-    <button class="w-[425px] h-[75px] bg-[#F86F03] rounded-[10px]">
-      <p class="text-white text-[36px] font-semibold">order confirm</p>
+
+    <button class="bg-orange-500 rounded-md">
+      <p class=" px-10 py-1 text-white text-lg font-semibold">order confirm</p>
     </button>
     <br>
   </section>

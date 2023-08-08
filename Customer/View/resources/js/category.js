@@ -30,7 +30,9 @@ for (const sub_category of category) {
 
             
 
-        
+        if(1=1){
+            var x ='<p class="lg:text-xs text-center line-through text-[9px]">Ks <span> ${subCate_product["p_sell_price"]}</span></p> <?php } ?>'
+        }
 
             $(".filter_sub_category").append(
                ` <a href="./detailpage.php?productid=${subCate_product["id"]}" class="lg:w-60 w-40 h-full bg-white drop-shadow-md mt-2" id ="${subCate_product["id"]}">
@@ -42,7 +44,7 @@ for (const sub_category of category) {
                    <div>
                        <p class="text-center lg:text-[13px] font-semibold text-[11px]">${subCate_product["p_title"]}</p>
                        <p class=" lg:block text-xs text-center hidden ">${subCate_product["p_des"]}</p>
-                   <?php if((${subCate_product["p_discount"]})!=null){?> <p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2">${subCate_product["p_discount"]}<span>%off</span></p><?php }?>
+                   
                    </div>
                    <div>
                        <div class="flex mt-1 ml-3 text-orange-500">
@@ -55,7 +57,7 @@ for (const sub_category of category) {
                        </div>
                        <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <span>${price}</span></p>
                        <?php if((${subCate_product["p_discount"]})!=null){?>
-                       <p class="lg:text-xs text-center line-through text-[9px]">Ks <span> ${subCate_product["p_sell_price"]}</span></p> <?php } ?>
+                        <?php if((${subCate_product["p_discount"]})!=null){?> <p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2">${subCate_product["p_discount"]}<span>%off</span></p><?php }?>
    
                    </div>
                </div>

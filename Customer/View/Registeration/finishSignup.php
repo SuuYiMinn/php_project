@@ -15,24 +15,6 @@
 <body>
     <?php include "../common/CommonNavigation.php" ?>
 
-<<<<<<< HEAD
-    <?php $verified_code = $_GET["verifiedcode"] ?>
-
-        <main class=" lg:flex w-full h-full justify-between px-20 ">
-            <div class="lg:w-1/3 lg:ml-24 sm:w-4/5  mt-16 sm:mx-auto text-center">
-                <p class="text-orange-500 text-3xl font-semibold ">Your Account</p>
-                <p class="text-orange-500 text-3xl font-semibold mb-12">Has been Registered</p>
-                
-
-                <form action="../../Controller/finishSignUpController.php?verifiedcode=<?=$verified_code ?>" method="post">
-                
-                <input type="text" name="username" class="ring-2 ring-orange-500">
-
-                <input type="submit" value="Go Home Page" class ="px-3 py-1 bg-green-800 rounded-md text-white text-sm">
-                </form>
-
-                </div>
-=======
     <main class=" lg:flex w-full h-full justify-between px-20 ">
         <div class="lg:w-1/3 lg:ml-24 sm:w-4/5  mt-16 sm:mx-auto">
             <p class="text-orange-500 text-3xl font-semibold text-center">Your Account</p>
@@ -41,7 +23,6 @@
             </button>
 
         </div>
->>>>>>> 28475c384bdca7c0362cf31b8f180a1a04994950
 
 
 
@@ -55,7 +36,7 @@
 
     </main>
 
-    <?php include "../common/commonFooter.php" ?>
+   
 
 </body>
 

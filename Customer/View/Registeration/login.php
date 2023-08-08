@@ -78,6 +78,8 @@ session_start()
         </div>
 
     </main>
+    <?php include "../common/commonFooter.php" ?>
+    <?php include "../common/commonFooterMobile.php" ?>
 </body>
 
 </html>

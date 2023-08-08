@@ -14,162 +14,102 @@
   <title>CheckOut</title>
 </head>
 
-<body>
+<body class="overflow-x-hidden" >
   <?php include "./common/CommonNavigation.php" ?>
-  <br />
 
+  <div class="w-full">
   <!-- body -->
-  <section class="flex justify-around">
+  <section class="flex lg:flex-row flex-col justify-around mt-4 ">
     <!-- deliver info -->
-    <div class="w-[650px]">
-      <p class="text-[36px] font-medium ml-12">Hla Hla Tun</p>
-      <br />
-      <br />
+    <div class="lg:w-1/2 w-full  ml-8">
+      <p class="lg:text-2xl text-xl font-medium  ml-6 mb-6">Hla Hla Tun</p>
 
       <div class="flex">
-        <div class="w-[40px]">
-          <img class="w-full" src="./resources/img/send.svg" alt="" />
-        </div>
-
-        <p class="text-[28px] opacity-[0.5] w-[620px] ml-3">
+       <ion-icon name="send" class="scale-150 -rotate-45"></ion-icon>
+        <p class="lg:text-lg text-base opacity-[0.5] w-96 ml-3">
           between 39th st and 40th st , between 80th st and 81th st. Chan Aye
           Tharzan Township, Mandalay.
         </p>
       </div>
-      <br /><br />
 
-      <div class="flex">
-        <div class="w-[40px]">
-          <img class="w-full" src="./resources/img/phone-linear.svg" alt="" />
-        </div>
-
-        <p class="text-[28px] opacity-[0.5] w-[620px] ml-3">09758896655</p>
+      <div class="flex my-5">
+        <ion-icon name="call" class="scale-150"></ion-icon>
+        <p class="lg:text-lg text-base opacity-50 w-96 ml-3">09758896655</p>
       </div>
-      <br /><br />
 
-      <div class="flex">
-        <div class="w-[50px]">
-          <img class="w-full" src="./resources/img/mail (1).svg" alt="" />
-        </div>
-
-        <p class="text-[28px] opacity-[0.5] w-[620px] ml-3">
+      <div class="flex ">
+        <ion-icon name="mail" class="scale-150"></ion-icon>
+        <p class="text-lg opacity-50 w-96 ml-3">
           hla009@gmail.com
         </p>
       </div>
-      <br /><br /><br /><br /><br />
 
-      <div class="flex">
-        <p class="font-semibold mt-[36px]">Total :</p>
-        <p class="text-[48px] text-[#FF9F29] font-semibold ml-3">Ks 11500</p>
-      </div>
+
+      
     </div>
 
     <!-- voucher -->
-    <div>
+    <div class = "lg:w-1/2 w-full">
       <!-- items -->
-      <div class="w-[600px] h-[500px] shadow-lg p-5">
+      <div class="w-11/12 p-4 shadow-lg mx-auto ">
         <!-- one item -->
-        <div class="flex justify-around">
-          <div class="w-[120px]">
+        <div class="flex justify-around border-b-orange-500 border-b-2 py-2 ">
+          <div class="w-20">
             <img class="w-full" src="./resources/img/photo/product-2.jpg" alt="" />
           </div>
-          <div class="w-[70%] ml-10 flex justify-around flex-col">
-            <p class="text-[20px]">Olay Moisturizing cream</p>
-            <p class="text-[18px]">Ks 25000</p>
-            <p>
-              <span class="text-[#FF9F29] text-[18px]">Qty</span>
-              <span class="text-[18px]">2</span>
+          <div class="w-4/5 ml-10 flex justify-around flex-col">
+            <p class="lg:text-lg text-sm">Olay Moisturizing cream</p>
+            <p class="lg:text-lg text-sm">Ks 25000</p>
+            <p class="lg:text-sm text-xs" >
+              <span class="text-[#FF9F29]">Qty</span>
+              <span >2</span>
             </p>
           </div>
           <!-- delete -->
           <div class="w-[20%] flex items-center">
             <div class="w-[30px]">
-              <img class="w-full" src="./resources/img/delete.svg" alt="" />
+            <ion-icon name="trash-outline" class="lg:scale-150 scale-100"></ion-icon>
             </div>
           </div>
         </div>
         <!-- one item end -->
 
-        <hr class="my-3 border-[#FF9F29]" />
-
-        <!-- one item -->
-        <div class="flex justify-around">
-          <div class="w-[120px]">
-            <img class="w-full" src="./resources/img/photo/product-2.jpg" alt="" />
-          </div>
-          <div class="w-[70%] ml-10 flex justify-around flex-col">
-            <p class="text-[20px]">Olay Moisturizing cream</p>
-            <p class="text-[18px]">Ks 25000</p>
-            <p>
-              <span class="text-[#FF9F29] text-[18px]">Qty</span>
-              <span class="text-[18px]">2</span>
-            </p>
-          </div>
-          <!-- delete -->
-          <div class="w-[20%] flex items-center">
-            <div class="w-[30px]">
-              <img class="w-full" src="./resources/img/delete.svg" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- one item end -->
-
-        <hr class="my-3 border-[#FF9F29]" />
-
-        <!-- one item -->
-        <div class="flex justify-around">
-          <div class="w-[120px]">
-            <img class="w-full" src="./resources/img/photo/product-2.jpg" alt="" />
-          </div>
-          <div class="w-[70%] ml-10 flex justify-around flex-col">
-            <p class="text-[20px]">Olay Moisturizing cream</p>
-            <p class="text-[18px]">Ks 25000</p>
-            <p>
-              <span class="text-[#FF9F29] text-[18px]">Qty</span>
-              <span class="text-[18px]">2</span>
-            </p>
-          </div>
-          <!-- delete -->
-          <div class="w-[20%] flex items-center">
-            <div class="w-[30px]">
-              <img class="w-full" src="./resources/img/delete.svg" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- one item end -->
-
-        <hr class="my-3 border-[#FF9F29]" />
 
         <!-- total -->
-        <div class="text-[#FF9F29] text-right">
-          <span class="text-[16px]"> 3 item(s). </span>
-          <span class="text-[16px]"> Subtotal: </span>
-          <span class="text-[20px]"> Ks 9000 </span>
+        <div class="text-orange-500 text-right mt-4">
+          <span class="lg:text-base text-sm"> 3 item(s). </span>
+          <span class="lg:text-base text-sm"> Subtotal: </span>
+          <span class="lg:text-lg text-base"> Ks 9000 </span>
         </div>
       </div>
       <br />
 
       <!-- delivery fee -->
-      <div class="w-[600px] h-[100px] shadow-lg flex justify-around">
+      <div class="w-11/12 p-4 shadow-lg flex mx-auto justify-around">
         <div>
-          <p class="text-[20px] mt-[50%]">Delivery Fees</p>
+          <p class="lg:text-xl text-lg mt-10">Delivery Fees</p>
         </div>
-        <div class="h-full flex flex-col justify-around">
-          <p>Ks 9000</p>
-          <p>Ks 2500</p>
+        <div>
+          <p class="my-2">Ks 9000</p>
+          <p class="text-orange-500">Ks 2500</p>
         </div>
       </div>
-      <br />
+      
+  <div class="flex mt-7 w-40 float-right lg:mr-14 mr-6 items-center ">
+        <p class="font-semibold">Total :</p>
+        <p class="lg:text-2xl text-xl text-[#FF9F29] font-semibold ml-3">Ks 11500</p>
+      </div>
+
+
+
+  <div class="lg:w-48 w-36 py-3 rounded-lg bg-[#ff9f29] mx-auto text-center mt-24 mb-10">
+    <p class="text-white lg:text-xl text-l font-semibold">Place Order</p>
+  </div>
     </div>
   </section>
-  <br />
 
-  <button class="w-[300px] h-[90px] rounded-[10px] bg-[#FF9F29] ml-[35%]">
-    <p class="text-white text-[48px] font-semibold">Place Order</p>
-  </button>
 
-  <br />
-  <br />
+  </div>
 
   <?php include "../View/common/commonFooter.php" ?>
 </body>

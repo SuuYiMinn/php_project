@@ -16,47 +16,47 @@
 
 <body>
   <?php include "./common/CommonNavigation.php" ?>
-  <br />
+  
 
   <!-- body -->
   <section class="flex flex-col items-center justify-around">
-    <p class="font-medium text-[48px] text-[#F86F03]">Add Shiping Address</p>
-    <br />
-    <div>
-      <p class="text-[32px] opacity-[0.5]">Full Name</p>
-      <input class="w-[445px] h-[75px] rounded-[10px] border-[2px] text-[32px]" type="text" />
+    <p class="font-medium lg:text-3xl text-2xl text-[#F86F03] my-10">Add Shiping Address</p>
+    
+    <div class="mb-8">
+      <p class="lg:text-lg text-base opacity-50  text-orange-500">Full Name</p>
+      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
     </div>
-    <br />
-    <div>
-      <p class="text-[32px] opacity-[0.5]">Address</p>
-      <input class="w-[445px] h-[75px] rounded-[10px] border-[2px] text-[32px]" type="text" />
+   
+    <div class="mb-8">
+      <p class="lg:text-lg text-base opacity-50  text-orange-500"> Address</p>
+      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
     </div>
-    <br />
-    <div>
-      <p class="text-[32px] opacity-[0.5]">Region</p>
-      <input class="w-[445px] h-[75px] rounded-[10px] border-[2px] text-[32px]" type="text" />
+    
+    <div class="mb-8">
+      <p class="lg:text-lg text-base opacity-50  text-orange-500">Region</p>
+      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
     </div>
-    <br />
-    <div>
-      <p class="text-[32px] opacity-[0.5]">City</p>
-      <input class="w-[445px] h-[75px] rounded-[10px] border-[2px] text-[32px]" type="text" />
+   
+    <div class="mb-8">
+      <p class="lg:text-lg text-base opacity-50  text-orange-500"> City</p>
+      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
     </div>
-    <br />
-    <div>
-      <p class="text-[32px] opacity-[0.5]">Phone number</p>
-      <input class="w-[445px] h-[75px] rounded-[10px] border-[2px] text-[32px]" type="text" />
+    
+    <div class="mb-8">
+      <p class="lg:text-lg text-base opacity-50  text-orange-500">Phone number</p>
+      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
     </div>
-    <br />
-    <div>
-      <button class="w-[345px] h-[75px] bg-[#263A29] rounded-[10px]">
-        <p class="text-white text-[36px]">Cancel</p>
+    
+    <div class="mt-14">
+      <button class="lg:w-40 w-32 h-10 bg-[#263A29] rounded-[10px]">
+        <p class="text-white text-lg">Cancel</p>
       </button>
-      <button class="w-[345px] h-[75px] bg-[#F86F03] rounded-[10px] ml-10">
-        <p class="text-white text-[36px]">Safe</p>
+      <button class="lg:w-40 w-32 h-10 bg-[#F86F03] rounded-[10px] ml-10">
+        <p class="text-white text-lg">Safe</p>
       </button>
     </div>
   </section>
-  <br />
+  
 
   <!-- review -->
   <div class="flex p-10">
@@ -71,7 +71,7 @@
         I switched to oil free moisturizers. Lately I am trying out different
         permutations and combinations to tackle the same.
       </p>
-      <br />
+      
 
       <div class="w-[200px] flex justify-around">
         <div class="w-[30px]">
@@ -99,7 +99,7 @@
         I switched to oil free moisturizers. Lately I am trying out different
         permutations and combinations to tackle the same.
       </p>
-      <br />
+      
 
       <div class="w-[200px] flex justify-around">
         <div class="w-[30px]">
@@ -149,7 +149,7 @@
   <hr class="mx-10" />
   <!-- noti end -->
 
-  <br />
+  
   <?php include "../View/common/commonFooter.php" ?>
 </body>
 
