@@ -14,12 +14,16 @@
     <title>FooterMobile</title>
 </head>
 
+<<<<<<< HEAD
 <body >
 
 <div class="lg:hidden inline">
+=======
+<body>
+>>>>>>> e704c638efd7a1c8bb70922a804176da3d2fd141
 
     <!-- footer -->
-    <footer>
+    <footer class="lg:invisible visible">
         <!-- closing line -->
         <div class="w-full h-[70px] bg-[#ff9f29] flex justify-around">
             <div class="flex flex-col justify-center items-center">
