@@ -24,9 +24,17 @@ for (const sub_category of category) {
          console.log(filter_sub_category);
         
 
+
          for (const subCate_product of filter_sub_category) {
 
+            var discount = "";
+            var normal_price ="";
+
             if((subCate_product["p_discount"])!=null){
+
+                discount =`<p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2">${subCate_product["p_discount"]}%off</p>`;
+                normal_price = ' <p class="lg:text-xs text-center line-through text-[9px]">Ks {subCate_product["p_sell_price"]} </p> '
+     
 
                 var price =subCate_product["p_sell_price"] - (((subCate_product["p_discount"])/100 )  * (subCate_product["p_sell_price"]) ) ;
              }else price = subCate_product["p_sell_price"];
@@ -41,6 +49,7 @@ for (const sub_category of category) {
                    <div>
                        <p class="text-center lg:text-[13px] font-semibold text-[11px]">${subCate_product["p_title"]}</p>
                        <p class=" lg:block text-xs text-center hidden ">${subCate_product["p_des"]}</p>
+                       ${discount}
                    
                    </div>
                    <div>
@@ -53,8 +62,8 @@ for (const sub_category of category) {
    
                        </div>
                        <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <span>${price}</span></p>
-                       <?php if((${subCate_product["p_discount"]})!=null){?>
-                        <?php if((${subCate_product["p_discount"]})!=null){?> <p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2">${subCate_product["p_discount"]}<span>%off</span></p><?php }?>
+                       ${normal_price}
+                        
    
                    </div>
                </div>

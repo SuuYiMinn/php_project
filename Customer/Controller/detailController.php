@@ -31,7 +31,7 @@ $cateProductsql=$pdo->prepare(
     $reviewsql=$pdo->prepare(
 
         "SELECT * FROM m_customers LEFT JOIN t_product_rating_detais 
-        ON m_customers.id=t_product_rating_detais.customer_id 
+        ON m_customers.id = t_product_rating_detais.customer_id 
         WHERE t_product_rating_detais.product_id = :product_id"
     );
     $reviewsql -> bindValue(":product_id",$product_id);

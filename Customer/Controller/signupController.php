@@ -57,7 +57,7 @@ if (count($result) == 0) {
   "Verification Link",
   
   "<h2> Here is your verification Link</h2>
-  <a href = 'http://$domain/php_pj/Customer/Controller/verifyController.php?token=$verify_code'> Verify </a>");
+  <a href = 'http://$domain/php_project/Customer/Controller/verifyController.php?token=$verify_code'> Verify </a>");
 
  $_SESSION["registerError"] = "We have send a verify link to your mail. Click the verify link.";
   header("Location: ../View/Registeration/signup.php");

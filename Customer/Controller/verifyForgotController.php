@@ -24,7 +24,7 @@ $resultCode = $sql->fetch(PDO::FETCH_ASSOC);
 
 if(count($resultCode)!=0){
 
-    header("Location: ../View/Registeration/resetpassword.php");
+    header("Location: ../View/Registeration/resetpassword.php?resetverifiedcode=$user_code");
 
 }
 

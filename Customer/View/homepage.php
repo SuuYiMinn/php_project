@@ -30,19 +30,30 @@
                 <p>godeal33@gmail.com</p>
         </div>
         </message>
+        <?php 
+        include "../Controller/accountController.php";
 
+        if($accountresult != null){
 
-        <div class="flex py-1">
+        $customer_name = $accountresult[0]["c_name"];
+   
+        ?>
+
+        <div> <login class="py-1"><?= $customer_name?></login> </div> <?php } else { ?>
+
+        <div class="flex py-1"> 
             <login class="mx-4">Login</login>
             <login>Sign Up</login>
         </div>
+
+        <?php } ?>
     </nav>
     <!--navigation bar end-->
     <!--menu bar start-->
     <div class="lg:inline hidden">
     <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
         <div class="w-[100px] h-[30px]">
-            <img src="../resources/img/photo/Logo.png" alt="logo" class="pt-0">
+            <img src="./resources/img/photo/Logo.png" alt="logo" class="pt-0">
         </div>
 
         <p>Home</p>
@@ -64,7 +75,7 @@
     <!--mobile menu bar start-->
     <div class="w-full flex justify-evenly py-2 lg:invisible sm:visible absolute top-0">
         <div class="w-[70px] h-[20px]">
-            <img src="../resources/img/photo/logo.png" alt="logo" class="pt-0">
+            <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
         </div>
         <searchBar class="relative">
             <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
@@ -90,7 +101,13 @@
     <div class="overflow-x-hidden mx-5 lg:mt-0 mt-5">
         <!-- hero session-->
 
-        <div class="w-full lg:h-72 h-56 bg-green-700 mb-2">
+        <div class=" flex w-full  lg:h-72 h-56 bg-white mb-2 overflow-x-auto">
+
+        <div class="w-72 h-72 mx-8 bg-yellow-200"><img src="./resources/img/photo/apple.png" alt="" class="w-full h-full"></div>
+        <div class="w-72 h-72 mx-8 bg-yellow-200"><img src="./resources/img/photo/acer.png" alt="" class="w-full h-full"></div>
+        <div class="w-72 h-72  mx-8 bg-yellow-200"><img src="./resources/img/photo/asus.png" alt="" class="w-full h-full"></div>
+        <div class="w-72 h-72  mx-8 bg-yellow-200"><img src="./resources/img/photo/oppo.png" alt="" class="w-full h-full"></div>
+        <div class="w-72 h-72  mx-8 bg-yellow-200"><img src="./resources/img/photo/vivo.png" alt="" class="w-full h-full"></div>
 
 
         </div>
@@ -103,7 +120,7 @@
                 <?php include "../Controller/homeController.php"; ?>
                 
                 <?php foreach ($result as $category) { ?>
-                    <a href="./categoryProduct.php?category_id=<?= $category["id"] ?>" 
+                    <a href="./categoryProduct.php?category_id=<?= $category["id"]?>&code=<?=$code?>" 
                     class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative mt-1 cate_item" id="cate_<?= $category["id"] ?>">
                         <div class="w-12 h-12 rounded-full bg-black absolute top-1 left-6"></div>
                         <p class="text-center text-xs mt-14" name="catename"><?= $category["cat_name"]?></p>

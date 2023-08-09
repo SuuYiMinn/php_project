@@ -15,86 +15,64 @@
 </head>
 
 <body>
-  <!-- nav -->
-  <nav class="w-full h-[100px] bg-[#FFB355]"></nav>
-  <br />
 
+  <?php include "./common/nav_without_search.php" ?>
   <!-- body -->
-  <sectionv class="w-full h-[100vh] flex justify-around items-center">
+  <section class="w-full flex text-center lg:flex-row flex-col justify-around my-10">
     <!-- profile -->
-    <div class="text-center">
-      <p class="text-[48px]">User Profile</p>
-      <br />
-      <br />
-      <div class="w-[360px] h-[360px] rounded-[50px]">
-        <img class="w-full" src="./resources/img/photo/shopProfile.jpg" alt="" />
+    <div class="lg:w-3/12 lg:mx-16 w-2/3 mx-auto">
+      <p class="text-2xl mb-8">User Profile</p>
+
+      <div class="w-44 h-32 mx-auto">
+        <img class="w-full rounded-xl" src="./resources/img/photo/shopProfile.jpg" alt="User image" >
       </div>
-      <br />
-      <p class="text-[40px]">Hla Hla Htun</p>
-      <br />
-      <p class="text-[32px] text-[#FF9F29]">09758891190</p>
-      <br />
-      <p class="text-[32px]">hal09@gmail.com</p>
+
+      <p class="text-lg mt-5">Hla Hla Htun</p>
+
+      <p class="text-lg text-[#FF9F29]">09758891190</p>
+
+      <p class="text-lg">hal09@gmail.com</p>
     </div>
 
     <!-- other details -->
-    <div class="w-[900px]">
+
+    <div class="lg:w-8/12 w-full lg:mt-0 mt-5">
       <!-- one list -->
-      <div class="flex w-full relative">
-        <div class="w-[60px]">
-          <img class="w-full" src="./resources/img/cart.svg" alt="" />
-        </div>
-        <p class="text-[32px] ml-5">My orders</p>
-        <div class="w-[50px] absolute ml-[95%]">
-          <img class="w-full" src="./resources/img/arrow-down.svg" alt="" />
-        </div>
+      <div class="flex lg:w-8/12 w-11/12 mx-auto border-b-[1px] border-orange-400 relative">
+
+        <ion-icon name="cart" class="scale-150"></ion-icon>
+
+        <p class="text-xl ml-5">My orders</p>
+        <ion-icon name="chevron-down-outline" class="absolute right-0 bottom-0 scaleX-150"></ion-icon>
       </div>
-      <hr class="border-[#FF9F29]" />
+
       <!-- one list end -->
 
       <!-- one list -->
-      <div class="flex w-full relative">
-        <div class="w-[60px]">
-          <img class="w-full" src="./resources/img/hand-heart-bold.svg" alt="" />
-        </div>
-        <p class="text-[32px] ml-5">My whishlist</p>
-        <div class="w-[50px] absolute ml-[95%]">
-          <img class="w-full" src="./resources/img/arrow-down.svg" alt="" />
-        </div>
+      <div class="flex lg:w-8/12 w-11/12 mx-auto border-b-[1px] border-orange-400 relative my-16">
+
+        <ion-icon name="gift-outline" class="scale-150"></ion-icon>
+
+        <p class="text-xl ml-5">My Wishlist</p>
+        <ion-icon name="chevron-down-outline" class="absolute right-0 bottom-0 scaleX-150"></ion-icon>
       </div>
-      <hr class="border-[#FF9F29]" />
-      <!-- one list end -->
+
 
       <!-- one list -->
-      <div class="flex w-full relative">
-        <div class="w-[60px]">
-          <img class="w-full" src="./resources/img/like-dislike.svg" alt="" />
-        </div>
-        <p class="text-[32px] ml-5">My reviews</p>
-        <div class="w-[50px] absolute ml-[95%]">
-          <img class="w-full" src="./resources/img/arrow-down.svg" alt="" />
-        </div>
-      </div>
-      <hr class="border-[#FF9F29]" />
-      <!-- one list end -->
+      <div class="flex lg:w-8/12 w-11/12 mx-auto border-b-[1px] border-orange-400 relative">
 
-      <!-- one list -->
-      <div class="flex w-full relative">
-        <div class="w-[60px]">
-          <img class="w-full" src="./resources/img/store.svg" alt="" />
-        </div>
-        <p class="text-[32px] ml-5">Followed stores</p>
-        <div class="w-[50px] absolute ml-[95%]">
-          <img class="w-full" src="./resources/img/arrow-down.svg" alt="" />
-        </div>
+        <ion-icon name="happy-outline" class="scale-150"></ion-icon>
+
+        <p class="text-xl ml-5">My Review</p>
+        <ion-icon name="chevron-down-outline" class="absolute right-0 bottom-0 scaleX-150"></ion-icon>
       </div>
-      <hr class="border-[#FF9F29]" />
-      <!-- one list end -->
+
     </div>
-  </sectionv>
 
-  <br />
+  </section>
+
   <?php include "../View/common/commonFooter.php" ?>
+  <?php include "../View/common/commonFooterMobile.php" ?>
 </body>
 
 </html>

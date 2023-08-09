@@ -31,11 +31,26 @@
         </div>
         </message>
 
+     <!-- checking user is logined or not-->
+        <?php 
+        include "../Controller/accountController.php";
 
-        <div class="flex py-1">
+        if($accountresult != null){
+
+        $customer_name = $accountresult[0]["c_name"];
+   
+        ?>
+
+        <div> <login class="py-1"><?= $customer_name?></login> </div> <?php } else { ?>
+
+        <div class="flex py-1"> 
             <login class="mx-4">Login</login>
             <login>Sign Up</login>
         </div>
+
+        <?php } ?>
+
+         <!-- checking user is logined or not finish-->
     </nav>
     <!--navigation bar end-->
     <!--menu bar start-->
@@ -89,12 +104,12 @@
     <!-- cathegory-->
     <div class="flex  ml-2 mb-2 mt-2  py-2 overflow-x-auto w-full">
 
-        <?php include "../Controller/home_to_subController.php" ?>
+        <?php include "../Controller/home_to_subController.php"?>
 
 
         <?php foreach ($result as $sub_category) { ?>
 
-            <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative mt-1 cate_item" id=<?= $sub_category["id"] ?>>
+            <div class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative mt-1 cate_item" id= "<?= $sub_category["id"]?>">
                 <div class="w-12 h-12 rounded-full bg-black absolute top-1 left-6"></div>
                 <p class="text-center text-xs mt-14" name="catename"><?= $sub_category["sub_category_name"] ?></p>
             </div>
@@ -117,7 +132,7 @@
 
 
             <!-- products card -->
-            <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:w-60 w-40 h-full bg-white drop-shadow-md mt-2" id="<?= $products["id"] ?>">
+            <a href="./detailpage.php?productid=<?=$products["id"]?>&code=<?=$code?>" class="lg:w-60 w-40 h-full bg-white drop-shadow-md mt-2" id="product_<?= $products["id"] ?>">
                 <!-- product image -->
                 <div class="w-full lg:h-2/3 h-3/5 relative">
                 </div>
@@ -137,9 +152,9 @@
                             <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
 
                         </div>
-                        <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <span><?= $price ?></span></p>
+                        <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <?= $price ?></p>
                         <?php if (($products["p_discount"]) != null) { ?>
-                            <p class="lg:text-xs text-center line-through text-[9px]">Ks <span><?= $products["p_sell_price"] ?></span></p> <?php } ?>
+                            <p class="lg:text-xs text-center line-through text-[9px]">Ks <?= $products["p_sell_price"] ?></p> <?php } ?>
 
                     </div>
                 </div>

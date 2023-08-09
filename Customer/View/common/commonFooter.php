@@ -15,42 +15,9 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-=======
-    <!-- footer -->
-    <footer class="lg:visible invisible">
-        <!-- closing line -->
-        <div class="w-full h-[130px] bg-[#FF9F29] flex justify-around">
-            <div class="flex flex-row items-center">
-                <div class="w-[80px] h-[80px] rounded-[50%] bg-[#CC3636] flex justify-center items-center">
-                    <div class="w-[50px]">
-                        <img class="w-full" src="../resources/img/headphone-line.svg" alt="" />
-                    </div>
-                </div>
-                <p class="text-[36px] ml-[20px]">Chat with us</p>
-            </div>
-            <div class="flex flex-row items-center">
-                <div class="w-[80px] h-[80px] rounded-[50%] bg-[#CC3636] flex justify-center items-center">
-                    <div class="w-[50px]">
-                        <img class="w-full" src="../resources/img/phone.svg" alt="" />
-                    </div>
-                </div>
-                <p class="text-[36px] ml-[20px]">Call us</p>
-            </div>
-            <div class="flex flex-row items-center">
-                <div class="w-[80px] h-[80px] rounded-[50%] bg-[#CC3636] flex justify-center items-center">
-                    <div class="w-[50px]">
-                        <img class="w-full" src="../resources/img/mail.svg" alt="" />
-                    </div>
-                </div>
-                <p class="text-[36px] ml-[20px]">Write to us</p>
-            </div>
-        </div>
-        <!-- closing line end -->
->>>>>>> e704c638efd7a1c8bb70922a804176da3d2fd141
 
     <div class="lg:inline hidden">
-        <!-- footer -->
+    
         <footer>
             <!-- closing line -->
             <div class="w-full h-[50px] bg-[#ff9f29] flex justify-around">

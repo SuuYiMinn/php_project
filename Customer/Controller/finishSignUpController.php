@@ -2,6 +2,9 @@
    
   $verified_code = $_GET["verifiedcode"];
   $username = $_POST["username"];
+
+  echo ($username);
+
   
    if($username != null){
 
@@ -12,7 +15,9 @@
     );
 
     $sql ->bindValue(":customername",$username);
-    $sql ->bindValue(":customername",$verified_code);
+    $sql ->bindValue(":usercode",$verified_code);
+    $sql ->execute();
+
    }
 
 
