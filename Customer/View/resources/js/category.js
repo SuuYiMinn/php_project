@@ -33,7 +33,7 @@ for (const sub_category of category) {
             if((subCate_product["p_discount"])!=null){
 
                 discount =`<p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2">${subCate_product["p_discount"]}%off</p>`;
-                normal_price = ' <p class="lg:text-xs text-center line-through text-[9px]">Ks {subCate_product["p_sell_price"]} </p> '
+                normal_price =`<p class="lg:text-xs text-center line-through text-[9px]">${subCate_product["p_sell_price"]}</p>`;
      
 
                 var price =subCate_product["p_sell_price"] - (((subCate_product["p_discount"])/100 )  * (subCate_product["p_sell_price"]) ) ;
