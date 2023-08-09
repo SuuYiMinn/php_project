@@ -14,13 +14,7 @@
     <title>FooterMobile</title>
 </head>
 
-<<<<<<< HEAD
-<body >
-
-<div class="lg:hidden inline">
-=======
 <body>
->>>>>>> e704c638efd7a1c8bb70922a804176da3d2fd141
 
     <!-- footer -->
     <footer class="lg:invisible visible">
