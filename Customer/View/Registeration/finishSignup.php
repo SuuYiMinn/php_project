@@ -20,7 +20,7 @@
             <p class="text-orange-500 text-3xl font-semibold text-center">Your Account</p>
             <p class="text-orange-500 text-3xl font-semibold text-center">Has been Registered</p>
 
-            <form action="../../Controller/finishSignUpController.php?verifiedcode=<?=$_GET["verifiedcode"]?>" method ="post" class= "mt-6" >
+            <form action="../../Controller/finishSignUpController.php" method ="post" class= "mt-6" >
 
             <input type="text" name="username" class="ring-[1px] rounded-md ml-1">
             <input type="submit" value="Go Home page" class="py-[2px] px-2 bg-green-800 text-white rounded-md">
