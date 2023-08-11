@@ -17,7 +17,7 @@
 
 <body>
 
-       <!--navgation and header session start-->
+       <!--navgation and header section start-->
 
        <nav class=" invisible lg:w-full lg:h-6 bg-[#FF9F29] flex justify-evenly text-white text-xs  lg:visible ">
         <div class="flex justify-between py-1">
@@ -120,7 +120,7 @@
                 <?php include "../Controller/homeController.php"; ?>
                 
                 <?php foreach ($result as $category) { ?>
-                    <a href="./categoryProduct.php?category_id=<?= $category["id"]?>&code=<?=$code?>" 
+                    <a href="./categoryProduct.php?category_id=<?= $category["id"]?>" 
                     class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative mt-1 cate_item" id="cate_<?= $category["id"] ?>">
                         <div class="w-12 h-12 rounded-full bg-black absolute top-1 left-6"></div>
                         <p class="text-center text-xs mt-14" name="catename"><?= $category["cat_name"]?></p>

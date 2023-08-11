@@ -132,7 +132,7 @@
 
 
             <!-- products card -->
-            <a href="./detailpage.php?productid=<?=$products["id"]?>&code=<?=$code?>" class="lg:w-60 w-40 h-full bg-white drop-shadow-md mt-2" id="product_<?= $products["id"] ?>">
+            <a href="./detailpage.php?productid=<?=$products["id"]?>" class="lg:w-60 w-40 h-full bg-white drop-shadow-md mt-2" id="product_<?= $products["id"] ?>">
                 <!-- product image -->
                 <div class="w-full lg:h-2/3 h-3/5 relative">
                 </div>

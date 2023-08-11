@@ -16,22 +16,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js" integrity="sha512-bp/xZXR0Wn5q5TgPtz7EbgZlRrIU3tsqoROPe9sLwdY6Z+0p6XRzr7/JzqQUfTSD3rWanL6WUVW7peD4zSY/vQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../resources/js/main.js" defer></script>
     <script src="../resources/lib/jquery/jQuery v3.7.0.js"></script>
+    <link rel="stylesheet" href="../resources/css/message.css">
 
 </head>
 
 <body>
     <?php include "../Layout/nav.php"; ?>
-    <div class="text-xl text-blueText ml-[200px] mt-[200px]">
+    <div class="text-md text-blueText ml-[300px] mt-[200px]">
         <!-- component -->
 
         
 
-        <div class="w-[1200px] mx-auto" style="margin-top: -128px;">
+        <div class="w-[900px]" style="margin-top: -128px;">
             <div class="py-6 h-screen">
                 <div class="flex  h-full">
 
                     <!-- Left -->
-                    <div class="w-1/3 flex flex-col px-5 py-5 rounded-xl shadow-3xl bg-inputBox">
+                    <div class="w-1/3 flex flex-col px-3 py-3 rounded-xl shadow-3xl bg-inputBox">
 
                         
 
@@ -49,7 +50,7 @@
                                 </div>
                                 <div class="ml-4 flex-1 py-4">
                                     <div class="flex items-bottom justify-between">
-                                        <p class="text-lg">
+                                        <p class="text-sm">
                                             New Movi
                                         </p>
                                         <p class="text-sm">
@@ -260,7 +261,7 @@
                                 <input class="w-full border rounded px-2 py-2" type="text"/>
                             </div>
                             <div>
-                            <a class="inline-block w-full lg:w-auto py-3 px-8 text-xl leading-6 text-whiteText font-medium tracking-tighter font-heading text-center bg-button hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl" href="#">Send</a>
+                            <a class="inline-block w-full lg:w-auto py-3 px-8 text-sm leading-6 text-whiteText font-medium tracking-tighter font-heading text-center bg-button hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl" href="#">Send</a>
                             </div>
                         </div>
                     </div>

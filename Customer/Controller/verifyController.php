@@ -14,7 +14,7 @@ session_start();
 
  $resultcode = $sql->fetchAll(PDO::FETCH_ASSOC);
 
- print_r($resultcode);
+ 
 
 
 
@@ -27,8 +27,10 @@ session_start();
 
         $verifysql->execute();
 
+        $_SESSION["user_account"] = $resultcode[0]["id"];
+
   
-  header("Location: ../View/Registeration/finishSignup.php?verifiedcode=$user_code");
+  header("Location: ../View/Registeration/finishSignup.php?");
  }
 
  

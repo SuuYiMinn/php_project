@@ -1,16 +1,13 @@
 $(document).ready(function () {
 
 var category = $(".cate_item");
-console.log(category);
 
 
 for (const sub_category of category) {
    $(sub_category).click(function () {
 
-    console.log ("hello");
+   console.log($(this).attr("id"));
 
-
-   
     $.ajax({
       url: "../Controller/filterSub_cateController.php",
       type : "POST",
@@ -21,7 +18,6 @@ for (const sub_category of category) {
         $(".filter_sub_category").empty();
 
          let filter_sub_category = JSON.parse(res);
-         console.log(filter_sub_category);
         
 
 

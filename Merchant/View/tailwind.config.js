@@ -18,6 +18,7 @@ module.exports = {
       'smallText': '9A9A9A',
       'blueChart': '#4C62CD',
       'cyanChart': '#43E2B7',
+      'search':'#F5F9FD',
     },
     fontFamily: {
       'ABeeZee': ['ABeeZee'],
