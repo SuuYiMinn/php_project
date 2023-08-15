@@ -1,3 +1,7 @@
+<?php
+include "../Controller/addAddressController.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,137 +23,55 @@
   
 
   <!-- body -->
-  <section class="flex flex-col items-center justify-around">
-    <p class="font-medium lg:text-3xl text-2xl text-[#F86F03] my-10">Add Shiping Address</p>
-    
-    <div class="mb-8">
-      <p class="lg:text-lg text-base opacity-50  text-orange-500">Full Name</p>
-      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
-    </div>
-   
-    <div class="mb-8">
-      <p class="lg:text-lg text-base opacity-50  text-orange-500"> Address</p>
-      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
-    </div>
-    
-    <div class="mb-8">
-      <p class="lg:text-lg text-base opacity-50  text-orange-500">Region</p>
-      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
-    </div>
-   
-    <div class="mb-8">
-      <p class="lg:text-lg text-base opacity-50  text-orange-500"> City</p>
-      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
-    </div>
-    
-    <div class="mb-8">
-      <p class="lg:text-lg text-base opacity-50  text-orange-500">Phone number</p>
-      <input class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
-    </div>
-    
-    <div class="mt-14">
-      <button class="lg:w-40 w-32 h-10 bg-[#263A29] rounded-[10px]">
-        <p class="text-white text-lg">Cancel</p>
-      </button>
-      <button class="lg:w-40 w-32 h-10 bg-[#F86F03] rounded-[10px] ml-10">
-        <p class="text-white text-lg">Safe</p>
-      </button>
-    </div>
-  </section>
-  
+  <form action="./checkout.php" method="post">
+    <input name="product" type="text" value="<?= $_GET["id"] ?>" class="hidden">
+    <section class="flex flex-col items-center justify-around">
+      <p class="font-medium lg:text-3xl text-2xl text-[#F86F03] my-10">Add Shiping Address</p>
 
-  <!-- review -->
-  <div class="flex p-10">
-    <div class="w-[100px] h-[100px] rounded-[50%] overflow-hidden mr-5">
-      <img class="w-full h-full" src="./resources/img/photo/shopProfile.jpg" alt="" />
-    </div>
-
-    <div>
-      <p class="text-[20px]">Richa Sharma</p>
-      <p class="text-[20px] opacity-[0.5]">
-        Oily yet dehydrated skin is something I have been struggling with when
-        I switched to oil free moisturizers. Lately I am trying out different
-        permutations and combinations to tackle the same.
-      </p>
-      
-
-      <div class="w-[200px] flex justify-around">
-        <div class="w-[30px]">
-          <img class="w-full" src="../img/like.svg" alt="" />
-        </div>
-        <div class="w-[30px]">
-          <img class="w-full" src="../img/dislike.svg" alt="" />
-        </div>
-        <p class="font-semibold text-[20px] opacity-[0.5]">Reply</p>
+      <div class="mb-8">
+        <p class="lg:text-lg text-base opacity-50  text-orange-500">Full Name</p>
+        <input name="full_name" class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
       </div>
-    </div>
-  </div>
-  <hr class="mx-10" />
-  <!-- review end -->
-  <!-- review -->
-  <div class="flex p-10">
-    <div class="w-[100px] h-[100px] rounded-[50%] overflow-hidden mr-5">
-      <img class="w-full h-full" src="./resources/img/photo/shopProfile.jpg" alt="" />
-    </div>
 
-    <div>
-      <p class="text-[20px]">Richa Sharma</p>
-      <p class="text-[20px] opacity-[0.5]">
-        Oily yet dehydrated skin is something I have been struggling with when
-        I switched to oil free moisturizers. Lately I am trying out different
-        permutations and combinations to tackle the same.
-      </p>
-      
-
-      <div class="w-[200px] flex justify-around">
-        <div class="w-[30px]">
-          <img class="w-full" src="../img/like.svg" alt="" />
-        </div>
-        <div class="w-[30px]">
-          <img class="w-full" src="../img/dislike.svg" alt="" />
-        </div>
-        <p class="font-semibold text-[20px] opacity-[0.5]">Reply</p>
+      <div class="mb-8">
+        <p class="lg:text-lg text-base opacity-50  text-orange-500"> Address</p>
+        <input name="address" class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
       </div>
-    </div>
-  </div>
-  <hr class="mx-10" />
-  <!-- review end -->
-  <!-- noti -->
-  <div class="flex p-10">
-    <div class="w-[100px] h-[100px] rounded-[50%] overflow-hidden mr-5">
-      <img class="w-full h-full" src="./resources/img/photo/shopProfile.jpg" alt="" />
-    </div>
 
-    <div>
-      <p class="text-[24px] text-[#FF9F29]">Yuzana Clothing</p>
-      <p class="text-[20px] opacity-[0.5]">
-        Oily yet dehydrated skin is something I have been struggling with when
-        I switched to oil free moisturizers. Lately I am trying out different
-        permutations and combinations to tackle the same.
-      </p>
-    </div>
-  </div>
-  <hr class="mx-10" />
-  <!-- noti end -->
-  <!-- noti -->
-  <div class="flex p-10">
-    <div class="w-[100px] h-[100px] rounded-[50%] overflow-hidden mr-5">
-      <img class="w-full h-full" src="./resources/img/photo/shopProfile.jpg" alt="" />
-    </div>
+      <div class="mb-8">
+        <p class="lg:text-lg text-base opacity-50  text-orange-500">Region</p>
+        <select name="region" class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text">
+          <?php foreach ($result as $region) { ?>
+            <option value="<?= $region["id"] ?>"><?= $region["name"] ?></option>
+          <?php } ?>
+        </select>
+      </div>
 
-    <div>
-      <p class="text-[24px] text-[#FF9F29]">Yuzana Clothing</p>
-      <p class="text-[20px] opacity-[0.5]">
-        Oily yet dehydrated skin is something I have been struggling with when
-        I switched to oil free moisturizers. Lately I am trying out different
-        permutations and combinations to tackle the same.
-      </p>
-    </div>
-  </div>
-  <hr class="mx-10" />
-  <!-- noti end -->
+      <div class="mb-8">
+        <p class="lg:text-lg text-base opacity-50  text-orange-500"> City</p>
+        <select class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text">
+          <!-- townships -->
+        </select>
+      </div>
 
-  
+      <div class="mb-8">
+        <p class="lg:text-lg text-base opacity-50  text-orange-500">Phone number</p>
+        <input name="phone_number" class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text" />
+      </div>
+
+      <div class="mt-14">
+        <button type="button" onclick="history.go(-1);" class="lg:w-40 w-32 h-10 bg-[#263A29] rounded-[10px]">
+          <p class="text-white text-lg">Cancel</p>
+        </button>
+        <button type="submit" class="lg:w-40 w-32 h-10 bg-[#F86F03] rounded-[10px] ml-10">
+          <p class="text-white text-lg">Safe</p>
+        </button>
+      </div>
+    </section>
+  </form>
+
+
+
   <?php include "../View/common/commonFooter.php" ?>
 </body>
 
