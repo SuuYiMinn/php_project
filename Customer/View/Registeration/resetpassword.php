@@ -1,3 +1,13 @@
+<?php
+ session_start();
+
+ if(!isset($_SESSION["userverified"])){
+
+    header("Location: ./usernotverified.php");
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +18,15 @@
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../resources/js/menu.js"></script>
     <title>Reset Password</title>
 </head>
 
 <body>
-    <?php include "../common/CommonNavigation.php" ?>
+<?php include "../common/registeration_nav.php" ?>
 
 
-    <form action="../../Controller/resetpasswordController.php?resetverifiedcode=<?= $_GET["resetverifiedcode"]?>" method="post">
+    <form action="../../Controller/resetpasswordController.php?" method="post">
         <main class="lg:flex-row w-full justify-evenly">
             <div class="w-1/3 mt-16">
                 <p class="text-2xl mx-auto my-10 w-64">Reset password</p>
@@ -50,7 +61,7 @@
         </main>
     </form>
     <?php include "../common/commonFooter.php" ?>
-    <?php include "../common/commonFooterMobile.php" ?>
+
 </body>
 
 </html>

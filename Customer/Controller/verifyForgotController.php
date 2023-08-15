@@ -1,4 +1,7 @@
 <?php 
+session_start();
+
+// verify code from email (forgot password)
 
 $user_code = $_GET["token"];
 
@@ -19,12 +22,15 @@ $sql->execute();
 
 
 
-$resultCode = $sql->fetch(PDO::FETCH_ASSOC);
+  $resultCode = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+  echo($resultCode);
 
-if(count($resultCode)!=0){
+ if(count($resultCode)!= 0){
 
-    header("Location: ../View/Registeration/resetpassword.php?resetverifiedcode=$user_code");
+        $_SESSION["userverified"] = $resultCode[0]["id"];
+
+    header("Location: ../View/Registeration/resetpassword.php");
 
 }
 

@@ -1,6 +1,7 @@
 <?php 
+session_start();
 
- $resetcode =$_GET["resetverifiedcode"];
+ $resetcode =$_SESSION["userverified"];
  $password = $_POST["new_password"];
  $retype_password = $_POST["retype_password"];
 
@@ -12,14 +13,17 @@
 
     $sql = $pdo->prepare(
    
-       "UPDATE m_customers SET c_password = :userpassword WHERE code = :usercode"
+       "UPDATE m_customers SET c_password = :userpassword WHERE id = :userId"
     );
    
     $sql -> bindValue(":userpassword", password_hash($password,PASSWORD_DEFAULT) );
-    $sql -> bindValue(":usercode",$resetcode );
+    $sql -> bindValue(":userId",$resetcode );
     $sql -> execute();
 
-    header("Location: ../View/homepage.php?code=$resetcode");
+    $_SESSION["user_account"]=$resetcode;
+
+
+    header("Location: ../View/homepage.php");
 
    
 

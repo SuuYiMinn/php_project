@@ -1,4 +1,7 @@
 <?php 
+
+
+// user verified the code from mail  and lead to finish sign up to add user name
 session_start();
 
  $user_code = $_GET["token"]; //user input code

@@ -1,5 +1,7 @@
 <?php
 
+// filter category controller with ajax 
+
 
 $subCate_id = $_POST["subcate_id"];
 

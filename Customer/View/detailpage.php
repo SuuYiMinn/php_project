@@ -1,3 +1,9 @@
+<?php if(!isset($_GET["productid"])){
+    header("Location: ./errorshow.php");
+
+} ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +16,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./resources/lib/jquery/jquery.js"></script>
     <script src="./resources/js/menu.js"></script>
+    <script src="./resources/js/detailslide.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -30,6 +37,10 @@
      }else{
 
         $price = ($productDetail_result[0]["p_sell_price"]);
+        $photo1 = ($productDetail_result[0]["p_photo_1"]);
+        $photo2 = ($productDetail_result[0]["p_photo_2"]);
+        $photo3 = ($productDetail_result[0]["p_photo_3"]);
+        $photo4 = ($productDetail_result[0]["p_photo_4"]);
 
      }
 
@@ -38,7 +49,33 @@
         <!--detail products-->
         <div class="lg:mx-10 mx-4">
             <!--detail products image session-->
-            <div class="lg:w-96 lg:h-80 w-full h-52 bg-gray-200">
+            <div class="lg:w-96 lg:h-80 w-full h-52 overflow-x-hidden flex bg-gray-200 relative">
+                <?php if( $photo1 != null) {?>
+                    <img src="../..<?=$photo1  ?>" alt="photo_1" class ="inline w-full h-full detail_image "> <?php } ?>
+
+                    <?php if( $photo2 != null) {?>
+                    <img src="../..<?=$photo2  ?>" alt="photo_2" class ="hidden h-full w-full detail_image"> <?php } ?>
+
+                    <?php if( $photo3 != null) {?>
+                    <img src="../..<?=$photo3  ?>" alt="photo_3" class ="hidden h-full w-full detail_image"> <?php } ?>
+
+                    <?php if( $photo4 != null) {?>
+                    <img src="../..<?=$photo4  ?>" alt="photo_4" class ="hidden h-full w-full detail_image"> <?php } ?>
+
+                    <div class=" rounded-full absolute w-6 h-6   bg-gray-700 top-1/2 left-0" id="backward"  >
+                    <ion-icon name="chevron-back-outline" class="scale-150 p-1 text-white" ></ion-icon>
+                    </div>
+                    <div class=" rounded-full w-6 h-6 absolute  bg-gray-700 top-1/2  right-0" id="forward" >
+                    <ion-icon name="chevron-forward-outline" class="scale-150 p-1 text-white" ></ion-icon>
+                    </div>
+
+                    
+                    
+
+                    
+
+
+                
 
             </div>
             <div class="flex justify-between lg:mt-4 mt-2">
@@ -49,13 +86,14 @@
                         <ion-icon name="chatbubble-ellipses-outline" class="lg:w-6 w-4 lg:h-6 h-4 mr-1"></ion-icon>
                     </div>
                     <div class="flex mt-3  text-orange-500">
-                        <ion-icon name="star-outline" class="lg:w-5 w-3 lg:h-5 h-3 mr-[2px]"></ion-icon>
-                        <ion-icon name="star-outline" class="lg:w-5 w-3 lg:h-5 h-3 mr-[2px]"></ion-icon>
-                        <ion-icon name="star-outline" class="lg:w-5 w-3 lg:h-5 h-3 mr-[2px]"></ion-icon>
-                        <ion-icon name="star-outline" class="lg:w-5 w-3 lg:h-5 h-3 mr-[2px]"></ion-icon>
-                        <ion-icon name="star-outline" class="lg:w-5 w-3 lg:h-5 h-3 mr-[2px]"></ion-icon>
 
-                    </div>
+                    <?php if ($product_rating_no != null) {
+                        
+                        for ($i=0; $i < $product_rating_no ; $i++) { ?>
+
+                            <ion-icon name="star" class="lg:w-5 w-3 lg:h-5 h-3 mr-[2px]"></ion-icon>
+                       <?php } } ?>      
+                  </div>
 
                 </div>
 
@@ -162,7 +200,7 @@
         <?php } ?></div>
     </div>
     <?php include "./common/commonFooter.php" ?>
-    <?php include "./common/commonFooterMobile.php" ?>
+   
 </body>
 
 </html>

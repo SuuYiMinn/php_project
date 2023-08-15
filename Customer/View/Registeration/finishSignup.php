@@ -1,3 +1,12 @@
+<?php 
+session_start();
+if(!isset($_SESSION["user_account"])){
+    header("Location: ./signup.php");
+} 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,21 +18,23 @@
     <link rel="stylesheet" href="./resources/lib/tailwind/input.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../resources/js/menu.js"></script>
     <title>Account Verified</title>
 </head>
 
 <body>
-    <?php include "../common/CommonNavigation.php" ?>
+    <?php include "../common/registeration_nav.php" ?>
 
     <main class=" lg:flex w-full h-full justify-between px-20 ">
         <div class="lg:w-1/3 lg:ml-24 sm:w-4/5  mt-16 sm:mx-auto">
             <p class="text-orange-500 text-3xl font-semibold text-center">Your Account</p>
             <p class="text-orange-500 text-3xl font-semibold text-center">Has been Registered</p>
 
-            <form action="../../Controller/finishSignUpController.php" method ="post" class= "mt-6" >
+            <form action="../../Controller/finishSignUpController.php" method ="post" class= "mt-6 h-28 flex lg:flex-row flex-col justify-around " >
 
-            <input type="text" name="username" class="ring-[1px] rounded-md ml-1">
-            <input type="submit" value="Go Home page" class="py-[2px] px-2 bg-green-800 text-white rounded-md">
+            <input type="text" name="username" class="  h-8 ring-[1px] rounded-md mr-2">
+            <input type="submit" value="Go Home page" class=" h-8 py-[2px] px-2 bg-green-800 text-white rounded-md">
+
             </form>
 
         </div>

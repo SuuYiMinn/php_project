@@ -4,7 +4,7 @@ include "./common/mailSender.php";
 include "./common/commonfunction.php";
 
 session_start();
-print_r($_POST);
+
 
 // check directly come from address bar come from signUp page
 if (count($_POST) == 0) {

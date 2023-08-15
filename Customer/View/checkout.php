@@ -15,7 +15,7 @@
 </head>
 
 <body class="overflow-x-hidden" >
-  <?php include "./common/CommonNavigation.php" ?>
+  <?php include "./common/nav_without_search.php" ?>
 
   <div class="w-full">
   <!-- body -->
@@ -112,6 +112,7 @@
   </div>
 
   <?php include "../View/common/commonFooter.php" ?>
+
 </body>
 
 </html>

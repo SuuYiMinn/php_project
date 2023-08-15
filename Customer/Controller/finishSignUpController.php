@@ -1,5 +1,5 @@
 <?php 
-   
+   // user finish the sing up steps and lead to home page 
    session_start();
 
 

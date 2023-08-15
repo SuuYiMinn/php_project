@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <?php include "./common/CommonNavigation.php" ?>
+  <?php include "./common/nav_without_search.php" ?>
   <p class="text-orange-500 font-medium text-2xl text-center my-5">My Cart</p>
   <section class=" w-full h-[100vh] flex lg:flex-row flex-col justify-around">
     <!-- products -->
@@ -303,6 +303,7 @@
   <!-- body end -->
 
   <?php include "../View/common/commonFooter.php" ?>
+
 </body>
 
 </html>

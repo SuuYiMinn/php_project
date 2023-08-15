@@ -1,8 +1,11 @@
 <?php
 
+
 if($_GET != NULL){
 
-    $brand_id = $_GET("brand_id");
+    $brand_id = $_GET["brand_id"];
+    
+
 
 
 
@@ -10,7 +13,7 @@ include "../Model/model.php";
 
  $sql = $pdo->prepare(
 
-    "SELECT * FROM m_brand LEFT JOIN m_products  ON m_brand.id = m_products.p_brand  WHERE p_brand = :brandId"
+    "SELECT * FROM m_brand INNER JOIN m_products  ON m_brand.id = m_products.p_brand  WHERE p_brand = :brandId"
 
  );
 

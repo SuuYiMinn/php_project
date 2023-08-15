@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <?php include "./common/CommonNavigation.php" ?>
+  <?php include "./common/nav_without_search.php" ?>
   <br />
 
   <!-- body -->

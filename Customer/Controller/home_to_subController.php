@@ -1,8 +1,9 @@
 <?php 
 
+
+
 $cate_id = $_GET["category_id"];
 
-echo("$cate_id");
 
 include "../Model/model.php";
 

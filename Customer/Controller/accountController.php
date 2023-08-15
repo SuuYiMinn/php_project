@@ -3,6 +3,8 @@
 
 
 session_start();
+if (isset($_SESSION["user_account"]))
+{
 
 if($_SESSION["user_account"]!= null){
 
@@ -18,6 +20,7 @@ if($_SESSION["user_account"]!= null){
  $sql -> bindValue(":userId",$cusotmer_id);
  $sql -> execute();
  $accountresult = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
 }else{
     $accountresult = null;
 }
