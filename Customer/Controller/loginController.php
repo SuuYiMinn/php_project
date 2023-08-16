@@ -12,7 +12,7 @@ if (count($_POST) == 0) {
 
  $sql = $pdo->prepare(
 
-   " SELECT * FROM m_customers WHERE c_email = :email"
+   " SELECT * FROM m_customers WHERE c_email = :email AND del_flg = 0"
 
  );
  $sql->bindValue(":email", $email);
@@ -22,13 +22,16 @@ $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
  if (count($result) != 0) {
     $dbPassword = $result[0]["c_password"];
-    $dbcode = $result[0]["code"];
+    $login_userId = $result[0]["id"];
 
     if(password_verify($password,$dbPassword)){
 
       if( ($dbPassword = $result[0]["verify"])==1){
 
-        header("Location: ../View/homepage.php?code=$dbcode");
+        header("Location: ../View/homepage.php?");
+
+        $_SESSION["user_account"] = $login_userId;
+        
       }else {
 
         $_SESSION["loginError"] = "Your account is not verified yet";

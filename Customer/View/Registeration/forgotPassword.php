@@ -12,11 +12,12 @@ session_start();
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../resources/js/menu.js"></script>
     <title>forget Password</title>
 </head>
 
 <body>
-    <?php include "../common/CommonNavigation.php" ?>
+<?php include "../common/registeration_nav.php" ?>
     <main class=" lg:flex w-full h-full justify-between">
 
     <form action="../../Controller/forgotpasswordController.php" method="post">
@@ -27,14 +28,18 @@ session_start();
                 <p class="mb-2 w-60  text-orange-500">Please enter your email</p>
                 <p class="mb-1 text-xs text-blue-900 w-60">In order to identify your identity we have sent a one time code to your email</p>
 
-                <input type="text" name="email" placeholder="Enter your email" class="w-54 ring-1 rounded-md mx-auto">
+                <input type="text" name="email" placeholder="Enter your email" class=" px-2 w-54 ring-1 rounded-md mx-auto">
                 
 
             </div>
 
             <div class="mt-8 w-56 mx-auto">
-                <input type="submit" value="Send Code" class="bg-[#ff9f29] rounded-md text-center my-4 px-16 py-1 text-white">
+                <input type="submit" name="customer" value="Send Code" class="bg-[#ff9f29] rounded-md text-center my-4 px-16 py-1 text-white">
+                <?php if(isset($_SESSION["code_sent"])) { ?>
+                    <p class="px-1 py-1 text-xs "><?= $_SESSION["code_sent"] ?></p> <?php }?>
             </div>
+
+            
 
         </div>
         </form>
@@ -48,11 +53,11 @@ session_start();
 
     </main>
     <?php include "../common/commonFooter.php" ?>
-    <?php include "../common/commonFooterMobile.php" ?>
 </body>
 
 </html>
 
 <?php 
 $_SESSION["forgotPasswordError"] = "";
+$_SESSION["code_sent"] ="";
 ?>

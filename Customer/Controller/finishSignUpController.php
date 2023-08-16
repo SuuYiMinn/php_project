@@ -1,27 +1,30 @@
 <?php 
-   
-  $verified_code = $_GET["verifiedcode"];
-  $username = $_POST["username"];
+   // user finish the sing up steps and lead to home page 
+   session_start();
 
-  echo ($username);
+
+
+  $user_id= $_SESSION["user_account"];
+  $fin_signUp_username = $_POST["username"];
+
 
   
-   if($username != null){
+   if($fin_signUp_username != null){
 
     include "../Model/model.php";
     $sql= $pdo->prepare(
   
-      "UPDATE m_customers SET c_name = :customername WHERE code = :usercode"  
+      "UPDATE m_customers SET c_name = :customername WHERE id = :userId AND del_flg = 0"  
     );
 
-    $sql ->bindValue(":customername",$username);
-    $sql ->bindValue(":usercode",$verified_code);
+    $sql ->bindValue(":customername",$fin_signUp_username);
+    $sql ->bindValue(":userId",$user_id);
     $sql ->execute();
 
    }
 
 
-  header("Location: ../View/homepage.php?code=$verified_code");
+  header("Location: ../View/homepage.php?");
 
 
 ?>

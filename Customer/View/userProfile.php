@@ -72,7 +72,7 @@
   </section>
 
   <?php include "../View/common/commonFooter.php" ?>
-  <?php include "../View/common/commonFooterMobile.php" ?>
+ 
 </body>
 
 </html>

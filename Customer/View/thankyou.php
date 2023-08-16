@@ -1,3 +1,9 @@
+<?php
+
+include "../Controller/orderController.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="./resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-  
+
   <title>ThankYou</title>
 </head>
 
@@ -22,11 +28,13 @@
     <p class="text-[64px] max-sm:text-[32px] font-['Pacifico']">
       For shopping with us
     </p>
-    <button class="w-[480px] h-[130px] max-sm:w-[175px] max-sm:h-[40px] rounded-[10px] bg-[#1A4D2E]">
-      <p class="text-white text-[48px] max-sm:text-[20px] font-semibold">
-        Shop more
-      </p>
-    </button>
+    <a href="./homepage.php">
+      <button class="w-[480px] h-[130px] max-sm:w-[175px] max-sm:h-[40px] rounded-[10px] bg-[#1A4D2E]">
+        <p class="text-white text-[48px] max-sm:text-[20px] font-semibold">
+          Shop more
+        </p>
+      </button>
+    </a>
   </section>
   <br />
 

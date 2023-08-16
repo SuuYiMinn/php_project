@@ -2,24 +2,26 @@
 <?php 
 
 
+session_start();
+if (isset($_SESSION["user_account"]))
+{
 
+if($_SESSION["user_account"]!= null){
 
-if($_GET != null){
-
-    $code = $_GET["code"];
+    $cusotmer_id= $_SESSION["user_account"];
 
     include "../Model/model.php";
  
    $sql = $pdo->prepare(
      
-     "SELECT * FROM m_customers WHERE code = :code"
+     "SELECT * FROM m_customers WHERE id = :userId AND del_flg = 0"
  );
  
- $sql -> bindValue(":code",$code);
+ $sql -> bindValue(":userId",$cusotmer_id);
  $sql -> execute();
  $accountresult = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
 }else{
-    $code = null;
     $accountresult = null;
 }
 ?>
