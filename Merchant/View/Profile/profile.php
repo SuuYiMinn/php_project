@@ -38,7 +38,7 @@ include "../../Controller/jointownshipController.php";
     <div class=" flex justify-center items-center ml-[200px]">
         <div class="px-10 py-3 shadow-3xl rounded-lg flex flex-col justify-center items-center">
             
-            <img src="../../..<?= $merchantreg[0]["me_profile"] ?>" class="w-[200px] h-[200px]" />
+            <img src="../../..<?= $merchantreg[0]["me_profile"] ?>" class="w-[200px] h-[100px]" />
             <!-- <div class="mt-5 mb-8">
                 <span class="text-blueText font-bold text-lg font-RobotoSlab uppercase">BalarBalar</span>
                 <span class="text-blueText font-bold text-md font-RobotoSlab pl-3"> Followed By</span>

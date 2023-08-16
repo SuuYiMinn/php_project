@@ -1,15 +1,20 @@
 <?php
-session_start();
-$productCat = $_SESSION["productCat"];
-$productSubcat = $_SESSION["productSubcat"];
-$productBrand = $_SESSION["productBrand"];
-$product = $_SESSION["product"];
-echo"<pre>";
-print_r($productCat);
-echo"</pre>";
-echo"<pre>";
-print_r($productSubcat);
-echo"</pre>";
+include "../../Controller/productDetailsController.php";
+// session_start();
+// $productCat = $_SESSION["productCat"];
+// $productSubcat = $_SESSION["productSubcat"];
+// $productBrand = $_SESSION["productBrand"];
+// $product = $_SESSION["product"];
+// echo "<pre>";
+// print_r($product);
+// echo "</pre>";
+// echo"<pre>";
+// print_r($ratingCustomer);
+// echo"</pre>";
+// echo "<pre>";
+// print_r($customers);
+// echo "</pre>";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,19 +42,18 @@ echo"</pre>";
 <body>
     <?php include "../Layout/nav.php"; ?>
     <!-- start of right side -->
-
     <!-- title -->
-    <div class="z-50 ml-36 flex flex-col justify-center items-center">
-        <div class="text-blueText text-lg font-bold mb-3">Product Details</div>
-        <div class="w-[500px] h-[2px] bg-orange shadow-3xl"></div>
+    <div class="z-30 ml-20 bg-whiteText w-full flex flex-col justify-center items-center fixed">
+        <div class="text-whiteText font-Tommorrow bg-orange border-2 rounded-full border-orange shadow-3xl px-20 py-5 text-xl font-bold mb-3 italic">Product Details</div>
+        <!-- <div class="w-[500px] h-[10px] bg-orange shadow-3xl"></div> -->
     </div>
     <!-- end title -->
 
+
     <!-- start of product details -->
-    <div class="z-30 mt-10 mb-10 ml-[300px]">
-        <div class="flex flex-row space-x-10">
-            <!-- <div><img src="../../../Storage/" /> -->
-            <!-- <img src="../../../<?= $productCat[0]["p_photo_1"] ?>" class="w-full"> -->
+    <div class="z-10 mt-32 mb-10 ml-[300px]">
+        <div class="flex flex-row space-x-32">
+
             <!-- start of edit photo -->
 
             <div class="grid grid-cols-2 gap-4 w-[400px] h-[400px]">
@@ -118,112 +122,164 @@ echo"</pre>";
 
             <!-- end of edit photo -->
             <div class="text-blueText text-md font-semibold space-y-3">
-                <p><span class="w-44">Product Name:</span> <span class="ml-3"><?= $productCat[0]["p_title"] ?></span></p>
-                <p><span class="w-32">Category:</span><span class="ml-3"><?= $productCat[0]["cat_name"] ?></span></p>
-                <p><span class="w-32">Sub Category:</span><span class="ml-3"><?= $productSubcat[0]["sub_category_name"] ?></span></p>
-                <p><span class="w-32">Brand:</span><span class="ml-3"><?= $productBrand[0]["brand_name"] ?></span></p>
-                <p><span class="w-32">Stock:</span><span class="ml-3"><?= $productCat[0]["p_stock"] ?> items</span></p>
-                <p><span class="w-32">Buy Price:</span><span class="ml-3"><?= $productCat[0]["p_buy_price"] ?>Ks</span></p>
-                <p><span class="w-32">Sell Price:</span><span class="ml-3"><?= $productCat[0]["p_sell_price"] ?>Ks</span></p>
-                <p><span class="w-32">Discount:</span><span class="ml-3"><?= $productCat[0]["p_discount"] ?>% Off</span></p>
-                <p><span class="w-32">Details:</span><span class="ml-3"><?= $productCat[0]["p_detail"] ?></span></p>
-                <p><span class="w-32">Description:</span><span class="ml-3"><?= $productCat[0]["p_des"] ?></span></p>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Product Name:</p>
+                    <p class="ml-8"><?= $productCat[0]["p_title"] ?></p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Category:</p>
+                    <p class="ml-8"><?= $productCat[0]["cat_name"] ?></p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Sub Category:</p>
+                    <p class="ml-8"><?= $productSubcat[0]["sub_category_name"] ?></p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Brand:</p>
+                    <p class="ml-8"><?= $productBrand[0]["brand_name"] ?></p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Stock:</p>
+                    <p class="ml-8"><?= $productCat[0]["p_stock"] ?> items</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Buy Price:</p>
+                    <p class="ml-8"><?= $productCat[0]["p_buy_price"] ?>Ks</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Sell Price:</p>
+                    <p class="ml-8"><?= $productCat[0]["p_sell_price"] ?>Ks</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Discount:</p>
+                    <p class="ml-8"><?= $productCat[0]["p_discount"] ?>% Off</p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Details:</p>
+                    <p class="ml-8"><?= $productCat[0]["p_detail"] ?></p>
+                </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Description:</p>
+                    <p class="ml-8"><?= $productCat[0]["p_des"] ?></p>
+                </div>
             </div>
 
             <!-- </div> -->
 
         </div>
         <!-- start of rating -->
+        
         <div class="flex items-center mb-2 mt-3">
-            <p class="text-blueText text-lg font-bold mr-5">Ratings</p>
-            <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-inputBox mr-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <p class="ml-2 text-lg text-blueText dark:text-white">4.95 out of 5</p>
-
+            <p class="text-blueText text-xl font-bold mr-5 border-b-2 border-orange w-10">Ratings</p>
+            <div class="ml-5 flex flex-row justify-center items-center">
+                <?php
+                for ($i = 0; $i < $product[0]["product_rating"]; $i++) {
+                ?>
+                    <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                <?php
+                }
+                ?>
+                <?php
+                for ($i = 0; $i < (5 - $product[0]["product_rating"]); $i++) {
+                ?>
+                    <svg class="w-4 h-4 text-inputBox mr-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                <?php
+                }
+                ?>
+                <p class="ml-10 text-lg text-blueText dark:text-white"><?= $product[0]["product_rating"] ?> out of 5</p>
+            </div>
         </div>
-        <p class="text-md font-medium text-blueText dark:text-gray-400">1,745 global ratings</p>
+        <p class="text-md italic font-medium text-bold  text-greyText1 dark:text-gray-400"><?= $ratingCustomer[0]["COUNT(customer_id)"] ?> ratings</p>
         <div class="flex items-center mt-4">
             <a href="#" class="text-md font-medium text-blueText dark:text-blue-500 hover:underline">5 star</a>
             <div class="w-2/4 h-5 mx-4 bg-inputBox rounded dark:bg-gray-700">
-                <div class="h-5 bg-orange rounded" style="width: 70%"></div>
+                <div class="h-5 bg-orange rounded" style="width: <?= ($fivestarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%"></div>
             </div>
-            <span class="text-md font-medium text-blueText dark:text-gray-400">70%</span>
+            <span class="text-md font-medium text-blueText dark:text-gray-400"><?= ($fivestarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%</span>
         </div>
         <div class="flex items-center mt-4">
             <a href="#" class="text-md font-medium text-blueText dark:text-blue-500 hover:underline">4 star</a>
             <div class="w-2/4 h-5 mx-4 bg-inputBox rounded dark:bg-gray-700">
-                <div class="h-5 bg-orange rounded" style="width: 17%"></div>
+                <div class="h-5 bg-orange rounded" style="width: <?= ($fourstarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%"></div>
             </div>
-            <span class="text-md font-medium text-blueText dark:text-gray-400">17%</span>
+            <span class="text-md font-medium text-blueText dark:text-gray-400"><?= ($fourstarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%</span>
         </div>
         <div class="flex items-center mt-4">
             <a href="#" class="text-md font-medium text-blueText dark:text-blue-500 hover:underline">3 star</a>
             <div class="w-2/4 h-5 mx-4 bg-inputBox rounded dark:bg-gray-700">
-                <div class="h-5 bg-orange rounded" style="width: 8%"></div>
+                <div class="h-5 bg-orange rounded" style="width: <?= ($threestarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%"></div>
             </div>
-            <span class="text-md font-medium text-blueText dark:text-gray-400">8%</span>
+            <span class="text-md font-medium text-blueText dark:text-gray-400"><?= ($threestarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%</span>
         </div>
         <div class="flex items-center mt-4">
             <a href="#" class="text-md font-medium text-blueText dark:text-blue-500 hover:underline">2 star</a>
             <div class="w-2/4 h-5 mx-4 bg-inputBox rounded dark:bg-gray-700">
-                <div class="h-5 bg-orange rounded" style="width: 4%"></div>
+                <div class="h-5 bg-orange rounded" style="width: <?= ($twostarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%"></div>
             </div>
-            <span class="text-md font-medium text-blueText dark:text-gray-400">4%</span>
+            <span class="text-md font-medium text-blueText dark:text-gray-400"><?= ($twostarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%</span>
         </div>
         <div class="flex items-center mt-4">
             <a href="#" class="text-md font-medium text-blueText dark:text-blue-500 hover:underline">1 star</a>
             <div class="w-2/4 h-5 mx-4 bg-inputBox rounded dark:bg-gray-700">
-                <div class="h-5 bg-orange rounded" style="width: 1%"></div>
+                <div class="h-5 bg-orange rounded" style="width: <?= ($onestarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%"></div>
             </div>
-            <span class="text-md font-medium text-blueText dark:text-gray-400">1%</span>
+            <span class="text-md font-medium text-blueText dark:text-gray-400"><?= ($onestarCustomer[0]["COUNT(customer_id)"] / $ratingCustomer[0]["COUNT(customer_id)"]) * 100 ?>%</span>
         </div>
         <!-- end of rating -->
         <!-- start of reviews -->
 
         <article class="mt-5">
-            <div class="text-lg font-bold text-blueText">Reviews</div>
-            <div class="flex items-center mb-4 space-x-4">
-                <img class="w-10 h-10 rounded-full" src="../resources/img/chatphoto.png" alt="">
-                <div class="space-y-1 dark:text-white">
-                    <p>Jese Leos <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400">Joined on August 2014</time></p>
+            <div class="text-xl font-bold text-blueText mb-5 border-b-2 border-orange w-10">Reviews</div>
+            <?php
+            for ($i = 0; $i < count($customers); $i++) {
+            ?>
+                <!-- start of review1 -->
+                <div>
+                    <div class="flex items-center mb-4 space-x-4">
+                        <img class="w-10 h-10 rounded-full" src="../../..<?= $customers[$i]["c_profile"] ?>" alt="">
+                        <div class="space-y-1 dark:text-white">
+                            <p><?= $customers[$i]["c_name"] ?></p>
+                            <!-- <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400">Joined on August 2014</time> -->
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-1">
+                        <?php for ($j = 0; $j < $customers[$i]["rating_no"]; $j++) {
+                        ?>
+                            <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            </svg>
+                        <?php
+                        }
+                        ?>
+                        <?php for ($j = 0; $j < 5 - $customers[$i]["rating_no"]; $j++) {
+                        ?>
+                            <svg class="w-4 h-4 text-inputBox dark:text-gray-500 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            </svg>
+                        <?php
+                        }
+                        ?>
+
+
+
+                        <!-- <h3 class="ml-2 text-sm font-semibold text-gray-900 dark:text-white">Thinking to buy another one!</h3> -->
+                    </div>
+                    <footer class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                        <p class="mb-5 text-greyText1 font-bold dark:text-gray-400"><?= $customers[$i]["product_review"] ?></p>
+                        <!-- <p>Reviewed in the United Kingdom on <time datetime="2017-03-03 19:00">March 3, 2017</time></p> -->
+                    </footer>
+
+                    <!-- <p class="mb-3 text-greyText1 font-bold dark:text-gray-400">It is obviously not the same build quality as those very expensive watches. But that is like comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.</p> -->
+
                 </div>
-            </div>
-            <div class="flex items-center mb-1">
-                <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-orange mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-inputBox dark:text-gray-500 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <h3 class="ml-2 text-sm font-semibold text-gray-900 dark:text-white">Thinking to buy another one!</h3>
-            </div>
-            <footer class="mb-5 text-sm text-gray-500 dark:text-gray-400">
-                <p>Reviewed in the United Kingdom on <time datetime="2017-03-03 19:00">March 3, 2017</time></p>
-            </footer>
-            <p class="mb-2 text-greyText1 font-bold dark:text-gray-400">This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived yesterday and the first thing I did was set the time, popped on an identical strap from another Invicta and went in the shower with it to test the waterproofing.... No problems.</p>
-            <p class="mb-3 text-greyText1 font-bold dark:text-gray-400">It is obviously not the same build quality as those very expensive watches. But that is like comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.</p>
+                <!-- end of review1 -->
+            <?php
+            }
+            ?>
 
 
         </article>
@@ -242,8 +298,13 @@ echo"</pre>";
 
 
 
+
+        <!-- end of product details -->
+
     </div>
-    <!-- end of product details -->
+
+
+
 
 
 
