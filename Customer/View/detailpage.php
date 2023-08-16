@@ -37,11 +37,12 @@
 
             $price = ($productDetail_result[0]["p_sell_price"]);
         }
+            $photo1 =($productDetail_result[0]["p_photo_1"]);
+            $photo2 =($productDetail_result[0]["p_photo_2"]);
+            $photo3 =($productDetail_result[0]["p_photo_3"]);
+            $photo4 =($productDetail_result[0]["p_photo_4"]);
 
-<<<<<<< HEAD
-        $price = ($productDetail_result[0]["p_sell_price"]);
 
-     }
 
 
         ?>
