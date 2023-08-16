@@ -15,7 +15,7 @@ if(!isset($_POST["email"])){
   
   include "../Model/model.php";
   $sql = $pdo->prepare(
-    "SELECT * FROM m_customers WHERE c_email=:email"
+    "SELECT * FROM m_customers WHERE c_email=:email AND del_flg = 0"
   );
   $sql->bindValue(":email", $user_email);
   $sql->execute();
@@ -28,7 +28,7 @@ if(!isset($_POST["email"])){
     $verify_code = get_token(128);
 
     $sql = $pdo->prepare(
-        "UPDATE m_customers SET code = :verifyCode WHERE c_email = :email"
+        "UPDATE m_customers SET code = :verifyCode WHERE c_email = :email AND del_flg = 0"
       );
 
       $sql->bindValue(":email", $user_email);
@@ -63,7 +63,7 @@ if(!isset($_POST["email"])){
   
   include "../Model/model.php";
   $sql = $pdo->prepare(
-    "SELECT * FROM m_customers WHERE c_email=:email"
+    "SELECT * FROM m_customers WHERE c_email=:email AND del_flg = 0"
   );
   $sql->bindValue(":email", $user_email);
   $sql->execute();
@@ -76,7 +76,7 @@ if(!isset($_POST["email"])){
     $verify_code = get_token(128);
 
     $sql = $pdo->prepare(
-        "UPDATE m_customers SET code = :verifyCode WHERE c_email = :email"
+        "UPDATE m_customers SET code = :verifyCode WHERE c_email = :email AND del_flg = 0"
       );
 
       $sql->bindValue(":email", $user_email);

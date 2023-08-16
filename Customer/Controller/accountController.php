@@ -14,7 +14,7 @@ if($_SESSION["user_account"]!= null){
  
    $sql = $pdo->prepare(
      
-     "SELECT * FROM m_customers WHERE id = :userId"
+     "SELECT * FROM m_customers WHERE id = :userId AND del_flg = 0"
  );
  
  $sql -> bindValue(":userId",$cusotmer_id);

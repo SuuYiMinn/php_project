@@ -18,7 +18,8 @@
 
 
 
-<body>
+<body class="relative">
+   <navigation class="sticky top-0 z-50">
     <nav class=" invisible lg:w-full lg:h-6 bg-[#FF9F29] flex justify-evenly text-white text-xs  lg:visible ">
         <div class="flex justify-between py-1">
             <phone class="flex mr-4">
@@ -55,7 +56,7 @@
     <!--navigation bar end-->
     <!--menu bar start-->
     <div class="lg:inline hidden">
-        <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
+        <menu class="w-full flex justify-evenly py-2 border lg:visible invisible  bg-white">
             <div class="w-[100px] h-[30px]">
                 <img src="./resources/img/photo/Logo.png" alt="logo" class="pt-0">
             </div>
@@ -83,7 +84,7 @@
     </div>
     <!--menu bar end-->
     <!--mobile menu bar start-->
-    <div class="w-full flex justify-evenly py-2 lg:invisible sm:visible absolute top-0">
+    <div class="w-full flex justify-evenly py-2 lg:invisible sm:visible absolute top-0 bg-white">
         <div class="w-[70px] h-[20px]">
             <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
         </div>
@@ -111,6 +112,7 @@
             <a href="./Registeration/login.php">Login</a> <?php } ?>
 
     </div>
+    </navigation>
     <!--mobile menu bar end-->
 
     <?php include "../Controller/brandProfileController.php";

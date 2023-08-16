@@ -11,7 +11,7 @@ session_start();
 
    $sql = $pdo->prepare(
 
-    "SELECT * FROM m_products WHERE p_brand = :brandId AND p_title LIKE :searchText"
+    "SELECT * FROM m_products WHERE p_brand = :brandId AND p_title LIKE :searchText AND del_flg = 0"
 
    );
 

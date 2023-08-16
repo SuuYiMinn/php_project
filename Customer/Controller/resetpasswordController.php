@@ -13,7 +13,7 @@ session_start();
 
     $sql = $pdo->prepare(
    
-       "UPDATE m_customers SET c_password = :userpassword WHERE id = :userId"
+       "UPDATE m_customers SET c_password = :userpassword WHERE id = :userId AND del_flg = 0"
     );
    
     $sql -> bindValue(":userpassword", password_hash($password,PASSWORD_DEFAULT) );

@@ -14,7 +14,7 @@ include "../Model/model.php";
 
 $sql = $pdo->prepare(
 
-    "SELECT * FROM m_customers WHERE code = :verifyCode"
+    "SELECT * FROM m_customers WHERE code = :verifyCode AND del_flg = 0"
 
 );
 $sql->bindValue(":verifyCode",$user_code);
@@ -32,7 +32,7 @@ $sql->execute();
 
     header("Location: ../View/Registeration/resetpassword.php");
 
-}
+ }
 
 
 

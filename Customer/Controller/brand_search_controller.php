@@ -7,7 +7,7 @@ $search_text = $_POST["searchText"];
 
 $sql = $pdo->prepare(
 
-    "SELECT * FROM m_brand WHERE brand_name LIKE :searchText"
+    "SELECT * FROM m_brand WHERE brand_name LIKE :searchText AND del_flg = 0"
 
 );
 $sql->bindValue(":searchText","%".$search_text."%");

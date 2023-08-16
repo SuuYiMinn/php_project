@@ -85,48 +85,49 @@
 
             </menu>
         </div>
-    </div>
-    <!--menu bar end-->
-    <!--mobile menu bar start-->
-    <div>
+    
+       <!--menu bar end-->
+        <!--mobile menu bar start-->
+    
         <div class="lg:hidden inline sticky top-0 z-50 ">
-        <div class="w-full flex justify-evenly py-2 bg-white ">
-            <div class="w-[70px] h-[20px]">
-                <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
-            </div>
-            <searchBar class="relative">
-                <input id="home_search_mobile" class="placeholder:italic placeholder:text-slate-400 block
+            <div class="w-full flex justify-evenly py-2 bg-white ">
+                <div class="w-[70px] h-[20px]">
+                    <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
+                </div>
+                <searchBar class="relative">
+                    <input id="home_search_mobile" class="placeholder:italic placeholder:text-slate-400 block
          bg-white w-48 border border-orange-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none
           focus:border-orange-500 focus:ring-orange-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
 
 
-                <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
-            </searchBar>
-            <ion-icon name="notifications" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon>
-            <!-- check user locked in or not to go cart page -->
-            <?php if ($accountresult != null) { ?>
-                <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+                    <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
+                </searchBar>
+                <ion-icon name="notifications" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon>
+                <!-- check user locked in or not to go cart page -->
+                <?php if ($accountresult != null) { ?>
+                    <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
 
-            <?php } else { ?>
-                <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
-            <?php } ?>
-            <!-- cart check done -->
+                <?php } else { ?>
+                    <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+                <?php } ?>
+                <!-- cart check done -->
 
-            <!-- humbarger menu for mobile phone -->
-            <ion-icon name="menu-outline" class="w-[20px] h-[20px] text-[#ff9f29]" id="home_menu"></ion-icon>
+                <!-- humbarger menu for mobile phone -->
+                <ion-icon name="menu-outline" class="w-[20px] h-[20px] text-[#ff9f29]" id="home_menu"></ion-icon>
+            </div>
+
+            <div class="w-28 h-36 bg-black opacity-70 float-right  text-white text-center flex flex-col justify-evenly top-10 right-2 absolute lg:invisible visible " id="home_dropdown">
+                <a href="./aboutUs.php">About Us</a>
+                <a href="./brandlist.php">Brand</a>
+                <?php if ($accountresult != null) { ?>
+                    <a href="./userProfile.php"><?= $customer_name ?></a> <?php } else { ?>
+
+                    <a href="./Registeration/signup.php">Sign Up </a>
+                    <a href="./Registeration/login.php">Login</a> <?php } ?>
+
+            </div>
+
         </div>
-
-        <div class="w-28 h-36 bg-black opacity-70 float-right  text-white text-center flex flex-col justify-evenly top-10 right-2 absolute lg:invisible visible " id="home_dropdown">
-            <a href="./aboutUs.php">About Us</a>
-            <a href="./brandlist.php">Brand</a>
-            <?php if ($accountresult != null) { ?>
-                <a href="./userProfile.php"><?= $customer_name ?></a> <?php } else { ?>
-
-                <a href="./Registeration/signup.php">Sign Up </a>
-                <a href="./Registeration/login.php">Login</a> <?php } ?>
-
-        </div>
-
         </div>
         <!--mobile menu bar end-->
 
@@ -135,7 +136,7 @@
 
 
 
-        <main class=" w-full lg:mt-0 mt-5" id="home_main_section">
+        <main class=" w-full mt-0" id="home_main_section">
 
 
 
@@ -143,12 +144,12 @@
 
             <div class="lg:w-11/12 w-full flex justify-between overflow-x-hidden mx-auto relative  h-64 lg:h-80">
                 <!-- category for desktop -->
-                <div class="lg:w-1/6 h-full">
+                <div class="lg:w-1/6 h-full absolute left">
 
                     <div class="border-b-2 py-1 border-b-white lg:w-1/6 h-[13%] mb-2 bg-green-800 bg-opacity-20">
                         <p class="text-2xl  font-medium text-orange-500 text-center ">Category</p>
                     </div>
-                    <div class="w-1/6 h-[87%] overflow-y-auto  bg-green-800 bg-opacity-20 lg:inline hidden">
+                    <div class="w-full h-[87%] overflow-y-auto  bg-green-800 bg-opacity-20 lg:inline hidden">
 
 
                         <?php include "../Controller/homeController.php" ?>
@@ -211,457 +212,186 @@
 
 
 
-        </main>
-        <!-- cathegory-->
-        <div class="h-40 lg:hidden inline">
-            <p class="text-xl font-medium mb-2 ">Cathegory</p>
 
-            <div class="flex w-full h-32 overflow-x-auto">
+            <!-- cathegory-->
+            <div class="h-40 lg:hidden inline">
+                <p class="text-xl font-medium mb-2 ">Cathegory</p>
 
-                <?php include "../Controller/homeController.php"; ?>
+                <div class="flex w-full h-32 overflow-x-auto">
 
-                <?php foreach ($result as $category) { ?>
-                    <a href="./categoryProduct.php?category_id=<?= $category["id"] ?>" class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative mt-1 cate_item" id="cate_<?= $category["id"] ?>">
-                        <div class="w-12 h-12 rounded-full bg-black absolute top-1 left-6"></div>
-                        <p class="text-center text-xs mt-14" name="catename"><?= $category["cat_name"] ?></p>
-                    </a>
-                <?php } ?>
+                    <?php include "../Controller/homeController.php"; ?>
 
-
-            </div>
+                    <?php foreach ($result as $category) { ?>
+                        <a href="./categoryProduct.php?category_id=<?= $category["id"] ?>" class="w-24 h-24 rounded-xl drop-shadow bg-gray-100 relative mt-1 cate_item" id="cate_<?= $category["id"] ?>">
+                            <div class="w-12 h-12 rounded-full bg-black absolute top-1 left-6"></div>
+                            <p class="text-center text-xs mt-14" name="catename"><?= $category["cat_name"] ?></p>
+                        </a>
+                    <?php } ?>
 
 
-        </div>
-        <!-- popular products -->
-        <div class="w-full h-72 my-3">
-            <p class="text-xl font-medium mb-4">Popular Products</p>
-            <div class=" w-full h-60  flex justify-evenly">
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline hidden">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md lg:inline hidden">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md hidden lg:inline ">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
                 </div>
 
 
             </div>
+            <!-- popular products -->
+            <div class="w-full h-72 my-3">
+                <?php include "../Controller/homeProduct_Controller.php" ?>
+                <p class="text-2xl font-medium mb-4 text-orange-500 ml-6 drop-shadow-md shadow-green-800 text-center">Popular Products</p>
+                <div class=" w-full h-60  flex flex-wrap justify-evenly">
+                    <!-- products card -->
+                    <?php foreach ($newArrival_result as $newArrival_product) {
 
-            <p class="float-right mt-1 text-orange-500 font-medium">See More..</p>
-        </div>
-        <!-- new arrivals -->
-        <div class="w-full h-72 my-3">
-            <p class="text-xl font-medium mb-4">New Arrivals</p>
-            <div class=" w-full h-60  flex justify-evenly">
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
 
+
+                        # code...
+                        $rating = $newArrival_product["product_rating"];
+                        if (($newArrival_product["p_discount"]) != null) {
+
+                            $price = $newArrival_product["p_sell_price"] - ((($newArrival_product["p_discount"]) / 100)  * ($newArrival_product["p_sell_price"]));
+                        } else $price = $newArrival_product["p_sell_price"];
+                    ?>
+
+
+                        <!-- products card -->
+                        <a href="./detailpage.php?productid=<?= $newArrival_product["id"] ?>" class="lg:w-60 w-40 lg:h-60  h-40 bg-white drop-shadow-md mt-2" id="product_<?= $newArrival_product["id"] ?>">
+                            <!-- product image -->
+                            <div class="w-full lg:h-2/3 h-3/5 relative">
+                                <img src="../..<?= $newArrival_product["p_photo_1"] ?>" alt="" class="w-full h-full">
                             </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
+                            <!-- product information -->
+                            <div class="flex justify-evenly lg:h-1/3 h-2/5 bg-yellow-50">
+                                <div>
+                                    <p class="text-center lg:text-[13px] font-semibold text-[11px]"><?= $newArrival_product["p_title"] ?></p>
+                                    <p class=" lg:block text-xs text-center hidden "><?= $newArrival_product["p_des"] ?></p>
+                                    <?php if (($newArrival_product["p_discount"]) != null) { ?> <p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $newArrival_product["p_discount"] ?><span>%off</span></p><?php } ?>
+                                </div>
+                                <div>
+                                    <div class="flex mt-1 ml-3 text-orange-500">
+                                        <?php if ($newArrival_product["product_rating"] != null) {
 
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
+                                            for ($i = 0; $i < $newArrival_product["product_rating"]; $i++) { ?>
 
+                                                <ion-icon name="star" class="lg:w-3 w-2 lg:h-3 h-2 mr-[2px]"></ion-icon>
+                                        <?php }
+                                        } ?>
+
+                                    </div>
+                                    <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                                    <?php if (($newArrival_product["p_discount"]) != null) { ?>
+                                        <p class="lg:text-xs text-center line-through text-[9px]">Ks <?= $newArrival_product["p_sell_price"] ?></p> <?php } ?>
+
+                                </div>
                             </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
+                        </a>
+                    <?php } ?>
                 </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md hidden  lg:inline ">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md lg:inline hidden">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline hidden">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
-            <p class="float-right mt-1 text-orange-500 font-medium">See More..</p>
+
+            <p class="float-right mt-1 text-orange-500 text-sm mr-2 ">See More..</p>
+    </div>
+    <!-- new arrivals -->
+    <div class="w-full h-72 my-3 clear-none">
+        <p class="text-xl font-medium mb-4">New Arrivals</p>
+        <div class=" w-full h-60  flex flex-wrap justify-evenly">
+            <!-- products card -->
+            <?php foreach ($newArrival_result as $newArrival_product) {
+
+
+
+                # code...
+                $rating = $newArrival_product["product_rating"];
+                if (($newArrival_product["p_discount"]) != null) {
+
+                    $price = $newArrival_product["p_sell_price"] - ((($newArrival_product["p_discount"]) / 100)  * ($newArrival_product["p_sell_price"]));
+                } else $price = $newArrival_product["p_sell_price"];
+            ?>
+
+
+                <!-- products card -->
+                <a href="./detailpage.php?productid=<?= $newArrival_product["id"] ?>" class="lg:w-60 w-40 lg:h-60  h-40 bg-white drop-shadow-md mt-2" id="product_<?= $newArrival_product["id"] ?>">
+                    <!-- product image -->
+                    <div class="w-full lg:h-2/3 h-3/5 relative">
+                        <img src="../..<?= $newArrival_product["p_photo_1"] ?>" alt="" class="w-full h-full">
+                    </div>
+                    <!-- product information -->
+                    <div class="flex justify-evenly lg:h-1/3 h-2/5 bg-yellow-50">
+                        <div>
+                            <p class="text-center lg:text-[13px] font-semibold text-[11px]"><?= $newArrival_product["p_title"] ?></p>
+                            <p class=" lg:block text-xs text-center hidden "><?= $newArrival_product["p_des"] ?></p>
+                            <?php if (($newArrival_product["p_discount"]) != null) { ?> <p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $newArrival_product["p_discount"] ?><span>%off</span></p><?php } ?>
+                        </div>
+                        <div>
+                            <div class="flex mt-1 ml-3 text-orange-500">
+                                <?php if ($newArrival_product["product_rating"] != null) {
+
+                                    for ($i = 0; $i < $newArrival_product["product_rating"]; $i++) { ?>
+
+                                        <ion-icon name="star" class="lg:w-3 w-2 lg:h-3 h-2 mr-[2px]"></ion-icon>
+                                <?php }
+                                } ?>
+
+                            </div>
+                            <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                            <?php if (($newArrival_product["p_discount"]) != null) { ?>
+                                <p class="lg:text-xs text-center line-through text-[9px]">Ks <?= $newArrival_product["p_sell_price"] ?></p> <?php } ?>
+
+                        </div>
+                    </div>
+                </a>
+            <?php } ?>
         </div>
-        <!-- Just for you products-->
-        <div class="w-full h-72 my-3">
-            <p class="text-xl font-medium mb-4">Just for you</p>
-            < <div class=" w-full h-60  flex justify-evenly">
+        <p class="float-right mt-1 text-orange-500 font-medium">See More..</p>
+    </div>
+    <!-- Just for you products-->
+    <div class="w-full h-72">
+        <p class="text-xl font-medium my-4">Just for you</p>
+        <div class=" w-full h-60  flex flex-wrap justify-evenly">
+            <!-- products card -->
+            <?php foreach ($justForU_result as $newArrival_product) {
+
+
+
+                # code...
+                $rating = $newArrival_product["product_rating"];
+                if (($newArrival_product["p_discount"]) != null) {
+
+                    $price = $newArrival_product["p_sell_price"] - ((($newArrival_product["p_discount"]) / 100)  * ($newArrival_product["p_sell_price"]));
+                } else $price = $newArrival_product["p_sell_price"];
+            ?>
+
+
                 <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md">
+                <a href="./detailpage.php?productid=<?= $newArrival_product["id"] ?>" class="lg:w-60 w-40 lg:h-60  h-40 bg-white drop-shadow-md mt-2" id="product_<?= $newArrival_product["id"] ?>">
                     <!-- product image -->
-                    <div class="w-full h-2/3 relative">
+                    <div class="w-full lg:h-2/3 h-3/5 relative">
+                        <img src="../..<?= $newArrival_product["p_photo_1"] ?>" alt="" class="w-full h-full">
                     </div>
                     <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
+                    <div class="flex justify-evenly lg:h-1/3 h-2/5 bg-yellow-50">
                         <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
+                            <p class="text-center lg:text-[13px] font-semibold text-[11px]"><?= $newArrival_product["p_title"] ?></p>
+                            <p class=" lg:block text-xs text-center hidden "><?= $newArrival_product["p_des"] ?></p>
+                            <?php if (($newArrival_product["p_discount"]) != null) { ?> <p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $newArrival_product["p_discount"] ?><span>%off</span></p><?php } ?>
                         </div>
                         <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
+                            <div class="flex mt-1 ml-3 text-orange-500">
+                                <?php if ($newArrival_product["product_rating"] != null) {
+
+                                    for ($i = 0; $i < $newArrival_product["product_rating"]; $i++) { ?>
+
+                                        <ion-icon name="star" class="lg:w-3 w-2 lg:h-3 h-2 mr-[2px]"></ion-icon>
+                                <?php }
+                                } ?>
 
                             </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
+                            <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                            <?php if (($newArrival_product["p_discount"]) != null) { ?>
+                                <p class="lg:text-xs text-center line-through text-[9px]">Ks <?= $newArrival_product["p_sell_price"] ?></p> <?php } ?>
 
                         </div>
                     </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline hidden">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md lg:inline hidden">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- products card -->
-                <div class="w-52 h-full bg-white drop-shadow-md  lg:inline hidden">
-                    <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                    </div>
-                    <!-- product information -->
-                    <div class="flex justify-evenly h-1/3 bg-yellow-50">
-                        <div>
-                            <p class="font-medium text-center">Product Name</p>
-                            <p class="text-xs text-center">Product Description</p>
-                            <p class="text-orange-500 text-xs mt-3">20<span>%off</span></p>
-                        </div>
-                        <div>
-                            <div class="flex mt-3 ml-3 text-orange-500">
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-                                <ion-icon name="star-outline" class="w-3 h-3 mr-[1px]"></ion-icon>
-
-                            </div>
-                            <p class=" text-center text-orange-500">Ks <span>amount</span></p>
-                            <p class="text-xs text-center line-through">Ks <span>amount</span></p>
-
-                        </div>
-                    </div>
-                </div>
-
-
+                </a>
+            <?php } ?>
         </div>
         <p class="float-right mt-1 text-orange-500 font-medium">See More..</p>
     </div>
@@ -669,6 +399,7 @@
     </div>
 
     </div>
+    </main>
 
     <?php include "./common/commonFooter.php" ?>
 

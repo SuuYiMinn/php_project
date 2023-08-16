@@ -77,7 +77,7 @@
 
         <?php } else { ?>
             <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
-        <?php } ?>
+        <?php }?>
 
     </menu>
     </div>

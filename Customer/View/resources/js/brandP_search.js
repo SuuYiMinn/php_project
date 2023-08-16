@@ -1,8 +1,15 @@
     $(document).ready(function () {
 
-     $("#brand_product_search").keyup(
+     $("#brand_product_search").keyup(function () {
+      brandProduct_search($(this).val());
+     });
 
-      function () {
+     $("#brand_product_search_mobile").keyup(function () {
+      brandProduct_search($(this).val());
+     });
+
+
+      function  brandProduct_search(searchKey) {
 
         
         $.ajax({
@@ -21,6 +28,14 @@
             for (const brand_product of search_brand_products) {
               var discount = "";
               var normal_price = "";
+
+              var rating = "";
+
+              var product_rating = brand_product["product_rating"];
+    
+              for (let index = 0; index < product_rating; index++) {
+                rating += `<ion-icon name="star" class="lg:w-3 w-2 lg:h-3 h-2 mr-[2px]"></ion-icon>`;
+              }
     
               if (brand_product["p_discount"] != null) {
                 discount = `<p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2">${brand_product["p_discount"]}%off</p>`;
@@ -47,11 +62,8 @@
                               </div>
                               <div>
                                   <div class="flex mt-1 ml-3 text-orange-500">
-                                      <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
-                                      <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
-                                      <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
-                                      <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
-                                      <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
+                                     
+                                  ${rating}
               
                                   </div>
                                   <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <span>${price}</span></p>
@@ -71,7 +83,7 @@
 
 
 
-     )  
+     
 
 
 

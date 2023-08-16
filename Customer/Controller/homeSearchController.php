@@ -7,7 +7,7 @@ $searchProduct = $_POST["SearchText"];
 include "../Model/model.php";
 
 $sql = $pdo -> prepare(
-    "SELECT * FROM m_products WHERE p_title LIKE :productname"
+    "SELECT * FROM m_products WHERE p_title LIKE :productname AND del_flg = 0"
 );
 
 $sql -> bindValue(":productname", '%'.$searchProduct.'%');

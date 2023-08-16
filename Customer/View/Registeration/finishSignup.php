@@ -1,8 +1,8 @@
-<?php 
+<?php
 session_start();
-if(!isset($_SESSION["user_account"])){
+if (!isset($_SESSION["user_account"])) {
     header("Location: ./signup.php");
-} 
+}
 
 ?>
 
@@ -30,10 +30,14 @@ if(!isset($_SESSION["user_account"])){
             <p class="text-orange-500 text-3xl font-semibold text-center">Your Account</p>
             <p class="text-orange-500 text-3xl font-semibold text-center">Has been Registered</p>
 
-            <form action="../../Controller/finishSignUpController.php" method ="post" class= "mt-6 h-28 flex lg:flex-row flex-col justify-around " >
+            <form action="../../Controller/finishSignUpController.php" method="post" class="mt-6 h-28 flex lg:flex-row flex-col justify-around items-center ">
+                <div class="mb-4">
+                    <p class="font-medium ">User Name</p>
+                    <input type="text" name="username" class="h-8 ring-[1px] rounded-md mr-2 my-2">
+                    <p class="text-xs text-orange-500">If you didn't add name your user email address will be remark as your user name</p>
+                </div>
 
-            <input type="text" name="username" class="  h-8 ring-[1px] rounded-md mr-2">
-            <input type="submit" value="Go Home page" class=" h-8 py-[2px] px-2 bg-green-800 text-white rounded-md">
+                <input type="submit" value="Go Home page" class=" h-8 py-[2px] px-2 bg-green-800 text-white rounded-md">
 
             </form>
 
@@ -51,7 +55,7 @@ if(!isset($_SESSION["user_account"])){
 
     </main>
 
-   
+
 
 </body>
 
