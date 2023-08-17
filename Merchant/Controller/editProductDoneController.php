@@ -8,7 +8,7 @@
 // $ppro = $_SESSION["ppro"];
 // $id = $ppro[0]["id"];
 
-print_r($_POST);
+// print_r($_POST);
 
 if (count($_POST) == 0) {
     header("Location: ../View/errors/error.php");
@@ -41,12 +41,29 @@ $pimg3tmp = $_FILES["default_img3"]["tmp_name"];
 $pimg4 = $_FILES["default_img4"]["name"];
 $pimg4tmp = $_FILES["default_img4"]["tmp_name"];
 $uploads_dir = "../../Storage/products/";
-include "../Model/model.php";
 
-move_uploaded_file($pimg1tmp, "$uploads_dir/$pimg1");
-move_uploaded_file($pimg2tmp, "$uploads_dir/$pimg2");
+include "../Model/model.php";
+$pphoto = "";
+if( $pimg1 != ""){
+    $pphoto .= "p_photo_1 = :pphoto1,";
+    move_uploaded_file($pimg1tmp, "$uploads_dir/$pimg1");
+}
+if( $pimg2 != ""){
+    $pphoto .= "p_photo_2 = :pphoto2,";
+    move_uploaded_file($pimg2tmp, "$uploads_dir/$pimg2");
+}
+if( $pimg3 != ""){
+    $pphoto .= "p_photo_3 = :pphoto3,";
+    move_uploaded_file($pimg3tmp, "$uploads_dir/$pimg3");
+}
+if( $pimg4 != ""){
+    $pphoto .= "p_photo_4 = :pphoto4,";
+    move_uploaded_file($pimg4tmp, "$uploads_dir/$pimg4");
+}
+
+/*move_uploaded_file($pimg2tmp, "$uploads_dir/$pimg2");
 move_uploaded_file($pimg3tmp, "$uploads_dir/$pimg3");
-move_uploaded_file($pimg4tmp, "$uploads_dir/$pimg4");
+move_uploaded_file($pimg4tmp, "$uploads_dir/$pimg4");*/
 
 // if ((move_uploaded_file($pimg1tmp, "../../Storage/products/" . $pimg1)) 
 // ||
@@ -62,10 +79,7 @@ move_uploaded_file($pimg4tmp, "$uploads_dir/$pimg4");
     
         " UPDATE  m_products SET
         p_title = :ptitle,
-        p_photo_1 = :pphoto1,
-        p_photo_2 = :pphoto2,
-        p_photo_3 = :pphoto3,
-        p_photo_4 = :pphoto4,
+        $pphoto
         p_category = :pcategory,
         p_sub_category = :psubcategory,
         p_brand = :pbrand,
@@ -82,10 +96,22 @@ move_uploaded_file($pimg4tmp, "$uploads_dir/$pimg4");
     );
     $sql->bindValue(":id", $pid);
     $sql->bindValue(":ptitle", $pname);
-    $sql->bindValue(":pphoto1", "/Storage/products/" . $pimg1);
-    $sql->bindValue(":pphoto2", "/Storage/products/" . $pimg2);
-    $sql->bindValue(":pphoto3", "/Storage/products/" . $pimg3);
-    $sql->bindValue(":pphoto4", "/Storage/products/" . $pimg4);
+    if( $pimg1 != ""){
+        $sql->bindValue(":pphoto1", "/Storage/products/" . $pimg1);
+    }
+    if( $pimg2 != ""){
+        $sql->bindValue(":pphoto2", "/Storage/products/" . $pimg2);
+    }
+    if( $pimg3 != ""){
+        $sql->bindValue(":pphoto3", "/Storage/products/" . $pimg3);
+    }
+    if( $pimg4 != ""){
+        $sql->bindValue(":pphoto4", "/Storage/products/" . $pimg4);
+    }
+   
+    // $sql->bindValue(":pphoto2", "/Storage/products/" . $pimg2);
+    // $sql->bindValue(":pphoto3", "/Storage/products/" . $pimg3);
+    // $sql->bindValue(":pphoto4", "/Storage/products/" . $pimg4);
     $sql->bindValue(":pcategory", $pcategory);
     $sql->bindValue(":psubcategory", $psubcategory);
     $sql->bindValue(":pbrand", $pbrand);

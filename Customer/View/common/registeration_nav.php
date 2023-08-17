@@ -26,35 +26,49 @@
                 <p>godeal33@gmail.com</p>
         </div>
         </message>
+        <?php
+        include "../../Controller/registeration_accController.php";
 
+        if ($accountresult != null) {
 
-        <div class="flex py-1">
-            <login class="mx-4">Login</login>
-            <login>Sign Up</login>
-        </div>
+            $customer_name = $accountresult[0]["c_name"];
+
+        ?>
+
+            <div> <a href="../userProfile.php"><?= $customer_name ?></a> </div> <?php } else { ?>
+
+            <div class="flex py-1">
+                <a href="./login.php" class="mx-4">Login</a>
+                <a href="./signup.php">Sign Up</a>
+            </div> <?php } ?>
     </nav>
     <!--navigation bar end-->
     <!--menu bar start-->
     <div class="lg:inline hidden">
-    <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
-        <div class="w-[100px] h-[30px]">
-            <img src="../resources/img/photo/Logo.png" alt="logo" class="pt-0">
-        </div>
+        <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
+            <a href="./home.php" class="w-[100px] h-[30px]">
+                <img src="../resources/img/photo/Logo.png" alt="logo" class="pt-0">
+            </a>
 
-        <p>Home</p>
-        <p>Shop</p>
-        <p>About Us</p>
-        <p>Contact Us</p>
-        <p>Help</p>
-        <searchBar class="relative">
+            <a href="../homepage.php">Home</a>
+            <a href="../brandlist.php">Brand</a>
+            <a href="../aboutUs.php">About Us</a>
+            <a href="../aboutUs.php">Contact Us</a>
+            <a href="../aboutUs.php">Help</a>
+            <!-- <searchBar class="relative">
             <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
 
             <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
-        </searchBar>
-        <ion-icon name="notifications" class="w-[23px] h-[23px] fill-[#ff9f29]"></ion-icon>
-        <ion-icon name="cart" class="w-[23px] h-[23px] fill-[#ff9f29]"></ion-icon>
+        </searchBar> -->
+            <ion-icon name="notifications" class="w-[23px] h-[23px] fill-[#ff9f29]"></ion-icon>
+            <?php if ($accountresult != null) { ?>
+            <a href="../cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
 
-    </menu>
+        <?php } else { ?>
+            <a href="./signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+        <?php } ?>
+
+        </menu>
     </div>
     <!--menu bar end-->
     <!--mobile menu bar start-->
@@ -62,19 +76,29 @@
         <div class="w-[70px] h-[20px]">
             <img src="../resources/img/photo/logo.png" alt="logo" class="pt-0">
         </div>
-        <searchBar class="relative">
+        <!-- <searchBar class="relative">
             <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
 
             <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
-        </searchBar>
+        </searchBar> -->
         <ion-icon name="notifications" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon>
-        <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon>
-        <ion-icon name="menu-outline" class="w-[20px] h-[20px] text-[#ff9f29]" id="menu"></ion-icon>
+
+        <?php if ($accountresult != null) { ?>
+            <a href="../cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+
+        <?php } else { ?>
+            <a href="./signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+        <?php } ?>
+        <ion-icon name="menu-outline" class="w-[20px] h-[20px] text-[#ff9f29]" id="commonNav_menu"></ion-icon>
     </div>
-    <div class="w-28 h-36 bg-black opacity-70 float-right  text-white text-center flex flex-col justify-evenly absolute top-10 right-2 lg:invisible sm:visible" id="dropdown_menu">
-        <p>About Us</p>
-        <p>Brand</p>
-        <p>User Profile</p>
+    <div class="w-28 h-36 bg-black opacity-70 float-right  text-white text-center flex flex-col justify-evenly absolute top-10 right-2 lg:invisible sm:visible" id="commonNav_dropdown">
+        <a href = "../aboutUs.php">About Us</a>
+        <a href= "../brandlist.php" >Brand</a>
+        <?php  if($accountresult != null){ ?>
+        <a href="../userProfile.php"><?=$customer_name?></a> <?php }else {?>
+
+            <a href="./signup.php">Sign Up </a>
+            <a href= "./login.php" >Login</a> <?php }?>
 
     </div>
     <!--mobile menu bar end-->

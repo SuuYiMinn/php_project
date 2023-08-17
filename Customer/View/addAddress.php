@@ -19,10 +19,15 @@ include "../Controller/addAddressController.php";
 </head>
 
 <body>
+<<<<<<< HEAD
   <!--navgation and header session start-->
 
   <?php include "./common/nav_without_search.php" ?>
 
+=======
+  <?php include "./common/nav_without_search.php." ?>
+  
+>>>>>>> 354ea645f4cadbce3ea7a2809ee8dc34441b9480
 
   <!-- body -->
   <form action="./checkout.php" method="post">

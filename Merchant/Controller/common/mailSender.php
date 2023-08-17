@@ -11,7 +11,7 @@ require './lib/PHPMailer/src/SMTP.php';
 
 class SendMail
 {
-    public function sendMail($toMail,$subject,$body)
+    public function sendMail($toMail,$subject,$body,$imgs)
     {
         $mail = new PHPMailer(true);
 
@@ -21,17 +21,17 @@ class SendMail
             $mail->isSMTP();                                         
             $mail->Host       = 'smtp.gmail.com';                    
             $mail->SMTPAuth   = true;                                  
-            $mail->Username   = 'suuyiminn@gmail.com';   //<< change   
-            $mail->Password   = 'hfqsmkdwpahtzvfl';          //<< change                     
+            $mail->Username   = 'g3phpproject03@gmail.com';   //<< change   
+            $mail->Password   = 'gdmfaeburjhwjypk';          //<< change                     
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
             $mail->Port       = 465;  
 
-            // for ($i=0; $i < count($imgs); $i++) {
-            //     $mail->addEmbeddedImage($imgs[$i], "img$i");
-            // }
+            for ($i=0; $i < count($imgs); $i++) {
+                $mail->addEmbeddedImage($imgs[$i], "img$i");
+            }
 
             //Recipients
-            $mail->setFrom('suuyiminn@gmail.com',"GoDeal"); //<<change
+            $mail->setFrom('g3phpproject03@gmail.com',"GoDeal"); //<<change
             $mail->addAddress($toMail);      
 
             //Content

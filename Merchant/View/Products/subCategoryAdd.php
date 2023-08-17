@@ -45,7 +45,7 @@ session_start();
                     <div class="mb-5 text-md flex flex-row items-center">
 
                         <label class="w-44 text-blueText ">Sub-Category Name:</label>
-                        <input name="subcatname" type="text" class="block w-lg rounded-lg border border-blueText px-20 py-2 text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-inputBox pl-[45px]" placeholder="Name">
+                        <input name="subcatname" required type="text" class="block w-lg rounded-lg border border-blueText px-20 py-2 text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-inputBox pl-[45px]" placeholder="Name">
 
                         <!-- <button name="" class="add_field_button ml-10 text-whiteText rounded-lg px-8 py-1.5 bg-button border border-button  text-sm font-RobotoSlab shadow-sm hover:bg-orange hover:border-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange">Next</button> -->
 

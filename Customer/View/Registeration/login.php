@@ -12,12 +12,13 @@ session_start()
     <link rel="stylesheet" href="./resources/lib/tailwind/input.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../resources/js/menu.js" defer></script>
     <title>Sign in</title>
 </head>
 
 <body>
     <!-- navigation bar-->
-    <?php include "../common/CommonNavigation.php" ?>
+    <?php include "../common/registeration_nav.php" ?>
 
 
 
@@ -79,7 +80,7 @@ session_start()
 
     </main>
     <?php include "../common/commonFooter.php" ?>
-    <?php include "../common/commonFooterMobile.php" ?>
+   
 </body>
 
 </html>

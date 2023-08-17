@@ -39,7 +39,7 @@
     <!-- start of lower -->
 
     <!-- start of left side -->
-    <aside id="logo-sidebar" class="fixed h-screen shadow-3xl rounded-lg transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <aside id="logo-sidebar" class="fixed z-50 h-screen shadow-3xl rounded-lg transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
     <!-- <aside class="bg-whiteText fixed z-40 shadow-3xl rounded-lg" aria-label="Sidebar"> -->
         
         <ul class="space-y-3 text-lg">
@@ -103,7 +103,7 @@
             </li>
             <!-- end of orders -->
             <!-- start of message -->
-            <li class="message">
+            <!-- <li class="message">
                 <a href="../Message/message.php" class="flex items-center px-10 py-3 hover:bg-orange hover:cursor-pointer group rounded-lg">
                     <svg class="messageicon fill-orange group-hover:fill-whiteText w-4 h-4" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
                         <path d="M40 4H8C5.79 4 4.02 5.79 4.02 8L4 44l8-8h28c2.21 0 4-1.79 4-4V8c0-2.21-1.79-4-4-4zm-4 24H12v-4h24v4zm0-6H12v-4h24v4zm0-6H12v-4h24v4z" />
@@ -113,7 +113,7 @@
                     <span class="message ml-2 font-RobotoSlab text-blueText group-hover:text-whiteText font-bold">Message</span>
 
                 </a>
-            </li>
+            </li> -->
             <!-- end of message -->
             <!-- start of setting -->
             <li class="setting">

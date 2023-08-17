@@ -11,4 +11,5 @@
  $sql -> execute();
 
  $brand_result = $sql->fetchAll(PDO::FETCH_ASSOC);
+ 
 ?>

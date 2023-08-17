@@ -27,9 +27,19 @@ $region_id = $_POST["region"];
 
 include "../Model/model.php";
 
+<<<<<<< HEAD
+=======
+$sql=$pdo->prepare(
+    "SELECT * FROM m_products  WHERE id = :productid AND del_flg = 0"
+);
+
+$sql->bindValue(":productid",$product_id);
+$sql->execute();
+$productDetail_result = $sql->fetchAll(PDO::FETCH_ASSOC);
+>>>>>>> 354ea645f4cadbce3ea7a2809ee8dc34441b9480
 
 $sql2=$pdo->prepare(
-    "SELECT * FROM m_customers  WHERE c_name = :name"
+    "SELECT * FROM m_customers  WHERE c_name = :name AND del_flg = 0"
 );
 
 $sql2->bindValue(":name",$name);
@@ -37,7 +47,7 @@ $sql2->execute();
 $result = $sql2->fetchAll(PDO::FETCH_ASSOC);
 
 $sql3=$pdo->prepare(
-    "SELECT * FROM m_regions  WHERE id = :region_id"
+    "SELECT * FROM m_regions  WHERE id = :region_id AND del_flg = 0"
 );
 
 $sql3->bindValue(":region_id",$region_id);

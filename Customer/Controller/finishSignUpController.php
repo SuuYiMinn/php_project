@@ -1,5 +1,5 @@
 <?php 
-   
+   // user finish the sing up steps and lead to home page 
    session_start();
 
 
@@ -14,7 +14,7 @@
     include "../Model/model.php";
     $sql= $pdo->prepare(
   
-      "UPDATE m_customers SET c_name = :customername WHERE id = :userId"  
+      "UPDATE m_customers SET c_name = :customername WHERE id = :userId AND del_flg = 0"  
     );
 
     $sql ->bindValue(":customername",$fin_signUp_username);

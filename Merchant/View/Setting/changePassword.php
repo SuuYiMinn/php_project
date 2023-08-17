@@ -26,16 +26,20 @@ session_start();
     <!-- start of right side -->
 
 
+    <div class="z-30 w-full ml-20 flex flex-col justify-center items-center bg-whiteText fixed">
+            <div class="text-whiteText font-Tommorrow bg-orange border-2 rounded-full border-orange shadow-3xl px-20 py-5 text-xl font-bold mb-3 italic">Change Password</div>
 
-    <div class="flex flex-col mt-3 items-center px-3 ml-[220px] md:h-screen">
-        <div class="w-full px-5 py-3 md:mt-0 sm:max-w-md ">
+        </div>
+    <div class=" z-10 flex flex-col mt-20 items-center px-3 ml-[190px] md:h-screen">
+        
+        <!-- <div class="w-full px-5 py-3 md:mt-0 sm:max-w-md "> -->
             <!-- title -->
-            <div class="flex flex-col justify-center items-center">
+            <!-- <div class="flex flex-col justify-center items-center">
                 <div class="text-blueText text-lg font-bold mb-3">Change Password</div>
                 <div class="w-[500px] h-[2px] bg-orange shadow-3xl"></div>
-            </div>
+            </div> -->
             <!-- end title -->
-            <form class="mt-4 space-y-3 lg:mt-5 md:space-y-5" action="../../Controller/settingController.php" method="post">
+            <form class="mt-10 space-y-3 lg:mt-5 md:space-y-5" action="../../Controller/settingController.php" method="post">
                 <div>
                     <label for="email" class="block mb-2 text-md font-semibold text-blueText dark:text-white">Your email</label>
                     <input type="email" name="email" id="email" class=" border border-blueText text-greyText1 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
@@ -60,7 +64,7 @@ session_start();
                 </div>
                 <button type="submit" name="setting" class="w-full text-whiteText text-md bg-button hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Reset passwod</button>
             </form>
-        </div>
+        <!-- </div> -->
     </div>
 
 

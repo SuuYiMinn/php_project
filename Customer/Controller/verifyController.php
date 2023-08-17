@@ -1,4 +1,7 @@
 <?php 
+
+
+// user verified the code from mail  and lead to finish sign up to add user name
 session_start();
 
  $user_code = $_GET["token"]; //user input code
@@ -6,7 +9,7 @@ session_start();
 
  $sql = $pdo->prepare(
 
-  "SELECT * FROM m_customers WHERE code = :verifycode"
+  "SELECT * FROM m_customers WHERE code = :verifycode AND del_flg = 0"
 
  );
  $sql->bindValue(":verifycode" , $user_code);
@@ -21,7 +24,7 @@ session_start();
  if (count($resultcode) != 0){  
     
     $verifysql = $pdo->prepare(
-        "UPDATE m_customers SET verify = 1 WHERE code = :verifycode");
+        "UPDATE m_customers SET verify = 1 WHERE code = :verifycode AND del_flg = 0");
 
         $verifysql->bindValue(":verifycode",$user_code);
 

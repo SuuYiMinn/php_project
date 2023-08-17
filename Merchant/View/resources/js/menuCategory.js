@@ -9,28 +9,29 @@ $(document).ready(function () {
           selectedCategoryId: $(this).find('p').text(),
         },
         success: function (res) {
-          console.log(res);
+          // console.log(res);
           $("#subdropdown").empty();
           // $("#setown").empty();
           let receivesubcategory = JSON.parse(res);
-          // console.log(receivesubcatgory);
+          console.log(receivesubcategory);
           for (const subcategory of receivesubcategory) {
-            console.log(subcategory);
+            // console.log(subcategory);
              $("#subdropdown").append(
               `
-                
-                <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">${subcategory.sub_category_name}</a>
+               <li class="">
+               <button type="button" class="subCat block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                     ${subcategory.sub_category_name}
+                    <p hidden>${subcategory.id}</p>
+                  </button>
                 </li>
-
+                
               `
              )
           }
         },
   
-  
-  
-  
+        
+        
   
   
         error: function (error) {

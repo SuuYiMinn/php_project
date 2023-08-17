@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="./resources/lib/tailwind/input.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../resources/js/menu.js"></script>
     <title>Sign Up</title>
 </head>
 
 <body>
 
 
-    <?php include "../common/CommonNavigation.php" ?>
+<?php include "../common/registeration_nav.php" ?>
     <form action="../../Controller/signupController.php" method="post">
         <main class=" lg:flex lg:w-full w-5/6 overflow-x-hidden mx-auto">
             <div class="lg:w-1/3 w-5/6 mx-auto mt-6 lg:mr-0">
@@ -58,7 +59,7 @@
         </main>
     </form>
     <?php include "../common/commonFooter.php" ?>
-    <?php include "../common/commonFooterMobile.php" ?>
+   
 </body>
 
 </html>

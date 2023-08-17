@@ -15,6 +15,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
   <!--navgation and header session start-->
 
   <?php include "./common/nav_without_search.php" ?>
@@ -22,6 +23,9 @@
   $data = $_POST;
   $datastring = serialize($data);
   ?>
+=======
+  <?php include "./common/nav_without_search.php" ?>
+>>>>>>> 354ea645f4cadbce3ea7a2809ee8dc34441b9480
   <br />
 
   <!-- body -->

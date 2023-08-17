@@ -12,7 +12,7 @@ if (count($_POST) == 0) {
 
  $sql = $pdo->prepare(
 
-   " SELECT * FROM m_customers WHERE c_email = :email"
+   " SELECT * FROM m_customers WHERE c_email = :email AND del_flg = 0"
 
  );
  $sql->bindValue(":email", $email);

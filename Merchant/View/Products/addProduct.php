@@ -38,11 +38,11 @@ include "../../Controller/brandListController.php";
     <?php include "../Layout/nav.php"; ?>
     <!-- start of right side -->
     <!-- title of Edit profile -->
-    <div class="z-50 ml-64 flex flex-col justify-center items-center bg-whiteText sticky">
-        <div class="text-blueText text-lg text-center font-bold mb-5">Add Product</div>
-        <div class="w-[300px] h-[3px] bg-orange shadow-3xl"></div>
+    <div class="z-30 w-full ml-20 flex flex-col justify-center items-center bg-whiteText fixed">
+        <div class="text-whiteText font-Tommorrow bg-orange border-2 rounded-full border-orange shadow-3xl px-20 py-5 text-xl font-bold mb-3 italic">Add Product</div>
+        <!-- <div class="w-[300px] h-[3px] bg-orange shadow-3xl"></div> -->
     </div>
-    <div class="ml-64 px-10 py-2 flex flex-col justify-center items-center mb-10">
+    <div class="z-10 mt-20 ml-64 px-10 py-2 flex flex-col justify-center items-center mb-10">
 
         <form class="" action="../../Controller/productaddController.php" method="post" enctype="multipart/form-data">
             <div class=" mt-10 flex flex-row justify-center">
