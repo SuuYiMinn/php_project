@@ -15,21 +15,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-  <!--navgation and header session start-->
-=======
-  <?php include "./common/nav_without_search.php" ?>
-  <p class="text-orange-500 font-medium text-2xl text-center my-5">My Cart</p>
-  <section class=" w-full h-[100vh] flex lg:flex-row flex-col justify-around">
-    <!-- products -->
-    <div class="lg:w-2/5 w-full lg:h-56 h-80 overflow-y-auto">
-      <!-- one product -->
-      <div class="w-11/12 lg:h-24 h-20 shadow-md flex justify-start items-center py-1 px-1 mx-auto relative">
-        <input class="lg:w-4 lg:h-4 w-2 h-2" type="checkbox" />
-        <div class=" lg:w-20 w-14 ml-2">
-          <img class="w-full" src="./resources/img/photo/product.jpg" alt="" />
-        </div>
->>>>>>> 354ea645f4cadbce3ea7a2809ee8dc34441b9480
 
   <?php
   include "./common/nav_without_search.php";

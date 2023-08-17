@@ -21,13 +21,7 @@ include "../Controller/checkOutController.php";
   <title>CheckOut</title>
 </head>
 
-<<<<<<< HEAD
-<body class="overflow-x-hidden">
-  <!--navgation and header session start-->
-
-=======
 <body class="overflow-x-hidden" >
->>>>>>> 354ea645f4cadbce3ea7a2809ee8dc34441b9480
   <?php include "./common/nav_without_search.php" ?>
 
   <div class="w-full">
