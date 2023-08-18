@@ -16,7 +16,7 @@ $(document).ready(function() {
       url: "../Controller/brand_search_controller.php",
       type: "POST",
       data: {
-        searchText: $(this).val(),
+        searchText: searchkey,
       },
       success: function (res) {
         console.log(res);

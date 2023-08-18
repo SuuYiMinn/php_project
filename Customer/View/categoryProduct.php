@@ -17,8 +17,8 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./resources/lib/jquery/jquery.js"></script>
-    <script src="./resources/js/category.js" defer></script>
-    <script src="./resources/js/menu.js" defer></script>
+    <script src="./resources/js/category.js?id=<?= time() ?>" defer></script>
+    <script src="./resources/js/menu.js?id=<?= time() ?>" defer></script>
 
     <title>CategoryProducts</title>
 </head>
@@ -66,8 +66,8 @@
         </nav>
         <!--navigation bar end-->
         <!--menu bar start-->
-        <div class="lg:inline hidden bg-white">
-            <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
+        <div class="lg:inline hidden">
+            <menu class="w-full flex justify-evenly py-2 border lg:visible invisible bg-white"  >
                 <a href="./homepage.php" class="w-[100px] h-[30px]">
                     <img src="./resources/img/photo/Logo.png" alt="logo" class="pt-0">
                 </a>
@@ -79,8 +79,9 @@
                 <a href="./aboutUs.php">Help</a>
 
                 <searchBar class="relative">
-                    <input id="cate_search" class="placeholder:italic placeholder:text-slate-400 block
-                 bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
+                    <input class="placeholder:italic placeholder:text-slate-400 block
+                 bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500
+                  focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" id="cate_search"  />
 
                     <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
                 </searchBar>
@@ -100,7 +101,8 @@
                 <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
             </div>
             <searchBar class="relative">
-                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
+                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none
+                 focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" id="cate_search_mobile" />
 
                 <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
             </searchBar>
@@ -162,7 +164,7 @@
 
 
                 <!-- products card -->
-                <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:w-60 w-40 lg:h-60  h-40 bg-white drop-shadow-md mt-2" id="product_<?= $products["id"] ?>">
+                <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:w-60 w-40 lg:h-60 h-40 bg-white drop-shadow-md mt-2" id="product_<?= $products["id"] ?>">
                     <!-- product image -->
                     <div class="w-full lg:h-2/3 h-3/5 relative">
                         <img src="../..<?= $products["p_photo_1"] ?>" alt="" class="w-full h-full">
@@ -198,7 +200,26 @@
         </div>
     </div>
 
+    <!-- pagentation -->
+
+    <ul class="flex justify-center mb-8">
+        <li class="ml-1 border-1 border-orange-500  
+        <?php if($page <= 1 ) { echo "disabled";}?>">
+
+        <a href="?page=<?= $page-1?>& category_id=<?= $cate_id ?> ">previous</a></li>
+
+        <?php  for ($i=1; $i <= $page_list ; $i++) { ?>
+                <li  class="ml-1 border-1 border-orange-500"> <a href="?page=<?= $i ?>& category_id=<?= $cate_id ?> "><?= $i ?></a></li>
+                
+<?php } ?>
+        <li class="ml-1 border-1 border-orange-500 
+        <?php if($page >= $page_list ) { echo "disabled";}?> ">
+
+        <a href="?page=<?= $page-1?>& category_id=<?= $cate_id ?> ">next</a></li>
+    </ul>
+
     <?php include "./common/commonFooter.php" ?>
+
 
 
 </body>

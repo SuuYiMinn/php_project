@@ -60,7 +60,7 @@
 
         </main>
     </form>
-    <?php include "../common/commonFooter.php" ?>
+   
 
 </body>
 

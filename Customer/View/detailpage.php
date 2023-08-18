@@ -128,81 +128,93 @@
             <div class="flex justify-evenly mt-5">
 
                 <button class="lg:w-1/3  w-2/5 h-8  bg-orange-500 rounded-md text-white">
-                    <a id="atag" href="../View/addAddress.php?id=<?= $productDetail_result[0]["id"] ?>" method="get">Buy Now</a>
+                    <a id="atag" href="./cart.php?id=<?= $productDetail_result[0]["id"] ?>" method="get">Buy Now</a>
                 </button>
 
-
-                <button class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white">Add to Cart</button>
+                <button class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white">
+                    <a id="atag" href="./cart.php?id=<?= $productDetail_result[0]["id"] ?>" method="get">Add to Cart</a>
+                </button>
 
             </div>
             <!--review sessions-->
-            <div class="mt-5 w-full">
-                <p class="lg:text-lg mb-2 text-sm">Reviews</p>
-                <!--customer reviews-->
-                <div class="lg:w-4/5 w-11/12 mx-2 text-gray-500">
-                    <p class="lg:text-sm text-xs"><?= $review_result[0]["c_name"] ?></p>
-                    <div class="flex mt-1  text-orange-500">
+            <?php if ($review_result != null) { ?>
+                <div class="mt-5 w-full">
+                    <p class="lg:text-lg mb-2 text-sm">Reviews</p>
+                    <!--customer reviews-->
+                    <div class="lg:w-4/5 w-11/12 mx-2">
+                        <div class="flex">
+                            <div class="w-8 h-8 rounded-full bg-black mx-1">
+                                <img src="../..<?php $all_review["c_profile"] ?>" alt="">
+                            </div>
+                            <p class="lg:text-base text-sm text-orange-400 "><?= $review_result[0]["c_name"] ?></p>
+                        </div>
 
-                        <p class="lg:text-xs text-[9px] mt-2">
-                            <?= $review_result[0]["product_review"] ?>
-                        </p>
+                        
 
+                            <p class="lg:text-sm ml-8 text-xs text-gray-700">
+                                <?= $review_result[0]["product_review"] ?>
+                            </p>
+
+                        
                     </div>
+                    <a href="./ProductReveiw.php?productid=<?= $product_id ?>" class="float-right text-xs font-medium text-orange-500 lg:mr-20">See all reviews..</a>
+
+
                 </div>
-
-
-            </div>
+            <?php } ?>
 
         </div>
     </div>
-        <!--you may also like session-->
-        <div class="lg:ml-10 ml-2 w-full">
-            <p class=" lg:text-xl text-sm font-semibold mb-4">You may also like</p>
+    <!--you may also like session-->
+    <div class="lg:ml-10 ml-0 w-full mb-5">
+        <p class=" lg:text-xl text-sm font-semibold ml-4 mb-4">You may also like</p>
 
-            <div class=" w-full flex overflow-x-auto">
-                <?php foreach ($category_result as $products) {
-                    # code...
+        <div class=" w-full flex flex-wrap">
+            <?php foreach ($category_result as $products) {
+                # code...
 
-                    $rating = $products["product_rating"];
-                    if (($products["p_discount"]) != null) {
+                $rating = $products["product_rating"];
+                if (($products["p_discount"]) != null) {
 
-                        $price = $products["p_sell_price"] - ((($products["p_discount"]) / 100)  * ($products["p_sell_price"]));
-                    } else $price = $products["p_sell_price"];
-                ?>
+                    $price = $products["p_sell_price"] - ((($products["p_discount"]) / 100)  * ($products["p_sell_price"]));
+                } else $price = $products["p_sell_price"];
+            ?>
 
 
-                    <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:h-60 h-40 lg:w-96 w-40 bg-white drop-shadow-md mt-2 ml-5" id="<?= $products["id"] ?>">
-                        <!-- product image -->
-                        <div class="w-full lg:h-2/3 h-3/5 relative bg-gray-200">
+                <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:h-60 h-40 lg:w-60 w-40 bg-white drop-shadow-md mt-2 lg:ml-5 ml-2" id="<?= $products["id"] ?>">
+                    <!-- product image -->
+                    <div class="w-full lg:h-2/3 h-3/5 relative bg-gray-200">
+                    </div>
+                    <!-- product information -->
+                    <div class="flex justify-evenly lg:h-1/3 h-2/5 bg-yellow-50">
+                        <div>
+                            <p class="text-center lg:text-[13px] font-semibold text-[11px]"><?= $products["p_title"] ?></p>
+                            <p class=" lg:block text-xs text-center hidden "><?= $products["p_des"] ?></p>
+                            <?php if (($products["p_discount"]) != null) { ?> <p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $products["p_discount"] ?><span>%off</span></p><?php } ?>
                         </div>
-                        <!-- product information -->
-                        <div class="flex justify-evenly lg:h-1/3 h-2/5 bg-yellow-50">
-                            <div>
-                                <p class="text-center lg:text-[13px] font-semibold text-[11px]"><?= $products["p_title"] ?></p>
-                                <p class=" lg:block text-xs text-center hidden "><?= $products["p_des"] ?></p>
-                                <?php if (($products["p_discount"]) != null) { ?> <p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $products["p_discount"] ?><span>%off</span></p><?php } ?>
-                            </div>
-                            <div>
-                                <div class="flex mt-1 ml-3 text-orange-500">
-                                    <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
-                                    <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
-                                    <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
-                                    <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
-                                    <ion-icon name="star-outline" class="lg:w-3 lg:h-3 w-2 h-2 mr-[1px]"></ion-icon>
+                        <div>
+                            <div class="flex mt-1 ml-3 text-orange-500">
 
-                                </div>
-                                <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <span><?= $price ?></span></p>
-                                <?php if (($products["p_discount"]) != null) { ?>
-                                    <p class="lg:text-xs text-center line-through text-[9px]">Ks <span><?= $products["p_sell_price"] ?></span></p> <?php } ?>
+                                <?php if ($products["product_rating"] != null) {
 
+                                    for ($i = 0; $i < $products["product_rating"]; $i++) { ?>
+
+                                        <ion-icon name="star" class="lg:w-3 w-2 lg:h-3 h-2 mr-[2px]"></ion-icon>
+                                <?php }
+                                } ?>
                             </div>
+                            <p class=" text-center lg:text-[13px] text-[11px] font-semibold text-orange-500 mt-1 w-16 ml-1">Ks <span><?= $price ?></span></p>
+                            <?php if (($products["p_discount"]) != null) { ?>
+                                <p class="lg:text-xs text-center line-through text-[9px]">Ks <span><?= $products["p_sell_price"] ?></span></p> <?php } ?>
+
                         </div>
-                    </a>
+                    </div>
+                </a>
 
-                <?php } ?>
-            </div>
+            <?php } ?>
         </div>
-        <?php include "./common/commonFooter.php" ?>
+    </div>
+    <?php include "./common/commonFooter.php" ?>
 
 </body>
 

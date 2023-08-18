@@ -16,7 +16,7 @@
           url: "../Controller/brandP_searchController.php",
           type: "POST",
           data: {
-            SearchBrand_product: $(this).val(),
+            SearchBrand_product: searchKey,
           },
           success: function (res) {             
            

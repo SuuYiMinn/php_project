@@ -12,8 +12,7 @@
 
 <body>
 
-
-
+<navigation class="sticky top-0 z-50">
 <nav class=" invisible lg:w-full lg:h-6 bg-[#FF9F29] flex justify-evenly text-white text-xs  lg:visible ">
         <div class="flex justify-between py-1">
             <phone class="flex mr-4">
@@ -48,7 +47,7 @@
     <!--navigation bar end-->
     <!--menu bar start-->
     <div class="lg:inline hidden">
-    <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
+    <menu class="w-full flex justify-evenly py-2 border lg:visible invisible bg-white">
         <a href="./home.php" class="w-[100px] h-[30px]">
             <img src="./resources/img/photo/Logo.png" alt="logo" class="pt-0">
         </a>
@@ -75,11 +74,11 @@
     </div>
     <!--menu bar end-->
     <!--mobile menu bar start-->
-    <div class="w-full flex justify-evenly py-2 lg:invisible sm:visible absolute top-0">
+    <div class="w-full flex justify-evenly py-2 lg:invisible sm:visible absolute top-0 bg-white">
         <div class="w-[70px] h-[20px]">
             <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
         </div>
-    <!--    <searchBar class="relative">
+        <!--    <searchBar class="relative">
             <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
 
             <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
@@ -104,6 +103,7 @@
 
     </div>
     <!--mobile menu bar end-->
+    </navigation>
 
       <!--navgation and header session end-->
       </body>

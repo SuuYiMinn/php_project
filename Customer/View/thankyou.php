@@ -1,8 +1,3 @@
-<?php
-
-include "../Controller/orderController.php";
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +14,12 @@ include "../Controller/orderController.php";
 </head>
 
 <body>
-  <?php include "./common/CommonNavigation.php" ?>
+  <!--navgation and header session start-->
+
+  <?php
+  include "./common/nav_without_search.php";
+  include "../Controller/orderController.php";
+  ?>
   <br />
 
   <!-- body -->
