@@ -1,7 +1,7 @@
 <?php
-print_r($_POST);
+// print_r($_POST);
 $received = $_POST["selectedRegionId"];
-echo $received;
+// echo $received;
 include "../Model/model.php";
 $sql = $pdo->prepare(
     "SELECT * FROM m_townships WHERE region_id = :selectedId"
