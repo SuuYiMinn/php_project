@@ -111,14 +111,14 @@ include "../../Controller/orderController.php";
                                     <div class="relative flex flex-wrap items-center xl:justify-between -mx-4 mb-1 pb-5 border-b border-gray-200 border-opacity-40">
                                         <div class="relative w-full md:w-auto px-3 mb-6 xl:mb-0">
                                             <a class="block mx-auto max-w-max" href="#">
-                                                <img class="h-28 object-cover" src="../resources/img/product.jpg" alt="">
+                                                <img class="h-28 object-cover" src="../../..<?= $countProducts["p_photo_1"] ?>" alt="">
                                             </a>
                                         </div>
                                         <div class="w-full md:w-auto mb-6 xl:mb-0">
-                                            <a class="block mb-5 text-md font-heading font-medium hover:underline" href="#"><?= $countProducts["p_title"] ?></a>
+                                            <!-- <a class="block mb-5 text-md font-heading font-medium hover:underline" href="#"><?= $countProducts["p_title"] ?></a> -->
                                             <div class="flex flex-wrap">
                                                 <p class="mr-4 text-sm font-medium">
-                                                    <span class="font-heading"><?= $countProducts["p_detail"] ?></span>
+                                                    <span class="font-heading"><?= $countProducts["p_title"] ?></span>
                                                     <!-- <span class="ml-2 text-gray-400">Silver</span> -->
                                                 </p>
                                                 <!-- <p class="text-sm font-medium">

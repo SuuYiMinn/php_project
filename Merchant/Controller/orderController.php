@@ -41,7 +41,7 @@ $orderDone = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 // for no of products correspond with orderid
 $sql = $pdo->prepare(
-    " SELECT t_order.id,m_products.p_title, t_order.total_amt, m_products.p_sell_price AS unit_price, m_products.p_detail, t_order_detail.qty, m_customers.c_name,
+    " SELECT t_order.id,m_products.p_title,m_products.p_photo_1, t_order.total_amt, m_products.p_sell_price AS unit_price, m_products.p_detail, t_order_detail.qty, m_customers.c_name,
     m_customers.c_phone, m_townships.name As town, m_regions.name As reg,
     t_order.payment, t_order.payment_no, t_order.address
     FROM m_products 

@@ -590,6 +590,10 @@ video {
   right: 0px;
 }
 
+.right-1 {
+  right: 0.25rem;
+}
+
 .right-\[20px\] {
   right: 20px;
 }
@@ -616,14 +620,6 @@ video {
 
 .top-\[45px\] {
   top: 45px;
-}
-
-.right-10 {
-  right: 2.5rem;
-}
-
-.right-1 {
-  right: 0.25rem;
 }
 
 .z-10 {

@@ -17,7 +17,7 @@ include "../../Controller/orderController.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- tailwind -->
-    <link href="../resources/lib/tailwind/output.css?id=<?= time()?>" rel="stylesheet">
+    <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <!-- css -->
     <!-- <link rel="stylesheet" href="../resources/css/style.css"> -->
     <!-- chartjs -->
@@ -25,8 +25,8 @@ include "../../Controller/orderController.php";
     <!-- chart script file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js" integrity="sha512-bp/xZXR0Wn5q5TgPtz7EbgZlRrIU3tsqoROPe9sLwdY6Z+0p6XRzr7/JzqQUfTSD3rWanL6WUVW7peD4zSY/vQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../resources/lib/jquery/jQuery v3.7.0.js"></script>
-    <script src="../resources/js/main.js?id=<?= time()?>" defer></script>
-    <link rel="stylesheet" href="../resources/css/dashboard.css?id=<?= time()?>">
+    <script src="../resources/js/main.js?id=<?= time() ?>" defer></script>
+    <link rel="stylesheet" href="../resources/css/dashboard.css?id=<?= time() ?>">
 </head>
 
 <body>
@@ -47,14 +47,14 @@ include "../../Controller/orderController.php";
 
                 <div class="w-[200px] h-[120px] ml-10 text-center bg-whiteText shadow-3xl rounded-2xl">
                     <p class="mt-8 font-ABeeZee font-bold text-blueText text-xl">Orders Done</p>
-                    <p class="mt-3 font-Tommorrow italic font-bold text-md text-greyText1"><?= count($orderDone)?></p>
+                    <p class="mt-3 font-Tommorrow italic font-bold text-md text-greyText1"><?= count($orderDone) ?></p>
 
                 </div>
                 <!-- end of registration fee -->
                 <!-- start of total orders -->
                 <div class="w-[200px] h-[120px] ml-10 text-center bg-whiteText shadow-3xl rounded-2xl">
                     <p class=" mt-8 font-ABeeZee font-bold text-blueText text-xl">Total Orders</p>
-                    <p class="mt-3 font-Tommorrow italic font-bold text-md text-greyText1"><?= count($orders)?></p>
+                    <p class="mt-3 font-Tommorrow italic font-bold text-md text-greyText1"><?= count($orders) ?></p>
 
                 </div>
                 <!-- end of total orders -->
@@ -113,12 +113,12 @@ include "../../Controller/orderController.php";
                                         }
                                         ?>
 
-                                        <?php for ($k = 0; $k < 5-$reviews[$i]["rating_no"]; $k++) { ?>
+                                        <?php for ($k = 0; $k < 5 - $reviews[$i]["rating_no"]; $k++) { ?>
                                             <svg class="w-[15px] fill-orange inline" data-name="Layer 1" id="Layer_1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <title />
-                                            <path d="M22.28,11.75a2.54,2.54,0,0,0,.6-2.56,2.43,2.43,0,0,0-1.95-1.7l-4.44-.66a.47.47,0,0,1-.36-.27l-2-4.17A2.39,2.39,0,0,0,12,1h0A2.37,2.37,0,0,0,9.83,2.4l-2,4.18a.46.46,0,0,1-.36.27l-4.43.69a2.4,2.4,0,0,0-1.94,1.7,2.53,2.53,0,0,0,.61,2.56L5,15.05a.49.49,0,0,1,.14.43l-.75,4.6a2.53,2.53,0,0,0,1,2.44,2.3,2.3,0,0,0,1.4.48,2.4,2.4,0,0,0,1.13-.29l4-2.18a.45.45,0,0,1,.45,0l4,2.16a2.33,2.33,0,0,0,2.53-.2,2.55,2.55,0,0,0,1-2.45l-.77-4.59a.51.51,0,0,1,.13-.44Zm-4.56,1.83A2.58,2.58,0,0,0,17,15.79l.77,4.6a.48.48,0,0,1-.18.48.46.46,0,0,1-.5,0l-4-2.16a2.34,2.34,0,0,0-2.24,0l-4,2.18a.46.46,0,0,1-.5,0,.47.47,0,0,1-.19-.48L7,15.82a2.58,2.58,0,0,0-.69-2.21L3.08,10.36A.49.49,0,0,1,3,9.86a.48.48,0,0,1,.39-.34l4.43-.68A2.4,2.4,0,0,0,9.58,7.47l2-4.19A.46.46,0,0,1,12,3a.46.46,0,0,1,.43.27l2,4.18a2.43,2.43,0,0,0,1.81,1.36l4.44.66a.45.45,0,0,1,.38.33.48.48,0,0,1-.12.51Z" />
-                                        </svg>
-                                            
+                                                <title />
+                                                <path d="M22.28,11.75a2.54,2.54,0,0,0,.6-2.56,2.43,2.43,0,0,0-1.95-1.7l-4.44-.66a.47.47,0,0,1-.36-.27l-2-4.17A2.39,2.39,0,0,0,12,1h0A2.37,2.37,0,0,0,9.83,2.4l-2,4.18a.46.46,0,0,1-.36.27l-4.43.69a2.4,2.4,0,0,0-1.94,1.7,2.53,2.53,0,0,0,.61,2.56L5,15.05a.49.49,0,0,1,.14.43l-.75,4.6a2.53,2.53,0,0,0,1,2.44,2.3,2.3,0,0,0,1.4.48,2.4,2.4,0,0,0,1.13-.29l4-2.18a.45.45,0,0,1,.45,0l4,2.16a2.33,2.33,0,0,0,2.53-.2,2.55,2.55,0,0,0,1-2.45l-.77-4.59a.51.51,0,0,1,.13-.44Zm-4.56,1.83A2.58,2.58,0,0,0,17,15.79l.77,4.6a.48.48,0,0,1-.18.48.46.46,0,0,1-.5,0l-4-2.16a2.34,2.34,0,0,0-2.24,0l-4,2.18a.46.46,0,0,1-.5,0,.47.47,0,0,1-.19-.48L7,15.82a2.58,2.58,0,0,0-.69-2.21L3.08,10.36A.49.49,0,0,1,3,9.86a.48.48,0,0,1,.39-.34l4.43-.68A2.4,2.4,0,0,0,9.58,7.47l2-4.19A.46.46,0,0,1,12,3a.46.46,0,0,1,.43.27l2,4.18a2.43,2.43,0,0,0,1.81,1.36l4.44.66a.45.45,0,0,1,.38.33.48.48,0,0,1-.12.51Z" />
+                                            </svg>
+
                                         <?php
                                         }
                                         ?>
@@ -147,8 +147,8 @@ include "../../Controller/orderController.php";
                     }
                     ?>
 
-                    
-                
+
+
                     <!-- end of review-cards -->
 
 
@@ -160,40 +160,40 @@ include "../../Controller/orderController.php";
                     <div class=" text-blueText text-lg font-bold">Top Products</div>
                     <!-- end of title -->
                     <!-- start of top-product-cards -->
-<?php foreach ($tops as $top) { ?>
-    <div class="flex flex-row justify-center items-center w-[450px] h-[80px] shadow-3xl rounded-xl mt-5">
-                        <!-- image of top-product -->
-                        <img src="../resources/img/top-product.png" class="w-[80px] h-[60px]" />
-                        <!-- start of details of top-product-->
-                        <div class="flex flex-row justify-center ml-3">
-                            <div class="text-sm text-blueText text-center flex flex-col">
-                                <div><?= $top["p_title"] ?></div>
-                                <div><?= $top["noOfOrders"] ?><span>orders</span></div>
+                    <?php foreach ($tops as $top) { ?>
+                        <div class="flex flex-row justify-center items-center w-[450px] h-[80px] shadow-3xl rounded-xl mt-5">
+                            <!-- image of top-product -->
+                            <img src="../../..<?= $top["p_photo_1"] ?>" class="w-[80px] h-[60px]" />
+                            <!-- start of details of top-product-->
+                            <div class="flex flex-row justify-center ml-3">
+                                <div class="text-sm text-blueText text-center flex flex-col">
+                                    <div><?= $top["p_title"] ?></div>
+                                    <div><?= $top["noOfOrders"] ?><span>orders</span></div>
+                                </div>
+                                <div class="ml-[30px] text-sm text-blueText text-center flex flex-col">
+                                    <div>Inventory</div>
+                                    <div><?= $top["p_stock"] ?><span>items</span></div>
+                                </div>
+                                <div class="ml-[30px] text-sm text-blueText text-center flex flex-col">
+                                    <div>Sales</div>
+                                    <div><?= $top["totalQty"] * $top["p_sell_price"]  ?><span>Ks</span></div>
+                                </div>
+                                <div class="ml-[30px] text-sm text-blueText text-center flex flex-col">
+                                    <div>Price</div>
+                                    <div><?= $top["p_sell_price"] ?><span>Ks</span></div>
+                                </div>
                             </div>
-                            <div class="ml-[30px] text-sm text-blueText text-center flex flex-col">
-                                <div>Inventory</div>
-                                <div><?= $top["p_stock"] ?><span>items</span></div>
-                            </div>
-                            <div class="ml-[30px] text-sm text-blueText text-center flex flex-col">
-                                <div>Sales</div>
-                                <div><?= $top["totalQty"] * $top["p_sell_price"]  ?><span>Ks</span></div>
-                            </div>
-                            <div class="ml-[30px] text-sm text-blueText text-center flex flex-col">
-                                <div>Price</div>
-                                <div><?= $top["p_sell_price"] ?><span>Ks</span></div>
-                            </div>
-                        </div>
-  
-<?php
-} ?>
-                    
+
+                        <?php
+                    } ?>
+
                         <!-- ========== -->
 
                         <!-- end of  details of top-product-->
-                    </div>
-                    <!-- ================================ -->
-                   
-                    <!-- end of top-product-cards -->
+                        </div>
+                        <!-- ================================ -->
+
+                        <!-- end of top-product-cards -->
 
 
                 </div>
@@ -205,25 +205,25 @@ include "../../Controller/orderController.php";
     </div>
     <!-- end of right side -->
     <script>
-    let server_Data = <?php echo json_encode($revAndOrders) ?>;
-    console.log(server_Data);
-    let revenue =[];
-    let orders =[];
-    for (let index = 0; index < server_Data.length; index++) {
-        orders.push(server_Data[index].orders);
-        revenue.push(server_Data[index].revenue);
-        
-    }
-    // console.log(orders);
-    let server_Data2 = <?php echo json_encode($salesByCat) ?>;
-    console.log(server_Data2);
-    let category =[];
-    let sales =[];
-    for (let index = 0; index < server_Data2.length; index++) {
-        category.push(server_Data2[index].category);
-        sales.push(server_Data2[index].Sales);
-        
-    }
+        let server_Data = <?php echo json_encode($revAndOrders) ?>;
+        console.log(server_Data);
+        let revenue = [];
+        let orders = [];
+        for (let index = 0; index < server_Data.length; index++) {
+            orders.push(server_Data[index].orders);
+            revenue.push(server_Data[index].revenue);
+
+        }
+        // console.log(orders);
+        let server_Data2 = <?php echo json_encode($salesByCat) ?>;
+        console.log(server_Data2);
+        let category = [];
+        let sales = [];
+        for (let index = 0; index < server_Data2.length; index++) {
+            category.push(server_Data2[index].category);
+            sales.push(server_Data2[index].Sales);
+
+        }
     </script>
 </body>
 

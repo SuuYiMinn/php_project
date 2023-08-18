@@ -23,7 +23,7 @@ $reviews = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 // for top products
 $sql = $pdo->prepare(
-    "SELECT product_id, noOfOrders, m_products.p_title, m_products.p_stock, m_products.p_sell_price, totalQty
+    "SELECT product_id, noOfOrders,m_products.p_photo_1, m_products.p_title, m_products.p_stock, m_products.p_sell_price, totalQty
     FROM (SELECT SUM(qty) As totalQty, product_id, COUNT(order_id) As noOfOrders FROM t_order_detail
     JOIN t_order ON t_order_detail.order_id = t_order.id
     WHERE t_order.order_done=1 GROUP BY t_order_detail.product_id) aa
