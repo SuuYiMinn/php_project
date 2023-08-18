@@ -115,7 +115,8 @@
     <!--mobile menu bar end-->
   
 
-  <section class=" w-full h-screen overflow-y-auto mt-2">
+  <section class=" w-full mb-20   overflow-y-auto mt-2">
+    <p class="text-center mb-8 mt-4 text-2xl font-medium text-orange-500">Brands Collections</p>
     <div class="full mx-2 flex h-full flex-wrap " id="brand_main_section">
       <?php include "../Controller/brandlistController.php";
 
@@ -123,9 +124,9 @@
        
         <!--brand list -->
 
-        <a  href="./brandProfile.php?brand_id=<?=$brand["id"]?>" class="w-40 border-[1px] py-2 my-2 flex justify-evenly items-center mx-2 ">
+        <a  href="./brandProfile.php?brand_id=<?=$brand["id"]?>" class="lg:w-40 w-36 h-20 border-[1px] py-2 lg:my-2 flex justify-evenly items-center mx-2 ">
 
-          <img src="../..<?= $brand["brand_photo"] ?>" alt="" class="w-4/12">
+          <img src="../..<?= $brand["brand_photo"] ?>" alt="" class="w-4/12 ">
 
         </a>
 

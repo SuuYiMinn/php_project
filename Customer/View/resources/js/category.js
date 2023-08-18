@@ -7,11 +7,11 @@ $(document).ready(function () {
         $(category[index]).removeClass("bg-black");
         $(category[index]).removeClass("bg-opacity-80");
         $(category[index]).removeClass("text-white");
+        $(category[index]).addClass("bg-gray-100");
       }
       $(this).removeClass("bg-gray-100");
-      $(this).addClass("bg-black");
-      $(this).addClass("bg-opacity-80");
-      $(this).addClass("text-white");
+      $(this).addClass("bg-black bg-opacity-80 text-white");
+     
 
       $.ajax({
         url: "../Controller/filterSub_cateController.php",
@@ -48,7 +48,7 @@ $(document).ready(function () {
             } else price = subCate_product["p_sell_price"];
 
             $(".filter_sub_category").append(
-              ` <a href="./detailpage.php?productid=${subCate_product["id"]}" class="lg:w-60 w-40 h-full bg-white drop-shadow-md mt-2" id ="${subCate_product["id"]}">
+              ` <a href="./detailpage.php?productid=${subCate_product["id"]}" class="lg:w-60 w-40 lg:h-60 h-40 bg-white drop-shadow-md mt-2" id ="${subCate_product["id"]}">
                <!-- product image -->
                <div class="w-full lg:h-2/3 h-3/5 relative">
                <img src="../..${subCate_product["p_photo_1"]}" alt="" class="w-full h-full">
@@ -85,22 +85,19 @@ $(document).ready(function () {
     });
   }
 
-    $("#cate_search").keyup(function () {
+  $("#cate_search").keyup(function () {
+    searchCategoryProduct($(this).val());
+  });
+  $("#cate_search_mobile").keyup(function () {
+    searchCategoryProduct($(this).val());
+  });
 
-      searchCategoryProduct(this.val());
-      
-    })
-    $("#cate_search_mobile").keyup(function () {
-
-      searchCategoryProduct(this.val());
-    })
-
-  function searchCategoryProduct (search) {
+  function searchCategoryProduct(search) {
     $.ajax({
       url: "../Controller/homeSearchController.php",
       type: "POST",
       data: {
-        SearchText: $(this).val(),
+        SearchText: search,
       },
       success: function (res) {
         let search_products = JSON.parse(res);
