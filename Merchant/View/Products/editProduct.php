@@ -4,9 +4,9 @@ $productCat = $_SESSION["productCat"];
 $productSubcat = $_SESSION["productSubcat"];
 $productBrand = $_SESSION["productBrand"];
 $product = $_SESSION["product"];
-echo"<pre>";
-print_r($productCat);
-echo"</pre>";
+// echo"<pre>";
+// print_r($productCat);
+// echo"</pre>";
 // echo"<pre>";
 // print_r($productSubcat);
 // echo"</pre>";
@@ -48,8 +48,12 @@ include "../../Controller/subCategoryListController.php";
 
 <body>
     <?php include "../Layout/nav.php"; ?>
+    <div class="z-30 w-full ml-20 flex flex-col justify-center items-center bg-whiteText fixed">
+        <div class="text-whiteText font-Tommorrow bg-orange border-2 rounded-full border-orange shadow-3xl px-20 py-5 text-xl font-bold mb-3 italic">Edit Product</div>
+        <!-- <div class="w-[300px] h-[3px] bg-orange shadow-3xl"></div> -->
+    </div>
     <!-- start of right side -->
-    <div class="ml-64 px-10 py-2 flex flex-col justify-center items-center mb-10">
+    <div class="ml-64 mt-20 z-10 px-10 py-2 flex flex-col justify-center items-center mb-10">
     <form class="" action="../../Controller/editProductDoneController.php" method="post" enctype="multipart/form-data">
             <div class=" mt-10 flex flex-row justify-center">
 

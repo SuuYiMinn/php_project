@@ -128,11 +128,12 @@
             <div class="flex justify-evenly mt-5">
 
                 <button class="lg:w-1/3  w-2/5 h-8  bg-orange-500 rounded-md text-white">
-                    <a id="atag" href="../View/addAddress.php?id=<?= $productDetail_result[0]["id"] ?>" method="get">Buy Now</a>
+                    <a id="atag" href="./cart.php?id=<?= $productDetail_result[0]["id"] ?>" method="get">Buy Now</a>
                 </button>
 
-
-                <button class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white">Add to Cart</button>
+                <button class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white">
+                    <a id="atag" href="./cart.php?id=<?= $productDetail_result[0]["id"] ?>" method="get">Add to Cart</a>
+                </button>
 
             </div>
             <!--review sessions-->

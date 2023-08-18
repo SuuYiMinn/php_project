@@ -1,3 +1,13 @@
+<?php
+session_start();
+$invoice = $_SESSION["invoice"];
+include "../../Controller/editProfileController.php";
+
+echo "<pre>";
+print_r($invoice);
+
+echo "</pre>";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +27,7 @@
     <script src="../resources/js/main.js" defer></script>
     <script src="../resources/lib/jquery/jQuery v3.7.0.js"></script>
     <link rel="stylesheet" href="../resources/css/order.css">
+    <script src="../resources/js/invoice.js?id=<?= time() ?>" defer></script>
 
 </head>
 
@@ -32,20 +43,20 @@
                     <!-- Grid -->
                     <div class="flex justify-between">
                         <div>
-                            <img src="../resources/img/logo.png" class="w-96 h-auto">
+                            <img src="../../..<?= $merchant[0]["me_profile"] ?>" class="w-40 h-auto">
 
                         </div>
                         <!-- Col -->
 
                         <div class="text-right">
                             <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">Invoice #</h2>
-                            <span class="mt-1 block text-gray-500">3682303</span>
+                            <span class="mt-1 block text-gray-500"><?= $invoice[0][0]["id"] ?></span>
 
                             <address class="mt-4 not-italic text-gray-800 dark:text-gray-200">
-                                45 Roker Terrace<br>
-                                Latheronwheel<br>
-                                KW5 8NW, London<br>
-                                United Kingdom<br>
+                                <?= $merchant[0]["me_address"] ?><br>
+                                <?= $merchant[0]["town"] ?><br>
+                                <?= $merchant[0]["reg"] ?><br>
+
                             </address>
                         </div>
                         <!-- Col -->
@@ -56,11 +67,11 @@
                     <div class="mt-8 grid sm:grid-cols-2 gap-3">
                         <div>
                             <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Bill to:</h3>
-                            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Sara Williams</h3>
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200"><?= $invoice[0][0]["c_name"] ?></h3>
                             <address class="mt-2 not-italic text-gray-500">
-                                280 Suzanne Throughway,<br>
-                                Breannabury, OR 45801,<br>
-                                United States<br>
+                                <?= $invoice[0][0]["address"] ?>,<br>
+                                <?= $invoice[0][0]["town"] ?>,<br>
+                                <?= $invoice[0][0]["reg"] ?><br>
                             </address>
                         </div>
                         <!-- Col -->
@@ -70,19 +81,21 @@
                             <div class="grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-2">
                                 <dl class="grid sm:grid-cols-5 gap-x-3">
                                     <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Invoice date:</dt>
-                                    <dd class="col-span-2 text-gray-500">03/10/2018</dd>
+                                    <dd class="col-span-2 text-gray-500">
+                                    <?php if ($invoice[0][0]["order_done"] != 1) { date("Y/m/d") ?>
+                                        <?php }  ?></dd>
                                 </dl>
-                                <dl class="grid sm:grid-cols-5 gap-x-3">
+                                <!-- <dl class="grid sm:grid-cols-5 gap-x-3">
                                     <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Due date:</dt>
                                     <dd class="col-span-2 text-gray-500">03/11/2018</dd>
-                                </dl>
-                                <dl class="grid sm:grid-cols-5 gap-x-3">
+                                </dl> -->
+                                <!-- <dl class="grid sm:grid-cols-5 gap-x-3">
                                     <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Status:</dt>
                                     <dd class="col-span-2 text-gray-500">Paid</dd>
-                                </dl>
+                                </dl> -->
                                 <dl class="grid sm:grid-cols-5 gap-x-3">
                                     <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Payment:</dt>
-                                    <dd class="col-span-2 text-gray-500">KBz</dd>
+                                    <dd class="col-span-2 text-gray-500"><?= $invoice[0][0]["payment"] ?></dd>
                                 </dl>
                             </div>
                             <!-- End Grid -->
@@ -95,34 +108,43 @@
                     <div class="mt-6">
                         <div class="border border-gray-200 p-4 rounded-lg space-y-4 dark:border-gray-700">
                             <div class="hidden sm:grid sm:grid-cols-5">
-                                <div class="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">Item</div>
+                                <div class="sm:col-span-2 text-xs font-medium text-gray-500 uppercase">No.</div>
+                                <div class="text-left text-xs font-medium text-gray-500 uppercase">Item </div>
                                 <div class="text-left text-xs font-medium text-gray-500 uppercase">Qty</div>
-                                <div class="text-left text-xs font-medium text-gray-500 uppercase">Rate</div>
                                 <div class="text-right text-xs font-medium text-gray-500 uppercase">Amount</div>
                             </div>
 
                             <div class="hidden sm:block border-b border-gray-200 dark:border-gray-700"></div>
 
-                            <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                                <div class="col-span-full sm:col-span-2">
-                                    <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">Item</h5>
-                                    <p class="font-medium text-gray-800 dark:text-gray-200">Design UX and UI</p>
-                                </div>
-                                <div>
-                                    <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">Qty</h5>
-                                    <p class="text-gray-800 dark:text-gray-200">1</p>
-                                </div>
-                                <div>
-                                    <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">Rate</h5>
-                                    <p class="text-gray-800 dark:text-gray-200">5</p>
-                                </div>
-                                <div>
-                                    <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">Amount</h5>
-                                    <p class="sm:text-right text-gray-800 dark:text-gray-200">$500</p>
-                                </div>
-                            </div>
+                            <?php $num = 0;
+                            foreach ($invoice as $inv) {
+                                foreach ($inv as $inner) {
+                                    # code...
+                            ?>
 
-                            <div class="sm:hidden border-b border-gray-200 dark:border-gray-700"></div>
+                                    <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
+                                        <div class="col-span-full sm:col-span-2">
+                                            <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">No.</h5>
+                                            <p class="font-medium text-gray-800 dark:text-gray-200"><?= ++$num; ?></p>
+                                        </div>
+                                        <div>
+                                            <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">Item</h5>
+                                            <p class="text-gray-800 dark:text-gray-200"><?= $inner["p_title"] ?></p>
+                                        </div>
+                                        <div>
+                                            <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">Qty</h5>
+                                            <p class="text-gray-800 dark:text-gray-200"><?= $inner["qty"] ?></p>
+                                        </div>
+                                        <div>
+                                            <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">Amount</h5>
+                                            <p class="sm:text-right text-gray-800 dark:text-gray-200"><?= $inner["p_sell_price"] ?></p>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+
+
+                            <!-- <div class="sm:hidden border-b border-gray-200 dark:border-gray-700"></div>
 
                             <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
                                 <div class="col-span-full sm:col-span-2">
@@ -162,7 +184,7 @@
                                     <h5 class="sm:hidden text-xs font-medium text-gray-500 uppercase">Amount</h5>
                                     <p class="sm:text-right text-gray-800 dark:text-gray-200">$2000</p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- End Table -->
@@ -173,11 +195,11 @@
                             <!-- Grid -->
                             <div class="grid grid-cols-2 sm:grid-cols-1 gap-3 sm:gap-2">
                                 <dl class="grid sm:grid-cols-5 gap-x-3">
-                                    <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Subtotal:</dt>
-                                    <dd class="col-span-2 text-gray-500">$2750.00</dd>
+                                    <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Total:</dt>
+                                    <dd class="col-span-2 text-gray-500"><?= $inner["total_amt"] ?> Ks</dd>
                                 </dl>
 
-                                <dl class="grid sm:grid-cols-5 gap-x-3">
+                                <!-- <dl class="grid sm:grid-cols-5 gap-x-3">
                                     <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Total:</dt>
                                     <dd class="col-span-2 text-gray-500">$2750.00</dd>
                                 </dl>
@@ -195,7 +217,7 @@
                                 <dl class="grid sm:grid-cols-5 gap-x-3">
                                     <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Due balance:</dt>
                                     <dd class="col-span-2 text-gray-500">$0.00</dd>
-                                </dl>
+                                </dl> -->
                             </div>
                             <!-- End Grid -->
                         </div>
@@ -206,12 +228,12 @@
                         <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Thank you!</h4>
                         <p class="text-gray-500">If you have any questions concerning this invoice, use the following contact information:</p>
                         <div class="mt-2">
-                            <p class="block text-sm font-medium text-gray-800 dark:text-gray-200">example@site.com</p>
-                            <p class="block text-sm font-medium text-gray-800 dark:text-gray-200">+1 (062) 109-9222</p>
+                            <p class="block text-sm font-medium text-gray-800 dark:text-gray-200"><?= $merchant[0]["me_email"] ?></p>
+                            <p class="block text-sm font-medium text-gray-800 dark:text-gray-200"><?= $merchant[0]["me_phone"] ?></p>
                         </div>
                     </div>
 
-                    <p class="mt-5 text-sm text-gray-500">© 2022 Preline.</p>
+                    <!-- <p class="mt-5 text-sm text-gray-500">© 2022 Preline.</p> -->
                 </div>
                 <!-- End Card -->
 
@@ -224,16 +246,28 @@
                         </svg>
                         PDF
                     </a> -->
-                    <a class="inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-md text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-10 bg-button text-whiteText hover:bg-orange dark:focus:ring-offset-gray-800" href="#">
-                        
-                        Send
+                    <a class="inline-flex justify-center text-button items-center gap-x-3 text-center bg-whiteText hover:bg-blue-700  border-transparent text-md text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-10 border-2 border-button hover:bg-orange hover:text-whiteText hover:border-0 dark:focus:ring-offset-gray-800" href="./order.php">
+
+                        Cancel
                     </a>
+                    
+                        <?php if ($invoice[0][0]["order_done"] == 1) { ?>
+                            
+                            <div href="#" class="inline-flex justify-center items-center gap-x-3 text-center bg-orange text-md text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-10 text-whiteText dark:focus:ring-offset-gray-800">
+                            Send Done
+                            </div>
+                        <?php } else { ?>
+                            <a href="../../Controller/invoiceSendController.php?id=<?= $invoice[0][0]["id"] ?>" class="send inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-md text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-10 bg-button text-whiteText hover:bg-orange dark:focus:ring-offset-gray-800">
+                            Send
+                            </a>
+                            <?php } ?>
+                    
                 </div>
                 <!-- End Buttons -->
             </div>
         </div>
         <!-- End Invoice -->
-</div>
+    </div>
 
 </body>
 

@@ -2,8 +2,11 @@
 
 // start of Dongunut chart
 const chartData = {
-    labels: ["Category1", "Category2", "Category3", "Category4", "Category5"],
-    data: [30, 17, 10, 7, 36],
+    // labels: ["Category1", "Category2", "Category3", "Category4", "Category5"],
+    labels: category,
+    
+    // data: [30, 17, 10, 7, 36],
+    data: sales,
   };
   
   const myChart = document.querySelector(".my-chart");
@@ -48,11 +51,13 @@ var areaChartOptions = {
   series: [
     {
       name: 'Revenue',
-      data: [31, 40, 28, 51, 42, 109, 100,120, 200,100, 111,111],
+      // data: [31, 40, 28, 51, 42, 109, 100,120, 200,100, 111,111],
+      data: revenue,
     },
     {
       name: 'Orders',
-      data: [11, 32, 45, 32, 34, 52, 41, 30, 40, 30, 30, 30],
+      // data: [11, 32, 45, 32, 34, 52, 41, 30, 40, 30, 30, 30],
+      data: orders,
     },
   ],
   chart: {

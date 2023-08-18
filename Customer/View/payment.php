@@ -15,23 +15,24 @@
 </head>
 
 <body>
+
   <?php include "./common/nav_without_search.php" ?>
+  <?php
+  $data = $_POST;
+  $datastring = serialize($data);
+  ?>
   <br />
 
   <!-- body -->
   <form action="./thankyou.php" method="post">
+    <input name="invoice_data" value="<?= htmlentities($datastring) ?>" type="text" class="hidden">
     <section class="w-full h-screen flex flex-col justify-around items-center">
-      <input name="full_name" type="text" value="<?= $_POST["full_name"] ?>" class="hidden">
-      <input name="address" type="text" value="<?= $_POST["address"] ?>" class="hidden">
-      <input name="region" type="text" value="<?= $_POST["region"] ?>" class="hidden">
-      <input name="phone_number" type="text" value="<?= $_POST["phone_number"] ?>" class="hidden">
-      <input name="total" type="number" value="11500" class="hidden">
       <p class="font-medium text-2xl mt-10">Choose Payment Method</p>
 
       <label for="COD">
         <p id="CODlabel" class="text-lg my-10">Cash on delivery</p>
       </label>
-      <input type="checkbox" name="COD" id="COD" value="0" class="hidden" >
+      <input type="checkbox" name="COD" id="COD" value="0" class="hidden">
 
 
       <p class="text-lg">OR</p>
@@ -49,7 +50,6 @@
   </form>
 
   <?php include "../View/common/commonFooter.php" ?>
-  <?php include "../View/common/commonFooterMobile.php" ?>
 </body>
 
 </html>

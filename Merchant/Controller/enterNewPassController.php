@@ -5,8 +5,8 @@ if(isset($_POST["newPass"])){
     
     include "../Model/model.php";
     $sql = $pdo->prepare(
-        "UPDATE m_merchant SET
-        password = :password
+        "UPDATE m_merchants SET
+        me_password = :password
         WHERE id = 1
     "
     );

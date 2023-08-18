@@ -53,6 +53,7 @@ include "../../Controller/jointownshipController.php";
                     <img class="w-[200px] h-auto" src="../../../<?= $merchant[0]["me_profile"] ?>" id="meprofileimgid" alt="file upload">
                 </label>
                 <input type="file" name="meprofile" id="meprofile" accept=".png,.jpeg,.jpg" class="hidden">
+                <input type="hidden" name="id" value="<?= $merchant[0]["id"] ?>">
                 <!-- </div> -->
                 <!-- <div class="absolute">
                         <span class="block text-base font-semibold relative text-blue-900 dark:text-white group-hover:text-blue-500">
