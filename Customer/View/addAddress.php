@@ -1,5 +1,8 @@
 <?php
 include "../Controller/addAddressController.php";
+// echo "<pre>";
+// print_r($result_townships);
+// echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -14,12 +17,13 @@ include "../Controller/addAddressController.php";
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="./resources/lib/jquery/jquery.js"></script>
-  <script src="./resources/js/address.js"></script>
+  <script src="./resources/js/address.js?id=<?= time() ?>" defer></script>
   <title>Add Address</title>
 </head>
 
 <body>
   <?php include "./common/nav_without_search.php" ?>
+ 
   
 
   <!-- body -->
@@ -44,7 +48,7 @@ include "../Controller/addAddressController.php";
 
       <div class="mb-8">
         <p class="lg:text-lg text-base opacity-50  text-orange-500">Region</p>
-        <select id="region" name="region" class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text">
+        <select id="region" name="region1" class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text">
           <?php foreach ($result as $region) { ?>
             <option value="<?= $region["id"] ?>"><?= $region["name"] ?></option>
           <?php } ?>
@@ -54,7 +58,9 @@ include "../Controller/addAddressController.php";
       <div class="mb-8">
         <p class="lg:text-lg text-base opacity-50  text-orange-500"> City</p>
         <select id="township" name="township" class="rounded-md ring-1 ring-gray-300 lg:text-lg text-base lg:w-80 w-64 lg:h-10 h-8" type="text">
-          <!-- townships -->
+        <?php foreach ($result_townships as $defaultTown) { ?>
+            <option value="<?= $defaultTown["id"] ?>"><?= $defaultTown["name"] ?></option>
+          <?php } ?>
         </select>
       </div>
 

@@ -52,7 +52,7 @@ include "../../Controller/productDetailsController.php";
 
     <!-- start of product details -->
     <div class="z-10 mt-32 mb-10 ml-[300px]">
-        <div class="flex flex-row space-x-32">
+        <div class="flex flex-row space-x-10">
 
             <!-- start of edit photo -->
 
@@ -156,11 +156,11 @@ include "../../Controller/productDetailsController.php";
                 </div>
                 <div class="flex flex-row">
                     <p class="text-right w-32">Details:</p>
-                    <p class="ml-8"><?= $productCat[0]["p_detail"] ?></p>
+                    <p class="ml-8 w-[350px]"><?= $productCat[0]["p_detail"] ?></p>
                 </div>
                 <div class="flex flex-row">
                     <p class="text-right w-32">Description:</p>
-                    <p class="ml-8"><?= $productCat[0]["p_des"] ?></p>
+                    <p class="ml-8 w-[350px]"><?= $productCat[0]["p_des"] ?></p>
                 </div>
             </div>
 
@@ -168,7 +168,9 @@ include "../../Controller/productDetailsController.php";
 
         </div>
         <!-- start of rating -->
-        
+        <?php
+               if( $product[0]["product_rating"] != null) {
+                ?>
         <div class="flex items-center mb-2 mt-3">
             <p class="text-blueText text-xl font-bold mr-5 border-b-2 border-orange w-10">Ratings</p>
             <div class="ml-5 flex flex-row justify-center items-center">
@@ -193,6 +195,7 @@ include "../../Controller/productDetailsController.php";
                 <p class="ml-10 text-lg text-blueText dark:text-white"><?= $product[0]["product_rating"] ?> out of 5</p>
             </div>
         </div>
+       
         <p class="text-md italic font-medium text-bold  text-greyText1 dark:text-gray-400"><?= $ratingCustomer[0]["COUNT(customer_id)"] ?> ratings</p>
         <div class="flex items-center mt-4">
             <a href="#" class="text-md font-medium text-blueText dark:text-blue-500 hover:underline">5 star</a>
@@ -231,8 +234,11 @@ include "../../Controller/productDetailsController.php";
         </div>
         <!-- end of rating -->
         <!-- start of reviews -->
-
-        <article class="mt-5">
+        <?php } ?>
+        <?php
+               if( count($customers) != 0) {
+        ?>
+        <div class="mt-5">
             <div class="text-xl font-bold text-blueText mb-5 border-b-2 border-orange w-10">Reviews</div>
             <?php
             for ($i = 0; $i < count($customers); $i++) {
@@ -282,7 +288,10 @@ include "../../Controller/productDetailsController.php";
             ?>
 
 
-        </article>
+        </div>
+        <?php
+            }
+            ?>
 
 
         <!-- end of reviews -->

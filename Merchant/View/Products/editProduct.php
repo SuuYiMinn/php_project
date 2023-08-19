@@ -121,7 +121,7 @@ include "../../Controller/subCategoryListController.php";
                     <!-- Product Name: -->
                     <li class="text-md flex flex-row items-center">
                         <label class="w-36 text-blueText ">Product Name:</label>
-                        <input name="pname" value="<?= $productCat[0]["p_title"] ?>" type="text" required class="block w-lg rounded-lg border border-blueText px-20 py-2 text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-inputBox pl-[45px]" placeholder="Name">
+                        <input name="pname" value="<?= $productCat[0]["p_title"] ?>" type="text" required class="block w-[400px] rounded-lg border border-blueText px-3 py-2 text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-inputBox" placeholder="Name">
 
                     </li>
                     <!-- edit Brand -->
@@ -207,7 +207,7 @@ include "../../Controller/subCategoryListController.php";
                     <li class="text-md flex flex-row">
                         <label class="w-36 text-blueText">Details:</label>
 
-                        <textarea name="pdetail" cols="35" rows="5" class="text-start block rounded-lg border border-blueText text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-greyText1">
+                        <textarea name="pdetail" cols="50" rows="10" class="px-3 py-2 text-justify block rounded-lg border border-blueText text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-greyText1">
                         <?= $productCat[0]["p_detail"] ?>
                     </textarea>
                     
@@ -215,7 +215,7 @@ include "../../Controller/subCategoryListController.php";
                     <li class="text-md flex flex-row">
                         <label class="w-36 text-blueText">Description:</label>
 
-                        <textarea name="pdes" cols="35" rows="5" class="text-start block rounded-lg border border-blueText text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-greyText1">
+                        <textarea name="pdes" cols="50" rows="10" class="px-3 py-2 text-justify block rounded-lg border border-blueText text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-greyText1">
                         <?= $productCat[0]["p_des"] ?>
                     </textarea>
 
@@ -231,7 +231,7 @@ include "../../Controller/subCategoryListController.php";
                 </ul>
                 <!-- start of edit photo -->
 
-                <div class="grid grid-cols-2 gap-4 w-[400px] h-[400px] ml-[100px]">
+                <div class="grid grid-cols-2 gap-4 w-[400px] h-[400px] ml-[30px]">
 
                     <div class="grid gap-4">
                     <div>

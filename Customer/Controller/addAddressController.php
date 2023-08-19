@@ -28,7 +28,7 @@ $sql->execute();
 $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 $sql2 = $pdo->prepare(
-    "SELECT * FROM m_townships WHERE del_flg = 0"
+    "SELECT m_townships.name, m_townships.id FROM m_townships JOIN m_regions ON m_regions.id = m_townships.region_id WHERE m_regions.id = 1"
     );
         
 $sql2->execute();

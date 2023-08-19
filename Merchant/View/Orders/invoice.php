@@ -3,10 +3,10 @@ session_start();
 $invoice = $_SESSION["invoice"];
 include "../../Controller/editProfileController.php";
 
-echo "<pre>";
-print_r($invoice);
+// echo "<pre>";
+// print_r($invoice);
 
-echo "</pre>";
+// echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,8 +82,15 @@ echo "</pre>";
                                 <dl class="grid sm:grid-cols-5 gap-x-3">
                                     <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Invoice date:</dt>
                                     <dd class="col-span-2 text-gray-500">
-                                    <?php if ($invoice[0][0]["order_done"] != 1) { date("Y/m/d") ?>
-                                        <?php }  ?></dd>
+                                    
+                                        <?php if ($invoice[0][0]["order_done"] != 1) {
+                                            echo date("Y/m/d");
+                                        } else {
+                                            echo $invoice[0][0]["invoice_date"];
+                                        } ?>
+                                    
+
+                                    </dd>
                                 </dl>
                                 <!-- <dl class="grid sm:grid-cols-5 gap-x-3">
                                     <dt class="col-span-3 font-semibold text-gray-800 dark:text-gray-200">Due date:</dt>
@@ -224,12 +231,12 @@ echo "</pre>";
                     </div>
                     <!-- End Flex -->
 
-                    <div class="mt-8 sm:mt-12">
-                        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Thank you!</h4>
-                        <p class="text-gray-500">If you have any questions concerning this invoice, use the following contact information:</p>
-                        <div class="mt-2">
-                            <p class="block text-sm font-medium text-gray-800 dark:text-gray-200"><?= $merchant[0]["me_email"] ?></p>
-                            <p class="block text-sm font-medium text-gray-800 dark:text-gray-200"><?= $merchant[0]["me_phone"] ?></p>
+                    <div class="mt-8">
+                        <!-- <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Thank you!</h4>
+                        <p class="text-gray-500">If you have any questions concerning this invoice, use the following contact information:</p> -->
+                        <div class="mt-2 text-center text-grayText2 text-xs">
+                            <span>Email: </span><span p class=""><?= $merchant[0]["me_email"] ?>, </span>
+                            <span>Ph no: </span><span class=""><?= $merchant[0]["me_phone"] ?></span>
                         </div>
                     </div>
 
@@ -250,18 +257,18 @@ echo "</pre>";
 
                         Cancel
                     </a>
-                    
-                        <?php if ($invoice[0][0]["order_done"] == 1) { ?>
-                            
-                            <div href="#" class="inline-flex justify-center items-center gap-x-3 text-center bg-orange text-md text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-10 text-whiteText dark:focus:ring-offset-gray-800">
+
+                    <?php if ($invoice[0][0]["order_done"] == 1) { ?>
+
+                        <div href="#" class="inline-flex justify-center items-center gap-x-3 text-center bg-orange text-md text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-10 text-whiteText dark:focus:ring-offset-gray-800">
                             Send Done
-                            </div>
-                        <?php } else { ?>
-                            <a href="../../Controller/invoiceSendController.php?id=<?= $invoice[0][0]["id"] ?>" class="send inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-md text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-10 bg-button text-whiteText hover:bg-orange dark:focus:ring-offset-gray-800">
+                        </div>
+                    <?php } else { ?>
+                        <a href="../../Controller/invoiceSendController.php?id=<?= $invoice[0][0]["id"] ?>" class="send inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-md text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-10 bg-button text-whiteText hover:bg-orange dark:focus:ring-offset-gray-800">
                             Send
-                            </a>
-                            <?php } ?>
-                    
+                        </a>
+                    <?php } ?>
+
                 </div>
                 <!-- End Buttons -->
             </div>

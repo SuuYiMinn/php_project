@@ -42,7 +42,7 @@ session_start();
             <form class="mt-10 space-y-3 lg:mt-5 md:space-y-5" action="../../Controller/settingController.php" method="post">
                 <div>
                     <label for="email" class="block mb-2 text-md font-semibold text-blueText dark:text-white">Your email</label>
-                    <input type="email" name="email" id="email" class=" border border-blueText text-greyText1 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
+                    <input type="email" name="email" id="email" class=" border border-blueText text-greyText1 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="suuyiminn@gmail.com" required="">
                 </div>
                 <span class="text-orange"> <?= $_SESSION["emailerror"] ?> </span>
                 <div>
