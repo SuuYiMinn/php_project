@@ -4,7 +4,7 @@ if (count($_GET) != 0) {
     $product_id = $_GET["id"];
 }
 $customer_id = $accountresult[0]["id"];
-// echo($customer_id);
+// echo($customer_id);   // need to check login
 $productDetail_result = [];
 
 // to use mutidimentional in_array function
@@ -68,7 +68,7 @@ $sql3 = $pdo->prepare(
 $sql3->execute();
 $items_in_cart = $sql3->fetchAll(PDO::FETCH_ASSOC);
 
-if (count($_GET) != 0 && count($items_in_cart) != 0) {
+if (count($_GET) != 0  || count($items_in_cart) != 0) {
     if (!in_array_r($product_id, $items_in_cart)) {
 
         // add products to their cart

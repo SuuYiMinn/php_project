@@ -5,7 +5,7 @@ $(document).ready(function () {
   
       $.ajax({
         type: "POST",
-        url: "../../Controller/selectRegionController.php",
+        url: "../Controller/selectRegionController.php",
         data: {
           selectedRegionId: $(this).val(),
         },

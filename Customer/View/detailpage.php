@@ -16,6 +16,7 @@
     <script src="./resources/lib/jquery/jquery.js"></script>
     <script src="./resources/js/menu.js"></script>
     <script src="./resources/js/detailslide.js" defer></script>
+    <script src="./resources/js/addtoCart.js?id=<?= time() ?>"></script>
     <title>Document</title>
 </head>
 
@@ -127,13 +128,17 @@
             </div>
             <div class="flex justify-evenly mt-5">
 
-                <button class="lg:w-1/3  w-2/5 h-8  bg-orange-500 rounded-md text-white">
-                    <a id="atag" href="./cart.php?id=<?= $productDetail_result[0]["id"] ?>" method="get">Buy Now</a>
-                </button>
-
-                <button class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white">
-                    <a id="atag" href="./cart.php?id=<?= $productDetail_result[0]["id"] ?>" method="get">Add to Cart</a>
-                </button>
+                <a href="../Controller/buynowController.php?productid=<?=$product_id?>" 
+                class="lg:w-1/3  w-2/5 h-8  bg-orange-500 rounded-md text-white">
+                   Buy Now</a>
+                </a>
+                       
+                        <a href="../Controller/addto_cartController.php?productid=<?=$product_id?>" 
+                        class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white text-center py-[2px]">Add To Cart</a>
+                     
+                
+                    
+               
 
             </div>
             <!--review sessions-->
