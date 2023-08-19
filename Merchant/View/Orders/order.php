@@ -21,14 +21,14 @@ include "../../Controller/orderController.php";
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <!-- <link href="../resources/lib/tailwind/output.css" rel="stylesheet"> -->
     <!-- css -->
-    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/style.css?id=<?= time() ?>">
     <!-- chartjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- chart script file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js" integrity="sha512-bp/xZXR0Wn5q5TgPtz7EbgZlRrIU3tsqoROPe9sLwdY6Z+0p6XRzr7/JzqQUfTSD3rWanL6WUVW7peD4zSY/vQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../resources/js/main.js" defer></script>
+    <script src="../resources/js/main.js?id=<?= time() ?>" defer></script>
     <script src="../resources/lib/jquery/jQuery v3.7.0.js"></script>
-    <link rel="stylesheet" href="../resources/css/order.css">
+    <link rel="stylesheet" href="../resources/css/order.css?id=<?= time() ?>">
     <script src="../resources/js/dateSearch.js?id=<?= time() ?>" defer></script>
     <script src="../resources/js/status.js?id=<?= time() ?>" defer></script>
 
@@ -44,9 +44,9 @@ include "../../Controller/orderController.php";
             <div class="flex justify-center items-center">
                 <!-- start of Date -->
 
-                <form action="/action_page.php">
+                <form>
                     
-                    <input type="date" value="<?php echo date('Y-m-d');?>" class="uppercase" id="dateId" name="dateName">
+                    <input type="date" placeholder="YYYY-MM-DD" class="uppercase" id="dateId" name="dateName">
 
                 </form>
 
@@ -58,7 +58,7 @@ include "../../Controller/orderController.php";
                         <polygon points="0,12.438 48,12.438 24,35.562 " />
                     </svg>
                     <select class="status text-orange h-10 pl-5 pr-10 bg-whiteText hover:border-gray-400 focus:outline-none appearance-none">
-                        <option>Status</option>
+                        <option value="">Status</option> 
                         <option value="1">Done</option>
                         <option value="0">Not Done</option>
                     </select>
@@ -182,13 +182,16 @@ include "../../Controller/orderController.php";
                                 <span><?= $countProducts["payment"] ?></span>
 
                             </div>
+                            <?php if ($countProducts["payment"] == "KBZ"){ ?>
                             <div class="flex flex-row py-1 mb-3 leading-8 bg-white bg-opacity-50 font-heading font-medium rounded-3xl">
-                                <span class="w-32">Payment Method:</span>
+                                <span class="w-32">Payment No:</span>
                                 <span><?= $countProducts["payment_no"] ?></span>
 
                             </div>
+                            <?php } ?>
                             <a href="../../Controller/invoiceController.php?id= <?= $product[0]["id"] ?>" class="inline-block w-full lg:w-auto py-1.5 px-10 text-md leading-6 text-whiteText font-medium tracking-tighter font-heading text-center bg-button hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl">Inovice</a>
                         </div>
+                       
                     </div>
 
 

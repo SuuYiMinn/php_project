@@ -43,8 +43,8 @@ $imgList = [
     "../Mail/invoice/images/image-5.png",
     "../Mail/invoice/images/image-6.png",
     "../Mail/invoice/images/image-7.gif",
-    "../Mail/invoice/images/image-8.png",
-    "../Mail/invoice/images/image-9.png"
+    "../Mail/invoice/images/image-8.png"
+   
 ];
 $mail = new SendMail();
 $mail->sendMail($to,"Invoice For Your Shopping", $message, $imgList);

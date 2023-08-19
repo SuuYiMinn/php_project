@@ -9,6 +9,7 @@ $(document).ready(function () {
           orderStatus: $(this).val(),
         },
         success: function(res){
+           
             $("#searchDateResult").empty();
             let products = JSON.parse(res);
             for (const product of products) {
@@ -118,6 +119,9 @@ $(document).ready(function () {
     
             
         }
+
+
+        $("#dateId").val("YYYY-MM-DD");
         },
   
   
