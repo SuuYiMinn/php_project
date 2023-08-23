@@ -37,9 +37,9 @@ $cateProductsql=$pdo->prepare(
 
     $reviewsql=$pdo->prepare(
 
-        "SELECT * FROM m_customers LEFT JOIN t_product_rating_detais 
-        ON m_customers.id = t_product_rating_detais.customer_id 
-        WHERE t_product_rating_detais.product_id = :product_id AND m_customers.del_flg = 0 AND t_product_rating_detais.del_flg = 0 LIMIT 1"
+        "SELECT * FROM m_customers LEFT JOIN t_product_rating_details 
+        ON m_customers.id = t_product_rating_details.customer_id 
+        WHERE t_product_rating_details.product_id = :product_id AND m_customers.del_flg = 0 AND t_product_rating_details.del_flg = 0 LIMIT 1"
     );
     $reviewsql -> bindValue(":product_id",$product_id);
     $reviewsql -> execute();
@@ -48,9 +48,9 @@ $cateProductsql=$pdo->prepare(
    
     $reviewsql_all=$pdo->prepare(
 
-        "SELECT * FROM m_customers LEFT JOIN t_product_rating_detais 
-        ON m_customers.id = t_product_rating_detais.customer_id 
-        WHERE t_product_rating_detais.product_id = :product_id AND m_customers.del_flg = 0 AND t_product_rating_detais.del_flg = 0"
+        "SELECT * FROM m_customers LEFT JOIN t_product_rating_details 
+        ON m_customers.id = t_product_rating_details.customer_id 
+        WHERE t_product_rating_details.product_id = :product_id AND m_customers.del_flg = 0 AND t_product_rating_details.del_flg = 0"
     );
     $reviewsql_all -> bindValue(":product_id",$product_id);
     $reviewsql_all -> execute();
