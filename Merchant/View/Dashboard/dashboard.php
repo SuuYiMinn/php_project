@@ -161,7 +161,7 @@ include "../../Controller/orderController.php";
                     <!-- end of title -->
                     <!-- start of top-product-cards -->
                     <?php foreach ($tops as $top) { ?>
-                        <div class="flex flex-row justify-center items-center w-[450px] h-[80px] shadow-3xl rounded-xl mt-5">
+                        <div class="px-5 flex flex-row justify-center items-center w-[450px] h-[80px] shadow-3xl rounded-xl mt-5">
                             <!-- image of top-product -->
                             <img src="../../..<?= $top["p_photo_1"] ?>" class="w-[80px] h-[60px]" />
                             <!-- start of details of top-product-->
@@ -183,6 +183,7 @@ include "../../Controller/orderController.php";
                                     <div><?= $top["p_sell_price"] ?><span>Ks</span></div>
                                 </div>
                             </div>
+                    </div>
 
                         <?php
                     } ?>
