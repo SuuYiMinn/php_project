@@ -132,7 +132,7 @@
             <p class="lg:text-2xl text-sm font-semibold"><?= $productDetail_result[0]["p_des"] ?></p>
             <div class="w-full lg:h-32 h-20 mt-2 ring-1 overflow-y-auto">
 
-                <p class="lg:text-[11px] text-[9px] p-2"><?= $productDetail_result[0]["p_detail"] ?></p>
+                <p class="lg:text-sm text-xs p-2"><?= $productDetail_result[0]["p_detail"] ?></p>
 
             </div>
             <div class="flex justify-evenly mt-5">
