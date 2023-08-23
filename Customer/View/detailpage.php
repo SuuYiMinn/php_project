@@ -17,6 +17,7 @@
     <script src="./resources/js/menu.js"></script>
     <script src="./resources/js/detailslide.js" defer></script>
     <script src="./resources/js/addtoCart.js?id=<?= time() ?>"></script>
+    <script src="./resources/js/Qty.js?id=<?= time() ?>"></script>
     <title>Document</title>
 </head>
 
@@ -68,15 +69,6 @@
                 <div class=" rounded-full w-6 h-6 absolute  bg-gray-700 top-1/2  right-0" id="forward">
                     <ion-icon name="chevron-forward-outline" class="scale-150 p-1 text-white"></ion-icon>
                 </div>
-
-
-
-
-
-
-
-
-
             </div>
             <div class="flex justify-between lg:mt-4 mt-2">
                 <div>
@@ -89,7 +81,11 @@
 
                         <?php if ($product_rating_no != null) {
 
-                            for ($i = 0; $i < $product_rating_no; $i++) { ?>
+                            for (
+                                $i = 0;
+                                $i < $product_rating_no;
+                                $i++
+                            ) { ?>
 
                                 <ion-icon name="star" class="lg:w-5 w-3 lg:h-5 h-3 mr-[2px]"></ion-icon>
                         <?php }
@@ -112,8 +108,21 @@
 
 
                 </div>
-
+                <div class="flex items-center w-28 justify-evenly float-right">
+                <p>Qty</p>
+                <div class="w-3 h-3 bg-green-700  relative  rounded-sm" id="remove">
+                <ion-icon name="remove-outline" class="w-full h-full absolute text-white font-bold"></ion-icon>
+                </div>
+                <p id="qty">1</p>
+                <div class="w-3 h-3 bg-green-700  relative  rounded-sm" id="add">
+                <ion-icon name="add-outline" class="w-full h-full absolute text-white font-bold"></ion-icon>
+                </div> 
             </div>
+
+               </div>
+        
+
+            
 
 
         </div>
@@ -128,17 +137,18 @@
             </div>
             <div class="flex justify-evenly mt-5">
 
-                <a href="../Controller/buynowController.php?productid=<?=$product_id?>" 
-                class="lg:w-1/3  w-2/5 h-8  bg-orange-500 rounded-md text-white">
-                   Buy Now</a>
-                </a>
-                       
-                        <a href="../Controller/addto_cartController.php?productid=<?=$product_id?>" 
-                        class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white text-center py-[2px]">Add To Cart</a>
-                     
-                
-                    
-               
+                        <form action="../Controller/buynowController.php" method="post" class="lg:w-1/3  w-2/5 ">
+                            <input type="hidden" name="productid" value=<?= $product_id ?>>
+                            <input type="hidden" name="quantity" value="1" id="p_qty">
+                <input type="submit" value="Buy Now" class=" w-full h-8  bg-orange-500 rounded-md text-white text-center py-[2px]">
+                 
+                </form>
+
+                <a href="../Controller/addto_cartController.php?productid=<?= $product_id ?>" class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white text-center py-[2px]">Add To Cart</a>
+
+
+
+
 
             </div>
             <!--review sessions-->
@@ -154,13 +164,13 @@
                             <p class="lg:text-base text-sm text-orange-400 "><?= $review_result[0]["c_name"] ?></p>
                         </div>
 
-                        
 
-                            <p class="lg:text-sm ml-8 text-xs text-gray-700">
-                                <?= $review_result[0]["product_review"] ?>
-                            </p>
 
-                        
+                        <p class="lg:text-sm ml-8 text-xs text-gray-700">
+                            <?= $review_result[0]["product_review"] ?>
+                        </p>
+
+
                     </div>
                     <a href="./ProductReveiw.php?productid=<?= $product_id ?>" class="float-right text-xs font-medium text-orange-500 lg:mr-20">See all reviews..</a>
 

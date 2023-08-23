@@ -11,6 +11,7 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="./resources/lib/jquery/jquery.js"></script>
   <script src="./resources/js/myCart.js?id=<?= time() ?>"></script>
+  <script src="./resources/js/cartQty.js?id=<?= time() ?>"></script>
   <title>Cart</title>
 </head>
 
@@ -48,9 +49,9 @@
           
          
         <!-- one product -->
-        <div class="w-11/12 lg:h-24 h-20 shadow-md flex justify-start items-center py-1 px-1 mx-auto relative product_cart">
+        <div class="w-11/12 lg:h-24 h-20 shadow-md flex justify-start items-center py-1 px-1 mx-auto relative product_cart" id="<?=$cart_product["product_id"]?>">
 
-          <input class="lg:w-4 lg:h-4 w-2 h-2 p_check" type="checkbox" />
+        
           <div class=" lg:w-20 w-14 ml-2 h-20">
             <img class="w-full h-full" src="../..<?= $cart_product["p_photo_1"] ?>" alt="" />
           </div>
@@ -68,19 +69,17 @@
                   <ion-icon name="trash-outline" class="ml-6 delete"></ion-icon>
                 </div>
                 <!-- quantity -->
-                <div class="flex">
-                  <p class="text-[#FF9F29]">Qty</p>
-                  <div class="flex w-10 items-center lg:ml-2 ml-1">
-                    <div class="w-3 mr-1">
-                      <img class="w-full" src="./resources/img/baseline-plus.svg" alt="" />
-                    </div>
-                    <div class="mr-1" qty="<?= $i ?>">1</div>
-                    <input name="qty" value="" type="text" class="hidden">
-                    <div class="w-3 mr-1">
-                      <img class="w-full" src="./resources/img/baseline-minus.svg" alt="" />
-                    </div>
-                  </div>
+                <div class="flex items-center w-28 justify-evenly float-right">
+                <p>Qty</p>
+                <div class="w-3 h-3 bg-green-700  relative  rounded-sm remove" >
+                <ion-icon name="remove-outline" class="w-full h-full absolute text-white font-bold"></ion-icon>
                 </div>
+          
+                <p class="qty">1</p>
+                <div class="w-3 h-3 bg-green-700  relative  rounded-sm add" >
+                <ion-icon name="add-outline" class="w-full h-full absolute text-white font-bold"></ion-icon>
+                </div> 
+            </div>
 
               </div>
             </div>
@@ -116,9 +115,11 @@
          
         </div>
 
-        <button id="proceed" type="button" class="w-48 rounded-md bg-[#ff9f29] mx-auto">
-          <p class="text-white text-center py-1">Proceed to Purchase</p>
-        </button>
+
+        <a href="../Controller/buyCartController.php?cartId=<?=$cartId?> "
+        class ="w-40 bg-orange-500 text-white text-center px-2 rounded-md py-1">
+          Proceed to Purchase
+        </a>
 
       </div>
     </section>

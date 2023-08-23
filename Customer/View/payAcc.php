@@ -14,29 +14,19 @@
   <title>Payment</title>
 </head>
 
-<body>
+<body class = "w-full">
 
-  <?php include "./common/nav_without_search.php" ?>
+<div class="w-40 h-40 mx-auto mt-20 mb-10">
+    <p class="text-orange-500 w-48">Please scan here to pay</p>
+    <img src="./resources/img/photo/kpayqrCode.png" alt="" class="w-full h-full ">
+</div>
+<form action="../Controller/orderController.php" method="post" class="flex flex-col lg:w-1/3 w-4/5 mx-auto">
 
+<input type="text" name="payNumber" placeholder="Enter your kbz pay Number" class="ring-1 rounded-md h-8 lg:w-2/3 w-full mx-auto mb-5"  required> 
 
-  <!-- body -->
+<input type="submit" name = "kbzpay" value = "Send" class="lg:w-1/2 w-3/4 mx-auto bg-orange-400 text-white h-8 rounded-md" >
 
-  <section class="w-full h-screen flex flex-col justify-around items-center">
-    <p class="font-medium text-2xl mt-10">Choose Payment Method</p>
+</form>
 
-      <form action="../Controller/orderController.php" method="post">
-    <input type="submit" name ="cod" value="Cash On Delivery" class="text-lg my-10">
-    </form>
-    <p class="text-lg">OR</p>
-
-    <a href="./payAcc.php" class="lg:w-56 lg:my-10 my-6 w-40">
-      <img class="w-full" src="./resources/img/photo/kpay.png" alt="" />
-    </a>
-   
-  </section>
-  </form>
-
-  <?php include "../View/common/commonFooter.php" ?>
 </body>
-
 </html>

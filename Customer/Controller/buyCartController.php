@@ -2,18 +2,20 @@
 session_start();
 
 
-if (($_POST["productid"] != null)&&(isset($_POST["productid"]))) {
+if (($_GET["cartId"] != null)&&(isset($_GET["cartId"]))) {
     if (!isset($_SESSION["user_account"])) {
         header("Location: ../View/Registeration/signUp.php");
     } else {
 
         $customer_id =  $_SESSION["user_account"];
-        $product_id = $_POST["productid"];
-        $product_qty = $_POST["quantity"];
+        $cart_id = $_GET["cartId"];
 
-        $_SESSION["buy_product"] = $product_id;
-        $_SESSION["buy_type"] = 1;
-        $_SESSION["product_qty"]= $product_qty;
+    
+
+        $_SESSION["buy_cart"] = $cart_id;
+        $_SESSION["buy_type"] = 2;
+
+        echo($_SESSION["buy_cart"] );
 
         include "../Model/model.php";
 
@@ -27,8 +29,6 @@ if (($_POST["productid"] != null)&&(isset($_POST["productid"]))) {
         $address_sql->execute();
         $address_result = $address_sql->fetchAll(PDO::FETCH_ASSOC);
 
-        echo "<pre>";
-        print_r($address_result);
 
         if ((($address_result[0]["c_address"]) != null) &&
             (($address_result[0]["c_region"]) != null) &&

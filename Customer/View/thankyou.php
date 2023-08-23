@@ -16,29 +16,25 @@
 <body>
   <!--navgation and header session start-->
 
-  <?php
-  include "./common/nav_without_search.php";
-  include "../Controller/orderController.php";
-  ?>
-  <br />
+  
 
   <!-- body -->
   <section class="w-full h-[70vh] flex flex-col items-center justify-around">
-    <p class="text-[64px] max-sm:text-[32px] text-[#F86F03]">Thank You</p>
-    <p class="text-[64px] max-sm:text-[32px] font-['Pacifico']">
+    <p class="lg:text-4xl text-xl text-[#F86F03]">Thank You</p>
+    <p class="lg:text-2xl text-xl font-['Pacifico']">
       For shopping with us
     </p>
     <a href="./homepage.php">
-      <button class="w-[480px] h-[130px] max-sm:w-[175px] max-sm:h-[40px] rounded-[10px] bg-[#1A4D2E]">
-        <p class="text-white text-[48px] max-sm:text-[20px] font-semibold">
+      <button class="lg:w-76 w-64 h-12 max-sm:h-[40px] rounded-[10px] bg-[#1A4D2E]">
+        <p class="text-white lg:text-2xl text-xl font-semibold">
           Shop more
         </p>
       </button>
     </a>
   </section>
-  <br />
 
-  <?php include "../View/common/commonFooter.php" ?>
+
+
   </div>
 </body>
 

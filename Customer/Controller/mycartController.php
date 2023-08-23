@@ -14,7 +14,10 @@
     $getuserCart_sql -> bindValue(":customerId", $cusId);
     $getuserCart_sql -> execute();
     $userCart_result = $getuserCart_sql->fetchAll(PDO::FETCH_ASSOC);
+  
+    $cartId = $userCart_result[0]["cart_id"];
 
+ 
   
 
   
