@@ -97,7 +97,7 @@ session_start();
    if($buytype==1){
       // insert product information in order detail table
 
-      $product = $_SESSION["buy_product"];
+      $product = $_SESSION["buy_product"]; 
 
       $get_pinfo_sql = $pdo->prepare(
          "SELECT * FROM m_products WHERE id = :productId" 
@@ -130,6 +130,8 @@ session_start();
    $orderdetail_sql->bindValue(":orderId",$getOrder_id);
    $orderdetail_sql->bindValue(":productId",$product);
    $orderdetail_sql->bindValue(":orderId",$p_sellprice);
+   $orderdetail_sql->execute();
+
   
     
 
