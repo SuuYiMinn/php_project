@@ -70,7 +70,7 @@ session_start();
 
      $addPay_sql=$pdo->prepare(
 
-      "UPDATE t_order SET  payment = :paytype, payment_number = :paymentNum WHERE id = :orderId"
+      "UPDATE t_order SET  payment = :paytype, payment_no = :paymentNum WHERE id = :orderId"
      );
      $addPay_sql->bindValue(":paytype","kbzpay");
      $addPay_sql->bindValue(":paymentNum",$kpay_num);
