@@ -57,11 +57,11 @@
             <a href="./aboutUs.php">About Us</a>
             <a href = "./aboutUs.php">Contact Us</a>
             <a href ="./aboutUs.php">Help</a>
-       <!-- <searchBar class="relative">
+       <searchBar class="relative">
             <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
 
             <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
-        </searchBar> -->
+        </searchBar> 
         <ion-icon name="notifications" class="w-[23px] h-[23px] fill-[#ff9f29]"></ion-icon>
         <?php if ($accountresult != null) { ?>
             <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>

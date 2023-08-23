@@ -48,7 +48,7 @@ $(document).ready(function () {
             } else price = subCate_product["p_sell_price"];
 
             $(".filter_sub_category").append(
-              ` <a href="./detailpage.php?productid=${subCate_product["id"]}" class="lg:w-60 w-40 lg:h-60 h-40 bg-white drop-shadow-md mt-2" id ="${subCate_product["id"]}">
+              ` <a href="./detailpage.php?productid=${subCate_product["id"]}" class="lg:w-56 w-40 lg:h-64 h-48 bg-white drop-shadow-md mt-2" id ="${subCate_product["id"]}">
                <!-- product image -->
                <div class="w-full lg:h-2/3 h-3/5 relative">
                <img src="../..${subCate_product["p_photo_1"]}" alt="" class="w-full h-full">

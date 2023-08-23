@@ -292,9 +292,9 @@
 
 
                     <!-- products card -->
-                    <a href="./detailpage.php?productid=<?= $newArrival_product["id"] ?>" class="lg:w-60 w-40 lg:h-60  h-40 bg-white drop-shadow-md mt-2" id="product_<?= $newArrival_product["id"] ?>">
+                    <a href="./detailpage.php?productid=<?= $newArrival_product["id"] ?>" class="lg:w-60 w-36 lg:h-60  h-40 bg-white drop-shadow-md mt-2" id="product_<?= $newArrival_product["id"] ?>">
                         <!-- product image -->
-                        <div class="w-full lg:h-2/3 h-3/5 relative">
+                        <div class="w-full lg:h-2/3 h-2/3 relative">
                             <img src="../..<?= $newArrival_product["p_photo_1"] ?>" alt="" class="w-full h-full">
                         </div>
                         <!-- product information -->

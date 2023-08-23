@@ -10,7 +10,8 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="./resources/lib/jquery/jquery.js"></script>
-  <script src="./resources/js/cart.js?id=<?= time() ?>"></script>
+  <script src="./resources/js/myCart.js?id=<?= time() ?>"></script>
+  <script src="./resources/js/cartQty.js?id=<?= time() ?>"></script>
   <title>Cart</title>
 </head>
 
@@ -18,60 +19,67 @@
 
   <?php
   include "./common/nav_without_search.php";
-  include "../Controller/cartController.php";
+  //include "../Controller/cartController.php";
+  include "../Controller/mycartController.php";
   ?>
 
-<!-- passing data to js -->
-  <script>
-      var $productDetail_result = <?php echo json_encode($productDetail_result); ?>
-  </script>
 
-  <form id="target" action="./addAddress.php" method="post">
-    
+
     <p class="text-orange-500 font-medium text-2xl text-center my-5">My Cart</p>
     <section class=" w-full h-[100vh] flex lg:flex-row flex-col justify-around">
       <!-- products -->
-      <div class="lg:w-2/5 w-full lg:h-56 h-80 overflow-y-auto">
+      <div class="lg:w-2/5 w-full lg:h-56 h-96 overflow-y-auto">
 
-      <?php
-      for ($i=0; $i < count($productDetail_result); $i++) { ?>
- 
+
+          <?php 
+                  $subtotal = 0;
+                  $shippingfees = 2500;
+          
+          foreach ($userCart_result as $cart_product) { 
+            
+            if (($cart_product["p_discount"]) != null) {
+
+              $price = $cart_product["p_sell_price"] - ((($cart_product["p_discount"]) / 100)  * ($cart_product["p_sell_price"]));
+          } else $price = $cart_product["p_sell_price"];
+            
+            $subtotal += $price;
+            ?>
+
+
+          
+         
         <!-- one product -->
-        <div item_no="<?=$i?>" class="w-11/12 lg:h-24 h-20 shadow-md flex justify-start items-center py-1 px-1 mx-auto relative">
-          <input name="product_id" value="" type="text" class="hidden">
-          <input added="<?=$i?>" id="<?=$i?>" class="lg:w-4 lg:h-4 w-2 h-2" type="checkbox" checked />
-          <div class=" lg:w-20 w-14 ml-2">
-            <img class="w-full" src="./resources/img/photo/product.jpg" alt="" />
+        <div class="w-11/12 lg:h-24 h-20 shadow-md flex justify-start items-center py-1 px-1 mx-auto relative product_cart" id="<?=$cart_product["product_id"]?>">
+
+        
+          <div class=" lg:w-20 w-14 ml-2 h-20">
+            <img class="w-full h-full" src="../..<?= $cart_product["p_photo_1"] ?>" alt="" />
           </div>
 
           <div class="lg:text-base absolute right-1 text-sm w-8/12">
-            <div class="flex ">
+            <div class="flex">
               <div>
-                <p p_title=<?=$i?> class="w-40 mb-1"><?= $productDetail_result[$i][0]["p_title"] ?></p>
-                <p item_total=<?=$i?>>Ks <?= $productDetail_result[$i][0]["p_sell_price"] ?></p>
-                <input name="amount" value="" type="text" class="hidden">
-                <input name="p_title" value="" type="text" class="hidden">
+                <p class="w-40 mb-1"><?= $cart_product["p_title"] ?></>
+                <p> <?= $price ?> </p>
               </div>
 
               <div class="absolute right-1 bottom-0">
                 <!-- delete -->
                 <div>
-                <ion-icon del="<?=$i?>" name="trash-outline" class="ml-6 delete"></ion-icon>
+                  <ion-icon name="trash-outline" class="ml-6 delete"></ion-icon>
                 </div>
                 <!-- quantity -->
-                <div class="flex">
-                  <p class="text-[#FF9F29]">Qty</p>
-                  <div class="flex w-10 items-center lg:ml-2 ml-1">
-                    <div class="w-3 mr-1">
-                      <img plus="<?=$i?>" class="w-full" src="./resources/img/baseline-plus.svg" alt="" />
-                    </div>
-                    <div class="mr-1" qty="<?=$i?>">1</div>
-                    <input name="qty" value="" type="text" class="hidden">
-                    <div class="w-3 mr-1">
-                      <img minus="<?=$i?>" class="w-full" src="./resources/img/baseline-minus.svg" alt="" />
-                    </div>
-                  </div>
+                <div class="flex items-center w-28 justify-evenly float-right">
+                <p>Qty</p>
+                <div class="w-3 h-3 bg-green-700  relative  rounded-sm remove" >
+                <ion-icon name="remove-outline" class="w-full h-full absolute text-white font-bold"></ion-icon>
                 </div>
+          
+                <p class="qty">1</p>
+                <div class="w-3 h-3 bg-green-700  relative  rounded-sm add" >
+                <ion-icon name="add-outline" class="w-full h-full absolute text-white font-bold"></ion-icon>
+                </div> 
+            </div>
 
               </div>
             </div>
@@ -82,6 +90,8 @@
 
         <?php } ?>
 
+
+
       </div>
 
 
@@ -90,8 +100,8 @@
         <p class="lg:text-xl text-lg font-medium mb-10">Order Summary</p>
 
         <div class="flex justify-between mb-5 lg:text-base text-sm">
-          <p>Subtotal ( <span id="item_count"><?=count($productDetail_result)?></span> items)</p>
-          <p id="subtotal">Ks 000000</p>
+          <p>Subtotal <span class="text-orange-500"><?=count($userCart_result) ?></span> items</p>
+          <p id="subtotal"><?=$subtotal ?></p>
         </div>
 
         <div class="flex justify-between mb-5 lg:text-base text-sm">
@@ -100,19 +110,21 @@
         </div>
 
         <div class="flex justify-around mb-8 lg:text-base text-sm">
-          <p class="text-lg">Total</p>
-          <p id="total" class="text-lg text-orange-500"></p>
-          <input name="total" value="" type="text" class="hidden">
+          <p class="text-lg font-medium">Total</p>
+          <p id="total" class="text-lg text-orange-500 font-medium"><?php echo($subtotal+$shippingfees) ?></p>
+         
         </div>
 
-        <button id="proceed" type="button" class="w-48 rounded-md bg-[#ff9f29] mx-auto">
-          <p class="text-white text-center py-1">Proceed to Purchase</p>
-        </button>
+
+        <a href="../Controller/buyCartController.php?cartId=<?=$cartId?> "
+        class ="w-40 bg-orange-500 text-white text-center px-2 rounded-md py-1">
+          Proceed to Purchase
+        </a>
 
       </div>
     </section>
     <!-- body end -->
-  </form>
+  
 
   <?php include "../View/common/commonFooter.php" ?>
 

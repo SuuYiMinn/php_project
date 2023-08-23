@@ -164,7 +164,7 @@
 
 
                 <!-- products card -->
-                <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:w-60 w-40 lg:h-60 h-40 bg-white drop-shadow-md mt-2" id="product_<?= $products["id"] ?>">
+                <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:w-56 w-40 lg:h-64 h-48 bg-white drop-shadow-md mt-2" id="product_<?= $products["id"] ?>">
                     <!-- product image -->
                     <div class="w-full lg:h-2/3 h-3/5 relative">
                         <img src="../..<?= $products["p_photo_1"] ?>" alt="" class="w-full h-full">
