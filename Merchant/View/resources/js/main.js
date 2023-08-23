@@ -2,11 +2,11 @@
 
 // start of Dongunut chart
 const chartData = {
-    // labels: ["Category1", "Category2", "Category3", "Category4", "Category5"],
-    labels: category,
+    labels: ["Mobile", "Computer", "TV"],
+    // labels: category,
     
-    // data: [30, 17, 10, 7, 36],
-    data: sales,
+    data: [10, 5, 2],
+    // data: sales,
   };
   
   const myChart = document.querySelector(".my-chart");

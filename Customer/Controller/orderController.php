@@ -129,7 +129,7 @@ session_start();
 
    $orderdetail_sql->bindValue(":orderId",$getOrder_id);
    $orderdetail_sql->bindValue(":productId",$product);
-   $orderdetail_sql->bindValue(":orderId",$p_sellprice);
+   $orderdetail_sql->bindValue(":subtotal",$p_sellprice);
    $orderdetail_sql->execute();
 
   

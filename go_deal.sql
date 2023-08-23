@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2023 at 09:22 AM
+-- Generation Time: Aug 23, 2023 at 11:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -58,7 +58,8 @@ INSERT INTO `m_brand` (`id`, `brand_name`, `brand_photo`, `del_flg`, `create_dat
 (15, 'LG', '', 0, '2023-08-04', NULL),
 (16, 'MCG', '', 0, '2023-08-04', NULL),
 (17, 'Chigo', '', 0, '2023-08-04', NULL),
-(18, 'ChangHong', '', 0, '2023-08-04', NULL);
+(18, 'ChangHong', '', 0, '2023-08-04', NULL),
+(19, 'sony', '/Storage/products/download (1).png', 0, '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -118,7 +119,7 @@ CREATE TABLE `m_customers` (
 
 INSERT INTO `m_customers` (`id`, `c_name`, `c_email`, `c_password`, `c_address`, `c_township`, `c_region`, `c_phone`, `c_profile`, `code`, `verify`, `del_flg`, `create_date`, `update_date`) VALUES
 (38, 'Yin Kyae Wai', 'yinkyae3299@gmail.com', '$2y$10$D0M9/s/He/268kqMJmGSR.nm/UbZ31rHQasOS/SrHTPhzeaDvdK2W', 'No.10,Kayay Street, Pataut Quater', 5, 3, '09947342189', NULL, 'CSUICaH49t94KJtbmijlpg6ZN69cAVtTk0VLBKHnfkbnXFTGO07gaWWFS5cgndMhyrVx20zsylc7IHGBixYs85qSopUha03y8gmLB94uHVN0nonEve0QgYh2r2OJt0c0', 1, 0, '2023-08-14', '0000-00-00'),
-(39, 'Suu Yi Minn', 'suuyiminn@gmail.com', '$2y$10$rw/yDQDrwi7sbgC1wLKjEOdtCVFdH5YFKaXBU6odRlfAwF6dfLAGW', 'No.11, Aungyadanar Street,  Sanpya Quater', 6, 10, '09912347689', NULL, 'iNHrxWsYWvxGJENtArVzOeXod2NuD9kBOqlyTqHKsIVRk4AeifrRXGxZ9jSiWanKWTEL3NHIO8vsGVCnmD00XtsVht0fd1fFMaFwpMwNLsrkNrCgUjK3d3ilClt02Du0', 1, 0, '2023-08-18', '0000-00-00');
+(39, 'Suu Yi Minn', 'suuyiminn@gmail.com', '$2y$10$LfdvveYeML7eaJkX7GIDtOQt.TYh6h0wsWrRdCpbi8yF2VCdMYb2K', 'No.11, Aungyadanar Street,  Sanpya Quater', 6, 10, '09912347689', NULL, '9C9BZI8nqOPMZNXlJapN55oBp3fg6R820wLl8meuSlu5RHbhpQa8AafGlb5L5LVnVVCGaU0EMyDuiKChmgosDc0WcMZ9DR48Snto4fHq8DXkslZpvfYaLpVFil4PaYKf', 1, 0, '2023-08-18', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -146,7 +147,7 @@ CREATE TABLE `m_merchants` (
 --
 
 INSERT INTO `m_merchants` (`id`, `me_name`, `me_email`, `me_password`, `me_address`, `me_township`, `me_region`, `me_phone`, `me_profile`, `me_shop_name`, `me_payment_acc`, `del_flg`) VALUES
-(1, 'Go_Deal', 'g3phpproject03@gmail.com', '$2y$10$ux0PZb.PdPZbtFptiDwzA.EeNzCRxmjFHW2E40JhQGb2uXhrYciH2', 'No.10, Kayay Road, Aungmyittar Quater', 390, 13, '09944138580', '/Storage/products/intel-logo-56a6fa195f9b58b7d0e5ce3a.png', 'Go_Deal', 1, 0);
+(1, 'Go_Deal', 'g3phpproject03@gmail.com', '$2y$10$ux0PZb.PdPZbtFptiDwzA.EeNzCRxmjFHW2E40JhQGb2uXhrYciH2', 'No.10, Kayay Road, Aungmyittar Quater', 390, 13, '09944138580', '/Storage/products/logo.png', 'Go_Deal', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -201,19 +202,19 @@ CREATE TABLE `m_products` (
 --
 
 INSERT INTO `m_products` (`id`, `p_category`, `p_title`, `p_buy_price`, `p_sell_price`, `p_stock`, `p_des`, `p_detail`, `p_discount`, `p_brand`, `p_photo_1`, `p_photo_2`, `p_photo_3`, `p_photo_4`, `product_rating`, `p_sub_category`, `del_flg`, `create_date`, `update_date`) VALUES
-(1, 1, '14 PRO MAX', 4000000, 4040000, -2, 'i5, 1235U, 8GB, SSD512GB', 'Dual-camera system\r\n12MP Main: 26 mm, ƒ/1.5 aperture, sensor‑shift optical image stabilization, seven‑element lens, 100% Focus Pixels\r\n12MP Ultra Wide: 13 mm, ƒ/2.4 aperture and 120° field of view, five‑element lens\r\n2x optical zoom out; digital zoom up to 5x\r\nSapphire crystal lens cover\r\nT', NULL, 1, '/Storage/products/product1.jpg', '/Storage/products/product2.jpg', '/Storage/products/p3.jpg', '/Storage/products/p4.jpg', 4, 3, 0, '2023-08-04', NULL),
-(2, 1, 'Iphone(13 PR0 MAX)', 3900000, 4000000, 0, '256GB Space Black, Esim', 'The iPhone 14 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 2, 1, '/Storage/products/product2.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
-(3, 1, 'IPhone (12 pro MAX)', 3000000, 3050000, 2, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/p3.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
-(4, 1, 'Iphone(13 PR0 MAX)', 3900000, 4000000, 3, '256GB Space Black, Esim', 'The iPhone 14 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 2, 1, '/Storage/products/p4.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
+(1, 1, '14 PRO MAX', 4000000, 4040000, 6, '                        i5, 1235U, 8GB, SSD512GB                    ', '                        Dual-camera system\r\n12MP Main: 26 mm, ƒ/1.5 aperture, sensor‑shift optical image stabilization, seven‑element lens, 100% Focus Pixels\r\n12MP Ultra Wide: 13 mm, ƒ/2.4 aperture and 120° field of view, five‑element lens\r\n2x optical zoom out; digital zoom up to 5x\r\nSapphire crystal lens cover\r\nT                    ', 1, 1, '/Storage/products/product1.jpg', '/Storage/products/product2.jpg', '/Storage/products/p3.jpg', '/Storage/products/p4.jpg', 4, 3, 0, '2023-08-23', NULL),
+(2, 1, 'Iphone(13 PR0 MAX)', 3900000, 4000000, -4, '256GB Space Black, Esim', 'The iPhone 14 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 2, 1, '/Storage/products/product2.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
+(3, 1, 'IPhone (12 pro MAX)', 3000000, 3050000, -2, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/p3.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
+(4, 1, 'Iphone(13 PR0 MAX)', 3900000, 4000000, -1, '256GB Space Black, Esim', 'The iPhone 14 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 2, 1, '/Storage/products/p4.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
 (5, 1, 'IPhone (12 pro MAX)', 2900000, 3050000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/p6.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 3, 3, 0, '2023-08-04', NULL),
 (6, 1, 'IPhone (13 pro MAX)', 2500000, 2800000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/p4.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-04', NULL),
-(7, 1, 'IPhone (11 pro MAX)', 4200000, 4250000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-04', NULL),
-(8, 1, 'IPhone (11 mini MAX)', 3000000, 3050000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-04', NULL),
-(9, 1, 'IPhone (8 mini MAX)', 3000000, 3050000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-04', NULL),
-(10, 1, 'IPhone (11 hex MAX)', 3000000, 3050000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-04', NULL),
-(11, 1, 'IPhone (11 dual MAX)', 3000000, 3050000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-04', NULL),
-(12, 1, 'IPhone (11 pro MAX)', 3000000, 3050000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-04', NULL),
-(13, 1, 'IPhone (11 dina MAX)', 3000000, 3050000, 4, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-04', NULL),
+(7, 1, 'IPhone (11 pro MAX)', 4200000, 4250000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/IPhone (11 pro MAX).webp', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
+(8, 1, 'IPhone (11 mini MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/IPhone (11 mini MAX).webp', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
+(9, 1, 'IPhone (8 mini MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/IPhone (8 mini MAX).jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
+(10, 1, 'IPhone (11 hex MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/IPhone (11 hex MAX).jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
+(11, 1, 'IPhone (11 dual MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/IPhone (11 pro MAX).webp', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
+(12, 1, 'IPhone (11 pro MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/download.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
+(13, 1, 'IPhone (11 dina MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/IPhone (11 mini MAX).webp', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
 (14, 1, 'GALAXY F14 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
 (15, 1, 'GALAXY F14 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
 (16, 1, 'GALAXY F14 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
@@ -224,7 +225,8 @@ INSERT INTO `m_products` (`id`, `p_category`, `p_title`, `p_buy_price`, `p_sell_
 (21, 1, 'GALAXY S23 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
 (22, 1, 'GALAXY F123+ ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
 (23, 1, 'GALAXY F04 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(24, 3, 'Acer Swift 1 ( SF114 - Pentium )', 159000, 1591000, 5, '                        Display: 14\" FHD IPS Display,\r\nProcessor: Intel® Pentium® Silver N6000 Processor,\r\nGraphics: Intel® UHD Graphics,\r\nMemory: 8GB DDR4 Memory,\r\nStorage: 256GB PCIe NVMe SSD,\r\nConnectivity: USB 3.0,Type C, HDMI, MicroSD Card , Reader, WLAN 802.11ac +,\r\nBluetooth,\r\nBattery: 48 Wh Li-ion battery,\r\nWeight: 1.16KG\r\nWarranty: 1 Year                                        ', '                        CPU and Chipset : Intel® Pentium® Silver N6000 Processor, ( 4MB L3 Cache, up to 3.30GHz )                                     ', 2, 4, '/Storage/products/Acer Swift 1 ( SF114 - Pentium ).webp', '/Storage/products/Acer Swift 1 ( SF114 - Pentium )2.webp', '/Storage/products/Acer Swift 1 ( SF114 - Pentium )1.webp', '/Storage/products/', NULL, 26, 0, '2023-08-22', NULL);
+(24, 3, 'Acer Swift 1', 159000, 1591000, 5, '                        14\" FHD IPS Display,\r\n                                                                         ', '                                                Processor: Intel® Pentium® Silver N6000 Processor,\r\nGraphics: Intel® UHD Graphics,\r\nMemory: 8GB DDR4 Memory,\r\nStorage: 256GB PCIe NVMe SSD,\r\nConnectivity: USB 3.0,Type C, HDMI, MicroSD Card , Reader, WLAN 802.11ac +,\r\nBluetooth,\r\nBattery: 48 Wh Li-ion battery,\r\nWeight: 1.16KG\r\nWarranty: 1 Year                                                                                                             ', 2, 4, '/Storage/products/Acer Swift 1 ( SF114 - Pentium ).webp', '/Storage/products/Acer Swift 1 ( SF114 - Pentium )2.webp', '/Storage/products/Acer Swift 1 ( SF114 - Pentium )1.webp', '/Storage/products/', NULL, 26, 0, '2023-08-23', NULL),
+(25, 7, 'BRAVIA XR 85', 400000, 450000, 5, 'Mini LED TV                                                    ', 'Intelligent TV processing technology with Cognitive Processor XR that delivers natural and realistic picture quality.                                                        ', 2, 19, '/Storage/products/Sony Tv.png', '/Storage/products/', '/Storage/products/Sony Tv1.png', '/Storage/products/', NULL, 40, 0, '2023-08-23', NULL);
 
 -- --------------------------------------------------------
 
@@ -309,7 +311,10 @@ INSERT INTO `m_sub_category` (`id`, `category_id`, `sub_category_name`, `del_flg
 (28, 3, 'Lenovo', 0, '2023-08-04', NULL),
 (29, 3, 'Asus', 0, '2023-08-04', NULL),
 (30, 3, 'Jumper', 0, '2023-08-04', NULL),
-(31, 3, 'Hp', 0, '2023-08-04', NULL);
+(31, 3, 'Hp', 0, '2023-08-04', NULL),
+(40, 7, 'Sony', 0, '0000-00-00', NULL),
+(41, 7, 'Panasonic', 0, '0000-00-00', NULL),
+(42, 7, 'Philips', 0, '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -833,16 +838,6 @@ CREATE TABLE `t_cart_detail` (
   `update_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `t_cart_detail`
---
-
-INSERT INTO `t_cart_detail` (`id`, `cart_id`, `product_id`, `del_flg`, `create_date`, `update_date`) VALUES
-(1, 1, 1, 1, '2023-08-18', '0000-00-00'),
-(2, 1, 1, 1, '2023-08-18', '0000-00-00'),
-(3, 1, 3, 1, '2023-08-18', '0000-00-00'),
-(4, 1, 4, 1, '2023-08-18', '0000-00-00');
-
 -- --------------------------------------------------------
 
 --
@@ -871,12 +866,11 @@ CREATE TABLE `t_order` (
 --
 
 INSERT INTO `t_order` (`id`, `customer_id`, `total_amt`, `address`, `township`, `region`, `payment`, `payment_no`, `order_done`, `del_flg`, `order_receive_date`, `invoice_date`, `create_date`, `update_date`) VALUES
-(1, 39, 4042250, 'No.11, Aungyadanar Stret,  Sanpya Quater', 450, 1, 'KBZ', '09432678987', 0, 0, '2023-08-18', '2023-08-18', '2023-08-18', NULL),
-(2, 39, 4042250, 'No.11, Aungyadanar Street,  Sanpya Quater', 450, 1, 'Cash On Delivery', '0', 0, 0, '2023-08-18', '2023-08-18', '2023-08-18', NULL),
 (3, 39, 4042250, 'No.11, Aungyadanar Street,  Sanpya Quater', 450, 1, 'Cash On Delivery', '0', 1, 0, '2023-01-18', '2023-08-22', '2023-08-18', NULL),
-(4, 39, 4042250, 'No.11, Aungyadanar Street,  Sanpya Quater', 450, 1, 'KBZ', '09654391268', 0, 0, '2023-08-18', '2023-08-18', '2023-08-18', NULL),
 (5, 39, 11092250, 'No.11, Aungyadanar Street,  Sanpya Quater', 450, 1, 'KBZ', '09785342678', 1, 0, '2023-02-18', '2023-08-22', '2023-08-18', NULL),
-(6, 39, 11092250, 'No.11, Aungyadanar Street,  Sanpya Quater', 450, 1, 'KBZ', '09786432123', 1, 0, '2023-03-18', '2023-08-22', '2023-08-18', NULL);
+(6, 39, 11092250, 'No.11, Aungyadanar Street,  Sanpya Quater', 450, 1, 'KBZ', '09786432123', 1, 0, '2023-03-18', '2023-08-22', '2023-08-18', NULL),
+(9, 39, 19210700, '', 6, 10, 'kbzpay', '09987567342', 1, 0, '2023-08-23', '2023-08-23', '0000-00-00', NULL),
+(13, 39, 443500, '', 6, 10, 'cod', '', 1, 0, '2023-08-23', '2023-08-23', '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -907,7 +901,14 @@ INSERT INTO `t_order_detail` (`id`, `order_id`, `product_id`, `qty`, `amt`, `del
 (5, 5, 4, 1, 4000000, 0, '2023-08-18', NULL),
 (6, 6, 1, 1, 4040000, 0, '2023-08-18', NULL),
 (7, 6, 3, 1, 3050000, 0, '2023-08-18', NULL),
-(8, 6, 4, 1, 4000000, 0, '2023-08-18', NULL);
+(8, 6, 4, 1, 4000000, 0, '2023-08-18', NULL),
+(9, 9, 1, 1, 3999600, 0, '0000-00-00', NULL),
+(10, 9, 1, 1, 3999600, 0, '0000-00-00', NULL),
+(11, 9, 3, 1, 2928000, 0, '0000-00-00', NULL),
+(12, 9, 4, 1, 3920000, 0, '0000-00-00', NULL),
+(13, 9, 25, 1, 441000, 0, '0000-00-00', NULL),
+(14, 9, 2, 1, 3920000, 0, '0000-00-00', NULL),
+(15, 13, 25, 1, 441000, 0, '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -1083,7 +1084,7 @@ ALTER TABLE `t_wishlist_detail`
 -- AUTO_INCREMENT for table `m_brand`
 --
 ALTER TABLE `m_brand`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `m_category`
@@ -1113,7 +1114,7 @@ ALTER TABLE `m_pay_acc`
 -- AUTO_INCREMENT for table `m_products`
 --
 ALTER TABLE `m_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `m_regions`
@@ -1125,7 +1126,7 @@ ALTER TABLE `m_regions`
 -- AUTO_INCREMENT for table `m_sub_category`
 --
 ALTER TABLE `m_sub_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `m_townships`
@@ -1149,19 +1150,19 @@ ALTER TABLE `t_cart`
 -- AUTO_INCREMENT for table `t_cart_detail`
 --
 ALTER TABLE `t_cart_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `t_order`
 --
 ALTER TABLE `t_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `t_order_detail`
 --
 ALTER TABLE `t_order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `t_product_rating_details`
