@@ -220,16 +220,17 @@ include "../../Controller/orderController.php";
         console.log(server_Data2);
         let category = [];
         let sales = [];
-        var totalSales = 0;
-        for (let index = 0; index < server_Data2.length; index++) {
-           totalSales += server_Data2[index].Sales;
+        // var totalSales = 0;
+        // for (let index = 0; index < server_Data2.length; index++) {
+        //    totalSales += server_Data2[index].Sales;
 
-        }
+        // }
         for (let index = 0; index < server_Data2.length; index++) {
             category.push(server_Data2[index].category);
-            var percent = (server_Data2[index].Sales / totalSales) * 100;
+            // var percent = (server_Data2[index].Sales / totalSales) * 100;
             
-            sales.push(percent.toFixed(2));
+            // sales.push(percent.toFixed(2));
+            sales.push(server_Data2[index].Sales);
 
         }
     </script>
