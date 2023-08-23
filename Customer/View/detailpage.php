@@ -199,6 +199,7 @@
                 <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:h-60 h-40 lg:w-60 w-40 bg-white drop-shadow-md mt-2 lg:ml-5 ml-2" id="<?= $products["id"] ?>">
                     <!-- product image -->
                     <div class="w-full lg:h-2/3 h-3/5 relative bg-gray-200">
+                        <img src="../..<?= $products["p_photo_1"] ?>" alt="" class="w-full h-full">
                     </div>
                     <!-- product information -->
                     <div class="flex justify-evenly lg:h-1/3 h-2/5 bg-yellow-50">
