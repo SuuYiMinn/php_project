@@ -6,7 +6,7 @@ session_start();
 
 
 $sql = $pdo->prepare(
-    " SELECT t_order.invoice_date, m_customers.c_email, m_products.p_sell_price, t_order.id,m_products.p_title, t_order.total_amt, m_products.p_sell_price AS unit_price, m_products.p_detail, t_order_detail.qty, m_customers.c_name,
+    " SELECT t_order.invoice_date, t_order_detail.product_id As productId, m_products.p_stock, m_customers.c_email, m_products.p_sell_price, t_order.id,m_products.p_title, t_order.total_amt, m_products.p_sell_price AS unit_price, m_products.p_detail, t_order_detail.qty, m_customers.c_name,
     m_customers.c_phone, m_townships.name As town, m_regions.name As reg,
     t_order.payment, t_order.payment_no, t_order.address, t_order.order_done
     FROM m_products 

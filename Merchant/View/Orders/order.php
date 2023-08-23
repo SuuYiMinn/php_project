@@ -172,7 +172,9 @@ include "../../Controller/orderController.php";
                             <div class="flex flex-row py-1 mb-3 leading-8 bg-white bg-opacity-50 font-heading font-medium rounded-3xl">
                                 <span class="w-32">Address:</span>
 
-                                <span><?= $countProducts["address"] ?>,<?= $countProducts["town"] ?>,<?= $countProducts["reg"] ?></span>
+                                <span><?= $countProducts["address"]?>,
+                                <p><?= $countProducts["town"] ?>,<?= $countProducts["reg"] ?></p>
+                            </span>
 
 
 
