@@ -56,15 +56,15 @@ $sql->execute();
 $revAndOrders = $sql->fetchAll(PDO::FETCH_ASSOC);
 //for sales by Category
 $sql = $pdo->prepare(
-    "SELECT m_category.cat_name As category, SUM(sales) As Sales
-    FROM (SELECT t_order_detail.product_id, t_order_detail.qty, t_order_detail.amt, t_order_detail.qty*t_order_detail.amt As sales, m_category.id As catId
-        FROM t_order_detail
-        JOIN t_order ON t_order.id = t_order_detail.order_id                                        
-        JOIN m_products ON m_products.id = t_order_detail.product_id 
-        JOIN m_category ON m_category.id = m_products.p_category
-        WHERE t_order.order_done = 1 GROUP By m_products.p_category) bb
-         
-        JOIN m_category ON m_category.id = catId
+    "SELECT category, sumCat As Sales FROM
+    (SELECT t_order_detail.product_id, t_order_detail.qty, t_order_detail.amt, m_category.id As catId,
+    m_category.cat_name As category,
+     t_order.id, t_order.order_done, t_order_detail.qty * t_order_detail.amt As qtyAmt,
+     SUM(t_order_detail.qty * t_order_detail.amt) As sumCat, SUM(qty) As totalQty
+         FROM t_order_detail
+         JOIN t_order ON t_order.id = t_order_detail.order_id                                        
+         JOIN m_products ON m_products.id = t_order_detail.product_id 
+         JOIN m_category ON m_category.id = m_products.p_category WHERE t_order.order_done = 1 GROUP By catId) bb
     "
 );
 

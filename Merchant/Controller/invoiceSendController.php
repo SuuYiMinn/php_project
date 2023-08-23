@@ -1,9 +1,9 @@
 <?php
 session_start();
 $receiveInvoice = $_SESSION["invoice"];
-// include "./common/mailSender.php";
+
 include "../Model/model.php";
-// $email =$_GET["email"];
+
 $invoiceId =$_GET["id"];
 $inDate = date("Y/m/d");
 $sql = $pdo->prepare(
@@ -17,33 +17,31 @@ $sql = $pdo->prepare(
 $sql->bindValue(":date", $inDate);
 $sql->bindValue(":id", $invoiceId);
 $sql->execute();
-//for get email
-// $sql = $pdo->prepare(
 
-//     "SELECT m_customers.c_email FROM t_order
-//     JOIN m_customers ON m_customers.id = t_order.customer_id
-//     WHERE t_order.id= :id
-//     "
-// );
-// $sql->bindValue(":id", $invoiceId);
+foreach ($receiveInvoice[0] as $quantity) {
+    // echo "<pre>";
+    // print_r ($quantity);
+    // echo "</pre>";
+    $orderQty = $quantity["qty"];
+    $productId = $quantity["productId"];
+    $stock = $quantity["p_stock"];
+    $leftStock = $stock - $orderQty;
+    // echo $orderQty;
+    // echo $productId;
+    $sql = $pdo->prepare(
 
-// $sql->execute();
-// $_SESSION["cusInfo"] = $sql->fetchAll(PDO::FETCH_ASSOC);
-//send invoice mail
-// $body = file_get_contents("../Mail/invoice/index.html");
-// $imgList = [
-//     "../Mail/invoice/images/image-1.png"
-    // "../Mail/invoice/images/image-2.png",
-    // "../Mail/invoice/images/image-3.png",
-    // "../Mail/invoice/images/image-4.png"
-    // "../Mail/invoiceMail/images/image-5.png",
-    // "../Mail/invoiceMail/images/image-6.png",
-    // "../Mail/invoiceMail/images/image-7.png",
-    // "../Mail/invoiceMail/images/image-8.png",
-    // "../Mail/invoiceMail/images/image-9.gif"
-// ];
-// $mail = new SendMail();
-// $mail->sendMail($email,"Invoice For Your Shopping", $body, $imgList);
+        "UPDATE m_products SET
+        p_stock =:stock
+        WHERE id =:id
+        "
+    );
+    $sql->bindValue(":stock", $leftStock);
+    $sql->bindValue(":id", $productId);
+    $sql->execute();
+}
+
+
+
 include "./common/mailSender.php";
 $to = $receiveInvoice[0][0]["c_email"];
 $name = "Dennis";
@@ -55,7 +53,6 @@ $cusReg = $receiveInvoice[0][0]["reg"];
 $cusPayment = $receiveInvoice[0][0]["payment"];
 $invoiceDate = $receiveInvoice[0][0]["invoice_date"];
 $totalAmt = $receiveInvoice[0][0]["total_amt"];
-// $receiveInvoice = $invoice;
 
 
 
@@ -64,11 +61,10 @@ $totalAmt = $receiveInvoice[0][0]["total_amt"];
 
 ob_start();
 include("../Mail/invoice/index.php");
-// include("../View/Orders/invoice.php");
+
 $message = ob_get_contents();
 ob_get_clean();
-// $send = mail($to, $subject, $message, $headers);
-// echo ($send ? "Mail is send" : "There was an error");
+
 
 $imgList = [
     "../Mail/invoice/images/image-1.png",
@@ -83,15 +79,6 @@ $imgList = [
 ];
 $mail = new SendMail();
 $mail->sendMail($to,"Invoice For Your Shopping", $message, $imgList);
-
+// echo "Invoice has been sent";
 header("Location: ../View/Orders/order.php");
-
-
-
-
-
-
-
-// header("Location: ./mailSendController.php");
-
 ?>
