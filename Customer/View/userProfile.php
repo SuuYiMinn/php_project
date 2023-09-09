@@ -11,68 +11,110 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="./resources/lib/jquery/jquery.js"></script>
   <script src="./resources/js/menu.js"></script>
+  <script src="./resources/js/logout.js"></script>
   <title>User Profile</title>
 </head>
 
-<body>
+<body class="w-full h-screen">
 
-  <?php include "./common/nav_without_search.php" ?>
+  <?php include "./common/nav_without_search.php";
+  include "../Controller/getUserController.php" ?>
   <!-- body -->
-  <section class="w-full flex text-center lg:flex-row flex-col justify-around my-10">
-    <!-- profile -->
-    <div class="lg:w-3/12 lg:mx-16 w-2/3 mx-auto">
-      <p class="text-2xl mb-8">User Profile</p>
+  <section class="lg:w-1/4 w-11/12 mx-auto bg-yellow-100/50 mt-20 text-center drop-shadow-2xl rounded-3xl">
 
-      <div class="w-44 h-32 mx-auto">
-        <img class="w-full rounded-xl" src="./resources/img/photo/shopProfile.jpg" alt="User image" >
+    <div class="  my-10 flex-col justify-items-center relative">
+
+      <!-- logout pop up -->
+
+      <div class="w-4/5 h-40 bg-white absolute top-24 right-10 rounded-lg drop-shadow-lg z-50 text-green-800 " id="logOut_popUp">
+        <div class="mt-8">
+          <p class="text-xl font-medium">ARE YOU SURE!</p>
+          <p>You want to log out?</p>
+        </div>
+        <div class="flex justify-evenly mt-5">
+          <button class="text-white bg-[#607d38] rounded-md w-1/4" id="no_logout">No</button>
+          <a href="../Controller/log_outController.php" class="text-white bg-[#607d38] rounded-md w-1/4">Yes</a>
+        </div>
+
+      </div>
+      <!-- profile -->
+      <a href="./edit_profile.php" class="float-right mt-4 mr-3 clear-all" title="Edit Profile">
+        <ion-icon name="create-outline" id="edit_profile"></ion-icon>
+
+      </a>
+      <div class=" mx-auto  w-2/3 my-10">
+
+        <div class="w-28 h-28 mx-auto absolute -top-10 right-[37%] rounded-full">
+          <img class="w-full rounded-full" src="../../<?= $user_account_result[0]["c_profile"] ?>" alt="User image">
+        </div>
+
+        <div class="pt-20">
+          <p class="mt-4"><?= $user_account_result[0]["c_name"] ?></p>
+
+          <p class="text-sm text-[#FF9F29]"><?= $user_account_result[0]["c_phone"] ?></p>
+
+          <p class="text-sm"><?= $user_account_result[0]["c_email"] ?></p>
+        </div>
+
       </div>
 
-      <p class="text-lg mt-5">Hla Hla Htun</p>
+      <!-- other details -->
 
-      <p class="text-lg text-[#FF9F29]">09758891190</p>
+      <div class=" w-full  pb-20">
+        <!-- one list -->
+        <div class="flex w-10/12 mx-auto relative hover:bg-[#607d38] rounded-lg hover:text-white transition ease-in-out delay-150 py-2 ">
 
-      <p class="text-lg">hal09@gmail.com</p>
-    </div>
+          <div class="w-32 mx-auto flex">
+            <ion-icon name="cart" class="scale-150 mt-1"></ion-icon>
 
-    <!-- other details -->
+            <a href="./myorder.php" class="ml-4">My orders</a>
+          </div>
+        </div>
+        <div class="flex w-10/12 mx-auto relative  hover:bg-[#607d38] rounded-lg hover:text-white transition ease-in-out delay-150 py-2 my-2">
 
-    <div class="lg:w-8/12 w-full lg:mt-0 mt-5">
-      <!-- one list -->
-      <div class="flex lg:w-8/12 w-11/12 mx-auto border-b-[1px] border-orange-400 relative">
+          <div class="w-32 mx-auto flex">
+            <ion-icon name="gift-outline" class="scale-150 mt-1"></ion-icon>
 
-        <ion-icon name="cart" class="scale-150"></ion-icon>
+            <a href="./whislist.php" class="ml-4">My Wishlist</a>
+          </div>
 
-        <p class="text-xl ml-5">My orders</p>
-        <ion-icon name="chevron-down-outline" class="absolute right-0 bottom-0 scaleX-150"></ion-icon>
+
+
+        </div>
+        <div class="flex w-10/12 mx-auto  relative hover:bg-[#607d38] rounded-lg hover:text-white transition ease-in-out delay-150 py-2">
+
+          <div class="w-32 mx-auto flex">
+            <ion-icon name="happy-outline" class="scale-150 mt-1"></ion-icon>
+
+            <a href="./myReview.php" class="ml-4">My Review</a>
+          </div>
+
+
+
+        </div>
+        <div class="flex w-10/12 mx-auto relative hover:bg-[#607d38] rounded-lg hover:text-white transition ease-in-out delay-150 py-2 my-2">
+
+          <div id="logOut" class="w-32 mx-auto flex">
+            <ion-icon name="log-out-outline" class="scale-150 mt-1"></ion-icon>
+
+            <p class="ml-4">Log Out</p>
+          </div>
+
+
+
+        </div>
+
+        <!-- one list end -->
+
+
+
       </div>
-
-      <!-- one list end -->
-
-      <!-- one list -->
-      <div class="flex lg:w-8/12 w-11/12 mx-auto border-b-[1px] border-orange-400 relative my-16">
-
-        <ion-icon name="gift-outline" class="scale-150"></ion-icon>
-
-        <p class="text-xl ml-5">My Wishlist</p>
-        <ion-icon name="chevron-down-outline" class="absolute right-0 bottom-0 scaleX-150"></ion-icon>
-      </div>
-
-
-      <!-- one list -->
-      <div class="flex lg:w-8/12 w-11/12 mx-auto border-b-[1px] border-orange-400 relative">
-
-        <ion-icon name="happy-outline" class="scale-150"></ion-icon>
-
-        <p class="text-xl ml-5">My Review</p>
-        <ion-icon name="chevron-down-outline" class="absolute right-0 bottom-0 scaleX-150"></ion-icon>
-      </div>
-
     </div>
 
   </section>
 
   <?php include "../View/common/commonFooter.php" ?>
- 
+
 </body>
 
 </html>

@@ -92,8 +92,6 @@ session_start();
 
    }
 
-
-
    if($buytype==1){
       // insert product information in order detail table
 
@@ -114,46 +112,35 @@ session_start();
          $p_sellprice = $product_price - (($product_price/100)*$discount);
       }else{
          $p_sellprice =  $cart_product[0]["p_sell_price"];
-      }
-
-    
-      
-
-      
-      
+      }      
    // insert into order detail table
 
    $orderdetail_sql=$pdo->prepare(
-      "INSERT INTO t_order_detail(order_id,product_id,qty,amt) VALUES(:orderId,:productId,1,:subtotal)"
+      "INSERT INTO t_order_detail(order_id,product_id,qty,amt) VALUES(:orderId,:productId,:productQty,:subtotal)"
    );
 
    $orderdetail_sql->bindValue(":orderId",$getOrder_id);
    $orderdetail_sql->bindValue(":productId",$product);
-   $orderdetail_sql->bindValue(":orderId",$p_sellprice);
+   $orderdetail_sql->bindValue(":productQty",$_SESSION["buy_product_quantity"]);
+   $orderdetail_sql->bindValue(":subtotal", $p_sellprice *$_SESSION["buy_product_quantity"] );
    $orderdetail_sql->execute();
-
-  
-    
-
    }
    if($buytype==2){
 
      $cart_id = $_SESSION["buy_cart"];
 
      $getCartInfo_sql = $pdo->prepare(
-      "SELECT product_id,p_sell_price,p_discount FROM  m_products LEFT JOIN t_cart_detail ON t_cart_detail.product_id = m_products.id WHERE t_cart_detail.cart_id =:cartId"
+      "SELECT product_id,p_sell_price,p_discount,qty FROM
+        m_products LEFT JOIN t_cart_detail ON t_cart_detail.product_id = m_products.id 
+      WHERE t_cart_detail.cart_id =:cartId AND m_products.del_flg = 0 AND t_cart_detail.del_flg = 0 "
      );
      $getCartInfo_sql->bindValue(":cartId",$cart_id);
      $getCartInfo_sql->execute();
      $cartInfo_result = $getCartInfo_sql->fetchAll(PDO::FETCH_ASSOC);
-
-    
-     
-
     
 
      foreach ($cartInfo_result as $cart_product) {
-
+      $product_quantity = $cart_product["qty"];
       $discount = $cart_product["p_discount"];
       if($discount != null){
          $product_price = $cart_product["p_sell_price"];
@@ -165,22 +152,43 @@ session_start();
 
       $orderCart_sql = $pdo->prepare(
 
-         "INSERT INTO t_order_detail(order_id,product_id,qty,amt) VALUES(:orderId,:productId,1,:subtotal)"
+         "INSERT INTO t_order_detail(order_id,product_id,qty,amt) VALUES(:orderId,:productId,:productQty,:subtotal)"
    
         );
         $orderCart_sql->bindValue(":orderId",$getOrder_id);
         $orderCart_sql->bindValue(":productId",$cart_product["product_id"]);
-        $orderCart_sql->bindValue(":subtotal",$p_sellprice);
+        $orderCart_sql->bindValue(":productQty",$product_quantity);
+        $orderCart_sql->bindValue(":subtotal",$p_sellprice * $product_quantity);
         $orderCart_sql->execute();
 
-     }
 
-   
-   
 
+        // empty the cart 
+
+        $delete_from_cart_sql = $pdo->prepare(
+
+         "UPDATE t_cart set del_flg = 1 WHERE id = :cartId"
+
+        );
+
+        $delete_from_cart_sql->bindValue("cartId",$cart_id);
+        $delete_from_cart_sql->execute();
+
+
+         // empty the deleted cart detail
+        $delete_from_cart_detail_sql = $pdo->prepare(
+
+         "UPDATE t_cart_detail set del_flg = 1 WHERE cart_id = :cartId"
+
+        );
+
+        $delete_from_cart_detail_sql->bindValue("cartId",$cart_id);
+        $delete_from_cart_detail_sql->execute();
+        
+
+     } 
 
    }
-
 
    header("Location: ../View/thankyou.php");
 

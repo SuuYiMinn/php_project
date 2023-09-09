@@ -16,6 +16,7 @@ $(document).ready(function () {
   
           let receiveTownships = JSON.parse(res);
           console.log(receiveTownships);
+          console.log(receiveTownships);
   
          
   

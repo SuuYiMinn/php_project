@@ -15,13 +15,13 @@ if (($_GET["cartId"] != null)&&(isset($_GET["cartId"]))) {
         $_SESSION["buy_cart"] = $cart_id;
         $_SESSION["buy_type"] = 2;
 
-        echo($_SESSION["buy_cart"] );
+   
 
         include "../Model/model.php";
 
         $address_sql = $pdo->prepare(
 
-            "SELECT c_address, c_township, c_region FROM m_customers WHERE id = :customerId"
+            "SELECT c_address, c_township, c_region FROM m_customers WHERE id = :customerId AND del_flg = 0"
 
         );
 

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class=" invisible lg:w-full lg:h-6 bg-[#FF9F29] flex justify-evenly text-white text-xs  lg:visible ">
+    <nav class=" invisible lg:w-full lg:h-6 bg-[#607d38] flex justify-evenly text-white text-xs  lg:visible ">
         <div class="flex justify-between py-1">
             <phone class="flex mr-4">
                 <ion-icon name="call-outline" class="mx-2 py-[2px]"></ion-icon>
@@ -45,29 +45,33 @@
     <!--navigation bar end-->
     <!--menu bar start-->
     <div class="lg:inline hidden">
-        <menu class="w-full flex justify-evenly py-2 border lg:visible invisible">
-            <a href="./home.php" class="w-[100px] h-[30px]">
+        <menu class="w-full flex  py-2 border">
+            <a href="./home.php" class="w-[100px] h-[30px] absolute left-10">
                 <img src="../resources/img/photo/Logo.png" alt="logo" class="pt-0">
             </a>
 
+            <div class="w-72 flex justify-evenly mx-auto">
             <a href="../homepage.php">Home</a>
             <a href="../brandlist.php">Brand</a>
             <a href="../aboutUs.php">About Us</a>
-            <a href="../aboutUs.php">Contact Us</a>
-            <a href="../aboutUs.php">Help</a>
+            </div>
+           
+           
             <!-- <searchBar class="relative">
             <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
 
             <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
         </searchBar> -->
-            <ion-icon name="notifications" class="w-[23px] h-[23px] fill-[#ff9f29]"></ion-icon>
+        <div class = "w-40 absolute right-0">
+            <ion-icon name="heart-outline" class="w-[20px] h-[20px] text-[#607d38] "></ion-icon>
             <?php if ($accountresult != null) { ?>
-            <a href="../cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+            <a href="../cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
 
         <?php } else { ?>
-            <a href="./signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+            <a href="./signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
         <?php } ?>
 
+        </div>
         </menu>
     </div>
     <!--menu bar end-->
@@ -81,15 +85,15 @@
 
             <ion-icon name="search" class="w-[17px] h-[17px] fill-[#FF9F29] absolute top-1 left-2"></ion-icon>
         </searchBar> -->
-        <ion-icon name="notifications" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon>
+        <ion-icon name="notifications" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon>
 
         <?php if ($accountresult != null) { ?>
-            <a href="../cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+            <a href="../cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[[#607d38]"></ion-icon></a>
 
         <?php } else { ?>
-            <a href="./signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#ff9f29]"></ion-icon></a>
+            <a href="./signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
         <?php } ?>
-        <ion-icon name="menu-outline" class="w-[20px] h-[20px] text-[#ff9f29]" id="commonNav_menu"></ion-icon>
+        <ion-icon name="menu-outline" class="w-[20px] h-[20px] text-[#607d38]" id="commonNav_menu"></ion-icon>
     </div>
     <div class="w-28 h-36 bg-black opacity-70 float-right  text-white text-center flex flex-col justify-evenly absolute top-10 right-2 lg:invisible sm:visible" id="commonNav_dropdown">
         <a href = "../aboutUs.php">About Us</a>

@@ -71,21 +71,38 @@
 
               $price = $buyproduct["p_sell_price"] - ((($buyproduct["p_discount"]) / 100)  * ($buyproduct["p_sell_price"]));
             } else $price = $buyproduct["p_sell_price"];
-              $subtotal += $price;
+
+            if($_SESSION["buy_type"]==1){
+
+              $subtotal += ($price * $product_quantity);
+
+            } if ($_SESSION["buy_type"]==2){
+
+              $subtotal += ($price * $buyproduct["qty"]);
+            }
+             
           ?>
-            <div class="flex justify-around border-b-orange-500 border-b-2 py-2 ">
+            <div class="flex justify-around border-b-[#607d38] border-b-2 py-2 ">
               <div class="w-20">
                 <img class="w-full" src="../..<?=$buyproduct["p_photo_1"]?>" alt="" />
               </div>
               <div class="w-4/5 ml-10 flex justify-around flex-col">
-                <p class="lg:text-lg text-sm"><?= $buyproduct["p_title"] ?></p>
+                <p class="lg:text-lg text-sm"><?= $buyproduct["p_title"]?></p>
                 <p class="lg:text-lg text-sm">Ks <?= $price ?></p>
                 <p class="lg:text-sm text-xs">
                 <div class="flex items-center w-28 justify-evenly float-right">
                 <p>Qty</p>
-               
-                <p class="qty">1</p>
+               <?php if($_SESSION["buy_type"] == 1) {?>
+
+                <p class="qty"><?=$product_quantity?></p>
+                <?php $_SESSION["buy_product_quantity"] = $product_quantity ?>
+                <?php } else {?>
+                                  
+                  <p class="qty"><?=$buyproduct["qty"]?></p>
+            
+                  <?php } ?>
              
+
             </div>
                 </p>
               </div>
@@ -101,10 +118,12 @@
           <?php } ?>
 
           <!-- total -->
-          <div class="text-orange-500 text-right mt-4">
+          <div class="text-[#607d38] text-right mt-4">
             <span class="lg:text-base text-sm"> <?= count($buyproducts_result) ?> item(s). </span>
             <span class="lg:text-base text-sm"> Subtotal: </span>
-            <span class="lg:text-lg text-base"> Ks <?= $subtotal ?> </span>
+            <span class="lg:text-lg text-base"> Ks <?=$subtotal ?> 
+             
+ </span>
           </div>
         </div>
         <br />
@@ -116,7 +135,7 @@
           </div>
           <div>
             <p class="my-2">Ks <?= $subtotal?> </p>
-            <p class="text-orange-500">Ks <?= $shippingfees ?></p>
+            <p class="text-[#607d38]">Ks <?= $shippingfees ?></p>
           </div>
         </div>
 
@@ -127,6 +146,7 @@
         <?php $_SESSION["subtotal"]= ($shippingfees + $subtotal) ?>
         <div class="lg:w-48 w-36 py-3 rounded-lg bg-[#ff9f29] mx-auto text-center mt-24 mb-10">
           <button>
+           
             <a  href="./payment.php" class="text-white lg:text-xl text-l font-semibold">Place Order</a>
           </button>
         </div>

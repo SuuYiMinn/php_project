@@ -57,7 +57,7 @@ if(isset($_SESSION["user_account"])){
                 m_customers.c_email
             FROM m_customers 
             LEFT JOIN m_townships ON m_customers.c_township = m_townships.id 
-            LEFT JOIN m_regions ON m_customers.c_region = m_regions.id WHERE m_customers.id = :userId"
+            LEFT JOIN m_regions ON m_customers.c_region = m_regions.id WHERE m_customers.id = :userId AND m_customers.del_flg = 0"
     );
     $userInfo_sql->bindValue(":userId",$customer);
     $userInfo_sql->execute();
@@ -76,7 +76,7 @@ if(isset($_SESSION["user_account"])){
     // get product info of buy now product
     
     $productInfo_sql =$pdo->prepare(
-        "SELECT * FROM m_products WHERE id = :productId"
+        "SELECT * FROM m_products WHERE id = :productId AND del_flg = 0 "
     );
     
     $productInfo_sql->bindValue(":productId",$buyproductId);
@@ -89,16 +89,14 @@ if(isset($_SESSION["user_account"])){
     }
     
     elseif ((isset($_SESSION["buy_cart"]))&&(($_SESSION["buy_cart"] != null))&& ($_SESSION["buy_type"]==2)) {
-    
-     
-    
+        
         $buycartId = $_SESSION["buy_cart"];
 
-      
+             $cart_sql = $pdo->prepare(
     
-        $cart_sql = $pdo->prepare(
-    
-            "SELECT * FROM m_products LEFT JOIN t_cart_detail ON m_products.id = t_cart_detail.product_id WHERE t_cart_detail.cart_id =  :cartId"
+            "SELECT p_title, p_sell_price, p_photo_1, p_discount, qty FROM m_products LEFT JOIN t_cart_detail ON 
+            m_products.id = t_cart_detail.product_id WHERE 
+            t_cart_detail.cart_id =  :cartId AND t_cart_detail.del_flg = 0 AND m_products.del_flg = 0"
     
         );
       

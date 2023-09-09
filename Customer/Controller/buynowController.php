@@ -19,7 +19,7 @@ if (($_POST["productid"] != null)&&(isset($_POST["productid"]))) {
 
         $address_sql = $pdo->prepare(
 
-            "SELECT c_address, c_township, c_region FROM m_customers WHERE id = :customerId"
+            "SELECT c_address, c_township, c_region FROM m_customers WHERE id = :customerId and del_flg = 0"
 
         );
 

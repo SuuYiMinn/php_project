@@ -27,17 +27,17 @@ if (!isset($_SESSION["user_account"])) {
 
     <main class=" lg:flex w-full h-full justify-between px-20 ">
         <div class="lg:w-1/3 lg:ml-24 sm:w-4/5  mt-16 sm:mx-auto">
-            <p class="text-orange-500 text-3xl font-semibold text-center">Your Account</p>
-            <p class="text-orange-500 text-3xl font-semibold text-center">Has been Registered</p>
+            <p class="text-green-700 text-3xl font-semibold text-center">Your Account</p>
+            <p class="text-green-700 text-3xl font-semibold text-center">Has been Registered</p>
 
-            <form action="../../Controller/finishSignUpController.php" method="post" class="mt-6 h-28 flex lg:flex-row flex-col justify-around items-center ">
-                <div class="mb-4">
-                    <p class="font-medium ">User Name</p>
-                    <input type="text" name="username" class="h-8 ring-[1px] rounded-md mr-2 my-2">
-                    <p class="text-xs text-orange-500">If you didn't add name your user email address will be remark as your user name</p>
+            <form action="../../Controller/finishSignUpController.php" method="post" class="mt-10 h-28 flex  flex-col justify-around items-center ">
+                <div class="my-10 w-60 mx-auto">
+                    <p class="font-medium text-gray-400 ">User Name</p>
+                    <input type="text" name="username" class="h-8 ring-[1px] rounded-md w-60 my-2  placeholder:px-4" placeholder="Enter your name">
+                    <p class="text-xs text-gray-500  text-center">If you didn't add name your user email address will be remark as your user name</p>
                 </div>
 
-                <input type="submit" value="Go Home page" class=" h-8 py-[2px] px-2 bg-green-800 text-white rounded-md">
+                <input type="submit" value="Go Home page" class=" h-8 py-[2px]  text-center px-4 bg-green-800 text-white rounded-md">
 
             </form>
 

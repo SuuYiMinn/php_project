@@ -16,7 +16,7 @@ $(document).ready(function () {
         product_qtyInt--;
     }
    
-
+    $("#qty").html(product_qtyInt);
     $("#p_qty").val(product_qtyInt);
   });
 });

@@ -28,22 +28,25 @@
                 <div class="">
                     <p class="mb-4 text-orange-500 test-center w-60">Please sign up using email</p>
                     <p class=" mb-1 text-xs text-blue-900 w-60">We will send verification link to your email</p>
+                    <div>
                     <input type="text" required name="email" placeholder="Enter your email" class="px-4 ring-1 rounded-md">
                     <?php
                     if (isset($_SESSION["registerError"])) { ?> <p class="text-red-500 text-xs font-semibold">
                             <?= $_SESSION["registerError"]; ?>
                         </p><?php } ?>
+                    </div>
+                  
                     <input type="password" required name="password" placeholder="Enter password" class="px-4 ring-1 rounded-md my-5">
 
 
                 </div>
 
                 <div class="w-52 mt-10 text-center">
-                    <input type="submit" value="Register" class="bg-[#ff9f29] rounded-md px-16 lg:px-16 py-1 text-white">
+                    <input type="submit" value="Register" class="bg-[#607d38] rounded-md px-16 lg:px-16 py-1 text-white">
                 </div>
                 <div class="w-52 text-center text-xs mt-6">
                     <p class="">Already have an account?</p>
-                    <a href="./login.php" class="text-orange-600">Sign in</a>
+                    <a href="./login.php" class=" text-blue-600 hover:underline font-medium text-sm delay-200 ease-in-out transition-all">Sign in</a>
                 </div>
 
             </div>

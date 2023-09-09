@@ -74,7 +74,7 @@ include "../Controller/addAddressController.php";
           <p class="text-white text-lg">Cancel</p>
         </button>
         <button type="submit" class="lg:w-40 w-32 h-10 bg-[#F86F03] rounded-[10px] ml-10" name="saveaddress" >
-          <p class="text-white text-lg">Safe</p>
+          <p class="text-white text-lg">Save</p>
         </button>
       </div>
       <br><br>

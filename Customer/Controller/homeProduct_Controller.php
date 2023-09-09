@@ -10,7 +10,7 @@ $justforU_sql->execute();
 $justForU_result = $justforU_sql->fetchAll(PDO::FETCH_ASSOC);
 
 $popular_sql = $pdo->prepare(
-    "SELECT * FROM m_products WHERE product_rating >= 4 LIMIT 4"
+    "SELECT * FROM m_products WHERE product_rating >= 4 AND del_flg = 0 LIMIT 4"
 );
 
 $popular_sql -> execute();

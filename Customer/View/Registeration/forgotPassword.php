@@ -18,23 +18,24 @@ session_start();
 
 <body>
 <?php include "../common/registeration_nav.php" ?>
-    <main class=" lg:flex w-full h-full justify-between">
+    <main class="lg:flex w-4/5 h-full justify-evenly mx-auto">
 
     <form action="../../Controller/forgotpasswordController.php" method="post">
-        <div class="lg:w-1/3 w-4/5 my-10 mx-auto">
-            <p class="text-2xl text-center w-60">Reset password</p>
+        <div class="lg:mt-20 mt-40">
+            <p class="text-3xl font-medium text-gray-700 drop-shadow-2xl shadow-orange-500 lg:ml-20 ml-12 ">Reset password</p>
 
-            <div class="mt-20 w-3/4 mx-auto">
-                <p class="mb-2 w-60  text-orange-500">Please enter your email</p>
-                <p class="mb-1 text-xs text-blue-900 w-60">In order to identify your identity we have sent a one time code to your email</p>
-
-                <input type="text" name="email" placeholder="Enter your email" class=" px-2 w-54 ring-1 rounded-md mx-auto">
+            <div class="mt-10 w-3/4 mx-auto">
+                <p class="text-[#607d38] mb-1 ml-1">Please enter your email</p>
+                <input type="text" name="email" placeholder="Enter your email" class="ring-1 ring-green-400 w-72 rounded-lg h-8 placeholder:px-2  ">
+                <p class="mt-1 text-[12px] w-60 text-gray-400 ">We will sent a one time code to your email</p>
                 
 
             </div>
 
-            <div class="mt-8 w-56 mx-auto">
-                <input type="submit" name="customer" value="Send Code" class="bg-[#ff9f29] rounded-md text-center my-4 px-16 py-1 text-white">
+            <div class="mt-8">
+                <div class="w-1/2 mx-auto text-center">
+                <input type="submit" name="customer" value="Send Code" class="text-white  bg-[#607d38] rounded-md px-16 py-2">
+                </div>
                 <?php if(isset($_SESSION["code_sent"])) { ?>
                     <p class="px-1 py-1 text-xs "><?= $_SESSION["code_sent"] ?></p> <?php }?>
             </div>

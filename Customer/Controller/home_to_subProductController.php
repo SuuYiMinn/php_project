@@ -9,7 +9,7 @@ if(isset($_GET["page"])){
     $page = 1;
 }
 
-$product_limit = 12;
+$product_limit = 8;
 $page_start = ($page-1)*$product_limit;
 
 $page_start = ($page_start<0)? 1: $page_start;
