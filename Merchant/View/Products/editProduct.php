@@ -246,7 +246,7 @@ include "../../Controller/subCategoryListController.php";
                                  " alt="">
                         </label>
 
-                        <input type="file" name="default_img1" id="default_img1" accept=".png,.jpeg" class="hidden">
+                        <input type="file" name="default_img1" id="default_img1" accept="" class="hidden">
                     </div>
                         <div>
                             <label for="default_img2">
@@ -259,7 +259,7 @@ include "../../Controller/subCategoryListController.php";
                                 
                                 " alt="">
                             </label>
-                            <input type="file" name="default_img2" id="default_img2" accept=".png,.jpeg" class="hidden">
+                            <input type="file" name="default_img2" id="default_img2" accept="" class="hidden">
                         </div>
 
                     </div>
@@ -275,7 +275,7 @@ include "../../Controller/subCategoryListController.php";
                                 
                                 " alt="">
                             </label>
-                            <input type="file" name="default_img3" id="default_img3" accept=".png,.jpeg" class="hidden">
+                            <input type="file" name="default_img3" id="default_img3" accept="" class="hidden">
                         </div>
 
                         <div>

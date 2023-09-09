@@ -2,7 +2,7 @@
 include "../../Controller/dashboardController.php";
 include "../../Controller/orderController.php";
 // echo "<pre>";
-// print_r($revAndOrders);
+// print_r($totalSales);
 // echo "</pre>";
 // echo "<pre>";
 // print_r($orders);

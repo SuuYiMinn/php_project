@@ -51,7 +51,7 @@ $cusAddress = $receiveInvoice[0][0]["address"];
 $cusTown = $receiveInvoice[0][0]["town"];
 $cusReg = $receiveInvoice[0][0]["reg"];
 $cusPayment = $receiveInvoice[0][0]["payment"];
-$invoiceDate = $receiveInvoice[0][0]["invoice_date"];
+$invoiceDate = $inDate;
 $totalAmt = $receiveInvoice[0][0]["total_amt"];
 
 
