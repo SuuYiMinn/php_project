@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2023 at 11:52 AM
+-- Generation Time: Nov 08, 2023 at 07:29 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,24 +42,22 @@ CREATE TABLE `m_brand` (
 
 INSERT INTO `m_brand` (`id`, `brand_name`, `brand_photo`, `del_flg`, `create_date`, `update_date`) VALUES
 (1, 'Apple', '/Storage/brand/apple.png', 0, '2023-08-04', NULL),
-(2, 'Dell', '/Storage/brand/dell.png', 0, '2023-08-04', NULL),
 (3, 'Lenovo', '/Storage/brand/lenovo.png', 0, '2023-08-04', NULL),
 (4, 'Acer', '/Storage/brand/acer.png', 0, '2023-08-04', NULL),
 (5, 'Toshiba', '/Storage/brand/toshiba.png', 0, '2023-08-04', NULL),
-(6, 'Panasonic', '/Storage/brand/panasonic.png', 0, '2023-08-04', NULL),
-(7, 'Oppo', '/Storage/brand/oppo.png', 0, '2023-08-04', NULL),
 (8, 'Vivo', '/Storage/brand/vivo.png', 0, '2023-08-04', NULL),
-(9, 'Realme', '/Storage/brand/realme.jiff', 0, '2023-08-04', NULL),
 (10, 'Xiaomi', '/Storage/brand/xiaomi.png', 0, '2023-08-04', NULL),
-(11, 'Huawei', '/Storage/brand/huawei.jiff', 0, '2023-08-04', NULL),
-(12, 'Midea', '', 0, '2023-08-04', NULL),
-(13, 'TCL', '', 0, '2023-08-04', NULL),
-(14, 'Hisense', '', 0, '2023-08-04', NULL),
-(15, 'LG', '', 0, '2023-08-04', NULL),
-(16, 'MCG', '', 0, '2023-08-04', NULL),
-(17, 'Chigo', '', 0, '2023-08-04', NULL),
-(18, 'ChangHong', '', 0, '2023-08-04', NULL),
-(19, 'sony', '/Storage/products/download (1).png', 0, '0000-00-00', NULL);
+(19, 'sony', '/Storage/products/download (1).png', 0, '0000-00-00', NULL),
+(21, 'Realme', '/Storage/products/Reaalme-1024x427.jpg', 0, '0000-00-00', NULL),
+(22, 'LG', '/Storage/products/640px-LG_symbol.svg.png', 0, '0000-00-00', NULL),
+(24, 'Panasonic', '/Storage/products/Panasonic-logo.png', 0, '0000-00-00', NULL),
+(25, 'Dell', '/Storage/products/Dell_logo_2016.svg.png', 0, '0000-00-00', NULL),
+(26, 'Oppo', '/Storage/products/oppo.jpg', 0, '0000-00-00', NULL),
+(27, 'Huawei', '/Storage/products/Huawei_Standard_logo.svg.png', 0, '0000-00-00', NULL),
+(28, 'EPSON', '/Storage/products/Epson-Logo.png', 0, '0000-00-00', NULL),
+(29, 'Canon', '/Storage/products/canon.png', 0, '0000-00-00', NULL),
+(30, 'TSC', '/Storage/products/TSC_LOGO.png', 0, '0000-00-00', NULL),
+(31, 'Chrome', '/Storage/products/Create Chrome Text Effect In Photoshop.jpg', 0, '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -83,12 +81,10 @@ INSERT INTO `m_category` (`id`, `cat_name`, `del_flg`, `create_date`, `update_da
 (1, 'Moible', 0, '2015-11-20', NULL),
 (2, 'Tablet', 0, '2023-08-16', NULL),
 (3, 'Computer', 0, '2023-08-09', NULL),
-(4, 'Printer', 0, '2023-08-22', NULL),
-(5, 'Electronic', 0, '2023-08-21', NULL),
-(6, 'Solar', 0, '2023-08-23', NULL),
 (7, 'TV', 0, '2023-08-04', NULL),
-(8, 'Smart Watch ', 0, '2023-08-04', NULL),
-(9, 'Speaker', 0, '2023-08-04', NULL);
+(10, 'Printer', 0, '2023-11-08', NULL),
+(11, 'Smart Watch', 0, '2023-11-08', NULL),
+(12, 'Speaker', 0, '2023-11-08', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,7 +115,20 @@ CREATE TABLE `m_customers` (
 
 INSERT INTO `m_customers` (`id`, `c_name`, `c_email`, `c_password`, `c_address`, `c_township`, `c_region`, `c_phone`, `c_profile`, `code`, `verify`, `del_flg`, `create_date`, `update_date`) VALUES
 (38, 'Yin Kyae Wai', 'yinkyae3299@gmail.com', '$2y$10$D0M9/s/He/268kqMJmGSR.nm/UbZ31rHQasOS/SrHTPhzeaDvdK2W', 'No.10,Kayay Street, Pataut Quater', 5, 3, '09947342189', NULL, 'CSUICaH49t94KJtbmijlpg6ZN69cAVtTk0VLBKHnfkbnXFTGO07gaWWFS5cgndMhyrVx20zsylc7IHGBixYs85qSopUha03y8gmLB94uHVN0nonEve0QgYh2r2OJt0c0', 1, 0, '2023-08-14', '0000-00-00'),
-(39, 'Suu Yi Minn', 'suuyiminn@gmail.com', '$2y$10$LfdvveYeML7eaJkX7GIDtOQt.TYh6h0wsWrRdCpbi8yF2VCdMYb2K', 'No.11, Aungyadanar Street,  Sanpya Quater', 6, 10, '09912347689', NULL, '9C9BZI8nqOPMZNXlJapN55oBp3fg6R820wLl8meuSlu5RHbhpQa8AafGlb5L5LVnVVCGaU0EMyDuiKChmgosDc0WcMZ9DR48Snto4fHq8DXkslZpvfYaLpVFil4PaYKf', 1, 0, '2023-08-18', '0000-00-00');
+(41, 'SuuYiMinn', 'suuyiminn@gmail.com', '$2y$10$Lh6JcVUAcJ4WadWEJxqcmeBZgQ7lRZPHV/KFS0ZCCv4QX2sVpN//C', 'Manawhari road', 1, 1, '09758895513', NULL, '02EtcTfAZuyf2VXbZ9ZzxDDsEU86UKsjsnveRdqr8UjUCfkoRt0YfNcv5YoTpnpdKEyEUKzwrRdR1pW6lb3IAH9EnLXLkaagYn01SsGhRdmymwxBmQt2YtSINNdSBw0k', 1, 0, '2023-11-06', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_hero`
+--
+
+CREATE TABLE `m_hero` (
+  `id` int(11) NOT NULL,
+  `create_date` date NOT NULL,
+  `update_date` date NOT NULL,
+  `del_flg` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -202,7 +211,6 @@ CREATE TABLE `m_products` (
 --
 
 INSERT INTO `m_products` (`id`, `p_category`, `p_title`, `p_buy_price`, `p_sell_price`, `p_stock`, `p_des`, `p_detail`, `p_discount`, `p_brand`, `p_photo_1`, `p_photo_2`, `p_photo_3`, `p_photo_4`, `product_rating`, `p_sub_category`, `del_flg`, `create_date`, `update_date`) VALUES
-(1, 1, '14 PRO MAX', 4000000, 4040000, 6, '                        i5, 1235U, 8GB, SSD512GB                    ', '                        Dual-camera system\r\n12MP Main: 26 mm, ƒ/1.5 aperture, sensor‑shift optical image stabilization, seven‑element lens, 100% Focus Pixels\r\n12MP Ultra Wide: 13 mm, ƒ/2.4 aperture and 120° field of view, five‑element lens\r\n2x optical zoom out; digital zoom up to 5x\r\nSapphire crystal lens cover\r\nT                    ', 1, 1, '/Storage/products/product1.jpg', '/Storage/products/product2.jpg', '/Storage/products/p3.jpg', '/Storage/products/p4.jpg', 4, 3, 0, '2023-08-23', NULL),
 (2, 1, 'Iphone(13 PR0 MAX)', 3900000, 4000000, -4, '256GB Space Black, Esim', 'The iPhone 14 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 2, 1, '/Storage/products/product2.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
 (3, 1, 'IPhone (12 pro MAX)', 3000000, 3050000, -2, '256GB Space Black, Esim', '\r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 4, 1, '/Storage/products/p3.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
 (4, 1, 'Iphone(13 PR0 MAX)', 3900000, 4000000, -1, '256GB Space Black, Esim', 'The iPhone 14 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks', 2, 1, '/Storage/products/p4.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', 5, 3, 0, '2023-08-04', NULL),
@@ -215,18 +223,23 @@ INSERT INTO `m_products` (`id`, `p_category`, `p_title`, `p_buy_price`, `p_sell_
 (11, 1, 'IPhone (11 dual MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/IPhone (11 pro MAX).webp', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
 (12, 1, 'IPhone (11 pro MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/download.jpg', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
 (13, 1, 'IPhone (11 dina MAX)', 3000000, 3050000, 4, '                        256GB Space Black, Esim                    ', '                        \r\nIphone(12 PR0 MAX)\r\nThe iPhone 12 and iPhone 14 Plus feature a 6.1-inch (15 cm) and 6.7-inch (17 cm) display, improvements to the rear-facing camera, and satellite connectivity for contacting emergency services when a user in trouble is beyond the range of Wi-Fi or cellular networks                    ', 4, 1, '/Storage/products/IPhone (11 mini MAX).webp', '/Storage/products/', '/Storage/products/', '/Storage/products/', NULL, 3, 0, '2023-08-23', NULL),
-(14, 1, 'GALAXY F14 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(15, 1, 'GALAXY F14 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(16, 1, 'GALAXY F14 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(17, 1, 'GALAXY M-12 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(18, 1, 'GALAXY M54 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(19, 1, 'GALAXY F14 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(20, 1, 'GALAXY A-54 ULTRA ', 1000000, 1050000, 3, '(12/512GB) Dual SIM', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(21, 1, 'GALAXY S23 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(22, 1, 'GALAXY F123+ ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
-(23, 1, 'GALAXY F04 ULTRA ', 1000000, 1050000, 3, '(12/512GB)GREEN', 'Type: PLS LCD, 90Hz,Size: 6.6 inches, 104.9 cm2 (~81.5% screen-to-body ratio),Resolution: 1080 x 2408 pixels, 20:9 ratio (~400 ppi density),Protection: Corning Gorilla Glass 5, SIM: Dual SIM (Nano-SIM, dual stand-by\r\n\r\n\r\n', 2, 3, '/Storage/products/', '/Storage/products/', '/Storage/products/', '/Storage/products/', 4, 5, 0, '2023-08-04', NULL),
 (24, 3, 'Acer Swift 1', 159000, 1591000, 5, '                        14\" FHD IPS Display,\r\n                                                                         ', '                                                Processor: Intel® Pentium® Silver N6000 Processor,\r\nGraphics: Intel® UHD Graphics,\r\nMemory: 8GB DDR4 Memory,\r\nStorage: 256GB PCIe NVMe SSD,\r\nConnectivity: USB 3.0,Type C, HDMI, MicroSD Card , Reader, WLAN 802.11ac +,\r\nBluetooth,\r\nBattery: 48 Wh Li-ion battery,\r\nWeight: 1.16KG\r\nWarranty: 1 Year                                                                                                             ', 2, 4, '/Storage/products/Acer Swift 1 ( SF114 - Pentium ).webp', '/Storage/products/Acer Swift 1 ( SF114 - Pentium )2.webp', '/Storage/products/Acer Swift 1 ( SF114 - Pentium )1.webp', '/Storage/products/', NULL, 26, 0, '2023-08-23', NULL),
-(25, 7, 'BRAVIA XR 85', 400000, 450000, 5, 'Mini LED TV                                                    ', 'Intelligent TV processing technology with Cognitive Processor XR that delivers natural and realistic picture quality.                                                        ', 2, 19, '/Storage/products/Sony Tv.png', '/Storage/products/', '/Storage/products/Sony Tv1.png', '/Storage/products/', NULL, 40, 0, '2023-08-23', NULL);
+(25, 7, 'BRAVIA XR 85', 400000, 450000, 5, 'Mini LED TV                                                    ', 'Intelligent TV processing technology with Cognitive Processor XR that delivers natural and realistic picture quality.                                                        ', 2, 19, '/Storage/products/Sony Tv.png', '/Storage/products/', '/Storage/products/Sony Tv1.png', '/Storage/products/', NULL, 40, 0, '2023-08-23', NULL),
+(26, 1, 'Realme C51', 440000, 449900, 9, '128GB, 6.74 inches                                                                                                                    ', '                                                (Nano-SIM, dual stand-by),\r\nFingerprint (side-mounted), accelerometer, proximity, compass,\r\nLi-Po 5000 mAh, 33W wired,\r\n50 MP, f/1.8, 27mm (wide), 1/2.76\", 0.64µm, PDAF                                                                                         ', 3, 21, '/Storage/products/yjtjntr5j_1696140762402.png', '/Storage/products/8okul6_1696140762402.png', '/Storage/products/jrtjrj4ej_1696140762402.png', '/Storage/products/', NULL, 12, 0, '2023-11-05', NULL),
+(27, 1, 'Realme 11 Pro Plus', 1500000, 1599900, 5, '512GB 12GB RAM                ', 'Android 13, Realme UI 4.0,\r\nOcta-core (2x2.6 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55)', 2, 21, '/Storage/products/h46j_1693649055267.png', '/Storage/products/thjyjyk_1693649055268.png', '/Storage/products/Untitled_design_-_2023-09-16T172220.118_1694861627322.png', '/Storage/products/Untitled_design_-_2023-09-16T172309.135_1694861627322.png', NULL, 12, 0, '2023-11-05', NULL),
+(28, 1, 'Realme C55 ', 620000, 629900, 20, '    8GB ,256GB (Gold)                ', '                6.72 inches, 109.0 cm2 (~86.7% screen-to-body ratio), Android 13, Realme UI 4.0    ', 3, 21, '/Storage/products/13_1694863002504.png', '/Storage/products/11_1694863002505.png', '/Storage/products/0089_1679540354332.png', '/Storage/products/12_1694863002505.png', NULL, 12, 0, '2023-11-05', NULL),
+(29, 2, 'iPad Pro 12.9-inch', 4300000, 4350000, 10, '128GB 5G (MP1X3ZP/A)Gray                 ', '2048 x 2732 pixels, 4:3 ratio (~265 ppi density),\r\niPadOS 16.1, upgradable to iPadOS 16.5                    ', 3, 1, '/Storage/products/trjeje4j_1687689452087.png', '/Storage/products/th4ej_1694941638526.png', '/Storage/products/th4rj4ej4_1694941638525.png', '/Storage/products/', NULL, 17, 0, '2023-11-06', NULL),
+(30, 2, 'iPad 9th Gen ', 1600000, 1610000, 10, '64GB,4G,Space Gray           ', '1620 x 2160 pixels, 4:3 ratio (~265 ppi density),\r\n8MP, f/2.4, 31mm (standard), 1.12µm, AF                 ', 1, 1, '/Storage/products/jh4j4kj_1683622879605.png', '/Storage/products/Untitled_design_-_2023-09-16T180714.466_1694864258604.png', '/Storage/products/Untitled_design_-_2023-09-16T180902.715_1694864349187.png', '/Storage/products/', NULL, 17, 0, '2023-11-06', NULL),
+(31, 10, 'Epson L-6290 Printer(NW)', 1200000, 1210000, 10, 'Print Resolution 4800 x 1200                    ', '  50000 pages, 200dpi; 12 sec /27 sec                  ', 2, 28, '/Storage/products/rhehh_1694844674972.png', '/Storage/products/tytkj_1694844590332.png', '/Storage/products/thjrj4_1694844590332.png', '/Storage/products/', NULL, 43, 0, '2023-11-08', NULL),
+(32, 10, 'Epson L-8050 A4 Printer(NW)', 1100000, 1130000, 10, '     5.760 x 1.440 DPI               ', '           8 pages/min Monochrome, 8 pages/min Colour, 55.1 x 45.7 x 24.2 cm         ', 2, 28, '/Storage/products/8529_1690093017339.png', '/Storage/products/Untitled_design_(82)_1690093017339.png', '/Storage/products/Untitled_design_(81)_1690093017339.png', '/Storage/products/', NULL, 43, 0, '2023-11-08', NULL),
+(33, 10, 'EcoTank L18050 Ink Tank Printer', 1000000, 1800000, 10, '2,100 pages (colour)                    ', 'Up to 80 sheets of A3 Plain Paper (80g/m2),\r\nUp to 100 sheets of A3 Plain Paper                    ', 1, 28, '/Storage/products/jyt5j_1694844927039.png', '/Storage/products/hthrjhj_1694844927040.png', '/Storage/products/rhhe_1694844927039.png', '/Storage/products/', NULL, 43, 0, '2023-11-08', NULL),
+(34, 10, 'G-3010 3 in 1 inkjet Printer', 500000, 540000, 10, '1.5, 3.5 ms/line (300 dpi)                    ', '4800 (horizontal)*1 x 1200 (vertical) dpi,\r\n	7000 pages                    ', 2, 29, '/Storage/products/2_1597327825203_1680066358472.png', '/Storage/products/015_1597139202725_1636019244782_1680066358471.png', '/Storage/products/3_1597327825203_1680066358472.png', '/Storage/products/', NULL, 43, 0, '2023-11-08', NULL),
+(35, 10, 'MF-264DW II Laser Printer', 1200000, 1209000, 10, '1,200 × 1,200 dpi (equivalent)', '5-line Monochrome LCD Display,\r\n2.6 seconds or less                    ', 1, 29, '/Storage/products/01_1695622004904.png', '/Storage/products/03_1695622004905.png', '/Storage/products/02_1695622004905.png', '/Storage/products/', NULL, 44, 0, '2023-11-08', NULL),
+(36, 10, 'LBP-6030 Wifi Printer (No Warranty)', 350000, 355000, 9, '600 x 600dpi                    ', '150 sheets (based on 80g/m2),\r\nA4, B5, A5, Legal*1, Letter                    ', 0, 29, '/Storage/products/06_1597138245467_1665822884549_1677319848887.png', '/Storage/products/4_1593505480805_1677319848888.png', '/Storage/products/1_1593505480805_1677319848887.png', '/Storage/products/1_1593505480805_1677319848887.png', NULL, 43, 0, '2023-11-08', NULL),
+(37, 10, 'TSC TE344 Barcode Printer', 780000, 786000, 9, ' 127 mm 5”/Second                   ', '       105.6mm (4.16”) x 1016mm (40”)             ', 0, 30, '/Storage/products/Untitled_design_(55)_1658835861584.png', '/Storage/products/11_(11)_1665827132896.png', '/Storage/products/Untitled_design_(54)_1658835861583.png', '/Storage/products/', NULL, 45, 0, '2023-11-08', NULL),
+(38, 10, 'TTP-244 Pro Barcode Printer', 490000, 495000, 10, '8 dots/mm (203 DPI)                    ', '4MB Flash Rom, 8MB SDRAM, RS-232, Parallel, USB 2.0, W 232mm x D 288 mm x H 156 mm', 0, 30, '/Storage/products/img13_1593577464267.png', '/Storage/products/img12-removebg-preview (1)_1593577464266.png', '/Storage/products/3_1591880881273.png', '/Storage/products/4_1591880881274.png', NULL, 45, 0, '2023-11-08', NULL),
+(39, 11, 'GT4 46mm White Watch', 630000, 639000, 10, '1.43-inches                    ', '    	Up to 14/7 days, 5 ATM-50 m Swim                ', 1, 27, '/Storage/products/326_1698636453301.png', '/Storage/products/Untitled_design_-_2023-10-30T095205.070_1698636453301.png', '/Storage/products/Untitled_design_-_2023-10-30T095439.254_1698636453301.png', '/Storage/products/', NULL, 46, 0, '2023-11-08', NULL),
+(40, 12, 'CS2188BFU 2.1 Speaker', 20000, 23000, 10, '  2.1 Channel                  ', '  Bluetooth , USB , SD Card , LED , FM,\r\n	80W (60W+2x10W)                  ', 0, 31, '/Storage/products/Untitled_design_-_2022-03-08T151655.567_1646730857476.png', '/Storage/products/Untitled_design_-_2023-09-19T184435.421_1695125983294.png', '/Storage/products/Untitled_design_-_2023-09-19T184242.301_1695125983294.png', '/Storage/products/', NULL, 48, 0, '2023-11-08', NULL);
 
 -- --------------------------------------------------------
 
@@ -287,7 +300,6 @@ INSERT INTO `m_sub_category` (`id`, `category_id`, `sub_category_name`, `del_flg
 (4, 1, 'Huawei', 0, '2023-08-04', NULL),
 (5, 1, 'Samsaung', 0, '2023-08-04', NULL),
 (6, 1, 'Xiaomi', 0, '2023-08-04', NULL),
-(7, 1, 'Hwawei', 0, '2023-08-04', NULL),
 (8, 1, 'Oppo', 0, '2023-08-04', NULL),
 (9, 1, 'OnePlus', 0, '2023-08-04', NULL),
 (10, 1, 'Vivo', 0, '2023-08-04', NULL),
@@ -314,7 +326,15 @@ INSERT INTO `m_sub_category` (`id`, `category_id`, `sub_category_name`, `del_flg
 (31, 3, 'Hp', 0, '2023-08-04', NULL),
 (40, 7, 'Sony', 0, '0000-00-00', NULL),
 (41, 7, 'Panasonic', 0, '0000-00-00', NULL),
-(42, 7, 'Philips', 0, '0000-00-00', NULL);
+(42, 7, 'Philips', 0, '0000-00-00', NULL),
+(43, 10, 'Color Printer', 0, '2023-11-08', NULL),
+(44, 10, 'Laser Printer', 0, '2023-11-08', NULL),
+(45, 10, 'Barcode', 0, '2023-11-08', NULL),
+(46, 11, 'Huawei', 0, '2023-11-08', NULL),
+(47, 11, 'Xiaomi', 0, '2023-11-08', NULL),
+(48, 12, 'Audio Speaker', 0, '2023-11-08', NULL),
+(49, 12, 'Bluetooth Speaker', 0, '2023-11-08', NULL),
+(50, 12, 'Sound Bar', 0, '2023-11-08', NULL);
 
 -- --------------------------------------------------------
 
@@ -821,7 +841,9 @@ CREATE TABLE `t_cart` (
 --
 
 INSERT INTO `t_cart` (`id`, `customer_id`, `del_flg`, `create_date`, `update_date`) VALUES
-(1, 39, 0, '2023-08-18', '0000-00-00');
+(1, 39, 0, '2023-08-18', '0000-00-00'),
+(2, 39, 0, '0000-00-00', '0000-00-00'),
+(3, 41, 0, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -837,6 +859,18 @@ CREATE TABLE `t_cart_detail` (
   `create_date` date NOT NULL,
   `update_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `t_cart_detail`
+--
+
+INSERT INTO `t_cart_detail` (`id`, `cart_id`, `product_id`, `del_flg`, `create_date`, `update_date`) VALUES
+(8, 1, 26, 0, '0000-00-00', '0000-00-00'),
+(9, 1, 2, 0, '0000-00-00', '0000-00-00'),
+(10, 1, 3, 0, '0000-00-00', '0000-00-00'),
+(11, 3, 3, 0, '0000-00-00', '0000-00-00'),
+(12, 3, 4, 0, '0000-00-00', '0000-00-00'),
+(13, 3, 26, 0, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -870,7 +904,11 @@ INSERT INTO `t_order` (`id`, `customer_id`, `total_amt`, `address`, `township`, 
 (5, 39, 11092250, 'No.11, Aungyadanar Street,  Sanpya Quater', 450, 1, 'KBZ', '09785342678', 1, 0, '2023-02-18', '2023-08-22', '2023-08-18', NULL),
 (6, 39, 11092250, 'No.11, Aungyadanar Street,  Sanpya Quater', 450, 1, 'KBZ', '09786432123', 1, 0, '2023-03-18', '2023-08-22', '2023-08-18', NULL),
 (9, 39, 19210700, '', 6, 10, 'kbzpay', '09987567342', 1, 0, '2023-08-23', '2023-08-23', '0000-00-00', NULL),
-(13, 39, 443500, '', 6, 10, 'cod', '', 1, 0, '2023-08-23', '2023-08-23', '0000-00-00', NULL);
+(13, 39, 443500, '', 6, 10, 'cod', '', 1, 0, '2023-08-23', '2023-08-23', '0000-00-00', NULL),
+(14, 41, 438903, '', 1, 1, 'cod', '', 1, 0, '2023-11-06', '2023-11-06', '0000-00-00', NULL),
+(15, 41, 613503, '', 1, 1, 'cod', '', 0, 0, '2023-11-06', '0000-00-00', '0000-00-00', NULL),
+(16, 41, 357500, '', 1, 1, 'cod', '', 1, 0, '2023-11-08', '2023-11-08', '0000-00-00', NULL),
+(17, 41, 788500, '', 1, 1, 'cod', '', 1, 0, '2023-11-08', '2023-11-08', '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -908,7 +946,11 @@ INSERT INTO `t_order_detail` (`id`, `order_id`, `product_id`, `qty`, `amt`, `del
 (12, 9, 4, 1, 3920000, 0, '0000-00-00', NULL),
 (13, 9, 25, 1, 441000, 0, '0000-00-00', NULL),
 (14, 9, 2, 1, 3920000, 0, '0000-00-00', NULL),
-(15, 13, 25, 1, 441000, 0, '0000-00-00', NULL);
+(15, 13, 25, 1, 441000, 0, '0000-00-00', NULL),
+(16, 14, 26, 1, 436403, 0, '0000-00-00', NULL),
+(17, 15, 28, 1, 611003, 0, '0000-00-00', NULL),
+(18, 16, 36, 1, 355000, 0, '0000-00-00', NULL),
+(19, 17, 37, 1, 786000, 0, '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -954,6 +996,14 @@ CREATE TABLE `t_wishlist` (
   `update_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `t_wishlist`
+--
+
+INSERT INTO `t_wishlist` (`id`, `customer_id`, `del_flg`, `create_date`, `update_date`) VALUES
+(1, 39, 0, '0000-00-00', '0000-00-00'),
+(2, 41, 0, '0000-00-00', '0000-00-00');
+
 -- --------------------------------------------------------
 
 --
@@ -968,6 +1018,16 @@ CREATE TABLE `t_wishlist_detail` (
   `create_date` date NOT NULL,
   `update_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `t_wishlist_detail`
+--
+
+INSERT INTO `t_wishlist_detail` (`id`, `wishlist_id`, `product_id`, `del_flg`, `create_date`, `update_date`) VALUES
+(1, 1, 2, 0, '0000-00-00', '0000-00-00'),
+(2, 2, 4, 0, '0000-00-00', '0000-00-00'),
+(3, 2, 3, 0, '0000-00-00', '0000-00-00'),
+(4, 2, 2, 0, '0000-00-00', '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -990,6 +1050,12 @@ ALTER TABLE `m_category`
 --
 ALTER TABLE `m_customers`
   ADD PRIMARY KEY (`id`,`c_email`);
+
+--
+-- Indexes for table `m_hero`
+--
+ALTER TABLE `m_hero`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `m_merchants`
@@ -1084,19 +1150,25 @@ ALTER TABLE `t_wishlist_detail`
 -- AUTO_INCREMENT for table `m_brand`
 --
 ALTER TABLE `m_brand`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `m_category`
 --
 ALTER TABLE `m_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `m_customers`
 --
 ALTER TABLE `m_customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `m_hero`
+--
+ALTER TABLE `m_hero`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `m_merchants`
@@ -1114,7 +1186,7 @@ ALTER TABLE `m_pay_acc`
 -- AUTO_INCREMENT for table `m_products`
 --
 ALTER TABLE `m_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `m_regions`
@@ -1126,7 +1198,7 @@ ALTER TABLE `m_regions`
 -- AUTO_INCREMENT for table `m_sub_category`
 --
 ALTER TABLE `m_sub_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `m_townships`
@@ -1144,25 +1216,25 @@ ALTER TABLE `t-message`
 -- AUTO_INCREMENT for table `t_cart`
 --
 ALTER TABLE `t_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `t_cart_detail`
 --
 ALTER TABLE `t_cart_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `t_order`
 --
 ALTER TABLE `t_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `t_order_detail`
 --
 ALTER TABLE `t_order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `t_product_rating_details`
@@ -1174,13 +1246,13 @@ ALTER TABLE `t_product_rating_details`
 -- AUTO_INCREMENT for table `t_wishlist`
 --
 ALTER TABLE `t_wishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `t_wishlist_detail`
 --
 ALTER TABLE `t_wishlist_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
