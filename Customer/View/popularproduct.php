@@ -14,102 +14,13 @@
     <script src="./resources/js/menu.js" defer></script>
     <script src="./resources/js/all_add_to_cart.js" defer></script>
     <script src="./resources/js/all_add_to_wishlist.js" defer></script>
+    <script src="./resources/js/formatPrice.js" defer></script>
 
     <title>Just for you</title>
 </head>
 
 <body class="relative">
-    <navigation class="sticky z-50 top-0">
-
-        <nav class=" invisible lg:w-full lg:h-6 bg-[#607d38] flex justify-evenly text-white text-xs  lg:visible ">
-            <div class="flex justify-between py-1">
-                <phone class="flex mr-4">
-                    <ion-icon name="call-outline" class="mx-2 py-[2px]"></ion-icon>
-                    <p>09758895513</p>
-                </phone>
-                <message class="flex">
-                    <ion-icon name="mail-open-outline" class="mx-2 py-[2px]"></ion-icon>
-                    <p>godeal33@gmail.com</p>
-            </div>
-            </message>
-
-            <!-- checking user is logined or not-->
-            <?php
-            include "../Controller/accountController.php";
-
-            if ($accountresult != null) {
-
-                $customer_name = $accountresult[0]["c_name"];
-
-            ?>
-
-                <div>
-                    <a href="./userProfile.php" class="py-1"><?= $customer_name ?></a>
-                </div> <?php } else { ?>
-
-                <div class="flex py-1">
-                    <login class="mx-4">Login</login>
-                    <login>Sign Up</login>
-                </div>
-
-            <?php } ?>
-
-            <!-- checking user is logined or not finish-->
-        </nav>
-        <!--navigation bar end-->
-        <!--menu bar start-->
-        <div class="lg:inline hidden">
-            <menu class="w-full flex justify-evenly py-2 border  bg-white">
-                <a href="./homepage.php" class="w-[100px] h-[30px]">
-                    <img src="./resources/img/photo/Logo.png" alt="logo" class="pt-0">
-                </a>
-
-                <a href="./homepage.php">Home</a>
-                <a href="./brandlist.php">Brand</a>
-                <a href="./aboutUs.php">About Us</a>
-                <a href="./aboutUs.php">Contact Us</a>
-                <a href="./aboutUs.php">Help</a>
-
-
-                <ion-icon name="notifications" class="w-[23px] h-[23px] fill-[#607d38]"></ion-icon>
-                <?php if ($accountresult != null) { ?>
-                    <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
-
-                <?php } else { ?>
-                    <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
-                <?php } ?>
-            </menu>
-        </div>
-        <!--menu bar end-->
-        <!--mobile menu bar start-->
-        <div class="w-full flex justify-evenly py-2 lg:invisible sm:visible absolute top-0 bg-white">
-            <div class="w-[70px] h-[20px]">
-                <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
-            </div>
-
-            <ion-icon name="notifications" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon>
-            <?php if ($accountresult != null) { ?>
-                <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
-
-            <?php } else { ?>
-                <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
-            <?php } ?>
-            <ion-icon name="menu-outline" class="w-[20px] h-[20px] text-[#607d38]" id="cate_menu"></ion-icon>
-        </div>
-        <div class="w-28 h-36 bg-black opacity-100 float-right  text-white text-center flex flex-col justify-evenly absolute top-10 right-2 lg:invisible sm:visible" id="cate_dropdown">
-            <a href="./aboutUs.php">About Us</a>
-            <a href="./brandlist.php">Brand</a>
-            <?php if ($accountresult != null) { ?>
-                <a href="./userProfile.php"><?= $customer_name ?></a> <?php } else { ?>
-
-                <a href="./Registeration/signup.php">Sign Up </a>
-                <a href="./Registeration/login.php">Login</a> <?php } ?>
-
-        </div>
-
-
-        <!--mobile menu bar end-->
-    </navigation>
+ <?php include "./common/nav_without_search.php"  ?>
 
     <!--navgation and header session end-->
 
@@ -138,7 +49,7 @@
 
 
                 <!-- products card -->
-                <a href="./detailpage.php?productid=<?= $popular_product["id"] ?>" class="lg:w-56 w-40 lg:h-72 h-60 bg-white drop-shadow-md mx-4 mt-8 products_to_add group " id="product_<?= $popular_product["id"] ?>">
+                <a href="./detailpage.php?productid=<?= $popular_product["id"] ?>" class="lg:w-56 w-40 lg:h-72 h-60 bg-white drop-shadow-md mx-4 mt-8 products_to_add group rounded-xl " id="product_<?= $popular_product["id"] ?>">
 
 
 
@@ -181,10 +92,10 @@
                         <div>
                             <p class="text-center text-xs mt-1 text-green-800"><?= $popular_product["p_title"] ?></p>
                             <p class="lg:block text-[10px] text-center hidden text-gray-600 "><?= $popular_product["p_des"] ?></p>
-                            <?php if (($popular_product["p_discount"]) != null) { ?> <p class="text-[#607d38] lg:text-xs text-[9px] mt-2 ml-2"><?= $popular_product["p_discount"] ?><span>%off</span></p><?php } ?>
+                            <?php if (($popular_product["p_discount"]) != null) { ?> <p class="text-red-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $popular_product["p_discount"] ?><span>%off</span></p><?php } ?>
                         </div>
                         <div>
-                            <div class="flex mt-1 ml-3 text-[#607d38]">
+                            <div class="flex mt-1 ml-3 text-[#9ACD32]">
                                 <?php if ($popular_product["product_rating"] != null) {
 
                                     for ($i = 0; $i < $popular_product["product_rating"]; $i++) { ?>
@@ -194,9 +105,9 @@
                                 } ?>
 
                             </div>
-                            <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                            <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span class="all_price"><?= $price ?></span></p>
                             <?php if (($popular_product["p_discount"]) != null) { ?>
-                                <p class="text-gray-700 text-center line-through text-[9px]">Ks <?= $popular_product["p_sell_price"] ?></p> <?php } ?>
+                                <p class="text-gray-700 text-center line-through text-[9px]">Ks <span class="all_price"><?= $popular_product["p_sell_price"] ?></p></span> <?php } ?>
 
                         </div>
                     </div>

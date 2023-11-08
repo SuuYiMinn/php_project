@@ -3,7 +3,8 @@
 include "../../Controller/categoryListController.php";
 // print_r($categories);
 include "../../Controller/subCategoryListController.php";
-// print_r($subcategories);
+include "../../Controller/firstSubCategoryListController.php";
+// print_r($firstSubCategories);
 include "../../Controller/brandListController.php";
 // print_r($brands);
 
@@ -85,7 +86,9 @@ include "../../Controller/brandListController.php";
                             <span class="w-36 text-blueText">Sub Category:</span>
 
                             <select name="psubcategory" id="psubcategory" class="text-left border border-blueText rounded-lg text-blueText pl-10 pr-[155px] py-2 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-
+                                <?php foreach ($firstSubCategories as $firstSubCategory) { ?>
+                                    <option value="<?= $firstSubCategory["id"] ?>"><?= $firstSubCategory["sub_category_name"] ?></option>
+                                <?php } ?>
                             </select>
                         </div>
 

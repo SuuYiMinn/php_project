@@ -34,7 +34,7 @@ session_start();
 
             <div class="mt-8">
                 <div class="w-1/2 mx-auto text-center">
-                <input type="submit" name="customer" value="Send Code" class="text-white  bg-[#607d38] rounded-md px-16 py-2">
+                <input type="submit" name="customer" value="Send Code" class="text-white  bg-[#607d38] hover:bg-[#9ACD32] rounded-md px-16 py-2">
                 </div>
                 <?php if(isset($_SESSION["code_sent"])) { ?>
                     <p class="px-1 py-1 text-xs "><?= $_SESSION["code_sent"] ?></p> <?php }?>

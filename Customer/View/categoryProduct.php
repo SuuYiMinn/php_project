@@ -23,6 +23,7 @@
     <script src="./resources/js/all_add_to_cart.js?id=<?= time() ?>" defer></script>
     <script src="./resources/js/all_add_to_wishlist.js?id=<?= time() ?>" defer></script>
     <script src="./resources/js/viewDetail.js?id=<?= time() ?>" defer></script>
+    <script src="./resources/js/formatPrice.js ?id=<?= time() ?>" defer></script>
 
     <title>CategoryProducts</title>
 </head>
@@ -55,9 +56,9 @@
 
             ?>
 
-                <div class="flex w-28 justify-between py-1">
-                <div class = "w-4 h-4 rounded-full"><a href="./userProfile.php"><img src="../../<?= $accountresult[0]["c_profile"]?>" alt="" class="w-full h-full rounded-full"></a></div>
-                    <a href="./userProfile.php"><?= $customer_name ?></a>              
+                <div class="flex w-28 justify-evenly py-1">
+                    <div class="w-4 h-4 rounded-full"><a href="./userProfile.php"><img src="../../<?= $accountresult[0]["c_profile"] ?>" alt="" class="w-full h-full rounded-full"></a></div>
+                    <a href="./userProfile.php" class=" hover:font-bold hover:underline"><?= $customer_name ?></a>
                 </div> <?php } else { ?>
 
                 <div class="flex py-1">
@@ -79,9 +80,9 @@
 
                 <div class="w-1/3 mx-auto flex justify-around">
                     <div class="w-72 flex justify-evenly mx-auto">
-                        <a href="./homepage.php">Home</a>
-                        <a href="./brandlist.php">Brand</a>
-                        <a href="./aboutUs.php">About Us</a>
+                        <a href="./homepage.php" class="hover:text-orange-500 hover:underline hover:font-medium">Home</a>
+                        <a href="./brandlist.php" class="hover:text-orange-500 hover:underline hover:font-medium" >Brand</a>
+                        <a href="./aboutUs.php" class="hover:text-orange-500 hover:underline hover:font-medium">About Us</a>
                     </div>
 
 
@@ -94,18 +95,18 @@
                     </searchBar>
                 </div>
 
-                <div class="w-60 justify-between absolute right-0">
+                <div class="w-40 flex justify-evenly absolute right-10">
                     <?php if ($accountresult != null) { ?>
-                        <a href="./whislist.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:scale-125" title="check cart"></ion-icon></a>
+                        <a href="./whislist.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:scale-125 hover:fill-orange-500" title="check cart"></ion-icon></a>
 
                     <?php } else { ?>
-                        <a href="./Registeration/signup.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:scale-125" title="check cart"></ion-icon></a>
+                        <a href="./Registeration/signup.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:scale-125 hover:fill-orange-500" title="check cart"></ion-icon></a>
                     <?php } ?>
                     <?php if ($accountresult != null) { ?>
-                        <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:scale-125" title="check cart"></ion-icon></a>
+                        <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:scale-125 hover:fill-orange-500" title="check cart"></ion-icon></a>
 
                     <?php } else { ?>
-                        <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:scale-125" title="check cart"></ion-icon></a>
+                        <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:scale-125 hover:fill-orange-500" title="check cart"></ion-icon></a>
                     <?php } ?>
                 </div>
             </menu>
@@ -243,10 +244,10 @@
                         <div>
                             <p class="text-center text-xs mt-1 text-green-800"><?= $products["p_title"] ?></p>
                             <p class="lg:block text-[10px] text-center hidden text-gray-600 "><?= $products["p_des"] ?></p>
-                            <?php if (($products["p_discount"]) != null) { ?> <p class="text-[#607d38] lg:text-xs text-[9px] mt-2 ml-2"><?= $products["p_discount"] ?><span>%off</span></p><?php } ?>
+                            <?php if (($products["p_discount"]) != null) { ?> <p class="text-red-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $products["p_discount"] ?><span>%off</span></p><?php } ?>
                         </div>
                         <div>
-                            <div class="flex mt-1 ml-3 text-[#607d38]">
+                            <div class="flex mt-1 ml-3 text-[#9ACD32]">
                                 <?php if ($products["product_rating"] != null) {
 
                                     for ($i = 0; $i < $products["product_rating"]; $i++) { ?>
@@ -256,9 +257,9 @@
                                 } ?>
 
                             </div>
-                            <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                            <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span class="all_price"><?= $price ?></span> </p>
                             <?php if (($products["p_discount"]) != null) { ?>
-                                <p class="text-gray-700 text-center line-through text-[9px]">Ks <?= $products["p_sell_price"] ?></p> <?php } ?>
+                                <p class="text-gray-700 text-center line-through text-[9px]">Ks <span class="all_price"><?= $products["p_sell_price"] ?></span></p> <?php } ?>
 
                         </div>
                     </div>

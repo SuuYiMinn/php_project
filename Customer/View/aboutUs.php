@@ -19,9 +19,9 @@
 
 
 
-  <div class="overflow-x-hidden lg:w-11/12 w-full">
+  <div class="overflow-x-hidden lg:w-11/12 mx-a w-full">
     <p class="text-xl text-[#FF9F29] mt-10 text-center ">About Us</p>
-    <p class="mt-5 text-gray-700  text-center lg:text-base text-sm w-11/12 mx-auto">
+    <p class="mt-5 text-gray-700  text-center lg:text-base text-sm w-4/5 mx-auto">
       Welcome to Godeal, your reliable and convenient Online Shopping Mall in Myanmar. Get ready as
       Godeal empowers you to let loose your shopaholic beast and go on a crazy online shopping spree like never before.
       Shop online with safest way as you can pay Cash on Delivery, allowing you make stress free payments. Whatever it is you
@@ -31,10 +31,10 @@
       At Godeal, we guarantee you to have the best online shopping experience like never before. With over 16000 items to choose from,
       Godeal offers wide range of items that span across everyone needs and wants.
     </p>
-    <div class=" lg:w-11/12 w-full lg:mx-auto flex lg:flex-row flex-col overflow-x-hidden justify-between mt-10">
+    <div class=" lg:w-10/12 w-full lg:mx-auto flex lg:flex-row flex-col overflow-x-hidden justify-evenly mt-10 ">
 
-      <div class="w-full lg:2/5">
-        <p class="text-lg text-[#FF9F29]  mb-5 font-semibold">FAQ</p>
+      <div class="w-full lg:w-1/3 mx-auto">
+        <p class="text-lg text-[#FF9F29]  mb-5 font-semibold text-center">FAQ</p>
         <p class="text-[#FF9F29]">How Long will the delivery take?</p>
         <p class="w-80 pt-2 text-sm opacity-50">Rhe delivery will take 2 or 3 days depending on your location after your order</p>
         <hr>
@@ -52,8 +52,8 @@
         <br>
 
       </div>
-      <div class="w-full lg:2/5  ">
-        <p class=" text-lg text-[#ff9f29] mb-5">Still need help</p>
+      <div class="w-full lg:w-1/4 mx-auto">
+        <p class=" text-lg text-[#ff9f29] mb-5 text-center">Still need help</p>
 
         <div class="flex mb-5">
           <div class="w-8 h-8 rounded-full bg-orange-500  mr-3">

@@ -1,15 +1,13 @@
 <?php
 session_start();
-
-
 include "../../Controller/profileController.php";
 include "../../Controller/updatePaymentController.php";
 include "../../Controller/jointownshipController.php";
 // print_r($paymentaccs);
 // print_r($merchantreg);
 // print_r($merchanttown);
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,55 +25,28 @@ include "../../Controller/jointownshipController.php";
     <!-- chart script file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js" integrity="sha512-bp/xZXR0Wn5q5TgPtz7EbgZlRrIU3tsqoROPe9sLwdY6Z+0p6XRzr7/JzqQUfTSD3rWanL6WUVW7peD4zSY/vQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../resources/js/main.js" defer></script>
-
     <link rel="stylesheet" href="../resources/css/profile.css">
 </head>
 
 <body>
-
     <?php include "../Layout/nav.php"; ?>
     <!-- start of right side -->
-    <div class=" flex justify-center items-center ml-[200px]">
+    <div class=" flex justify-center items-center ml-[200px] mt-10">
         <div class="px-10 py-3 shadow-3xl rounded-lg flex flex-col justify-center items-center">
-            
-            <img src="../../..<?= $merchantreg[0]["me_profile"] ?>" class="w-[200px] h-[100px]" />
-            <!-- <div class="mt-5 mb-8">
-                <span class="text-blueText font-bold text-lg font-RobotoSlab uppercase">BalarBalar</span>
-                <span class="text-blueText font-bold text-md font-RobotoSlab pl-3"> Followed By</span>
-                <span class="text-blueText text-md font-Tommorrow">1K</span>
-
-            </div> -->
-            <div class="flex flex-row space-x-32">
+            <img src="../../..<?= $merchantreg[0]["me_profile"] ?>" class="w-[200px] h-[80px] mt-10" />
+            <div class="flex flex-row space-x-32 mt-10">
                 <!-- start of left-side profile information -->
                 <div class="space-y-8">
                     <!-- start of About  -->
                     <div class="bg-inputBox px-3 py-2 rounded-md text-blueText text-md flex space-x-[280px]">
                         <div class="font-bold">About</div>
-
                         <a href="./editProfile.php">
                             <svg class="fill-orange w-[20px] h-[20px]" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z" />
                             </svg>
-
                         </a>
-
-
                     </div>
                     <!-- end of About -->
-                    <!-- name -->
-                    <!-- <div class="flex flex-row">
-                        <svg class="fill-orange w-[20px] h-[20px]" style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="info" />
-                            <g id="icons">
-                                <g id="user">
-                                    <ellipse cx="12" cy="8" rx="5" ry="6" />
-                                    <path d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9    C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-                                </g>
-                            </g>
-                        </svg>
-                        <p class="ml-[10px] text-blueText text-lg font-RobotoSlab">U Khin Maung</p>
-                    </div> -->
-                    <!-- shop name -->
                     <div class="flex flex-row">
                         <svg class="fill-orange w-[20px] h-[20px]" data-name="Layer 1" id="Layer_1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <title />
@@ -83,24 +54,14 @@ include "../../Controller/jointownshipController.php";
                         </svg>
                         <p class="ml-[10px] text-blueText text-lg font-RobotoSlab"><?= $merchantreg[0]["me_shop_name"] ?></p>
                     </div>
-
-                    <!-- join date -->
-                    <!-- <div class="flex flex-row">
-                        <svg class="fill-orange w-[20px] h-[20px]" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M448 384c-28.02 0-31.26-32-74.5-32-43.43 0-46.825 32-74.75 32-27.695 0-31.454-32-74.75-32-42.842 0-47.218 32-74.5 32-28.148 0-31.202-32-74.75-32-43.547 0-46.653 32-74.75 32v-80c0-26.5 21.5-48 48-48h16V112h64v144h64V112h64v144h64V112h64v144h16c26.5 0 48 21.5 48 48v80zm0 128H0v-96c43.356 0 46.767-32 74.75-32 27.951 0 31.253 32 74.75 32 42.843 0 47.217-32 74.5-32 28.148 0 31.201 32 74.75 32 43.357 0 46.767-32 74.75-32 27.488 0 31.252 32 74.5 32v96zM96 96c-17.75 0-32-14.25-32-32 0-31 32-23 32-64 12 0 32 29.5 32 56s-14.25 40-32 40zm128 0c-17.75 0-32-14.25-32-32 0-31 32-23 32-64 12 0 32 29.5 32 56s-14.25 40-32 40zm128 0c-17.75 0-32-14.25-32-32 0-31 32-23 32-64 12 0 32 29.5 32 56s-14.25 40-32 40z" />
-                        </svg>
-                        <p class="ml-[10px] text-blueText text-lg font-RobotoSlab">Join in June 26, 2021</p>
-                    </div> -->
-                    <!-- address -->
                     <div>
-                        <div  class="flex flex-row"><svg class="fill-orange w-[20px] h-[20px]" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M192 0C85.97 0 0 85.97 0 192c0 77.41 26.97 99.03 172.3 309.7c9.531 13.77 29.91 13.77 39.44 0C357 291 384 269.4 384 192C384 85.97 298 0 192 0zM192 271.1c-44.13 0-80-35.88-80-80S147.9 111.1 192 111.1s80 35.88 80 80S236.1 271.1 192 271.1z" />
-                        </svg>
-                        <p class="ml-[10px] text-blueText text-lg font-RobotoSlab"><?= $merchantreg[0]["me_address"] ?>,</p>
-</div>
+                        <div class="flex flex-row"><svg class="fill-orange w-[20px] h-[20px]" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M192 0C85.97 0 0 85.97 0 192c0 77.41 26.97 99.03 172.3 309.7c9.531 13.77 29.91 13.77 39.44 0C357 291 384 269.4 384 192C384 85.97 298 0 192 0zM192 271.1c-44.13 0-80-35.88-80-80S147.9 111.1 192 111.1s80 35.88 80 80S236.1 271.1 192 271.1z" />
+                            </svg>
+                            <p class="ml-[10px] text-blueText text-lg font-RobotoSlab"><?= $merchantreg[0]["me_address"] ?>,</p>
+                        </div>
                         <p class="text-blueText text-md ml-[30px]"><?= $merchanttown[0]["name"] ?>, <?= $merchantreg[0]["name"] ?></p>
                     </div>
-                    
                     <!-- email -->
                     <div class="flex flex-row">
                         <svg class="fill-orange w-[20px] h-[20px]" style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

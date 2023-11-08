@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="w-52 mt-10 text-center">
-                    <input type="submit" value="Register" class="bg-[#607d38] rounded-md px-16 lg:px-16 py-1 text-white">
+                    <input type="submit" value="Register" class="bg-[#607d38] hover:bg-[#9ACD32] rounded-md px-16 lg:px-16 py-1 text-white">
                 </div>
                 <div class="w-52 text-center text-xs mt-6">
                     <p class="">Already have an account?</p>

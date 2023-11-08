@@ -24,6 +24,7 @@
     <script src="./resources/js/all_add_to_cart.js?id=<?= time() ?>" defer></script>
     <script src="./resources/js/all_add_to_wishlist.js?id=<?= time() ?>" defer></script>
     <script src="./resources/js/viewDetail.js?id=<?= time() ?>" defer></script>
+    <script src="./resources/js/formatPrice.js?id=<?= time() ?>" defer></script>
 
     <title>BrandProfile</title>
 </head>
@@ -55,12 +56,12 @@
             ?>
 
                 <div>
-                    <a href="./userProfile.php" class="py-1"><?= $customer_name ?></a>
+                    <a href="./userProfile.php" class="py-1 hover:font-bold"><?= $customer_name ?></a>
                 </div> <?php } else { ?>
 
                 <div class="flex py-1">
-                    <a href="./Registeration/login.php" class="mx-4">Login</a>
-                    <a href="./Registeration/signup.php">Sign Up</a>
+                    <a href="./Registeration/login.php" class="mx-4 hover:font-bold">Login</a>
+                    <a href="./Registeration/signup.php" class=" hover:font-bold">Sign Up</a>
                 </div>
 
             <?php } ?>
@@ -79,14 +80,14 @@
 
         <div class="lg:inline hidden">
             <menu class="w-full flex justify-evenly py-2 border relative  bg-white">
-                <div class="w-[100px] h-[30px] absolute left-10">
+                <div class="w-[100px] h-[30px] absolute left-20">
                     <img src="./resources/img/photo/Logo.png" alt="logo" class="pt-0">
                 </div>
 
                 <div class="flex w-1/3 justify-evenly mx-auto">
-                    <a href="./homepage.php">Home</a>
-                    <a href="./brandlist.php">Brand</a>
-                    <a href="./aboutUs.php">About Us</a>
+                    <a href="./homepage.php" class="hover:font-medium hover:text-orange-500 hover:underline   ">Home</a>
+                    <a href="./brandlist.php" class="hover:font-medium hover:text-orange-500 hover:underline  ">Brand</a>
+                    <a href="./aboutUs.php" class="hover:font-medium  hover:text-orange-500 hover:underline ">About Us</a>
 
                     <searchBar class="relative">
                         <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-48 border border-slate-300 rounded-md py-[2px] pl-8 pr-3 
@@ -95,18 +96,18 @@
                     </searchBar>
 
                 </div>
-                <div class="w-28 justify-evenly sbsolute right-20">
+                <div class="w-28 flex justify-evenly absolute right-20">
                     <?php if ($accountresult != null) { ?>
-                        <a href="./whislist.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./whislist.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38]  hover:fill-orange-500 hover:scale-110"></ion-icon></a>
 
                     <?php } else { ?>
-                        <a href="./Registeration/signup.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./Registeration/signup.php" class="signup_check"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110"></ion-icon></a>
                     <?php } ?>
                     <?php if ($accountresult != null) { ?>
-                        <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110"></ion-icon></a>
 
                     <?php } else { ?>
-                        <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110"></ion-icon></a>
                     <?php } ?>
                 </div>
 
@@ -126,7 +127,7 @@
 
                 <ion-icon name="search" class="w-[17px] h-[17px] fill-[#607d38] absolute top-1 left-2"></ion-icon>
             </searchBar>
-            <ion-icon name="notifications" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon>
+            <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon>
             <?php if ($accountresult != null) { ?>
                 <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
 
@@ -148,8 +149,8 @@
     </navigation>
     <!--mobile menu bar end-->
 
-    <?php include "../Controller/brandProfileController.php";
 
+    <?php include "../Controller/brandProfileController.php";
     $_SESSION["brand_id"] = $brand_id;
     ?>
 
@@ -163,6 +164,8 @@
     </div>
 
 
+
+
     <div class="absolute w-full h-full top-0 right-0 bg-gray-900/30 flex flex-col justify-center z-50 items-center show_detail">
 
         <div class="absolute top-32 left-72 w-1/2 h-96 drop-shadow-md bg-white rounded z-50 ">
@@ -172,7 +175,7 @@
 
     </div>
 
-    <div class="flex flex-wrap my-2 py-2 lg:w-10/12 w-11/12 mx-auto " id="b_profile_body" isLogin="<?=$is_customer?>" >
+    <div class="flex flex-wrap my-2 py-2 lg:w-10/12 w-11/12 mx-auto " id="b_profile_body" isLogin="<?= $is_customer ?>">
 
 
 
@@ -188,7 +191,7 @@
 
 
             <!-- products card -->
-            <a href="./detailpage.php?productid=<?= $brand_product["id"] ?>" class="lg:w-56 w-40 lg:h-72 h-60 lg:ml-4 ml-2 bg-white drop-shadow-md mt-8 group products_to_add " id="product_<?= $brand_product["id"] ?>">
+            <a href="./detailpage.php?productid=<?= $brand_product["id"] ?>" class="lg:w-56 w-40 lg:h-72 h-60 lg:ml-4 ml-2 bg-white drop-shadow-md mt-8 group products_to_add rounded-xl " id="product_<?= $brand_product["id"] ?>">
 
                 <div class="w-full h-full absolute opacity-0 bg-green-800/20 -top-10 group-hover:top-0
                          z-50 group-hover:opacity-100 rounded-xl transition-all delay-100 ease-in-out flex flex-col justify-around">
@@ -227,10 +230,10 @@
                     <div>
                         <p class="text-center text-xs mt-1 text-green-800"><?= $brand_product["p_title"] ?></p>
                         <p class="lg:block text-[10px] text-center hidden text-gray-600 "><?= $brand_product["p_des"] ?></p>
-                        <?php if (($brand_product["p_discount"]) != null) { ?> <p class="text-[#607d38] lg:text-xs text-[9px] mt-2 ml-2"><?= $brand_product["p_discount"] ?><span>%off</span></p><?php } ?>
+                        <?php if (($brand_product["p_discount"]) != null) { ?> <p class="text-red-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $brand_product["p_discount"] ?><span>%off</span></p><?php } ?>
                     </div>
                     <div>
-                        <div class="flex mt-1 ml-3 text-[#607d38]">
+                        <div class="flex mt-1 ml-3 text-[#9ACD32]">
                             <?php if ($brand_product["product_rating"] != null) {
 
                                 for ($i = 0; $i < $brand_product["product_rating"]; $i++) { ?>
@@ -240,9 +243,9 @@
                             } ?>
 
                         </div>
-                        <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                        <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span class="all_price"> <?= $price ?></span></p>
                         <?php if (($brand_product["p_discount"]) != null) { ?>
-                            <p class="text-gray-700 text-center line-through text-[9px]">Ks <?= $brand_product["p_sell_price"] ?></p> <?php } ?>
+                            <p class="text-gray-700 text-center line-through text-[9px]">Ks <span class="all_price"><?= $brand_product["p_sell_price"] ?></span></p> <?php } ?>
 
                     </div>
                 </div>

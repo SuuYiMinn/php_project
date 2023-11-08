@@ -26,6 +26,7 @@
     <script src="./resources/js/all_add_to_wishlist.js ?id=<?= time() ?>" defer></script>
     <script src="./resources/js/all_add_to_cart.js?id=<?= time() ?>" defer></script>
     <script src="./resources/js/viewDetail.js?id=<?= time() ?>" defer></script>
+    <script src="./resources/js/formatPrice.js?id=<?= time() ?>"></script>
 
 
 
@@ -47,7 +48,7 @@
                     </phone>
                     <message class="flex">
                         <ion-icon name="mail-open-outline" class="mx-2 py-[2px]"></ion-icon>
-                        <a href="https://mail.google.com/mail/u/0/#inbox">godeal33@gmail.com</a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox">g3phpproject03@gmail.com</a>
 
                     </message>
                 </div>
@@ -60,14 +61,14 @@
 
                 ?>
 
-                    <div class="flex w-28 justify-between py-1">
+                    <div class="flex w-28 justify-evenly py-1">
                         <div class="w-4 h-4 rounded-full"><a href="./userProfile.php"><img src="../../<?= $accountresult[0]["c_profile"] ?>" alt="" class="w-full h-full rounded-full"></a></div>
-                        <a href="./userProfile.php"><?= $customer_name ?></a>
+                        <a href="./userProfile.php" class=" hover:font-bold hover:underline"><?= $customer_name ?></a>
                     </div> <?php } else { ?>
 
                     <div class="flex py-1">
-                        <a href="./Registeration/login.php" class="mx-4">Login</a>
-                        <a href="./Registeration/signup.php">Sign Up</a>
+                        <a href="./Registeration/login.php" class="mx-4 hover:font-bold hover:underline ease-in-out delay-200">Login</a>
+                        <a href="./Registeration/signup.php" class="hover:font-bold hover:underline ">Sign Up</a>
                     </div>
 
                 <?php } ?>
@@ -78,16 +79,16 @@
         <!--menu bar start-->
         <div class="lg:inline hidden ">
             <menu class="w-full flex py-2 border relative bg-white">
-                <div class="absolute left-10 w-[100px] h-[30px]">
+                <div class="absolute left-20 w-[100px] h-[30px]">
                     <a href="./homepage.php" class="w-full h-full">
                         <img src="./resources/img/photo/Logo.png" alt="logo" class="w-full h-full">
                     </a>
                 </div>
                 <div class="w-1/3 mx-auto flex justify-around">
                     <div class="flex w-72 justify-evenly">
-                        <a href="./homepage.php">Home</a>
-                        <a href="./brandlist.php">Brand</a>
-                        <a href="./aboutUs.php">About Us</a>
+                        <a href="./homepage.php" class="hover:font-medium hover:text-orange-500 hover:underline">Home</a>
+                        <a href="./brandlist.php" class="hover:font-medium hover:text-orange-500 hover:underline">Brand</a>
+                        <a href="./aboutUs.php" class="hover:font-medium hover:text-orange-500 hover:underline">About Us</a>
                     </div>
 
                     <searchBar class="relative w-48">
@@ -97,18 +98,18 @@
                     </searchBar>
 
                 </div>
-                <div class="w-44 justify-evenly absolute -right-10">
+                <div class="w-40 flex justify-evenly absolute right-10">
                     <?php if ($accountresult != null) { ?>
-                        <a href="./whislist.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./whislist.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110" title="view wishlist"></ion-icon></a>
                     <?php } else { ?>
-                        <a href="./Registeration/signup.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./Registeration/signup.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110" title="view wishlist"></ion-icon></a>
                     <?php } ?>
 
                     <?php if ($accountresult != null) { ?>
-                        <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110" title="view cart"></ion-icon></a>
 
                     <?php } else { ?>
-                        <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110" title="view cart"></ion-icon></a>
                     <?php } ?>
                 </div>
 
@@ -134,10 +135,10 @@
                 <ion-icon name="heart_outline" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon>
                 <!-- check user locked in or not to go cart page -->
                 <?php if ($accountresult != null) { ?>
-                    <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                    <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]" title="view cart"></ion-icon></a>
 
                 <?php } else { ?>
-                    <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                    <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]" title="view cart"></ion-icon></a>
                 <?php } ?>
                 <!-- cart check done -->
                 <!-- humbarger menu for mobile phone -->
@@ -173,14 +174,14 @@
     ?>
 
 
-    <div class="sticky w-full h-full top-0 right-0 bg-gray-900/30 flex flex-col justify-center z-50 items-center show_detail">
+    <!-- <div class="sticky w-full h-full top-0 right-0 bg-gray-900/30 flex flex-col justify-center z-50 items-center show_detail">
 
         <div class="absolute top-32 left-72 w-1/2 h-96 drop-shadow-md bg-white rounded z-50 ">
             <ion-icon name="close-outline" class="float-right scale-150 mt-2 mr-2 close_detail_popup"></ion-icon>
             <div class="show_detail_product w-full h-full"></div>
         </div>
 
-    </div>
+    </div> -->
 
 
     <main class=" w-full mt-0 mb-5" id="home_main_section" islogin=<?= $is_customer ?>>
@@ -194,7 +195,7 @@
             <div class="lg:w-[15%] lg:inline hidden">
 
                 <div class="border-b-2 py-1 lg:w-full w-1/3 border-b-white  mb-2 bg-[#607d38] ">
-                    <p class="text-2xl  font-medium text-white text-center  ">Category</p>
+                    <p class="text-2xl  font-medium text-white text-center">Category</p>
                 </div>
                 <div class="w-full h-[87%] overflow-y-auto ">
 
@@ -202,7 +203,7 @@
                     <?php include "../Controller/homeController.php" ?>
                     <?php foreach ($result as $category) { ?>
 
-                        <a href="./categoryProduct.php?category_id=<?= $category["id"] ?>" class="w-full h-6 border-b-2 border-b-white text-[#607d38]">
+                        <a href="./categoryProduct.php?category_id=<?= $category["id"] ?>" class="w-full h-6 border-b-2 border-b-white text-[#607d38] hover:underline">
 
                             <p class="text-center text-base font-medium py-1" name="catename"><?= $category["cat_name"] ?></p>
                         </a>
@@ -216,13 +217,9 @@
 
             <div class="w-full lg:w-2/3 h-full relative flex overflow-x-hidden ">
                 <!-- first photo of hero section -->
-                <div class="w-full h-full relative inline">
-                    <?php
-                    include "../Controller/herosectionController.php";
-                    foreach ($herosection_result as $banner) { ?>
-                        <img src="../..<?= $banner["photo"] ?>" alt="<?= $banner["photo"] ?>" class="w-full h-full hero_img">
-
-                    <?php   } ?>
+                <div class="w-full relative inline">
+                    
+                    <img src="./resources/img/shop.jpg" alt="" class="w-full h-full">
                 </div>
                 <div id="dots"></div>
 
@@ -266,13 +263,13 @@
         <!-- popular products -->
         <div class="lg:w-1/2 w-4/5 mx-auto lg:mt-14 mt-0 lg:mb-4 mb-0 lg:h-56 h-40">
 
-            <img src="../../Storage/products/bestsellerbanner3.avif" alt="" class="w-full h-full">
+            <img src="./resources/img/bestSeller1.jpg" alt="" class="w-full h-full">
 
         </div>
 
-        <div class="w-10/12  mx-auto">
+        <div class=" lg:w-4/5 w-11/12 mx-auto">
             <?php include "../Controller/homeProduct_Controller.php" ?>
-            <div class=" w-full flex flex-wrap justify-evenly">
+            <div class=" lg:w-11/12 w-full mx-auto flex flex-wrap">
                 <!-- products card -->
                 <?php foreach ($popular_result as $popular_product) {
 
@@ -289,7 +286,7 @@
                     <!-- products card -->
 
 
-                    <a href="./detailpage.php?productid=<?= $popular_product["id"] ?>" class=" lg:w-56 w-40 lg:h-64 h-60 bg-white drop-shadow-md mt-2 rounded-xl products_to_add group" id="product_<?= $popular_product["id"] ?>">
+                    <a href="./detailpage.php?productid=<?= $popular_product["id"] ?>" class=" lg:w-56 w-40 lg:h-64 h-60 bg-white drop-shadow-md lg:mt-5 lg:mx-5 mx-2 mt-2 rounded-xl products_to_add group" id="product_<?= $popular_product["id"] ?>">
                         <!-- product image -->
 
                         <div class="w-full h-full absolute opacity-0 bg-green-800/20 -top-10 group-hover:top-0
@@ -330,10 +327,10 @@
                             <div>
                                 <p class="text-center text-xs mt-1 text-green-800"><?= $popular_product["p_title"] ?></p>
                                 <p class=" lg:block text-[10px] text-center hidden text-gray-600 "><?= $popular_product["p_des"] ?></p>
-                                <?php if (($popular_product["p_discount"]) != null) { ?> <p class="text-[#607d38] lg:text-xs text-[9px] mt-2 ml-2"><?= $popular_product["p_discount"] ?><span>%off</span></p><?php } ?>
+                                <?php if (($popular_product["p_discount"]) != null) { ?> <p class="text-red-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $popular_product["p_discount"] ?><span>%off</span></p><?php } ?>
                             </div>
                             <div>
-                                <div class="flex mt-1 ml-3 text-[#607d38]">
+                                <div class="flex mt-1 ml-3 text-[#9ACD32]">
                                     <?php if ($popular_product["product_rating"] != null) {
 
                                         for ($i = 0; $i < $popular_product["product_rating"]; $i++) { ?>
@@ -343,9 +340,9 @@
                                     } ?>
 
                                 </div>
-                                <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                                <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span class="all_price"> <?= $price ?></span></p>
                                 <?php if (($popular_product["p_discount"]) != null) { ?>
-                                    <p class="text-gray-700 text-center line-through text-[9px]">Ks <?= $popular_product["p_sell_price"] ?></p> <?php } ?>
+                                    <p class="text-gray-700 text-center line-through text-[9px]">Ks <span class="all_price"><?= $popular_product["p_sell_price"] ?></span></p> <?php } ?>
 
                             </div>
                         </div>
@@ -371,8 +368,8 @@
 
         </div>
         <!-- Just for you products-->
-        <div class="w-10/12 mx-auto">
-            <div class=" w-full flex flex-wrap justify-evenly">
+        <div class="lg:w-4/5 w-11/12 mx-auto">
+            <div class=" lg:w-11/12 w-full mx-auto flex flex-wrap">
                 <!-- products card -->
                 <?php foreach ($justForU_result as $justForU_product) {
 
@@ -388,7 +385,7 @@
 
 
                     <!-- products card -->
-                    <a href="./detailpage.php?productid=<?= $justForU_product["id"] ?>" class="lg:w-56 w-40 lg:h-64 h-60 bg-white drop-shadow-md mt-2 products_to_add group" id="product_<?= $justForU_product["id"] ?>">
+                    <a href="./detailpage.php?productid=<?= $justForU_product["id"] ?>" class="lg:w-56 w-40 lg:h-64 h-60 bg-white drop-shadow-md lg:mt-5 mt-2 rounded-xl lg:mx-5 mx-2 products_to_add group" id="product_<?= $justForU_product["id"] ?>">
 
 
 
@@ -429,10 +426,10 @@
                             <div>
                                 <p class="text-center text-xs mt-1 text-green-800"><?= $justForU_product["p_title"] ?></p>
                                 <p class="lg:block text-[10px] text-center hidden text-gray-600 "><?= $justForU_product["p_des"] ?></p>
-                                <?php if (($justForU_product["p_discount"]) != null) { ?> <p class="text-[#607d38] lg:text-xs text-[9px] mt-2 ml-2"><?= $justForU_product["p_discount"] ?><span>%off</span></p><?php } ?>
+                                <?php if (($justForU_product["p_discount"]) != null) { ?> <p class="text-red-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $justForU_product["p_discount"] ?><span>%off</span></p><?php } ?>
                             </div>
                             <div>
-                                <div class="flex mt-1 ml-3 text-[#607d38]">
+                                <div class="flex mt-1 ml-3 text-[#9ACD32]">
                                     <?php if ($justForU_product["product_rating"] != null) {
 
                                         for ($i = 0; $i < $justForU_product["product_rating"]; $i++) { ?>
@@ -442,9 +439,9 @@
                                     } ?>
 
                                 </div>
-                                <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                                <p class="text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span class="all_price"><?= $price ?></span></p>
                                 <?php if (($justForU_product["p_discount"]) != null) { ?>
-                                    <p class="text-gray-700 text-center line-through text-[9px]">Ks <?= $justForU_product["p_sell_price"] ?></p> <?php } ?>
+                                    <p class="text-gray-700 text-center line-through text-[9px]">Ks <span class="all_price"><?= $justForU_product["p_sell_price"] ?></span></p><?php } ?>
 
                             </div>
                         </div>
@@ -469,8 +466,8 @@
             <img src="../../Storage/products/new_ArrivalBanner.jpg" alt="" class="w-full h-full">
 
         </div>
-        <div class="w-10/12 mt-4 mx-auto">
-            <div class=" w-full flex flex-wrap justify-evenly">
+        <div class="lg:w-4/5 w-11/12 mt-4 mx-auto">
+            <div class="lg:w-11/12 w-full mx-auto flex flex-wrap">
                 <!-- products card -->
                 <?php foreach ($newArrival_result as $newArrival_product) {
 
@@ -486,7 +483,7 @@
 
 
                     <!-- products card -->
-                    <a href="./detailpage.php?productid=<?= $newArrival_product["id"] ?>" class="lg:w-56 w-40 lg:h-64 h-60 bg-white drop-shadow-md mt-2 products_to_add group" id="product_<?= $newArrival_product["id"] ?>">
+                    <a href="./detailpage.php?productid=<?= $newArrival_product["id"] ?>" class="lg:w-56 w-40 lg:h-64 h-60 bg-white lg:mx-6 mx-2  drop-shadow-md lg:mt-5 mt-2 products_to_add rounded-xl group" id="product_<?= $newArrival_product["id"] ?>">
 
                         <div class="w-full h-full absolute opacity-0 bg-green-800/20 -top-10 group-hover:top-0
                          z-50 group-hover:opacity-100 rounded-xl transition-all delay-100 ease-in-out flex flex-col justify-around">
@@ -523,10 +520,10 @@
                             <div>
                                 <p class="text-center text-xs mt-1 text-green-800"><?= $newArrival_product["p_title"] ?></p>
                                 <p class="  lg:block text-[10px] text-center hidden text-gray-600"><?= $newArrival_product["p_des"] ?></p>
-                                <?php if (($newArrival_product["p_discount"]) != null) { ?> <p class="text-[#607d38] lg:text-xs text-[9px] mt-2 ml-2"><?= $newArrival_product["p_discount"] ?><span>%off</span></p><?php } ?>
+                                <?php if (($newArrival_product["p_discount"]) != null) { ?> <p class="text-red-500 lg:text-xs text-[9px] mt-2 ml-2"><?= $newArrival_product["p_discount"] ?><span>%off</span></p><?php } ?>
                             </div>
                             <div>
-                                <div class="flex mt-1 ml-3 text-[#607d38]">
+                                <div class="flex mt-1 ml-3 text-[#9ACD32]">
                                     <?php if ($newArrival_product["product_rating"] != null) {
 
                                         for ($i = 0; $i < $newArrival_product["product_rating"]; $i++) { ?>
@@ -536,9 +533,9 @@
                                     } ?>
 
                                 </div>
-                                <p class=" text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <?= $price ?></p>
+                                <p class=" text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks<span class="all_price"> <?= $price ?> </span></p>
                                 <?php if (($newArrival_product["p_discount"]) != null) { ?>
-                                    <p class="text-gray-700 text-center line-through text-[9px]">Ks <?= $newArrival_product["p_sell_price"] ?></p> <?php } ?>
+                                    <p class="text-gray-700 text-center line-through text-[9px]">Ks <span class="all_price"><?= $newArrival_product["p_sell_price"] ?> </span></p> <?php } ?>
 
                             </div>
                         </div>

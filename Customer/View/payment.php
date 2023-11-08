@@ -25,12 +25,12 @@
     <p class="font-medium text-2xl mt-10">Choose Payment Method</p>
 
       <form action="../Controller/orderController.php" method="post">
-    <input type="submit" name ="cod" value="Cash On Delivery" class="text-lg my-10">
+    <input type="submit" name ="cod" value="Cash On Delivery" class="text-lg my-10 hover:text-orange-400 hover:underline hover:text-2xl ease-in-out delay-150 transition-all">
     </form>
     <p class="text-lg">OR</p>
 
     <a href="./payAcc.php" class="lg:w-56 lg:my-10 my-6 w-40">
-      <img class="w-full" src="./resources/img/photo/kpay.png" alt="" />
+      <img class="w-full hover:scale-125 ease-in-out delay-150 transition-all" src="./resources/img/photo/kpay.png" alt="" />
     </a>
    
   </section>

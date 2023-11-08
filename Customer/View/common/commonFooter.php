@@ -28,7 +28,7 @@
                             <img class="w-full" src="./resources/img/headphone-line.svg" alt="" />
                         </div>
                     </a>
-                    <p class="ml-[20px]">Chat with us</p>
+                    <p class="ml-[20px] text-white">Chat with us</p>
                 </div>
                 <div class="flex flex-row items-center">
                     <a href="./aboutUs.php" class="w-[30px] h-[30px] rounded-[50%] bg-black flex justify-center items-center">
@@ -36,7 +36,7 @@
                             <img class="w-full" src="./resources/img/phone.svg" alt="" />
                         </div>
                     </a>
-                    <p class="ml-[20px]">Call us</p>
+                    <p class="ml-[20px] text-white">Call us</p>
                 </div>
                 <div class="flex flex-row items-center">
                     <a href="aboutUs.php" class="w-[30px] h-[30px] rounded-[50%] bg-black flex justify-center items-center">
@@ -45,7 +45,7 @@
                         </div>
                     </a>
 
-                    <p class="ml-[20px]">Write to us</p>
+                    <p class="ml-[20px] text-white">Write to us</p>
                 </div>
             </div>
             <!-- closing line end -->
@@ -93,14 +93,14 @@
     <!-- mobile footer start -->
     <footer class="lg:hidden inline ">
             <!-- closing line -->
-            <div class="w-full h-[70px] bg-[#ff9f29] flex justify-around">
+            <div class="w-full h-[70px] bg-[#607d38] flex justify-around">
                 <div class="flex flex-col justify-center items-center">
                     <a href="../aboutUs.php" class="w-[30px] h-[30px] rounded-[50%] bg-black flex justify-center items-center">
                         <div class="w-[16px]">
                             <img class="w-full" src="./resources/img/headphone-line.svg" alt="" />
                         </div>
                     </a>
-                    <p class="text-xs">Chat with us</p>
+                    <p class="text-xs text-white">Chat with us</p>
                 </div>
                 <div class="flex flex-col justify-center items-center">
                     <a href="../aboutUs.php" class="w-[30px] h-[30px] rounded-[50%] bg-black flex justify-center items-center">
@@ -108,7 +108,7 @@
                             <img class="w-full" src="./resources/img/phone.svg" alt="" />
                         </div>
                     </a>
-                    <p class="text-xs ml-[5px]">Call us</p>
+                    <p class="text-xs ml-[5px] text-white">Call us</p>
                 </div>
                 <div class="flex flex-col justify-center items-center">
                     <a href="../aboutUs.php" class="w-[30px] h-[30px] rounded-[50%] bg-black flex justify-center items-center">
@@ -116,7 +116,7 @@
                             <img class="w-full" src="./resources/img/mail.svg" alt="" />
                         </div>
                     </a>
-                    <p class="text-xs ml-[5px]">Write to us</p>
+                    <p class="text-xs ml-[5px] text-white">Write to us</p>
                 </div>
             </div>
             <!-- closing line end -->

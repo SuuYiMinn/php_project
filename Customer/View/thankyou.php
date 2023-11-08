@@ -19,13 +19,16 @@
   
 
   <!-- body -->
-  <section class="w-full h-[70vh] flex flex-col items-center justify-around">
-    <p class="lg:text-4xl text-xl text-[#F86F03]">Thank You</p>
-    <p class="lg:text-2xl text-xl font-['Pacifico']">
+  <section class="w-full h-[70vh] flex flex-col items-center justify-center ">
+
+    <p class=" text-base text-green-500">We recieved your order. </p>
+    <p class=" text-base text-green-500">We will deliver products to your resident within two days</p>
+    <p class="lg:text-4xl text-xl font-bold text-[#F86F03] my-5">Thank You</p>
+    <p class="lg:text-2xl text-xl mb-10 font-['Pacifico']">
       For shopping with us
     </p>
     <a href="./homepage.php">
-      <button class="lg:w-76 w-64 h-12 max-sm:h-[40px] rounded-[10px] bg-[#1A4D2E]">
+      <button class="lg:w-76 w-64 h-12 max-sm:h-[40px] rounded-[10px] bg-[#607d38] hover:bg-[#9ACD32]">
         <p class="text-white lg:text-2xl text-xl font-semibold">
           Shop more
         </p>

@@ -1,5 +1,8 @@
 $(document).ready(function () {
     
+
+    var register_popup = $(".register");
+
     var viewDetail = $(".view_detail");
     $(".show_detail").hide();
     $(".close_detail_popup").click(function () {

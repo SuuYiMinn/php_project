@@ -94,7 +94,7 @@
                             ${rating}
     
                         </div>
-                        <p class=" text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span>${price}</span></p>
+                        <p class=" text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span>${price.toLocaleString()}</span></p>
                         ${normal_price}
                          
     
@@ -291,7 +291,7 @@
                    <div class="text-center mt-10">
                        <p class="text-2xl">${productResult[0]["p_title"]}</p>
                        <p class="text-base">${productResult[0]["p_des"]}</p>
-                       <p class="text-base mt-5 font-medium">Ks ${price}</p>
+                       <p class="text-base mt-5 font-medium">Ks ${price.toLocalString()}</p>
                       ${discount_show}
                    </div>
                </div>

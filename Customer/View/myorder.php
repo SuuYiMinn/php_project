@@ -15,15 +15,19 @@
 <body>
 
 
-    <?php include "./common/nav_without_search.php" ?>
+    <?php include "./common/nav_without_search.php"                     ?>
     <?php include "../Controller/myorderController.php"?>
 
   <!-- body -->
 
+  
+  <div class="float-left ml-20 mt-5 clear-both" id="edit_user_back" onclick="history.go(-1);">
+        <ion-icon name="arrow-back" class="scale-[2]" title="back"></ion-icon>
+    </div>
 
 <p class="text-2xl my-8 text-orange-500 text-center font-medium">My orders</p>
   
-<div class="relative overflow-x-auto">
+<div class="relative">
     <table class="w-11/12 lg:w-4/5 text-sm text-left text-gray-500 dark:text-gray-400 mx-auto">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -59,7 +63,7 @@
                     <?=$userOrder["order_receive_date"] ?>
                 </td>
                 <td scope="col" class="lg:px-6 px-2 py-1 lg:py-3">
-                   <a href="./myorder_detail.php?order_id=<?=$userOrder["id"]?>">View Detail</a>
+                   <a href="./myorder_detail.php?order_id=<?=$userOrder["id"]?>" class="font-bold hover:text-red-500 hover:underline">View Detail</a>
                 </td>
             </tr>
             <?php  } ?>

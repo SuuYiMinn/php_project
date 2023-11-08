@@ -12,6 +12,7 @@
   <script src="./resources/lib/jquery/jquery.js"></script>
   <script src="./resources/js/myCart.js?id=<?= time() ?>"></script>
   <script src="./resources/js/cartQty.js?id=<?= time() ?>"></script>
+  <script src="./resources/js/formatPrice.js?id=<?= time() ?>"></script>
   <title>Cart</title>
 </head>
 
@@ -96,10 +97,10 @@
 
     </td>
     <td class="lg:px-6 px-2 lg:py-3 py-1">
-      <p class="lg:w-36 w-20 mb-1"><?= $cart_product["p_title"] ?></p>
+      <p class="lg:w-36 w-20 mb-1 hover:text-red-400"><?= $cart_product["p_title"] ?></p>
     </td>
     <td class="lg:px-6 px-2 lg:py-3 py-1">
-      <p> <?= $price ?> </p>
+      <p class="all_price"> <?= $price ?> </p>
     </td>
     <td class="lg:px-6 px-2 lg:py-3 py-1">
 
@@ -117,11 +118,11 @@
     </td>
     <!-- product price with quantity -->
     <td class="lg:px-6 px-2 lg:py-3 py-1">
-      <p class="totalprice"><?= $price * $cart_product["qty"]?> </p>
+      <p> <span class="totalprice all_price"><?= $price * $cart_product["qty"]?> </span> </p>
     </td>
     <td class="lg:px-6 px-2 lg:py-3 py-1">
 
-      <ion-icon name="trash-outline" class="ml-6 delete"></ion-icon>
+      <ion-icon name="trash-outline" class="ml-6 delete hover:text-red-500 hover:scale-150 transition-all ease-in-out delay-200" title="delete from cart"></ion-icon>
 
     </td>
     </tr>
@@ -141,22 +142,22 @@
 
     <div class="flex justify-between mb-5 lg:text-base text-sm">
       <p>Subtotal <span class="text-[#607d38]"><?= count($userCart_result) ?></span> items</p>
-      <p id="subtotal"><?= $subtotal ?></p>
+      <p id="subtotal" class="all_price"><?= $subtotal ?></p>
     </div>
 
     <div class="flex justify-between mb-5 lg:text-base text-sm">
       <p>Shipping Fees</p>
-      <p>Ks <span id="shippingFees">2250</span></p>
+      <p>Ks <span id="shippingFees" class="all_price">2250</span></p>
     </div>
 
     <div class="flex justify-around mb-8 lg:text-base text-sm">
       <p class="text-lg font-medium">Total</p>
-      <p id="total" class="text-lg text-[#607d38] font-medium"><?php echo ($subtotal + $shippingfees) ?></p>
+      <p id="total" class="text-lg text-[#607d38] font-medium all_price"><?php echo ($subtotal + $shippingfees) ?></p>
 
     </div>
 
 
-    <a href="../Controller/buyCartController.php?cartId=<?= $cartId ?> " class="w-40 bg-[#607d38] text-white text-center px-2 rounded-md py-1">
+    <a href="../Controller/buyCartController.php?cartId=<?= $cartId ?> " class="w-44 bg-[#607d38] text-white text-center px-2  rounded-md py-2 hover:bg-[#9ACD32] ">
       Proceed to Purchase
     </a>
 

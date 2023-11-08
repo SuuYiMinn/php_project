@@ -27,7 +27,7 @@
 
 
     <form action="../../Controller/resetpasswordController.php?" method="post">
-        <main class="lg:flex-row w-full justify-evenly">
+        <main class="flex w-full justify-evenly">
             <div class="w-1/3 mt-16">
                 <p class="text-2xl mx-auto my-10 w-64">Reset password</p>
 
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="w-3/4 mx-auto">
-                    <input type="submit" value="Send" class="bg-[#ff9f29] rounded-md mx-4 my-4 px-20 py-1 text-white">
+                    <input type="submit" value="Send" class="bg-[#607d38] hover:bg-[#9ACD32] rounded-md mx-4 my-4 px-20 py-1 text-white">
                 </div>
 
             </div>

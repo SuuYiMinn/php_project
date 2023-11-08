@@ -13,6 +13,7 @@ if(isset($_POST["change_info"])){
        $region = $_POST["user_region"];
        $township = $_POST["user_township"];
        $phone_number = $_POST["user_phone"];
+       $user_email = $_POST["user_email"];
 
         $photo_name = $_FILES["user_photo"]["name"];
         $photo_temp = $_FILES["user_photo"]["tmp_name"];
@@ -26,6 +27,7 @@ if(isset($_POST["change_info"])){
         "UPDATE m_customers SET
           c_name = :customername,
           c_phone = :phoneNum,
+          c_email = :customerEmail,
           c_address = :customerAddress,
           c_township = :customerTownship,
           c_region = :customerRegion,
@@ -36,6 +38,7 @@ if(isset($_POST["change_info"])){
 
         $changeInfo->bindValue(":customername", $user_name);
         $changeInfo->bindValue(":phoneNum", $phone_number);
+        $changeInfo->bindValue(":customerEmail", $user_email);
         $changeInfo->bindValue(":customerAddress", $address);
         $changeInfo->bindValue(":customerTownship", $township);
         $changeInfo->bindValue(":customerRegion", $region);

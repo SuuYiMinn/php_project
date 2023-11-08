@@ -43,7 +43,7 @@ $(document).ready(function () {
 
           if (search_product["p_discount"] != null) {
             discount = `<p class="text-orange-500 lg:text-xs text-[9px] mt-2 ml-2">${search_product["p_discount"]}%off</p>`;
-            normal_price = `<p class="lg:text-xs text-center line-through text-[9px]">${search_product["p_sell_price"]}</p>`;
+            normal_price = `<p class="lg:text-xs text-center line-through text-[9px]">Ks ${(search_product["p_sell_price"]).toLocaleString()}</p>`;
 
             var price =
               search_product["p_sell_price"] -
@@ -77,8 +77,8 @@ $(document).ready(function () {
 
             
             <!-- product image -->
-            <div class="w-full h-2/3 relative">
-                         <div class="w-11/12 h-full mt-2 mx-auto flex-col justify-items-center">
+            <div class="w-2/3 h-2/3 mx-auto relative">
+                         <div class="w-full h-full mt-2 mx-auto flex-col justify-items-center">
                          <img src="../..${search_product["p_photo_1"]} " alt="" class="w-full h-full ">
                          </div>                      
                      </div>
@@ -97,7 +97,7 @@ $(document).ready(function () {
                         ${rating}
 
                     </div>
-                    <p class=" text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span>${price}</span></p>
+                    <p class=" text-center lg:text-xs text-[10px] font-medium text-[#607d38] mt-1 w-16 ml-1">Ks <span>${price.toLocaleString()}</span></p>
                     ${normal_price}
                      
 

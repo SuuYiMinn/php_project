@@ -17,7 +17,6 @@ if ($_GET != NULL) {
 
     $sql->bindValue(":brandId", $brand_id);
     $sql->execute();
-
     $brand_products = $sql->fetchAll(PDO::FETCH_ASSOC);
 } else {
 

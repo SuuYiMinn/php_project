@@ -36,10 +36,10 @@
 
   setInterval(() => {
     brand_images_slider();
-  }, 2000);
+  }, 4000);
 
 
   setInterval(() => {
     images_slider();
-  }, 2000);
+  }, 4000);
 //});

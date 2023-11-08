@@ -24,7 +24,7 @@ session_start()
 
     <main class=" lg:flex w-4/5 h-full justify-between mx-auto">
         <div class="lg:w-1/3 w-4/5 mt-16 mx-auto">
-            <p class="  text-2xl text-center">Login</p>
+            <p class="  text-2xl text-center ">Login</p>
 
             <form action="../../Controller/loginController.php" method="post">
 
@@ -57,7 +57,7 @@ session_start()
 
                 </div>
                 <div class="w-3/4 mx-auto mt-8 mb-4">
-                    <input type="submit" value="Login" class="bg-[#607d38] rounded-md mx-4 my-4 px-20 py-1 text-white">
+                    <input type="submit" value="Login" class="bg-[#607d38] hover:bg-[#9ACD32] rounded-md mx-4 my-4 px-20 py-1 text-white">
                 </div>
                 <div class="flex w-80  justify-between text-xs">
                     <p class="sm:ml-12 lg:ml-4">Don't have an account?</p>

@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="./resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <script src="./resources/lib/jquery/jquery.js"></script>
+    <script src="./resources/js/deleteWishlist.js"></script>
+
 
     <title>Whilist</title>
 </head>
@@ -55,6 +58,10 @@
 
                 $count = 1;
 
+                
+
+                if($wishlist_id != null){
+
                 foreach ($wish_product_result as $wish_product) {
 
                     $wish_p_discount = $wish_product["p_discount"];
@@ -81,12 +88,13 @@
                             <?= $price ?>
                         </td>
                         <td class="px-6 py-4">
-                            <ion-icon name="trash-outline" class="scale-110 delete_wishlist"></ion-icon>
+                            <ion-icon name="trash-outline" class="scale-110 delete_wishlist text-red-500 hover:scale-125"></ion-icon>
                         </td>
                     </tr>
 
                 <?php $count++;
-                } ?>
+                } 
+            } else {?>    <p class="text-2xl font-medium text-red-500 text-center mb-6">No product in your wishlist</p><?php }?>
 
             </tbody>
         </table>

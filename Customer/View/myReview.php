@@ -19,6 +19,9 @@
 
     <?php include "./common/nav_without_search.php";
     include "../Controller/myReviewController.php" ?>
+       <div class="float-left ml-20 mt-5 clear-both" id="edit_user_back" onclick="history.go(-1);">
+        <ion-icon name="arrow-back" class="scale-[2] hover:text-green-600" title="back" ></ion-icon>
+    </div>
 
           <p class="text-center text-3xl text-green-600 font-medium my-8">My Reviews</p>
     <section class="w-5/6 mx-auto flex flex-wrap ">

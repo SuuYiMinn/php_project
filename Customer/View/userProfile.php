@@ -32,8 +32,8 @@
           <p>You want to log out?</p>
         </div>
         <div class="flex justify-evenly mt-5">
-          <button class="text-white bg-[#607d38] rounded-md w-1/4" id="no_logout">No</button>
-          <a href="../Controller/log_outController.php" class="text-white bg-[#607d38] rounded-md w-1/4">Yes</a>
+          <button class="text-white bg-[#607d38] hover:bg-[#9ACD32] rounded-md w-1/4" id="no_logout">No</button>
+          <a href="../Controller/log_outController.php" class="text-white bg-red-700 hover:bg-red-500 rounded-md w-1/4">Yes</a>
         </div>
 
       </div>

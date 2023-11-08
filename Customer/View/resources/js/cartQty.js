@@ -45,6 +45,7 @@ $(document).ready(function () {
             totalAmount += parseInt($(price).html());
           }
           $("#subtotal").html(totalAmount);
+          $("#total").html(totalAmount + 2250);
         },
         error: function () {},
       });
@@ -93,6 +94,7 @@ $(document).ready(function () {
             totalAmount += parseInt($(price).html());
           }
           $("#subtotal").html(totalAmount);
+          $("#total").html(totalAmount + 2250);
         },
         error: function () {},
       });
@@ -113,15 +115,32 @@ $(document).ready(function () {
         
           $products_from_cart = JSON.parse(res);
           console.log($products_from_cart);
+          let totalPrice_cart =0;
+        for (const delete_products of $products_from_cart) {
+          
+          let product_discount = delete_products["p_discount"];
+          let product_sellPrice = delete_products["p_sell_price"];
+          let product_quantity = delete_products["qty"];
+          if(product_discount != null ){
+
+            let price = product_sellPrice - ((product_discount/100) *product_sellPrice) ;
+
+          }else {
+           let price = product_sellPrice;
+          }
+         
+          let subTotal = product_quantity * price;
+
+          totalPrice_cart += subTotal;
+
+        }
+
+
           $(products_cart[index]).remove();
           let p_qty_price = $(".totalprice");
-          var totalAmount = 0;
 
-          for (const price of p_qty_price) {
-            totalAmount += parseInt($(price).html());
-            console.log(totalAmount);
-          }
-          $("#subtotal").html(totalAmount);
+          $("#subtotal").html(totalPrice_cart.toLocaleString());
+          $("#total").html((totalPrice_cart + 2250).toLocaleString());
           
         },
         error: function () {},

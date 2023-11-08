@@ -16,7 +16,7 @@
     <script src="./resources/lib/jquery/jquery.js"></script>
     <script src="./resources/js/menu.js"></script>
     <script src="./resources/js/detailslide.js" defer></script>
-    <title>Document</title>
+    <title>Priduct Reviews</title>
 </head>
 
 <body class="relative w-full">
@@ -25,35 +25,42 @@
     <?php include "./common/nav_without_search.php" ?>
 
     <?php include "../Controller/detailController.php" ?>
+    <div class="float-left ml-20 mt-5 clear-both" id="edit_user_back" onclick="history.go(-1);">
+        <ion-icon name="arrow-back" class="scale-[2] hover:text-green-600" title="back"></ion-icon>
+    </div>
 
     <?php if ($review_result_all != null) { ?>
         <div class="mt-8 lg:w-1/3 w-11/12 mx-auto">
-            <p class="lg:text-xl text-lg font-medium text-orange-500 my-5 text-center"> Product_Reviews</p>
+            <p class="lg:text-xl text-lg font-medium text-orange-500 my-5 text-center">Reviews</p>
             <!--customer reviews-->
             <?php foreach ($review_result_all as $all_review) { ?>
 
 
-                <div class="w-10/12 mx-2 text-gray-500 my-4 ">
-                <div class="flex ">
-                    <div class ="w-10 h-10 rounded-full bg-black mx-1" >
-                        <img src="../..<?php $all_review["c_profile"] ?>" alt="">
-                    </div>
-                    <div>
-                        <p class="text-lg font-medium "><?= $all_review["c_name"] ?></p>
-                    </div>
+                <div class="lg:w-4/5 w-11/12 mx-2 mt-4">
+                        <div class="flex">
+                            <div class="w-8 h-8 rounded-full mx-1">
+                                <img src="../../<?= $all_review["c_profile"] ?>" alt="user_photo" class="w-full h-full rounded-full">
+                            </div>
+                            <div>
+                                <p class=" text-sm text-green-600 -mb-1"><?= $all_review["c_name"] ?></p>
+                                <div class="mt-0">
+                                    <?php for ($i = 0; $i < $all_review["rating_no"]; $i++) { ?>
+                                        <ion-icon name="star" class="mr-[1px] text-orange-400 w-3 h-3"></ion-icon>
 
-                </div>
+                                    <?php   } ?>
+                                </div>
+                            </div>
 
-                    <div class=" ml-8   text-orange-500">
+                        </div>
 
-                        <p class="text-base  ">
-                            <?= $all_review["product_review"] ?>
+                        <p class=" font-medium ml-8 text-xs text-gray-400">
+                            <?=$all_review["product_review"] ?>
                         </p>
 
+
                     </div>
-                </div>
             <?php } ?>
-           
+
 
 
         </div>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $payacc = $_SESSION["payacc"];
-print_r($payacc);
+// print_r($payacc);
 ?>
 <!DOCTYPE html>
 <html lang="en">

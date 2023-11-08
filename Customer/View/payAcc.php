@@ -16,15 +16,15 @@
 
 <body class = "w-full">
 
-<div class="w-40 h-40 mx-auto mt-20 mb-10">
-    <p class="text-orange-500 w-48">Please scan here to pay</p>
+<p class="text-orange-500  font-medium mt-32 text-center">Please scan here to pay</p>
+<div class="w-44 h-44 mx-auto mt-10 mb-10">   
     <img src="./resources/img/photo/kpayqrCode.png" alt="" class="w-full h-full ">
 </div>
 <form action="../Controller/orderController.php" method="post" class="flex flex-col lg:w-1/3 w-4/5 mx-auto">
 
-<input type="text" name="payNumber" placeholder="Enter your kbz pay Number" class="ring-1 rounded-md h-8 lg:w-2/3 w-full mx-auto mb-5"  required> 
+<input type="text" name="payNumber" placeholder="Enter your kbz pay Number" class="ring-1 rounded-md h-8 lg:w-2/3 w-full mx-auto mb-5 placeholder:px-2"  required> 
 
-<input type="submit" name = "kbzpay" value = "Send" class="lg:w-1/2 w-3/4 mx-auto bg-orange-400 text-white h-8 rounded-md" >
+<input type="submit" name = "kbzpay" value = "Send" class="lg:w-1/2 w-3/4 mx-auto bg-[#607d38] hover:bg-[#9ACD32] text-white h-8 rounded-md" >
 
 </form>
 

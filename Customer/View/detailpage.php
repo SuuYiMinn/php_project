@@ -91,28 +91,24 @@
             </div>
             <div class="lg:mt-4 mt-2">
                 <div class="flex justify-between">
-                    <div>
-                        <div class="flex text-[#607d38]">
-                            <ion-icon name="heart-outline" class="lg:w-7 w-4 lg:h-7 h-4 mr-1"></ion-icon>
-                            <ion-icon name="card-outline" class="lg:w-7 w-4 lg:h-7 h-4 mr-1"></ion-icon>
-                            <ion-icon name="chatbubble-ellipses-outline" class="lg:w-6 w-4 lg:h-6 h-4 mr-1"></ion-icon>
+                    
+                    <div class="flex flex-col justify-center items-center text-orange-400">
+                        <div>
+                        <?php if ($product_rating_no != null) {
+
+                            for (
+                                $i = 0;
+                                $i < $product_rating_no;
+                                $i++
+                            ) { ?>
+
+                                <ion-icon name="star" class="lg:w-4 w-3 lg:h-4 h-3 mr-[1px]"></ion-icon>
+                        <?php }
+                        } ?>
                         </div>
-                        <div class="flex mt-3  text-[#607d38]">
-
-                            <?php if ($product_rating_no != null) {
-
-                                for (
-                                    $i = 0;
-                                    $i < $product_rating_no;
-                                    $i++
-                                ) { ?>
-
-                                    <ion-icon name="star" class="lg:w-5 w-3 lg:h-5 h-3 mr-[2px]"></ion-icon>
-                            <?php }
-                            } ?>
-                        </div>
-
                     </div>
+
+
 
                     <!-- product prices-->
                     <div>
@@ -128,7 +124,7 @@
                     </div>
 
                 </div>
-                <div class="flex items-center w-28 justify-evenly float-right">
+                <div class="flex items-center w-28 justify-evenly float-left">
                     <p>Qty</p>
                     <div class="w-3 h-3 bg-green-700  relative  rounded-sm" id="remove">
                         <ion-icon name="remove-outline" class="w-full h-full absolute text-white font-bold"></ion-icon>
@@ -147,22 +143,21 @@
         </div>
         <!-- product description-->
         <div class="lg:w-1/2 w-11/12 ml-2 ">
-            <p class="lg:text-2xl text-sm mt-2 font-semibold"> <?= $productDetail_result[0]["p_title"] ?></p>
-            <p class="lg:text-2xl text-sm font-semibold"><?= $productDetail_result[0]["p_des"] ?></p>
+            <p class="lg:text-2xl text-sm mt-2 font-semibold text-green-700 mb-3"> <?= $productDetail_result[0]["p_title"] ?></p>
+            <p class="lg:text-xl text-sm font-semibold text-gray-500"><?= $productDetail_result[0]["p_des"] ?></p>
 
-            <div class="w-full lg:h-32 h-20 mt-2 ring-1 overflow-y-auto">
+            <div class="w-4/5 lg:h-32 h-20 mt-2 flex flex-col justify-icenters items-center text-gray-500 overflow-y-auto">
                 <p class="lg:text-sm text-xs p-2"><?= $productDetail_result[0]["p_detail"] ?></p>
             </div>
 
-            <div class="mt-5">
+            <div class="mt-5 w-4/5 ">
                 <div class="flex justify-evenly">
+                    <div class="lg:w-1/3 w-2/5 h-8 bg-orange-500 hover:bg-yellow-400 rounded-md text-white text-center py-[2px]" isLogin=<?= $isUser ?> id="add_to_cart" pId=<?= $product_id ?>>Add To Cart</div>
                     <form action="../Controller/buynowController.php" method="post" class="lg:w-1/3  w-2/5 ">
                         <input type="hidden" name="productid" value=<?= $product_id ?>>
                         <input type="hidden" name="quantity" value="1" id="p_qty">
-                        <input type="submit" value="Buy Now" class=" w-full h-8  bg-[#607d38] rounded-md text-white text-center py-[2px]">
+                        <input type="submit" value="Buy Now" class=" w-full h-8  bg-[#607d38] hover:bg-[#9ACD32] rounded-md text-white text-center py-[2px]">
                     </form>
-
-                    <div class="lg:w-1/3 w-2/5 h-8 bg-green-800 rounded-md text-white text-center py-[2px]" isLogin=<?= $isUser ?> id="add_to_cart" pId=<?= $product_id ?>>Add To Cart</div>
                 </div>
                 <div class="noti w-48 rounded-lg text-gray-500 text-center mx-auto mt-4 bg-white drop-shadow-md text-sm py-1"></div>
             </div>
@@ -177,21 +172,29 @@
                     <!--customer reviews-->
                     <div class="lg:w-4/5 w-11/12 mx-2">
                         <div class="flex">
-                            <div class="w-8 h-8 rounded-full bg-black mx-1">
-                                <img src="../..<?php $all_review["c_profile"] ?>" alt="">
+                            <div class="w-8 h-8 rounded-full mx-1">
+                                <img src="../../<?= $review_result[0]["c_profile"] ?>" alt="user_photo" class="w-full h-full rounded-full">
                             </div>
-                            <p class="lg:text-base text-sm text-orange-400 "><?= $review_result[0]["c_name"] ?></p>
+                            <div>
+                                <p class=" text-sm text-green-600 -mb-1"><?= $review_result[0]["c_name"] ?></p>
+                                <div class="mt-0">
+                                    <?php for ($i = 0; $i < $review_result[0]["rating_no"]; $i++) { ?>
+                                        <ion-icon name="star" class="mr-[1px] text-orange-400 w-3 h-3"></ion-icon>
+
+                                    <?php   } ?>
+                                </div>
+                            </div>
+
                         </div>
 
-
-
-                        <p class="lg:text-sm ml-8 text-xs text-gray-700">
+                        <p class=" font-medium ml-8 text-xs text-gray-400">
                             <?= $review_result[0]["product_review"] ?>
                         </p>
 
 
                     </div>
-                    <a href="./ProductReveiw.php?productid=<?= $product_id ?>" class="float-right text-xs font-medium text-[#607d38] lg:mr-20">See all reviews..</a>
+                    <a href="./ProductReveiw.php?productid=<?= $product_id ?>" class="float-right text-xs font-medium 
+                    text-[#607d38] lg:mr-20 hover:text-orange-600 hover:font-bold">See all reviews</a>
 
 
                 </div>
@@ -209,10 +212,10 @@
     } ?>
 
     <!--you may also like session-->
-    <div class="w-full mx-auto lg:w-10/12 mb-5 mt-8">
+    <div class="w-11/12 mx-auto lg:w-10/12 mb-5 mt-8">
         <p class=" lg:text-xl text-sm font-semibold ml-4 mb-4">Related products</p>
 
-        <div class=" w-full flex flex-wrap">
+        <div class="w-full flex flex-wrap">
             <?php foreach ($category_result as $products) {
                 # code...
 
@@ -224,7 +227,7 @@
             ?>
 
 
-                <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:w-56 w-40 lg:h-72 h-60 bg-white drop-shadow-md mt-8 group products_to_add rounded-xl  ml-2 " id="product_<?= $products["id"] ?>">
+                <a href="./detailpage.php?productid=<?= $products["id"] ?>" class="lg:w-56 w-44 lg:h-72 h-60 bg-white drop-shadow-md mt-8 group products_to_add rounded-xl  ml-2 " id="product_<?= $products["id"] ?>">
 
 
                     <div class="w-full h-full absolute opacity-0 bg-green-800/20 -top-10 group-hover:top-0
@@ -248,8 +251,8 @@
 
                     </div>
                     <!-- product image -->
-                    <div class="w-full h-2/3 relative">
-                        <div class="w-11/12 h-full mt-2 mx-auto flex-col justify-items-center">
+                    <div class="w-2/3 h-2/3 mx-auto relative">
+                        <div class="w-full h-full mt-2 mx-auto flex-col justify-items-center">
                             <img src="../..<?= $products["p_photo_1"] ?>" alt="" class="w-full h-full ">
                         </div>
                     </div>

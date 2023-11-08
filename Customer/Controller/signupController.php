@@ -1,7 +1,8 @@
 <?php
 // call mailsender
-include "./common/mailSender.php";
+// include "./common/mailSender.php";
 include "./common/commonfunction.php";
+include "../Controller/common/mailSender.php";
 
 session_start();
 

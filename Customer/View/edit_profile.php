@@ -44,8 +44,8 @@
                 <form action="../Controller/edit_profileController.php" method="post" enctype="multipart/form-data">
 
                     <div class="w-28 h-28 mx-auto absolute -top-10 right-[40%] rounded-full">
-                        <label for="user_img">
-                        <img class="w-full rounded-full" src="../../<?=$user_account_result[0]["c_profile"] ?>" alt="User image" id="upload_photo" >
+                        <label for="user_img" class="w-full h-full rounded-full">
+                        <img class="w-full rounded-full" src="../../<?=$user_account_result[0]["c_profile"] ?>" alt="User image" id="upload_photo" class="w-full h-full rounded-full" >
                         </label>
                         
                         <input type="file" name="user_photo" id="user_img" accept="image/*" class="hidden">
@@ -66,7 +66,7 @@
 
                     <div class="pt-4">
                         <p class="text-xs text-gray-400 font-medium">Email</p>
-                        <input type="text" name="uwer_email" class="border-b-[1px] border-b-gray-300 py-1 font-medium w-full px-4" value="<?= $user_account_result[0]["c_email"] ?>">
+                        <input type="text" name="user_email" class="border-b-[1px] border-b-gray-300 py-1 font-medium w-full px-4" value="<?= $user_account_result[0]["c_email"] ?>">
                     </div>
 
                     <div class="pt-4 ">
@@ -93,7 +93,7 @@
                     </div>
 
                     <div class="py-8 w-3/4 mx-auto">
-                        <input type="submit" name="change_info" value="Update Profile" class="w-full py-2 bg-[#607d38] rounded-lg mx-auto text-white">
+                        <input type="submit" name="change_info" value="Update Profile" class="w-full py-2 bg-[#607d38] hover:bg-[#9ACD32] rounded-lg mx-auto text-white">
                     </div>
 
                 </form>

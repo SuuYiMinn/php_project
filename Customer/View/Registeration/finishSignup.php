@@ -37,7 +37,7 @@ if (!isset($_SESSION["user_account"])) {
                     <p class="text-xs text-gray-500  text-center">If you didn't add name your user email address will be remark as your user name</p>
                 </div>
 
-                <input type="submit" value="Go Home page" class=" h-8 py-[2px]  text-center px-4 bg-green-800 text-white rounded-md">
+                <input type="submit" value="Go Home page" class=" h-8 py-[2px]  text-center px-4 bg-green-800 hover:bg-[#9ACD32] text-white rounded-md">
 
             </form>
 

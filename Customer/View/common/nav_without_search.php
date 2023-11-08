@@ -35,11 +35,14 @@
 
             ?>
 
-                <div> <a href="./userProfile.php"><?= $customer_name ?></a> </div> <?php } else { ?>
+                <div class="flex w-28 justify-evenly py-1">
+                    <div class="w-4 h-4 rounded-full"><a href="./userProfile.php"><img src="../../<?= $accountresult[0]["c_profile"] ?>" alt="" class="w-full h-full rounded-full"></a></div>
+                    <a href="./userProfile.php" class=" hover:font-bold hover:underline"><?= $customer_name ?></a>
+                </div><?php } else { ?>
 
                 <div class="flex py-1">
-                    <a href="./Registeration/login.php" class="mx-4">Login</a>
-                    <a href="./Registeration/login.php">Sign Up</a>
+                    <a href="./Registeration/login.php" class="mx-4 hover:font-bold">Login</a>
+                    <a href="./Registeration/login.php" class="hover:font-bold">Sign Up</a>
                 </div>
 
             <?php } ?>
@@ -54,23 +57,23 @@
 
                 <div class="w-1/3 flex justify-evenly mx-auto">
 
-                    <a href="./homepage.php">Home</a>
-                    <a href="./brandlist.php">Brand</a>
-                    <a href="./aboutUs.php">About Us</a>
+                    <a href="./homepage.php" class="hover:font-medium hover:text-orange-500 hover:underline">Home</a>
+                    <a href="./brandlist.php" class="hover:font-medium hover:text-orange-500 hover:underline">Brand</a>
+                    <a href="./aboutUs.php" class="hover:font-medium hover:text-orange-500 hover:underline">About Us</a>
                 </div>
 
                 <div class="w-40 flex justify-evenly absolute right-20">
                     <?php if ($accountresult != null) { ?>
-                        <a href="./whislist.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./whislist.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110"></ion-icon></a>
 
                     <?php } else { ?>
-                        <a href="./Registeration/signup.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./Registeration/signup.php"> <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110"></ion-icon></a>
                     <?php } ?>
                     <?php if ($accountresult != null) { ?>
-                        <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110"></ion-icon></a>
 
                     <?php } else { ?>
-                        <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                        <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110"></ion-icon></a>
                     <?php } ?>
                 </div>
             </menu>
@@ -81,9 +84,9 @@
             <div class="w-[70px] h-[20px]">
                 <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
             </div>
-            <ion-icon name="notifications" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon>
+            <ion-icon name="heart" class="w-[20px] h-[20px] fill-[#607d38] over:text-orange-500 hover:fill-orange-500 hover:scale-110"></ion-icon>
             <?php if ($accountresult != null) { ?>
-                <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>
+                <a href="./cart.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38] hover:fill-orange-500 hover:scale-110"></ion-icon></a>
 
             <?php } else { ?>
                 <a href="./Registeration/signup.php"> <ion-icon name="cart" class="w-[20px] h-[20px] fill-[#607d38]"></ion-icon></a>

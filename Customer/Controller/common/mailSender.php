@@ -4,9 +4,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require './lib/PHPMailer/src/Exception.php';
+// require './lib/PHPMailer/src/Exception.php';
 require './lib/PHPMailer/src/PHPMailer.php';
 require './lib/PHPMailer/src/SMTP.php';
+require '../lib/PHPMailer/src/Exception.php';
 
 
 class SendMail
