@@ -155,13 +155,14 @@ include "../../Controller/productDetailsController.php";
                     <p class="ml-8"><?= $productCat[0]["p_discount"] ?>% Off</p>
                 </div>
                 <div class="flex flex-row">
-                    <p class="text-right w-32">Details:</p>
-                    <p class="ml-8 w-[350px]"><?= $productCat[0]["p_detail"] ?></p>
-                </div>
-                <div class="flex flex-row">
                     <p class="text-right w-32">Description:</p>
                     <p class="ml-8 w-[350px]"><?= $productCat[0]["p_des"] ?></p>
                 </div>
+                <div class="flex flex-row">
+                    <p class="text-right w-32">Details:</p>
+                    <p class="ml-8 w-[350px]"><?= $productCat[0]["p_detail"] ?></p>
+                </div>
+                
             </div>
 
             <!-- </div> -->
@@ -246,7 +247,7 @@ include "../../Controller/productDetailsController.php";
                 <!-- start of review1 -->
                 <div>
                     <div class="flex items-center mb-4 space-x-4">
-                        <img class="w-10 h-10 rounded-full" src="../../..<?= $customers[$i]["c_profile"] ?>" alt="">
+                        <img class="w-10 h-10 rounded-full" src="../../../<?= $customers[$i]["c_profile"] ?>" alt="">
                         <div class="space-y-1 dark:text-white">
                             <p><?= $customers[$i]["c_name"] ?></p>
                             <!-- <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400">Joined on August 2014</time> -->

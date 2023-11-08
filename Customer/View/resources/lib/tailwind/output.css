@@ -899,6 +899,10 @@ video {
   margin-top: 2rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1005,6 +1009,10 @@ video {
 
 .h-96 {
   height: 24rem;
+}
+
+.h-\[100px\] {
+  height: 100px;
 }
 
 .h-\[17px\] {
@@ -1205,6 +1213,10 @@ video {
 
 .w-\[17px\] {
   width: 17px;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .w-\[20px\] {

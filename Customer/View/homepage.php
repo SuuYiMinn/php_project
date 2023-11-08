@@ -81,7 +81,7 @@
             <menu class="w-full flex py-2 border relative bg-white">
                 <div class="absolute left-20 w-[100px] h-[30px]">
                     <a href="./homepage.php" class="w-full h-full">
-                        <img src="./resources/img/photo/Logo.png" alt="logo" class="w-full h-full">
+                        <img src="./resources/img/logo.png" alt="logo" class="w-full h-full">
                     </a>
                 </div>
                 <div class="w-1/3 mx-auto flex justify-around">
@@ -122,7 +122,7 @@
         <div class="lg:hidden inline ">
             <div class="w-full flex justify-evenly py-2 bg-white ">
                 <div class="w-[70px] h-[20px]">
-                    <img src="./resources/img/photo/logo.png" alt="logo" class="pt-0">
+                    <img src="./resources/img/logo.png" alt="logo" class="w-full h-full">
                 </div>
                 <searchBar class="relative">
                     <input id="home_search_mobile" class="placeholder:italic placeholder:text-slate-400 block
@@ -215,14 +215,12 @@
 
             <!-- Hero section images -->
 
-            <div class="w-full lg:w-2/3 h-full relative flex overflow-x-hidden ">
+            <div class="w-full lg:w-2/3 h-full relative flex overflow-x-hidden ml-20 mt-3 ">
                 <!-- first photo of hero section -->
                 <div class="w-full relative inline">
-                    
-                    <img src="./resources/img/shop.jpg" alt="" class="w-full h-full">
+                    <img src="./resources/img/shopping.png" alt="" class="w-2/3 h-full">
                 </div>
                 <div id="dots"></div>
-
             </div>
         </div>
 
@@ -318,7 +316,6 @@
 
                             <div class="w-11/12 h-full mx-auto flex-col justify-items-center">
                                 <img src="../..<?= $popular_product["p_photo_1"] ?>" alt="" class="w-full h-full py-3 object-fill">
-
                             </div>
 
                         </div>

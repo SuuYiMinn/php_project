@@ -91,7 +91,7 @@ include "../../Controller/orderController.php";
                     <?php for ($i = 0; $i < count($reviews); $i++) { ?>
                         <div class="flex flex-row justify-center items-center py-5 px-5 shadow-3xl rounded-xl mt-5">
                             <!-- image of customer -->
-                            <img src="../../..<?= $reviews[$i]["c_profile"] ?>" class="rounded-full w-10 h-10" />
+                            <img src="../../../<?= $reviews[$i]["c_profile"] ?>" class="rounded-full w-10 h-10" />
                             <!-- start of name-date-star-reviewText -->
                             <div class="ml-5 flex flex-col justify-center">
                                 <div class="text-blueText text-sm font-Tommorrow">
@@ -163,7 +163,7 @@ include "../../Controller/orderController.php";
                     <?php foreach ($tops as $top) { ?>
                         <div class="px-5 flex flex-row justify-center items-center w-[450px] h-[80px] shadow-3xl rounded-xl mt-5">
                             <!-- image of top-product -->
-                            <img src="../../..<?= $top["p_photo_1"] ?>" class="w-[80px] h-[60px]" />
+                            <img src="../../../<?= $top["p_photo_1"] ?>" class="w-[80px] h-[60px]" />
                             <!-- start of details of top-product-->
                             <div class="flex flex-row justify-center ml-3">
                                 <div class="text-sm text-blueText text-center flex flex-col">

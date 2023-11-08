@@ -203,6 +203,13 @@ include "../../Controller/subCategoryListController.php";
                         <input name="pdiscount" value="<?= $productCat[0]["p_discount"] ?>" type="number" required class="block w-20 rounded-lg border border-blueText pl-5 py-2 text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-inputBox" placeholder="40">
                         <span class="text-xl text-blueText text-center ml-3"> % OFF</span>
                     </li>
+                     <!-- edit Description: -->
+                     <li class="text-md flex flex-row">
+                        <label class="w-36 text-blueText">Description:</label>
+
+                        <textarea name="pdes" cols="50" rows="3" maxlength="50" class="px-3 py-2 text-justify block rounded-lg border border-blueText text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-greyText1">
+                        <?= $productCat[0]["p_des"] ?>
+                    </textarea>
                     <!-- edit details -->
                     <li class="text-md flex flex-row">
                         <label class="w-36 text-blueText">Details:</label>
@@ -211,13 +218,7 @@ include "../../Controller/subCategoryListController.php";
                         <?= $productCat[0]["p_detail"] ?>
                     </textarea>
                     
-                    <!-- edit Description: -->
-                    <li class="text-md flex flex-row">
-                        <label class="w-36 text-blueText">Description:</label>
-
-                        <textarea name="pdes" cols="50" rows="10" class="px-3 py-2 text-justify block rounded-lg border border-blueText text-blueText shadow-sm focus:ring-blueText focus:border-blueText placeholder:text-greyText1">
-                        <?= $productCat[0]["p_des"] ?>
-                    </textarea>
+                   
 
                     </li>
 
