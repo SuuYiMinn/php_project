@@ -17,7 +17,6 @@ $sql = $pdo->prepare(
 $sql->bindValue(":date", $inDate);
 $sql->bindValue(":id", $invoiceId);
 $sql->execute();
-
 foreach ($receiveInvoice[0] as $quantity) {
     // echo "<pre>";
     // print_r ($quantity);
@@ -26,18 +25,35 @@ foreach ($receiveInvoice[0] as $quantity) {
     $productId = $quantity["productId"];
     $stock = $quantity["p_stock"];
     $leftStock = $stock - $orderQty;
+    if ($leftStock < 0 || $leftStock == 0){
+        $leftStock = 0;
+        $sql = $pdo->prepare(
+            "UPDATE m_products SET
+            p_stock =:stock,
+            del_flg =:value
+            WHERE id =:id
+            "
+        );
+        $sql->bindValue(":stock", $leftStock);
+        $sql->bindValue(":id", $productId);
+        $sql->bindValue(":value", 1);
+        $sql->execute();
+    }
     // echo $orderQty;
     // echo $productId;
-    $sql = $pdo->prepare(
-
-        "UPDATE m_products SET
-        p_stock =:stock
-        WHERE id =:id
-        "
-    );
-    $sql->bindValue(":stock", $leftStock);
-    $sql->bindValue(":id", $productId);
-    $sql->execute();
+    else{
+        $sql = $pdo->prepare(
+            "UPDATE m_products SET
+            p_stock =:stock
+            WHERE id =:id
+            "
+        );
+        $sql->bindValue(":stock", $leftStock);
+        $sql->bindValue(":id", $productId);
+        $sql->execute();
+    }
+    
+    
 }
 
 

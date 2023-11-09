@@ -24,14 +24,13 @@ include "../../Controller/categoryListController.php";
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
     <link rel="stylesheet" href="../resources/css/product.css" />
-    <!-- <link rel="stylesheet" href="../resources/css/dropdown.css" /> -->
+
     <script src="../resources/lib/jquery/jQuery v3.7.0.js"></script>
     <script src="../resources/js/searchProduct.js?id=<?= time() ?>"></script>
     <script src="../resources/js/menuCategory.js?id=<?= time() ?>" defer></script>
     <script src="../resources/js/searchCategory.js?id=<?= time() ?>"></script>
     <script src="../resources/js/searchSubcategory.js?id=<?= time() ?>"></script>
 </head>
-
 <body>
     <?php include "../Layout/nav.php"; ?>
     <!-- start of right side -->
@@ -92,54 +91,8 @@ include "../../Controller/categoryListController.php";
                         <?php } ?>
                     </ul>
                 </div>
-                <style>
-                    /* since nested groupes are not supported we have to use 
-     regular css for the nested dropdowns 
-  */
-                    li>ul {
-                        transform: translatex(100%) scale(0);
-                    }
-
-                    li:hover>ul {
-                        transform: translatex(101%) scale(1)
-                    }
-
-                    li>button svg {
-                        transform: rotate(-90deg)
-                    }
-
-                    li:hover>button svg {
-                        transform: rotate(-270deg);
-                        fill: orange;
-
-                    }
-
-                    /* Below styles fake what can be achieved with the tailwind config
-     you need to add the group-hover variant to scale and define your custom
-     min width style.
-  	 See https://codesandbox.io/s/tailwindcss-multilevel-dropdown-y91j7?file=/index.html
-  	 for implementation with config file
-  */
-                    .group:hover .group-hover\:scale-100 {
-                        transform: scale(1)
-                    }
-
-                    .group:hover .group-hover\:-rotate-180 {
-                        transform: rotate(180deg)
-                    }
-
-                    .scale-0 {
-                        transform: scale(0)
-                    }
-
-                    .min-w-32 {
-                        min-width: 8rem
-                    }
-                </style>
-
-
-
-
+              
+                <link rel="stylesheet" href="../resources/css/dropdown.css" />
 
                 <a href="../Products/addProduct.php" class="ml-[150px] text-whiteText hover:text-button">Add Product</a>
                 <!-- start of search bar -->
